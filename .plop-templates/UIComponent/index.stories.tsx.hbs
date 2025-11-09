@@ -1,5 +1,7 @@
-import { Meta } from 'storybook-react-rsbuild';
-import { {{ pascalCase name}}, T{{ pascalCase name }}Props } from './src';
+import React from 'react';
+import type { Meta } from 'storybook-react-rsbuild';
+
+import { {{ pascalCase name}}, type T{{ pascalCase name }}Props } from './src';
 
 const meta: Meta = {
     title: 'UI/{{ pascalCase name }}',
@@ -8,4 +10,4 @@ const meta: Meta = {
 
 export default meta;
 
-export const Demo = (props: T{{ pascalCase name }}Props) => <{{ pascalCase name }} {...props}/>;
+export const Demo = (props: T{{ pascalCase name }}Props) => <{{ pascalCase name }} {...props} />;
