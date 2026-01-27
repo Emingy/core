@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import type { Preview } from 'storybook-react-rsbuild';
 
 import { AppProvider, PageWrapper } from '@emingy/core/ui';
@@ -18,7 +19,9 @@ const preview: Preview = {
         (Story) => (
             <AppProvider>
                 <PageWrapper>
-                    <Story />
+                    <MemoryRouter>
+                        <Story />
+                    </MemoryRouter>
                 </PageWrapper>
             </AppProvider>
         ),

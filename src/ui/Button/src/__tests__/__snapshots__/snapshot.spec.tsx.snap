@@ -1,0 +1,286 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Button > should render alert type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__alert-kPvPbc src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_4_"
+  >
+    <button
+      id="_r_4_"
+    >
+      Alert
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH complex-button src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__large-size-GNuvd_"
+    for="_r_f_"
+  >
+    ←
+    <button
+      id="_r_f_"
+    >
+      Complex Button
+    </button>
+    →
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render basic button 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_0_"
+  >
+    <button
+      id="_r_0_"
+    >
+      Click me
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render disabled state 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__disabled-dU2pl7"
+    for="_r_8_"
+  >
+    <button
+      disabled=""
+      id="_r_8_"
+    >
+      Disabled
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render ghosted type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_3_"
+  >
+    <button
+      id="_r_3_"
+    >
+      Ghosted
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render large size 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__large-size-GNuvd_"
+    for="_r_7_"
+  >
+    <button
+      id="_r_7_"
+    >
+      Large
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render medium size 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_6_"
+  >
+    <button
+      id="_r_6_"
+    >
+      Medium
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render primary type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_1_"
+  >
+    <button
+      id="_r_1_"
+    >
+      Primary
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render secondary type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__secondary-H0IJrG src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_2_"
+  >
+    <button
+      id="_r_2_"
+    >
+      Secondary
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render small size 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__small-size-PteQvF"
+    for="_r_5_"
+  >
+    <button
+      id="_r_5_"
+    >
+      Small
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__splitted-s9I3PI"
+    for="_r_c_"
+  >
+    <button
+      id="_r_c_"
+    >
+      Split
+    </button>
+  </label>
+  <button
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__splitted-right-AUN946"
+  >
+    -
+  </button>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with custom className 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH custom-button src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_d_"
+  >
+    <button
+      id="_r_d_"
+    >
+      Custom
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with htmlType submit 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_e_"
+  >
+    <button
+      id="_r_e_"
+      type="submit"
+    >
+      Submit
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with postfix 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_a_"
+  >
+    <button
+      id="_r_a_"
+    >
+      Next
+    </button>
+    →
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_9_"
+  >
+    $
+    <button
+      id="_r_9_"
+    >
+      Price
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_b_"
+  >
+    $
+    <button
+      id="_r_b_"
+    >
+      100
+    </button>
+    USD
+  </label>
+</div>
+`;
