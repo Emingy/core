@@ -1,0 +1,44 @@
+.Divider {
+    display: flex;
+    color: var(--color-grey-60);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    span {
+        display: block;
+        background-color: currentcolor;
+    }
+
+    label {
+        display: block;
+    }
+
+    &__horizontal {
+        width: 100%;
+        flex-direction: row;
+
+        span {
+            width: 100%;
+            height: 1px;
+        }
+    }
+
+    &__vertical {
+        height: 100%;
+        flex-direction: column;
+
+        span {
+            width: 1px;
+            height: 100%;
+        }
+
+        label {
+            writing-mode: vertical-rl;
+        }
+    }
+
+    &:has(label) {
+        gap: 4px;
+    }
+}
