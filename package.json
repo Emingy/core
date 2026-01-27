@@ -98,6 +98,10 @@
         "atLeast": 95,
         "detail": true
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Emingy/core.git"
+    },
     "dependencies": {
         "lodash-es": "4.17.21"
     }
