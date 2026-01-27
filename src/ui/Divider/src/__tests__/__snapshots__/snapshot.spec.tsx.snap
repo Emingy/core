@@ -1,0 +1,85 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Divider > should render basic divider 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render horizontal divider 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render horizontal with label 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
+>
+  <span />
+  <label>
+    Section
+  </label>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render vertical divider 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__vertical-qlIc83"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render vertical with label 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__vertical-qlIc83"
+>
+  <span />
+  <label>
+    Text
+  </label>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with all props 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT my-custom-divider src-ui-Divider-src-index-module__Divider__vertical-qlIc83"
+>
+  <span />
+  <label>
+    Divider
+  </label>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with custom className 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT custom-divider src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with label 1`] = `
+<div
+  class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
+>
+  <span />
+  <label>
+    OR
+  </label>
+  <span />
+</div>
+`;
