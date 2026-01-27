@@ -1,0 +1,400 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Input > should render basic input 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_0_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_0_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render disabled state 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 src-ui-Input-src-index-module__Input--disabled-Y9bAHR"
+  for="_r_7_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        disabled=""
+        id="_r_7_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render disabled with error 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 src-ui-Input-src-index-module__Input--disabled-Y9bAHR src-ui-Input-src-index-module__Input--error-wY7L5W"
+  for="_r_c_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        disabled=""
+        id="_r_c_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render error state 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 src-ui-Input-src-index-module__Input--error-wY7L5W"
+  for="_r_8_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_8_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with all props 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 custom-class src-ui-Input-src-index-module__Input--has-value-aRNyyM"
+  for="_r_b_"
+>
+  <span
+    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+  >
+    $
+  </span>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <span
+      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+    >
+      Amount
+    </span>
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_b_"
+        value="1000"
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+  >
+    USD
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with custom className 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 my-custom-input"
+  for="_r_e_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_e_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with mask 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_9_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_9_"
+        value=""
+      />
+      <span
+        class="src-ui-Input-src-index-module__Input__mask-G1M0lC"
+        data-testid="input-mask"
+      >
+        +7 (111) 111-11-11
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with mask and title 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_d_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <span
+      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+    >
+      Phone Number
+    </span>
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_d_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with placeholder 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_2_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_2_"
+        placeholder="Enter your email"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with postfix 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_5_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_5_"
+        value=""
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+  >
+    .com
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with prefix 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_4_"
+>
+  <span
+    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+  >
+    @
+  </span>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_4_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with prefix and postfix 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_6_"
+>
+  <span
+    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+  >
+    $
+  </span>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_6_"
+        value=""
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+  >
+    USD
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with title 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_1_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <span
+      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+    >
+      Email
+    </span>
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_1_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with title and value 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 src-ui-Input-src-index-module__Input--has-value-aRNyyM"
+  for="_r_a_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <span
+      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+    >
+      Phone
+    </span>
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_a_"
+        value="+7 (555) 123-45-67"
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with value 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27 src-ui-Input-src-index-module__Input--has-value-aRNyyM"
+  for="_r_3_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_3_"
+        value="test@example.com"
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with various HTML input attributes 1`] = `
+<label
+  class="src-ui-Input-src-index-module__Input-QN2v27"
+  for="_r_f_"
+>
+  <div
+    class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
+  >
+    <div
+      class="src-ui-Input-src-index-module__Input__input-container-H7yVm0"
+    >
+      <input
+        autocomplete="email"
+        class="src-ui-Input-src-index-module__Input__field-dL_ChX"
+        id="_r_f_"
+        name="email"
+        required=""
+        type="email"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
