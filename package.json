@@ -74,6 +74,7 @@
         "jsdom": "26.1.0",
         "knip": "5.67.1",
         "lint-staged": "16.2.4",
+        "lodash-es": "4.17.21",
         "plop": "4.0.4",
         "prettier": "3.6.2",
         "react": "19.2.0",
@@ -88,7 +89,8 @@
     "peerDependencies": {
         "classnames": "2.5.1",
         "react": "19.2.0",
-        "react-dom": "19.2.0"
+        "react-dom": "19.2.0",
+        "react-router-dom": "6.30.3"
     },
     "engines": {
         "node": "22",
@@ -101,8 +103,5 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Emingy/core.git"
-    },
-    "dependencies": {
-        "lodash-es": "4.17.21"
     }
 }

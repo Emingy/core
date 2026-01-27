@@ -1,0 +1,130 @@
+@use '@emingy/core/styles/typography';
+
+.Button {
+    @include typography.base;
+    @include typography.weight-bold;
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    border: 1px solid;
+    color: var(--color-grey-1);
+    cursor: pointer;
+    width: fit-content;
+    transition:
+        border-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
+    user-select: none;
+    align-items: center;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 12px;
+
+        &:has(.Button__primary) {
+            box-shadow:
+                0 4px 4px 0 var(--color-grey-100),
+                0 0 8px 0 var(--color-purple-60);
+        }
+
+        &:has(.Button__secondary) {
+            box-shadow: 0 4px 4px 0 var(--color-grey-100);
+        }
+
+        &:has(.Button__alert) {
+            box-shadow:
+                0 4px 4px 0 var(--color-grey-100),
+                0 0 8px 0 var(--color-red-60);
+        }
+    }
+
+    &__primary {
+        border-color: var(--color-purple-40);
+        background-color: var(--color-purple-50);
+
+        &:hover {
+            background-color: var(--color-purple-40);
+        }
+
+        &:active {
+            background-color: var(--color-purple-60);
+        }
+    }
+
+    &__secondary {
+        border-color: var(--color-grey-40);
+        background-color: var(--color-grey-50);
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
+    }
+
+    &__ghosted {
+        border-color: var(--color-grey-40);
+
+        &:hover {
+            border-color: var(--color-grey-10);
+        }
+
+        &:active {
+            border-color: var(--color-grey-60);
+        }
+    }
+
+    &__alert {
+        border-color: var(--color-red-40);
+        background-color: var(--color-red-50);
+
+        &:hover {
+            background-color: var(--color-red-40);
+        }
+
+        &:active {
+            background-color: var(--color-red-60);
+        }
+    }
+
+    &__middle-size {
+        border-radius: 12px;
+        padding: 4px 24px;
+        height: 48px;
+    }
+
+    &__small-size {
+        border-radius: 8px;
+        padding: 4px 16px;
+        height: 32px;
+    }
+
+    &__large-size {
+        border-radius: 16px;
+        padding: 4px 32px;
+        height: 64px;
+    }
+
+    &__disabled {
+        opacity: 0.1;
+        cursor: auto;
+        pointer-events: none;
+    }
+
+    &__splitted {
+        border-end-end-radius: 0;
+        border-start-end-radius: 0;
+    }
+
+    &__splitted-right {
+        border-end-start-radius: 0;
+        border-start-start-radius: 0;
+    }
+}
