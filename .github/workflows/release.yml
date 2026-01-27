@@ -21,7 +21,8 @@ jobs:
               uses: ./.github/actions/prepare-project/
 
             - name: Testing
-              uses: ./.github/actions/unit-tests/
+              run: pnpm test
+              shell: bash
 
     checks:
         name: 🔍 Static Analysis & Code Quality

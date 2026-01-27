@@ -1,8 +1,0 @@
-name: "Unit Testing"
-
-runs:
-  using: "composite"
-  steps:
-    - name: Run tests
-      shell: bash
-      run: pnpm test

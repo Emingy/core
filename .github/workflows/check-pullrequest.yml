@@ -1,50 +1,51 @@
 name: CI Checks
 
 on:
-  pull_request:
-    branches: [master]
+    pull_request:
+        branches: [master]
 
 jobs:
-  tests:
-    name: 🧪 Testing (Unit)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    tests:
+        name: 🧪 Testing (Unit)
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Prepare
-        uses: ./.github/actions/prepare-project/
+            - name: Prepare
+              uses: ./.github/actions/prepare-project/
 
-      - name: Testing
-        run: ./.github/actions/unit-tests/
+            - name: Testing
+              run: pnpm test
+              shell: bash
 
-  checks:
-    name: 🔍 Static Analysis & Code Quality
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    checks:
+        name: 🔍 Static Analysis & Code Quality
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
-      - name: Prepare
-        uses: ./.github/actions/prepare-project/
+            - name: Prepare
+              uses: ./.github/actions/prepare-project/
 
-      - name: Checks
-        uses: ./.github/actions/checks/
+            - name: Checks
+              uses: ./.github/actions/checks/
 
-  build:
-    name: 🏗️ Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Prepare
-        uses: ./.github/actions/prepare-project/
+    build:
+        name: 🏗️ Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Prepare
+              uses: ./.github/actions/prepare-project/
 
-      - name: Check packages build
-        run: pnpm build
+            - name: Check packages build
+              run: pnpm build
