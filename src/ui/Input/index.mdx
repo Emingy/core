@@ -1,0 +1,289 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Input: Form Control
+
+The `Input` component is a flexible and accessible text input field with built-in support for **input masking**, **validation**, and **prefix/postfix elements**. It provides a consistent interface for capturing user input while supporting various input types and states.
+
+---
+
+## I. Component Usage
+
+The component renders an HTML `<input>` element wrapped in a `<label>` for accessibility. It supports controlled and uncontrolled modes, custom validation, and automatic masking.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Input } from '@emingy/core/ui';
+
+<Input
+  title="Email Address"
+  placeholder="Enter your email"
+  type="email"
+/>
+\`\`\`
+`}
+</Markdown>
+
+### With Prefix and Postfix
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Input } from '@emingy/core/ui';
+
+<Input
+  title="Amount"
+  prefix="$"
+  postfix="USD"
+  type="number"
+  value={amount}
+  onChange={(e) => setAmount(e.target.value)}
+/>
+\`\`\`
+`}
+</Markdown>
+
+### With Input Mask
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Input } from '@emingy/core/ui';
+
+<Input
+  title="Phone Number"
+  mask="+7 (d{3}) d{3}-d{2}-d{2}"
+  onChange={(e) => {
+    console.log('Masked:', e.target.value);         // "+7 (555) 123-45-67"
+    console.log('Unmasked:', e.target.unmaskedValue); // "5551234567"
+  }}
+/>
+\`\`\`
+`}
+</Markdown>
+
+### With Validation
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Input } from '@emingy/core/ui';
+
+<Input
+  title="Username"
+  placeholder="At least 3 characters"
+  validate={(value) => value.length >= 3}
+  error={false}
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Input` component accepts all standard HTML `<input>` attributes, plus specific props for enhanced functionality.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`title\`** | \`string\` | | Label displayed above the input field. Recommended for accessibility. |
+| **\`placeholder\`** | \`string\` | | Placeholder text shown when the field is empty. **Cannot be used with \`mask\`.** |
+| **\`mask\`** | \`string\` | | Input mask pattern (e.g., \`"d{3}-d{3}-d{4}"\`). **Cannot be used with \`placeholder\`.** |
+| **\`prefix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed before the input field. |
+| **\`postfix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed after the input field. |
+| **\`error\`** | \`boolean\` | \`false\` | Indicates validation error state. Applies error-specific styling. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables the input field. Prevents user interaction. |
+| **\`value\`** | \`string\` | | Controlled value of the input field. |
+| **\`onChange\`** | \`(event) => void\` | | Event handler called when input value changes. Event includes \`target.value\` (masked) and \`target.unmaskedValue\` (raw). |
+| **\`validate\`** | \`(value: string) => boolean\` | | Custom validation function. Returns \`true\` if value is valid, \`false\` otherwise. |
+| **\`className\`** | \`string\` | | Additional CSS classes for styling. |
+| **\`type\`** | \`string\` | \`'text'\` | HTML input type (text, number, password, email, etc.). |
+`}
+</Markdown>
+
+---
+
+## III. Input Masking
+
+The `Input` component includes a powerful masking system that automatically formats user input according to a specified pattern. The mask uses a regex-like syntax with quantifiers.
+
+### Mask Pattern Syntax
+
+<Markdown>
+    {`
+| Character | Meaning | Example |
+| :--- | :--- | :--- |
+| **\`d\`** | Digit (0-9) | \`"d"\` → accepts 1 digit |
+| **\`w\`** | Letter (any Unicode letter) | \`"w"\` → accepts 1 letter |
+| **\`*\`** | Any character (digit or letter) | \`"*"\` → accepts 1 character |
+| **\`{n}\`** | Exact count quantifier | \`"d{3}"\` → exactly 3 digits |
+| **\`{min,max}\`** or **\`{min-max}\`** | Range quantifier | \`"d{2,4}"\` or \`"d{2-4}"\` → 2 to 4 digits |
+| **Any other** | Literal (static) character | \`"+7 ("\` → literal text |
+`}
+</Markdown>
+
+### Mask Examples
+
+<Markdown>
+{`
+\`\`\`tsx
+// Phone number (Russian format)
+<Input mask="+7 (d{3}) d{3}-d{2}-d{2}" />
+// Result: +7 (555) 123-45-67
+
+// Credit card
+
+<Input mask="d{4} d{4} d{4} d{4}" />
+// Result: 1234 5678 9012 3456
+
+// Date (DD/MM/YYYY)
+
+<Input mask="d{2}/d{2}/d{4}" />
+// Result: 25/12/2024
+
+// License plate (3 letters + 4 digits)
+
+<Input mask="w{3}-d{4}" />
+// Result: ABC-1234
+
+// Flexible ZIP code (3-6 digits) - comma syntax
+
+<Input mask="d{3,6}" />
+// Result: 12345 (allows 3 to 6 digits)
+
+// Flexible ZIP code - hyphen syntax (alternative)
+
+<Input mask="d{3-6}" />
+// Result: 12345 (allows 3 to 6 digits)
+
+// Mixed format (passport)
+
+<Input mask="d{4} d{6}" />
+// Result: 1234 567890
+\`\`\`
+`}
+</Markdown>
+
+### Alternative Syntax
+
+You have multiple ways to write mask patterns:
+
+#### Repeated Characters
+
+<Markdown>
+{`
+\`\`\`tsx
+// These are equivalent:
+<Input mask="d{3}" />
+<Input mask="ddd" />
+
+// Phone with repeated chars
+
+<Input mask="+1 (ddd) ddd-dddd" />
+// Result: +1 (555) 123-4567
+\`\`\`
+`}
+</Markdown>
+
+#### Range Separators
+
+Both comma and hyphen work as range separators:
+
+<Markdown>
+{`
+\`\`\`tsx
+// These are equivalent:
+<Input mask="d{2,4}" />  // Comma separator
+<Input mask="d{2-4}" />  // Hyphen separator
+
+// You can mix both in one mask
+
+<Input mask="d{1-3}w{2,4}" />
+// Result: 123ab (1-3 digits followed by 2-4 letters)
+\`\`\`
+`}
+</Markdown>
+
+### Unmasked Value
+
+When using a mask, the `onChange` event provides both the masked (formatted) and unmasked (raw) values:
+
+<Markdown>
+    {`
+\`\`\`tsx
+<Input
+  mask="+7 (d{3}) d{3}-d{2}-d{2}"
+  onChange={(e) => {
+    console.log(e.target.value);         // "+7 (555) 123-45-67"
+    console.log(e.target.unmaskedValue); // "5551234567"
+  }}
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## IV. Validation
+
+The component supports both built-in and custom validation:
+
+### Built-in Error State
+
+<Markdown>
+    {`
+\`\`\`tsx
+<Input
+  title="Email"
+  error={true}
+/>
+\`\`\`
+`}
+</Markdown>
+
+### Custom Validation Function
+
+<Markdown>
+    {`
+\`\`\`tsx
+<Input
+  title="Password"
+  validate={(value) => {
+    // Must be at least 8 characters
+    return value.length >= 8;
+  }}
+/>
+\`\`\`
+`}
+</Markdown>
+
+The validation function is called on every input change. If it returns `false`, error styling is automatically applied.
+
+---
+
+## V. Accessibility
+
+The component follows accessibility best practices:
+
+- The `<label>` element wraps the input for proper click targeting
+- The `title` prop creates an associated label for screen readers
+- The `id` attribute is automatically generated if not provided
+- Error states are visually indicated for users with disabilities
+- Disabled state prevents keyboard navigation to the field
+
+---
+
+## VI. Notes
+
+- **Mask vs Placeholder**: The `mask` and `placeholder` props are mutually exclusive. Use `mask` for formatted input or `placeholder` for hint text, but not both.
+- **Controlled Component**: When using the `value` prop, always provide an `onChange` handler to update the value.
+- **Cursor Position**: When using masks, cursor position is automatically managed during input.
+- **Error State Logic**: The component shows error styling when either `error` prop is `true` OR the `validate` function returns `false`. They work together via OR logic: if `error={true}`, the error state is shown regardless of validation result.

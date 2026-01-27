@@ -97,5 +97,8 @@
     "typeCoverage": {
         "atLeast": 95,
         "detail": true
+    },
+    "dependencies": {
+        "lodash-es": "4.17.21"
     }
 }
