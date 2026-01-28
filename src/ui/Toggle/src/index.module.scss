@@ -1,0 +1,78 @@
+.Toggle {
+    cursor: pointer;
+    user-select: none;
+
+    &__input {
+        border: 1px solid var(--color-grey-40);
+        width: 48px;
+        height: 24px;
+        border-radius: 16px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: var(--color-grey-50);
+        flex-shrink: 0;
+        margin: 0;
+        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+        position: relative;
+        box-shadow: 0 4px 4px 0 var(--color-grey-100);
+
+        &::after {
+            width: 20px;
+            height: 20px;
+            border-radius: 16px;
+            background-color: var(--color-grey-1);
+            top: 1px;
+            position: absolute;
+            left: 1px;
+            content: '';
+            transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+        }
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
+
+        &:checked {
+            background-color: var(--color-purple-50);
+            border-color: var(--color-purple-40);
+
+            &::after {
+                left: auto;
+                left: 25px;
+            }
+
+            &:hover {
+                background-color: var(--color-purple-40);
+            }
+
+            &:active {
+                background-color: var(--color-purple-60);
+            }
+        }
+    }
+
+    &:has(.Toggle__input:disabled) {
+        filter: opacity(0.1);
+        pointer-events: none;
+    }
+
+    &:has(.Toggle__error) &__input {
+        border-color: var(--color-red-50);
+    }
+
+    &__description {
+        color: var(--color-grey-10);
+    }
+
+    &__error {
+        color: var(--color-red-50);
+    }
+
+    &__label {
+        line-height: 24px;
+    }
+}
