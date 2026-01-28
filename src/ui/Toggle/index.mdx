@@ -1,0 +1,141 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Toggle: Form Input Component
+
+The `Toggle` component is a customizable, accessible toggle switch input with built-in support for labels, descriptions, and error messages. It provides a consistent interface for on/off state control throughout the application with proper form integration.
+
+---
+
+## I. Component Usage
+
+The component renders an `<input type="checkbox">` styled as a toggle switch, wrapped in a `<label>` for accessibility. It automatically generates unique IDs for proper label-input association and supports custom styling, descriptions, and error states.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Toggle } from '@emingy/core/ui';
+
+// Simple toggle
+<Toggle label="Enable notifications" />
+
+// Toggle with description
+<Toggle
+  label="Dark mode"
+  description="Switch interface to dark theme"
+/>
+
+// Toggle with error
+<Toggle
+  label="Auto-save"
+  error="This feature is currently unavailable"
+/>
+
+// Controlled toggle
+const [enabled, setEnabled] = useState(false);
+
+<Toggle
+  label="Enable feature"
+  checked={enabled}
+  onChange={(e) => setEnabled(e.target.checked)}
+/>
+
+// Disabled toggle
+<Toggle
+  label="This option is disabled"
+  disabled
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Toggle` component accepts standard HTML input attributes, plus specific props for enhanced functionality.
+
+<Markdown>
+{`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`label\`** | \`string\` | | **Required.** Label text displayed next to the toggle switch. |
+| **\`description\`** | \`string\` | | Optional description text displayed below the label. Hidden when error is present. |
+| **\`error\`** | \`string\` | | Error message displayed below the label. Takes priority over description. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling of the wrapper element. |
+| **\`id\`** | \`string\` | | Custom ID for the input. If not provided, a unique ID is auto-generated. |
+| **\`checked\`** | \`boolean\` | | Controlled checked state of the toggle. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables toggle interaction and applies disabled styling. |
+| **\`onChange\`** | \`(e: ChangeEvent) => void\` | | Change event handler fired when toggle state changes. |
+| **\`name\`** | \`string\` | | Name attribute for form submission. |
+| **...restProps** | \`HTMLInputElement props\` | | All other standard HTML input attributes are supported. |
+`}
+</Markdown>
+
+---
+
+## III. Visual States
+
+The toggle component has distinct visual states:
+
+<Markdown>
+{`
+- **Off** (default): Grey switch in left position.
+- **On**: Purple switch in right position with active indicator.
+- **Hover**: Darker background color on mouse hover.
+- **Active**: Visual feedback when clicked.
+- **Disabled**: Reduced opacity, non-interactive state.
+- **Error**: Red border when error prop is provided.
+`}
+</Markdown>
+
+---
+
+## IV. Label and Description
+
+The component supports both label and optional description text:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Label only
+<Toggle label="Enable feature" />
+
+// Label with description
+<Toggle
+  label="Two-factor authentication"
+  description="Add an extra layer of security to your account"
+/>
+
+// Label with error (description is hidden)
+<Toggle
+  label="Premium features"
+  description="This won't be shown"
+  error="Upgrade to access this feature"
+/>
+\`\`\`
+`}
+</Markdown>
+
+**Note:** When both `description` and `error` are provided, only the error is displayed. The error message always takes priority.
+
+---
+
+## V. Important Notes
+
+<Markdown>
+{`
+- The toggle is wrapped in a \`<label>\` element which acts as the clickable area.
+- When \`disabled={true}\`, the toggle cannot be switched and has reduced opacity.
+- The component uses CSS modules for styling via \`index.module.scss\`.
+- Error state adds a red border to the toggle switch.
+- The description and error use \`Typography.Micro\` for consistent text styling.
+- Custom \`className\` is applied to the wrapper \`<label>\` element, not the input.
+- All standard HTML input props (except \`type\`) are forwarded to the input element.
+- Toggle is best used for immediate on/off actions, unlike checkboxes which are for selections.
+`}
+</Markdown>
