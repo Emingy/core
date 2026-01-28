@@ -1,6 +1,166 @@
 import { Meta, Markdown } from '@storybook/blocks';
 import * as Stories from './index.stories';
 
-<Meta of={Stories} />
+<Meta of={Stories}/>
 
-# Button
+# Button: Interactive Component
+
+The `Button` component is a versatile, production-ready button with multiple variants, sizes, and built-in navigation support. It provides a consistent interface for user interactions throughout the application and integrates seamlessly with React Router for navigation.
+
+---
+
+## I. Component Usage
+
+The component renders a `<button>` element wrapped in a `<label>` for proper styling. It supports various visual styles, sizes, and can act as both a standard button and a navigation link.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Button } from '@emingy/core/ui';
+
+// Simple button with onClick
+<Button type="primary" size="md" onClick={() => console.log('Clicked!')}>
+  Submit
+</Button>
+
+// Button with navigation
+<Button type="secondary" href="/dashboard">
+  Go to Dashboard
+</Button>
+
+// Button with prefix and postfix
+<Button type="primary" prefix="$" postfix="USD">
+  100
+</Button>
+
+// Splitted button with additional action
+<Button type="primary" splitted>
+  Save
+</Button>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Button` component accepts standard HTML button attributes, plus specific props to control appearance and behavior.
+
+<Markdown>
+{`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`type\`** | \`'primary'\` \\| \`'secondary'\` \\| \`'ghosted'\` \\| \`'alert'\` | \`'primary'\` | Visual style variant of the button. |
+| **\`size\`** | \`'sm'\` \\| \`'md'\` \\| \`'lg'\` | \`'md'\` | Size of the button. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables button interaction and applies disabled styling. |
+| **\`htmlType\`** | \`'button'\` \\| \`'submit'\` \\| \`'reset'\` | \`'button'\` | Native HTML button type attribute. |
+| **\`prefix\`** | \`ReactNode\` | | Content displayed before the button text (e.g., icon, symbol). |
+| **\`postfix\`** | \`ReactNode\` | | Content displayed after the button text (e.g., icon, badge). |
+| **\`splitted\`** | \`boolean\` | \`false\` | Enables split button mode with an additional action button. |
+| **\`href\`** | \`string\` | | Navigation path. When provided, clicking the button navigates using React Router. |
+| **\`navigateOptions\`** | \`NavigateOptions\` | | Options passed to React Router's navigate function (e.g., \`replace\`, \`state\`). |
+| **\`onClick\`** | \`(e: MouseEvent) => void\` | | Click event handler. Fires before navigation if \`href\` is provided. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+| **\`children\`** | \`ReactNode\` | | Button text or content. |
+`}
+</Markdown>
+
+---
+
+## III. Button Types
+
+The component supports four visual variants:
+
+<Markdown>
+{`
+- **Primary** (\`type="primary"\`): Main action button with solid background.
+- **Secondary** (\`type="secondary"\`): Alternative action button with outlined style.
+- **Ghosted** (\`type="ghosted"\`): Subtle button with minimal styling.
+- **Alert** (\`type="alert"\`): Warning or destructive action button (e.g., delete, cancel).
+`}
+</Markdown>
+
+---
+
+## IV. Button Sizes
+
+Three size options are available:
+
+<Markdown>
+{`
+- **Small** (\`size="sm"\`): Compact button for dense layouts.
+- **Medium** (\`size="md"\`): Default size for most use cases.
+- **Large** (\`size="lg"\`): Prominent button for primary actions.
+`}
+</Markdown>
+
+---
+
+## V. Navigation
+
+The `Button` component integrates with React Router for client-side navigation:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Simple navigation
+<Button href="/profile">View Profile</Button>
+
+// Navigation with options
+<Button
+  href="/settings"
+  navigateOptions={{ replace: true, state: { from: 'dashboard' } }}
+>
+  Settings
+</Button>
+
+// Navigation with onClick (both fire)
+<Button
+  href="/save"
+  onClick={() => console.log('Saving...')}
+>
+  Save and Continue
+</Button>
+\`\`\`
+`}
+</Markdown>
+
+**Note:** When `href` is provided, the `onClick` handler executes first, then navigation occurs. Ensure the component is wrapped in a React Router context (e.g., `BrowserRouter`, `MemoryRouter`).
+
+---
+
+## VI. Splitted Button
+
+The `splitted` prop enables a split button with two clickable areas:
+
+<Markdown>
+{`
+\`\`\`tsx
+<Button type="primary" splitted>
+  Save
+</Button>
+\`\`\`
+`}
+</Markdown>
+
+This creates a button with:
+- **Main area**: Executes the primary action
+- **Secondary area** (right side with "-"): For additional options or actions
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+{`
+- The button is wrapped in a \`<label>\` element for styling purposes.
+- When \`disabled={true}\`, the button cannot be clicked and navigation is prevented.
+- The \`prefix\` and \`postfix\` props accept any React node (text, icons, components).
+- The \`htmlType\` prop sets the native HTML button type (useful for forms).
+- Custom styling can be added via the \`className\` prop.
+- For navigation to work, the application must be wrapped in a React Router provider.
+`}
+</Markdown>
