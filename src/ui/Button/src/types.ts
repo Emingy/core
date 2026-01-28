@@ -5,7 +5,7 @@ import type { ESize, EType } from './constants';
 
 type TButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-export type TPropsCommon = {
+type TPropsCommon = {
     size?: `${ESize}`;
     type?: `${EType}`;
     disabled?: boolean;

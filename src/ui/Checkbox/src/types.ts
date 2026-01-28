@@ -1,10 +1,10 @@
 import type { HTMLProps } from 'react';
 
-export type TCheckboxProps = {
+type TPropsCommon = {
     label: string;
     description?: string;
     error?: string;
     className?: string;
 };
 
-export type TProps = TCheckboxProps & Omit<HTMLProps<HTMLInputElement>, 'type'>;
+export type TProps = TPropsCommon & Omit<HTMLProps<HTMLInputElement>, 'type'>;
