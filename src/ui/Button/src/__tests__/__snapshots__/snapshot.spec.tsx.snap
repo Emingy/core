@@ -11,7 +11,11 @@ exports[`[SNAPSHOT] Button > should render alert type 1`] = `
     <button
       id="_r_4_"
     >
-      Alert
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Alert
+      </p>
     </button>
   </label>
 </div>
@@ -29,7 +33,11 @@ exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
     <button
       id="_r_f_"
     >
-      Complex Button
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Complex Button
+      </p>
     </button>
     →
   </label>
@@ -47,7 +55,11 @@ exports[`[SNAPSHOT] Button > should render basic button 1`] = `
     <button
       id="_r_0_"
     >
-      Click me
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Click me
+      </p>
     </button>
   </label>
 </div>
@@ -65,7 +77,11 @@ exports[`[SNAPSHOT] Button > should render disabled state 1`] = `
       disabled=""
       id="_r_8_"
     >
-      Disabled
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Disabled
+      </p>
     </button>
   </label>
 </div>
@@ -82,7 +98,11 @@ exports[`[SNAPSHOT] Button > should render ghosted type 1`] = `
     <button
       id="_r_3_"
     >
-      Ghosted
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Ghosted
+      </p>
     </button>
   </label>
 </div>
@@ -99,7 +119,11 @@ exports[`[SNAPSHOT] Button > should render large size 1`] = `
     <button
       id="_r_7_"
     >
-      Large
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Large
+      </p>
     </button>
   </label>
 </div>
@@ -116,7 +140,11 @@ exports[`[SNAPSHOT] Button > should render medium size 1`] = `
     <button
       id="_r_6_"
     >
-      Medium
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Medium
+      </p>
     </button>
   </label>
 </div>
@@ -133,7 +161,11 @@ exports[`[SNAPSHOT] Button > should render primary type 1`] = `
     <button
       id="_r_1_"
     >
-      Primary
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Primary
+      </p>
     </button>
   </label>
 </div>
@@ -150,7 +182,11 @@ exports[`[SNAPSHOT] Button > should render secondary type 1`] = `
     <button
       id="_r_2_"
     >
-      Secondary
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Secondary
+      </p>
     </button>
   </label>
 </div>
@@ -167,7 +203,11 @@ exports[`[SNAPSHOT] Button > should render small size 1`] = `
     <button
       id="_r_5_"
     >
-      Small
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Small
+      </p>
     </button>
   </label>
 </div>
@@ -184,7 +224,11 @@ exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
     <button
       id="_r_c_"
     >
-      Split
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Split
+      </p>
     </button>
   </label>
   <button
@@ -206,7 +250,11 @@ exports[`[SNAPSHOT] Button > should render with custom className 1`] = `
     <button
       id="_r_d_"
     >
-      Custom
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Custom
+      </p>
     </button>
   </label>
 </div>
@@ -224,7 +272,11 @@ exports[`[SNAPSHOT] Button > should render with htmlType submit 1`] = `
       id="_r_e_"
       type="submit"
     >
-      Submit
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Submit
+      </p>
     </button>
   </label>
 </div>
@@ -241,7 +293,11 @@ exports[`[SNAPSHOT] Button > should render with postfix 1`] = `
     <button
       id="_r_a_"
     >
-      Next
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Next
+      </p>
     </button>
     →
   </label>
@@ -260,7 +316,11 @@ exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
     <button
       id="_r_9_"
     >
-      Price
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Price
+      </p>
     </button>
   </label>
 </div>
@@ -278,7 +338,11 @@ exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
     <button
       id="_r_b_"
     >
-      100
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        100
+      </p>
     </button>
     USD
   </label>

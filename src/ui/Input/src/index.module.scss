@@ -24,7 +24,6 @@
         pointer-events: none;
         transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
 
-        @include typography.base;
         z-index: 1;
         max-width: calc(100% - var(--spacing-8x));
         overflow: hidden;

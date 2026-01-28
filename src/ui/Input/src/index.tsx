@@ -1,6 +1,8 @@
 import cls from 'classnames/bind';
 import React, { type ChangeEvent, useEffect, useId, useRef, useState } from 'react';
 
+import { Typography } from '../../Typography';
+
 import { useMask } from './hooks/useMask';
 import { calculateCursorPosition } from './utils/calculateCursorPosition';
 import { maskToPlaceholder } from './utils/maskToPlaceholder';
@@ -94,9 +96,17 @@ export const Input = ({
             })}
             htmlFor={restProps.id ?? id}
         >
-            {prefix && <span className={cn(`${BLOCK_NAME}__prefix`)}>{prefix}</span>}
+            {prefix && (
+                <Typography.Base elementType="span" className={cn(`${BLOCK_NAME}__prefix`)}>
+                    {prefix}
+                </Typography.Base>
+            )}
             <div className={cn(`${BLOCK_NAME}__wrapper`)}>
-                {title && <span className={cn(`${BLOCK_NAME}__title`)}>{title}</span>}
+                {title && (
+                    <Typography.Base elementType="span" className={cn(`${BLOCK_NAME}__title`)}>
+                        {title}
+                    </Typography.Base>
+                )}
                 <div className={cn(`${BLOCK_NAME}__input-container`)}>
                     <input
                         {...restProps}
@@ -111,13 +121,21 @@ export const Input = ({
                         onBlur={handleBlur}
                     />
                     {Boolean(!placeholder && mask && !inputValue && (!title || isFocused)) && (
-                        <span className={cn(`${BLOCK_NAME}__mask`)} data-testid={'input-mask'}>
+                        <Typography.Base
+                            elementType="span"
+                            className={cn(`${BLOCK_NAME}__mask`)}
+                            data-testid={'input-mask'}
+                        >
                             {mask ? maskToPlaceholder(mask) : ''}
-                        </span>
+                        </Typography.Base>
                     )}
                 </div>
             </div>
-            {postfix && <span className={cn(`${BLOCK_NAME}__postfix`)}>{postfix}</span>}
+            {postfix && (
+                <Typography.Base elementType="span" className={cn(`${BLOCK_NAME}__postfix`)}>
+                    {postfix}
+                </Typography.Base>
+            )}
         </label>
     );
 };

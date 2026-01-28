@@ -49,7 +49,7 @@ describe('[UNIT] Divider', () => {
 
     it('Renders label inside label element', () => {
         const { container } = render(<Divider label="Section" />);
-        const label = container.querySelector('label');
+        const label = container.querySelector('p');
 
         expect(label?.textContent).toBe('Section');
     });
