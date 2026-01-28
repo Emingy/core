@@ -26,10 +26,14 @@ const meta: Meta = {
                 disable: true,
             },
         },
+        isLoading: {
+            type: 'boolean',
+        },
     },
     args: {
         size: 'md',
         type: 'primary',
+        isLoading: false,
     },
 };
 

@@ -15,6 +15,7 @@
         box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
     user-select: none;
     align-items: center;
+    position: relative;
 
     &__wrapper {
         display: flex;
@@ -123,5 +124,16 @@
     &__splitted-right {
         border-end-start-radius: 0;
         border-start-start-radius: 0;
+    }
+
+    &__label-hidden,
+    &__span-hidden {
+        visibility: hidden;
+    }
+
+    &__spinner {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
     }
 }

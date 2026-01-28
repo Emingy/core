@@ -39,6 +39,11 @@ import { Button } from '@emingy/core/ui';
 <Button type="primary" splitted>
   Save
 </Button>
+
+// Loading state
+<Button type="primary" isLoading={true}>
+  Saving...
+</Button>
 \`\`\`
 `}
 </Markdown>
@@ -60,6 +65,7 @@ The `Button` component accepts standard HTML button attributes, plus specific pr
 | **\`prefix\`** | \`ReactNode\` | | Content displayed before the button text (e.g., icon, symbol). |
 | **\`postfix\`** | \`ReactNode\` | | Content displayed after the button text (e.g., icon, badge). |
 | **\`splitted\`** | \`boolean\` | \`false\` | Enables split button mode with an additional action button. |
+| **\`isLoading\`** | \`boolean\` | \`false\` | Shows spinner and disables the button. Hides button text while loading. |
 | **\`href\`** | \`string\` | | Navigation path. When provided, clicking the button navigates using React Router. |
 | **\`navigateOptions\`** | \`NavigateOptions\` | | Options passed to React Router's navigate function (e.g., \`replace\`, \`state\`). |
 | **\`onClick\`** | \`(e: MouseEvent) => void\` | | Click event handler. Fires before navigation if \`href\` is provided. |
@@ -152,12 +158,67 @@ This creates a button with:
 
 ---
 
-## VII. Important Notes
+## VII. Loading State
+
+The `isLoading` prop shows a loading spinner and disables the button:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useState } from 'react';
+
+function SubmitForm() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    try {
+      await saveData();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <Button onClick={handleSubmit} isLoading={isLoading}>
+      Submit
+    </Button>
+  );
+}
+
+// Loading state with navigation
+<Button href="/dashboard" isLoading={isLoading}>
+  Go to Dashboard
+</Button>
+
+// Loading state with different types
+<Button type="primary" isLoading={true}>
+  Saving...
+</Button>
+
+<Button type="secondary" isLoading={true}>
+  Loading...
+</Button>
+\`\`\`
+`}
+</Markdown>
+
+**Behavior when `isLoading={true}`:**
+- The button becomes disabled and cannot be clicked
+- A spinner is displayed in place of the button text
+- The button text is hidden but maintains the button's dimensions
+- Navigation is prevented even if `href` is provided
+- The spinner inherits the button's text color
+
+---
+
+## VIII. Important Notes
 
 <Markdown>
 {`
 - The button is wrapped in a \`<label>\` element for styling purposes.
-- When \`disabled={true}\`, the button cannot be clicked and navigation is prevented.
+- When \`disabled={true}\` or \`isLoading={true}\`, the button cannot be clicked and navigation is prevented.
+- The \`isLoading\` prop automatically disables the button, shows a spinner, and hides the text.
 - The \`prefix\` and \`postfix\` props accept any React node (text, icons, components).
 - The \`htmlType\` prop sets the native HTML button type (useful for forms).
 - Custom styling can be added via the \`className\` prop.

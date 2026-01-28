@@ -13,6 +13,7 @@ type TPropsCommon = {
     prefix?: ReactNode;
     postfix?: ReactNode;
     splitted?: boolean;
+    isLoading?: boolean;
     href?: string;
     navigateOptions?: NavigateOptions;
     className?: string;
