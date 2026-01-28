@@ -29,6 +29,9 @@ const meta: Meta = {
         isLoading: {
             type: 'boolean',
         },
+        isFullWidth: {
+            type: 'boolean',
+        },
     },
     args: {
         size: 'md',

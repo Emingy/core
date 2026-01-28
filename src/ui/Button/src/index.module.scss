@@ -16,6 +16,7 @@
     user-select: none;
     align-items: center;
     position: relative;
+    justify-content: center;
 
     &__wrapper {
         display: flex;
@@ -23,6 +24,14 @@
         width: fit-content;
         height: fit-content;
         border-radius: 12px;
+
+        &_full-width {
+            width: 100%;
+
+            .Button {
+                width: 100%;
+            }
+        }
 
         &:has(.Button__primary) {
             box-shadow:
@@ -135,5 +144,13 @@
         position: absolute;
         top: calc(50% - 8px);
         left: calc(50% - 8px);
+    }
+
+    &__loading {
+        cursor: wait;
+    }
+
+    button {
+        cursor: inherit;
     }
 }

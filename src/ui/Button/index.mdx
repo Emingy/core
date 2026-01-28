@@ -44,6 +44,11 @@ import { Button } from '@emingy/core/ui';
 <Button type="primary" isLoading={true}>
   Saving...
 </Button>
+
+// Full width button
+<Button type="primary" isFullWidth>
+  Submit Form
+</Button>
 \`\`\`
 `}
 </Markdown>
@@ -66,6 +71,7 @@ The `Button` component accepts standard HTML button attributes, plus specific pr
 | **\`postfix\`** | \`ReactNode\` | | Content displayed after the button text (e.g., icon, badge). |
 | **\`splitted\`** | \`boolean\` | \`false\` | Enables split button mode with an additional action button. |
 | **\`isLoading\`** | \`boolean\` | \`false\` | Shows spinner and disables the button. Hides button text while loading. |
+| **\`isFullWidth\`** | \`boolean\` | \`false\` | Makes the button take the full width of its container. |
 | **\`href\`** | \`string\` | | Navigation path. When provided, clicking the button navigates using React Router. |
 | **\`navigateOptions\`** | \`NavigateOptions\` | | Options passed to React Router's navigate function (e.g., \`replace\`, \`state\`). |
 | **\`onClick\`** | \`(e: MouseEvent) => void\` | | Click event handler. Fires before navigation if \`href\` is provided. |
@@ -212,13 +218,49 @@ function SubmitForm() {
 
 ---
 
-## VIII. Important Notes
+## VIII. Full Width Mode
+
+The `isFullWidth` prop makes the button expand to fill the full width of its container:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Full width button
+<Button type="primary" isFullWidth>
+  Continue
+</Button>
+
+// Full width in a form
+<form style={{ maxWidth: '400px' }}>
+  <Button type="primary" isFullWidth htmlType="submit">
+    Submit Form
+  </Button>
+</form>
+
+// Full width with loading state
+<Button type="secondary" isFullWidth isLoading={isSubmitting}>
+  Processing...
+</Button>
+\`\`\`
+`}
+</Markdown>
+
+**Behavior when `isFullWidth={true}`:**
+- The button's wrapper expands to 100% of the parent container width
+- Useful for forms, mobile layouts, and modal dialogs
+- Works with all button types, sizes, and states
+- The button itself remains centered within the full-width wrapper
+
+---
+
+## IX. Important Notes
 
 <Markdown>
 {`
 - The button is wrapped in a \`<label>\` element for styling purposes.
 - When \`disabled={true}\` or \`isLoading={true}\`, the button cannot be clicked and navigation is prevented.
 - The \`isLoading\` prop automatically disables the button, shows a spinner, and hides the text.
+- The \`isFullWidth\` prop makes the button wrapper expand to the full width of its container.
 - The \`prefix\` and \`postfix\` props accept any React node (text, icons, components).
 - The \`htmlType\` prop sets the native HTML button type (useful for forms).
 - Custom styling can be added via the \`className\` prop.
