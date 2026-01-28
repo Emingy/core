@@ -32,6 +32,11 @@ describe('[SNAPSHOT] Button', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
+    it('should render outlined type', () => {
+        const { container } = renderWithRouter(<Button type={EType.Outlined}>Ghosted</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
     it('should render alert type', () => {
         const { container } = renderWithRouter(<Button type={EType.Alert}>Alert</Button>);
         expect(container.firstChild).toMatchSnapshot();
