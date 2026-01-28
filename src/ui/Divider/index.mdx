@@ -3,4 +3,182 @@ import * as Stories from './index.stories';
 
 <Meta of={Stories} />
 
-# Divider
+# Divider: Visual Separator
+
+The `Divider` component is a versatile visual separator used to organize content and create clear distinctions between sections. It supports both horizontal and vertical orientations and can display an optional label to provide context.
+
+---
+
+## I. Component Usage
+
+The component renders a `<div>` element with two `<span>` elements for the divider lines and an optional label in between. It should be used to visually separate content sections, group items, or add breathing space in layouts.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Divider } from '@emingy/core/ui';
+
+// Horizontal divider (default)
+
+<Divider />
+
+// Horizontal divider with label
+
+<Divider type="horizontal" label="OR" />
+
+// Vertical divider
+
+<Divider type="vertical" />
+
+// Vertical divider with label
+
+<Divider type="vertical" label="Section" />
+
+// Custom styling
+
+<Divider className="my-divider" />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Divider` component accepts a minimal set of props for controlling its appearance and orientation.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`type\`** | \`'horizontal'\` \\| \`'vertical'\` | \`'horizontal'\` | Orientation of the divider. |
+| **\`label\`** | \`string\` | | Optional text label displayed in the center of the divider. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+`}
+</Markdown>
+
+---
+
+## III. Divider Types
+
+The component supports two orientation modes:
+
+<Markdown>
+{`
+### Horizontal (\`type="horizontal"\`)
+- Default orientation
+- Spans the full width of its container
+- Used to separate content vertically (stacked sections)
+- Common for dividing page sections, form groups, or list items
+
+\`\`\`tsx
+
+<div>
+    <section>Content Above</section>
+    <Divider type="horizontal" />
+    <section>Content Below</section>
+</div>
+\`\`\`
+
+### Vertical (\`type="vertical"\`)
+
+- Spans the full height of its container
+- Used to separate content horizontally (side-by-side elements)
+- Common for dividing columns, toolbar items, or navigation elements
+
+\`\`\`tsx
+
+<div style={{ display: 'flex', height: '200px' }}>
+  <aside>Sidebar</aside>
+  <Divider type="vertical" />
+  <main>Main Content</main>
+</div>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## IV. Label Usage
+
+The `label` prop allows you to add descriptive text to the divider:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Section divider with label
+<Divider type="horizontal" label="OR" />
+
+// Login form separator
+
+<>
+    <button>Login with Google</button>
+    <Divider label="OR" />
+    <form>...</form>
+</>
+
+// Vertical section label
+
+<Divider type="vertical" label="Settings" />
+\`\`\`
+`}
+</Markdown>
+
+**Label Rendering:**
+
+- The label is rendered using the `Typography.Base` component with `<p>` element
+- Only displayed when the `label` prop is provided
+- Positioned in the center between the two divider lines
+- Inherits text styling from the typography system
+
+---
+
+## V. Use Cases
+
+Common scenarios for using the `Divider` component:
+
+<Markdown>
+{`
+   \`\`\`tsx
+// 1. Form Sections**: Separate different groups of form fields
+
+<Divider label="Personal Information" />
+
+// 2. Content Separation\*\*: Divide articles, posts, or card content
+
+<Divider />
+
+// 3. Navigation\*\*: Separate groups of navigation items
+
+<Divider type="vertical" />
+
+// 4. Alternative Actions\*\*: Indicate alternative options (e.g., "OR")
+
+<Divider label="OR" />
+
+// 5. Layout Structure\*\*: Create visual boundaries in complex layouts
+
+<Divider type="vertical" label="Main" />
+
+\`\`\`
+`}
+
+</Markdown>
+
+---
+
+## VI. Important Notes
+
+<Markdown>
+    {`
+- The divider consists of two \`<span>\` elements that create the visual line effect
+- Default orientation is \`horizontal\` if no \`type\` is specified
+- The \`label\` prop is optional and can be omitted for simple dividers
+- Vertical dividers require their parent container to have a defined height
+- Custom styling can be applied via the \`className\` prop
+- The component uses CSS modules for styling, ensuring no conflicts
+- For horizontal dividers in flex containers, consider setting \`flex-shrink: 0\` on the divider
+`}
+</Markdown>
