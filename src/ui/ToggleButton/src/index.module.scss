@@ -1,0 +1,62 @@
+.ToggleButton {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    height: fit-content;
+    width: fit-content;
+    color: var(--color-grey-20);
+    transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+    position: relative;
+
+    &__label {
+        color: currentcolor;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    &:hover:not(:has(input[type='checkbox']:disabled)) {
+        color: var(--color-grey-1);
+    }
+
+    &:has(input[type='checkbox']:checked) {
+        color: var(--color-grey-1);
+    }
+
+    &__primary:has(input[type='checkbox']:checked) {
+        background-color: var(--color-purple-50);
+    }
+
+    &__secondary:has(input[type='checkbox']:checked) {
+        background-color: var(--color-grey-50);
+    }
+
+    &:not(.ToggleButton__loading):has(input[type='checkbox']:disabled) {
+        filter: opacity(35%);
+    }
+
+    &__label-hidden,
+    &__span-hidden {
+        visibility: hidden;
+    }
+
+    &__spinner {
+        position: absolute;
+        color: currentcolor;
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
+    }
+
+    &__full-width {
+        width: 100%;
+    }
+
+    &__loading {
+        cursor: wait;
+    }
+}

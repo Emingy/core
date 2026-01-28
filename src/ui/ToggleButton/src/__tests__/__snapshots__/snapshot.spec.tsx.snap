@@ -1,0 +1,358 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] ToggleButton > should render all combinations 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt complex-toggle src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_a_"
+>
+  <input
+    hidden=""
+    id="_r_a_"
+    type="checkbox"
+  />
+  <span
+    class=""
+  >
+    ←
+  </span>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Complex Toggle
+  </p>
+  <span
+    class=""
+  >
+    →
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render basic toggle button 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_0_"
+>
+  <input
+    hidden=""
+    id="_r_0_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Click me
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render checked state 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_4_"
+>
+  <input
+    checked=""
+    hidden=""
+    id="_r_4_"
+    readonly=""
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Checked
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render disabled state 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_3_"
+>
+  <input
+    disabled=""
+    hidden=""
+    id="_r_3_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Disabled
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render loading state 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__loading-nORuQE src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_b_"
+>
+  <input
+    disabled=""
+    hidden=""
+    id="_r_b_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-ToggleButton-src-index-module__ToggleButton__label-hidden-iwuBEC src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Loading
+  </p>
+  <span
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__spinner-P_B9mF"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render loading state with primary type 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__loading-nORuQE src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_c_"
+>
+  <input
+    disabled=""
+    hidden=""
+    id="_r_c_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-ToggleButton-src-index-module__ToggleButton__label-hidden-iwuBEC src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Loading
+  </p>
+  <span
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__spinner-P_B9mF"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render loading state with secondary type 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__loading-nORuQE src-ui-ToggleButton-src-index-module__ToggleButton__secondary-UfK2w0"
+  for="_r_d_"
+>
+  <input
+    disabled=""
+    hidden=""
+    id="_r_d_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-ToggleButton-src-index-module__ToggleButton__label-hidden-iwuBEC src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Loading
+  </p>
+  <span
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__spinner-P_B9mF"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render primary type 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_1_"
+>
+  <input
+    hidden=""
+    id="_r_1_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Primary
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render secondary type 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__secondary-UfK2w0"
+  for="_r_2_"
+>
+  <input
+    hidden=""
+    id="_r_2_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Secondary
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with custom className 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt custom-toggle src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_8_"
+>
+  <input
+    hidden=""
+    id="_r_8_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Custom
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with custom id 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="custom-id"
+>
+  <input
+    hidden=""
+    id="custom-id"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Custom ID
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with isFullWidth 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__full-width-bRtrmP src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_e_"
+>
+  <input
+    hidden=""
+    id="_r_e_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Full Width Toggle
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with postfix 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_6_"
+>
+  <input
+    hidden=""
+    id="_r_6_"
+    type="checkbox"
+  />
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Next
+  </p>
+  <span
+    class=""
+  >
+    →
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with prefix 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_5_"
+>
+  <input
+    hidden=""
+    id="_r_5_"
+    type="checkbox"
+  />
+  <span
+    class=""
+  >
+    $
+  </span>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    Price
+  </p>
+</label>
+`;
+
+exports[`[SNAPSHOT] ToggleButton > should render with prefix and postfix 1`] = `
+<label
+  class="src-ui-ToggleButton-src-index-module__ToggleButton-ukZ0wt src-ui-ToggleButton-src-index-module__ToggleButton__primary-NYUBG7"
+  for="_r_7_"
+>
+  <input
+    hidden=""
+    id="_r_7_"
+    type="checkbox"
+  />
+  <span
+    class=""
+  >
+    $
+  </span>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-ToggleButton-src-index-module__ToggleButton__label-yunrr1 src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+  >
+    100
+  </p>
+  <span
+    class=""
+  >
+    USD
+  </span>
+</label>
+`;
