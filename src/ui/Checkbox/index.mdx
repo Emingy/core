@@ -1,0 +1,137 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Checkbox: Form Input Component
+
+The `Checkbox` component is a customizable, accessible checkbox input with built-in support for labels, descriptions, and error messages. It provides a consistent interface for boolean user input throughout the application with proper form integration.
+
+---
+
+## I. Component Usage
+
+The component renders an `<input type="checkbox">` wrapped in a `<label>` for accessibility. It automatically generates unique IDs for proper label-input association and supports custom styling, descriptions, and error states.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Checkbox } from '@emingy/core/ui';
+
+// Simple checkbox
+
+<Checkbox label="Accept terms and conditions" />
+
+// Checkbox with description
+
+<Checkbox label="Subscribe to newsletter" description="Receive weekly updates about new features" />
+
+// Checkbox with error
+
+<Checkbox label="I agree" error="You must accept to continue" />
+
+// Controlled checkbox
+const [checked, setChecked] = useState(false);
+
+<Checkbox
+    label="Enable notifications"
+    checked={checked}
+    onChange={(e) => setChecked(e.target.checked)}
+/>
+
+// Disabled checkbox
+
+<Checkbox
+  label="This option is disabled"
+  disabled
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Checkbox` component accepts standard HTML input attributes, plus specific props for enhanced functionality.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`label\`** | \`string\` | | **Required.** Label text displayed next to the checkbox. |
+| **\`description\`** | \`string\` | | Optional description text displayed below the label. Hidden when error is present. |
+| **\`error\`** | \`string\` | | Error message displayed below the label. Takes priority over description. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling of the wrapper element. |
+| **\`id\`** | \`string\` | | Custom ID for the input. If not provided, a unique ID is auto-generated. |
+| **\`checked\`** | \`boolean\` | | Controlled checked state of the checkbox. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables checkbox interaction and applies disabled styling. |
+| **\`onChange\`** | \`(e: ChangeEvent) => void\` | | Change event handler fired when checkbox state changes. |
+| **\`name\`** | \`string\` | | Name attribute for form submission. |
+| **...restProps** | \`HTMLInputElement props\` | | All other standard HTML input attributes are supported. |
+`}
+</Markdown>
+
+---
+
+## III. Visual States
+
+The checkbox component has distinct visual states:
+
+<Markdown>
+    {`
+- **Unchecked** (default): Grey background with light border.
+- **Checked**: Purple background with white checkmark icon.
+- **Hover**: Darker background color on mouse hover.
+- **Active**: Darkest background when clicked.
+- **Disabled**: Reduced opacity, non-interactive state.
+- **Error**: Red border when error prop is provided.
+`}
+</Markdown>
+
+---
+
+## IV. Label and Description
+
+The component supports both label and optional description text:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Label only
+<Checkbox label="Remember me" />
+
+// Label with description
+
+<Checkbox label="Enable dark mode" description="Switches the interface to dark theme" />
+
+// Label with error (description is hidden)
+
+<Checkbox
+  label="Accept privacy policy"
+  description="This won't be shown"
+  error="You must accept to proceed"
+/>
+\`\`\`
+`}
+</Markdown>
+
+**Note:** When both `description` and `error` are provided, only the error is displayed. The error message always takes priority.
+
+---
+
+## V. Important Notes
+
+<Markdown>
+    {`
+- The checkbox is wrapped in a \`<label>\` element which acts as the clickable area.
+- When \`disabled={true}\`, the checkbox cannot be toggled and has reduced opacity.
+- The component uses CSS modules for styling via \`index.module.scss\`.
+- Error state adds a red border to the checkbox input.
+- The description and error use \`Typography.Micro\` for consistent text styling.
+- Custom \`className\` is applied to the wrapper \`<label>\` element, not the input.
+- All standard HTML input props (except \`type\`) are forwarded to the input element.
+`}
+</Markdown>
