@@ -1,0 +1,155 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories}/>
+
+# Radio: Form Input Component
+
+The `Radio` component is a customizable, accessible radio button input with built-in support for labels, descriptions, and error messages. It provides a consistent interface for single-choice selection throughout the application with proper form integration.
+
+---
+
+## I. Component Usage
+
+The component renders an `<input type="radio">` wrapped in a `<label>` for accessibility. It automatically generates unique IDs for proper label-input association and supports custom styling, descriptions, and error states.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Radio } from '@emingy/core/ui';
+
+// Simple radio
+<Radio label="Option A" name="choice" value="a" />
+
+// Radio with description
+<Radio
+  label="Premium Plan"
+  description="Includes all features and priority support"
+  name="plan"
+  value="premium"
+/>
+
+// Radio with error
+<Radio
+  label="Standard Plan"
+  error="This plan is unavailable"
+  name="plan"
+  value="standard"
+/>
+
+// Controlled radio
+const [selected, setSelected] = useState('option1');
+
+<Radio
+  label="Option 1"
+  name="options"
+  value="option1"
+  checked={selected === 'option1'}
+  onChange={(e) => setSelected(e.target.value)}
+/>
+
+// Disabled radio
+<Radio
+  label="This option is disabled"
+  name="choice"
+  value="disabled"
+  disabled
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Radio` component accepts standard HTML input attributes, plus specific props for enhanced functionality.
+
+<Markdown>
+{`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`label\`** | \`string\` | | **Required.** Label text displayed next to the radio button. |
+| **\`description\`** | \`string\` | | Optional description text displayed below the label. Hidden when error is present. |
+| **\`error\`** | \`string\` | | Error message displayed below the label. Takes priority over description. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling of the wrapper element. |
+| **\`id\`** | \`string\` | | Custom ID for the input. If not provided, a unique ID is auto-generated. |
+| **\`name\`** | \`string\` | | Group identifier - radio buttons with the same name form a group. |
+| **\`value\`** | \`string\` | | Value submitted with the form when this radio is selected. |
+| **\`checked\`** | \`boolean\` | | Controlled checked state of the radio button. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables radio interaction and applies disabled styling. |
+| **\`onChange\`** | \`(e: ChangeEvent) => void\` | | Change event handler fired when radio state changes. |
+| **...restProps** | \`HTMLInputElement props\` | | All other standard HTML input attributes are supported. |
+`}
+</Markdown>
+
+---
+
+## III. Visual States
+
+The radio component has distinct visual states:
+
+<Markdown>
+{`
+- **Unchecked** (default): Grey circular button with light border.
+- **Checked**: Purple circular button with filled center indicator.
+- **Hover**: Darker background color on mouse hover.
+- **Active**: Darkest background when clicked.
+- **Disabled**: Reduced opacity, non-interactive state.
+- **Error**: Red border when error prop is provided.
+`}
+</Markdown>
+
+---
+
+## IV. Label and Description
+
+The component supports both label and optional description text:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Label only
+<Radio label="Basic Option" name="choice" value="basic" />
+
+// Label with description
+<Radio
+  label="Advanced Option"
+  description="Includes additional features"
+  name="choice"
+  value="advanced"
+/>
+
+// Label with error (description is hidden)
+<Radio
+  label="Unavailable Option"
+  description="This won't be shown"
+  error="This option is currently unavailable"
+  name="choice"
+  value="unavailable"
+/>
+\`\`\`
+`}
+</Markdown>
+
+**Note:** When both `description` and `error` are provided, only the error is displayed. The error message always takes priority.
+
+---
+
+## V. Important Notes
+
+<Markdown>
+{`
+- The radio button is wrapped in a \`<label>\` element which acts as the clickable area.
+- When \`disabled={true}\`, the radio cannot be selected and has reduced opacity.
+- The component uses CSS modules for styling via \`index.module.scss\`.
+- Error state adds a red border to the radio input.
+- The description and error use \`Typography.Micro\` for consistent text styling.
+- Custom \`className\` is applied to the wrapper \`<label>\` element, not the input.
+- All standard HTML input props (except \`type\`) are forwarded to the input element.
+- Radio buttons with the same \`name\` form a mutually exclusive group.
+- Each radio in a group should have a unique \`value\` attribute.
+`}
+</Markdown>
