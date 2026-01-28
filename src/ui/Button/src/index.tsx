@@ -2,6 +2,7 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Spinner } from '../../Spinner';
 import { Typography } from '../../Typography';
 
 import styles from './index.module.scss';
@@ -22,6 +23,7 @@ export const Button = ({
     splitted,
     className,
     children,
+    isLoading = false,
     href,
     navigateOptions,
     onClick,
@@ -54,17 +56,48 @@ export const Button = ({
                 })}
                 htmlFor={restProps.id ?? id}
             >
-                {prefix && prefix}
+                {prefix && (
+                    <span
+                        className={cn({
+                            [`${BLOCK_NAME}__span-hidden`]: isLoading,
+                        })}
+                    >
+                        {prefix}
+                    </span>
+                )}
                 <button
                     {...restProps}
                     id={restProps.id ?? id}
                     type={htmlType}
-                    disabled={disabled}
+                    disabled={disabled || isLoading}
                     onClick={handleClick}
                 >
-                    <Typography.Base weight="bold">{children}</Typography.Base>
+                    <Typography.Base
+                        weight="bold"
+                        className={cn(`${BLOCK_NAME}__label`, {
+                            [`${BLOCK_NAME}__label-hidden`]: isLoading,
+                        })}
+                    >
+                        {children}
+                    </Typography.Base>
+                    {isLoading && (
+                        <Typography.Base
+                            elementType="span"
+                            className={cn(`${BLOCK_NAME}__spinner`)}
+                        >
+                            <Spinner />
+                        </Typography.Base>
+                    )}
                 </button>
-                {postfix && postfix}
+                {postfix && (
+                    <span
+                        className={cn({
+                            [`${BLOCK_NAME}__span-hidden`]: isLoading,
+                        })}
+                    >
+                        {postfix}
+                    </span>
+                )}
             </label>
             {splitted && (
                 <button

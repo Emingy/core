@@ -105,4 +105,27 @@ describe('[SNAPSHOT] Button', () => {
         );
         expect(container.firstChild).toMatchSnapshot();
     });
+
+    it('should render loading state', () => {
+        const { container } = renderWithRouter(<Button isLoading>Loading</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render loading state with primary type', () => {
+        const { container } = renderWithRouter(
+            <Button isLoading type={EType.Primary}>
+                Loading
+            </Button>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render loading state with secondary type', () => {
+        const { container } = renderWithRouter(
+            <Button isLoading type={EType.Secondary}>
+                Loading
+            </Button>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });

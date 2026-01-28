@@ -239,4 +239,60 @@ describe('[UNIT] Button', () => {
 
         expect(clicked).toBe(true);
     });
+
+    it('Renders spinner when isLoading is true', () => {
+        const { container } = renderWithRouter(<Button isLoading>Loading</Button>);
+        const spinner = container.querySelector('svg');
+
+        expect(spinner).toBeDefined();
+    });
+
+    it('Hides label when isLoading is true', () => {
+        const { container } = renderWithRouter(<Button isLoading>Loading</Button>);
+        const label = container.querySelector('.Button__label');
+
+        expect(label?.className).toContain('Button__label-hidden');
+    });
+
+    it('Disables button when isLoading is true', () => {
+        renderWithRouter(
+            <Button isLoading data-testid="button">
+                Loading
+            </Button>
+        );
+        const button = screen.getByTestId('button') as HTMLButtonElement;
+
+        expect(button.disabled).toBe(true);
+    });
+
+    it('Does not navigate when isLoading and href is provided', () => {
+        renderWithRouter(
+            <Button isLoading href="/test-path" data-testid="button">
+                Loading
+            </Button>,
+            '/'
+        );
+        const button = screen.getByTestId('button');
+        const location = screen.getByTestId('location');
+
+        expect(location.textContent).toBe('/');
+
+        fireEvent.click(button);
+
+        expect(location.textContent).toBe('/');
+    });
+
+    it('Shows label when isLoading is false', () => {
+        const { container } = renderWithRouter(<Button isLoading={false}>Click me</Button>);
+        const label = container.querySelector('.Button__label');
+
+        expect(label?.className).not.toContain('Button__label-hidden');
+    });
+
+    it('Does not render spinner when isLoading is false', () => {
+        const { container } = renderWithRouter(<Button isLoading={false}>Click me</Button>);
+        const spinner = container.querySelector('svg');
+
+        expect(spinner).toBeNull();
+    });
 });
