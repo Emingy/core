@@ -2,6 +2,8 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Typography } from '../../Typography';
+
 import styles from './index.module.scss';
 
 import { ESize, EType } from './constants';
@@ -60,7 +62,7 @@ export const Button = ({
                     disabled={disabled}
                     onClick={handleClick}
                 >
-                    {children}
+                    <Typography.Base weight="bold">{children}</Typography.Base>
                 </button>
                 {postfix && postfix}
             </label>

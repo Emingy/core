@@ -10,7 +10,7 @@
         background-color: currentcolor;
     }
 
-    label {
+    p {
         display: block;
     }
 
@@ -33,12 +33,12 @@
             height: 100%;
         }
 
-        label {
+        p {
             writing-mode: vertical-rl;
         }
     }
 
-    &:has(label) {
+    &:has(p) {
         gap: 4px;
     }
 }

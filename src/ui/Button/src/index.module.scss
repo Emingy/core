@@ -1,9 +1,6 @@
 @use '@emingy/core/styles/typography';
 
 .Button {
-    @include typography.base;
-    @include typography.weight-bold;
-
     display: flex;
     flex-direction: row;
     gap: 8px;

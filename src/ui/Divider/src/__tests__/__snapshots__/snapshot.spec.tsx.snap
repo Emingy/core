@@ -23,9 +23,11 @@ exports[`[SNAPSHOT] Divider > should render horizontal with label 1`] = `
   class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
 >
   <span />
-  <label>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+  >
     Section
-  </label>
+  </p>
   <span />
 </div>
 `;
@@ -44,9 +46,11 @@ exports[`[SNAPSHOT] Divider > should render vertical with label 1`] = `
   class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__vertical-qlIc83"
 >
   <span />
-  <label>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+  >
     Text
-  </label>
+  </p>
   <span />
 </div>
 `;
@@ -56,9 +60,11 @@ exports[`[SNAPSHOT] Divider > should render with all props 1`] = `
   class="src-ui-Divider-src-index-module__Divider-XcJqmT my-custom-divider src-ui-Divider-src-index-module__Divider__vertical-qlIc83"
 >
   <span />
-  <label>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+  >
     Divider
-  </label>
+  </p>
   <span />
 </div>
 `;
@@ -77,9 +83,11 @@ exports[`[SNAPSHOT] Divider > should render with label 1`] = `
   class="src-ui-Divider-src-index-module__Divider-XcJqmT src-ui-Divider-src-index-module__Divider__horizontal-YtIoQY"
 >
   <span />
-  <label>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+  >
     OR
-  </label>
+  </p>
   <span />
 </div>
 `;

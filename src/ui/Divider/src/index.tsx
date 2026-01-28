@@ -1,6 +1,8 @@
 import cls from 'classnames/bind';
 import React from 'react';
 
+import { Typography } from '../../Typography';
+
 import styles from './index.module.scss';
 
 import { EType } from './constants';
@@ -18,7 +20,7 @@ export const Divider = ({ type = EType.Horizontal, label, className }: TProps) =
             })}
         >
             <span />
-            {label && <label>{label}</label>}
+            {label && <Typography.Base elementType="p">{label}</Typography.Base>}
             <span />
         </div>
     );

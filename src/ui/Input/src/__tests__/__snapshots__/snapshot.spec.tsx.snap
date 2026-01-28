@@ -92,7 +92,7 @@ exports[`[SNAPSHOT] Input > should render with all props 1`] = `
   for="_r_b_"
 >
   <span
-    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
   >
     $
   </span>
@@ -100,7 +100,7 @@ exports[`[SNAPSHOT] Input > should render with all props 1`] = `
     class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
   >
     <span
-      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__title-an6a9F"
     >
       Amount
     </span>
@@ -115,7 +115,7 @@ exports[`[SNAPSHOT] Input > should render with all props 1`] = `
     </div>
   </div>
   <span
-    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__postfix-B1XU82"
   >
     USD
   </span>
@@ -160,7 +160,7 @@ exports[`[SNAPSHOT] Input > should render with mask 1`] = `
         value=""
       />
       <span
-        class="src-ui-Input-src-index-module__Input__mask-G1M0lC"
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__mask-G1M0lC"
         data-testid="input-mask"
       >
         +7 (111) 111-11-11
@@ -179,7 +179,7 @@ exports[`[SNAPSHOT] Input > should render with mask and title 1`] = `
     class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
   >
     <span
-      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__title-an6a9F"
     >
       Phone Number
     </span>
@@ -237,7 +237,7 @@ exports[`[SNAPSHOT] Input > should render with postfix 1`] = `
     </div>
   </div>
   <span
-    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__postfix-B1XU82"
   >
     .com
   </span>
@@ -250,7 +250,7 @@ exports[`[SNAPSHOT] Input > should render with prefix 1`] = `
   for="_r_4_"
 >
   <span
-    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
   >
     @
   </span>
@@ -276,7 +276,7 @@ exports[`[SNAPSHOT] Input > should render with prefix and postfix 1`] = `
   for="_r_6_"
 >
   <span
-    class="src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__prefix-Sy_AHP"
   >
     $
   </span>
@@ -294,7 +294,7 @@ exports[`[SNAPSHOT] Input > should render with prefix and postfix 1`] = `
     </div>
   </div>
   <span
-    class="src-ui-Input-src-index-module__Input__postfix-B1XU82"
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__postfix-B1XU82"
   >
     USD
   </span>
@@ -310,7 +310,7 @@ exports[`[SNAPSHOT] Input > should render with title 1`] = `
     class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
   >
     <span
-      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__title-an6a9F"
     >
       Email
     </span>
@@ -336,7 +336,7 @@ exports[`[SNAPSHOT] Input > should render with title and value 1`] = `
     class="src-ui-Input-src-index-module__Input__wrapper-w9l4hK"
   >
     <span
-      class="src-ui-Input-src-index-module__Input__title-an6a9F"
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Input-src-index-module__Input__title-an6a9F"
     >
       Phone
     </span>
