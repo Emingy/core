@@ -1,0 +1,259 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Checkbox > should render basic checkbox 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_0_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_0_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Basic checkbox
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render checked checkbox 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_6_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      checked=""
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_6_"
+      readonly=""
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Checked checkbox
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render disabled checkbox 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_5_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      disabled=""
+      id="_r_5_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Disabled checkbox
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with all props 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z custom-class"
+  for="full-checkbox"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      disabled=""
+      id="full-checkbox"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Full featured checkbox
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Checkbox-src-index-module__Checkbox__description-Ib3sTF"
+      >
+        Description text
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with custom className 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z my-custom-class"
+  for="_r_4_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_4_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Custom checkbox
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with custom id 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="custom-checkbox-id"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="custom-checkbox-id"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Custom ID
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with description 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_1_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_1_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Checkbox with description
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Checkbox-src-index-module__Checkbox__description-Ib3sTF"
+      >
+        This is a helpful description
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with description and error (error takes priority) 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_3_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_3_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Checkbox
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Checkbox-src-index-module__Checkbox__error-tKoIa4"
+      >
+        Error text
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Checkbox > should render with error 1`] = `
+<label
+  class="src-ui-Checkbox-src-index-module__Checkbox-Z5zY0Z"
+  for="_r_2_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Checkbox-src-index-module__Checkbox__input-AjmbhI"
+      id="_r_2_"
+      type="checkbox"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Checkbox-src-index-module__Checkbox__label-xmsz9y"
+      >
+        Checkbox with error
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Checkbox-src-index-module__Checkbox__error-tKoIa4"
+      >
+        This field is required
+      </span>
+    </div>
+  </div>
+</label>
+`;

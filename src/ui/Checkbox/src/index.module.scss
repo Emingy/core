@@ -1,0 +1,71 @@
+.Checkbox {
+    cursor: pointer;
+    user-select: none;
+
+    &__input {
+        border: 1px solid var(--color-grey-40);
+        width: 24px;
+        height: 24px;
+        border-radius: 8px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: var(--color-grey-50);
+        flex-shrink: 0;
+        margin: 0;
+        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+        position: relative;
+        box-shadow: 0 4px 4px 0 var(--color-grey-100);
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
+
+        &:checked {
+            background-color: var(--color-purple-50);
+            border-color: var(--color-purple-40);
+
+            &::after {
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgOC42NjY2N0wzLjkwMTEzIDEyLjQ2ODlDNC41NjIzOCAxMy43OTE0IDYuMzY0NSAxMy45NTM0IDcuMjAxNTggMTIuNzM0NkMxMC4zNzEgOC4xMTk3MSAxNCAyIDE0IDIiIHN0cm9rZT0iI0Y3RjdGNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
+                width: 16px;
+                height: 16px;
+                top: 3px;
+                position: absolute;
+                left: 3px;
+                content: '';
+            }
+
+            &:hover {
+                background-color: var(--color-purple-40);
+            }
+
+            &:active {
+                background-color: var(--color-purple-60);
+            }
+        }
+    }
+
+    &:has(.Checkbox__input:disabled) {
+        filter: opacity(0.1);
+        pointer-events: none;
+    }
+
+    &:has(.Checkbox__error) &__input {
+        border-color: var(--color-red-50);
+    }
+
+    &__description {
+        color: var(--color-grey-10);
+    }
+
+    &__error {
+        color: var(--color-red-50);
+    }
+
+    &__label {
+        line-height: 24px;
+    }
+}
