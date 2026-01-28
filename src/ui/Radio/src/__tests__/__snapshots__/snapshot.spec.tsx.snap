@@ -1,0 +1,287 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Radio > should render basic radio 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_0_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_0_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Basic radio
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render checked radio 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_6_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      checked=""
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_6_"
+      readonly=""
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Checked radio
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render disabled radio 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_5_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      disabled=""
+      id="_r_5_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Disabled radio
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with all props 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP custom-class"
+  for="full-radio"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      disabled=""
+      id="full-radio"
+      type="radio"
+      value="full-option"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Full featured radio
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Radio-src-index-module__Radio__description-U7MeCT"
+      >
+        Description text
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with custom className 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP my-custom-class"
+  for="_r_4_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_4_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Custom radio
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with custom id 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="custom-radio-id"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="custom-radio-id"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Custom ID
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with description 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_1_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_1_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Radio with description
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Radio-src-index-module__Radio__description-U7MeCT"
+      >
+        This is a helpful description
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with description and error (error takes priority) 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_3_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_3_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Radio
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Radio-src-index-module__Radio__error-j9GMA0"
+      >
+        Error text
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with error 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_2_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_2_"
+      type="radio"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Radio with error
+      </span>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Radio-src-index-module__Radio__error-j9GMA0"
+      >
+        This field is required
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Radio > should render with value 1`] = `
+<label
+  class="src-ui-Radio-src-index-module__Radio-xa5JlP"
+  for="_r_8_"
+>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--align-flex-start-jBlY_d src-ui-Flex-src-index-module__Flex--gap-2x-JbtqKe"
+  >
+    <input
+      class="src-ui-Radio-src-index-module__Radio__input-yQO033"
+      id="_r_8_"
+      type="radio"
+      value="option1"
+    />
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+    >
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Radio-src-index-module__Radio__label-cJDh5m"
+      >
+        Radio with value
+      </span>
+    </div>
+  </div>
+</label>
+`;

@@ -1,0 +1,71 @@
+.Radio {
+    cursor: pointer;
+    user-select: none;
+
+    &__input {
+        border: 1px solid var(--color-grey-40);
+        width: 24px;
+        height: 24px;
+        border-radius: 16px;
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: var(--color-grey-50);
+        flex-shrink: 0;
+        margin: 0;
+        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+        position: relative;
+        box-shadow: 0 4px 4px 0 var(--color-grey-100);
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
+
+        &:checked {
+            background-color: var(--color-purple-50);
+            border-color: var(--color-purple-40);
+
+            &::after {
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0Y3RjdGNyIvPgo8L3N2Zz4K");
+                width: 12px;
+                height: 12px;
+                top: 5px;
+                position: absolute;
+                left: 5px;
+                content: '';
+            }
+
+            &:hover {
+                background-color: var(--color-purple-40);
+            }
+
+            &:active {
+                background-color: var(--color-purple-60);
+            }
+        }
+    }
+
+    &:has(.Radio__input:disabled) {
+        filter: opacity(0.1);
+        pointer-events: none;
+    }
+
+    &:has(.Radio__error) &__input {
+        border-color: var(--color-red-50);
+    }
+
+    &__description {
+        color: var(--color-grey-10);
+    }
+
+    &__error {
+        color: var(--color-red-50);
+    }
+
+    &__label {
+        line-height: 24px;
+    }
+}
