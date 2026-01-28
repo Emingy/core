@@ -1,0 +1,179 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Avatar > should render basic avatar 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="Test"
+    class="Avatar__image Avatar__image-hidden"
+    src="/test.jpg"
+  />
+</button>
+`;
+
+exports[`[SNAPSHOT] Avatar > should render complex avatar 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 user-avatar src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+  disabled=""
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="User"
+    class="Avatar__image Avatar__image-hidden"
+    src="/user.jpg"
+    title="John Doe"
+  />
+</button>
+`;
+
+exports[`[SNAPSHOT] Avatar > should render disabled avatar 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+  disabled=""
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="Test"
+    class="Avatar__image Avatar__image-hidden"
+    src="/test.jpg"
+  />
+</button>
+`;
+
+exports[`[SNAPSHOT] Avatar > should render with custom className 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 custom-avatar src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="Test"
+    class="Avatar__image Avatar__image-hidden"
+    src="/test.jpg"
+  />
+</button>
+`;
+
+exports[`[SNAPSHOT] Avatar > should render with different src 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="Avatar"
+    class="Avatar__image Avatar__image-hidden"
+    src="/avatar.png"
+  />
+</button>
+`;
+
+exports[`[SNAPSHOT] Avatar > should render with title 1`] = `
+<button
+  class="src-ui-Avatar-src-index-module__Avatar-cmwzW7 src-ui-Avatar-src-index-module__Avatar__loading-MhaeVh"
+>
+  <div
+    class="Avatar__loader"
+  >
+    <svg
+      class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+  <img
+    alt="Test"
+    class="Avatar__image Avatar__image-hidden"
+    src="/test.jpg"
+    title="User Avatar"
+  />
+</button>
+`;
