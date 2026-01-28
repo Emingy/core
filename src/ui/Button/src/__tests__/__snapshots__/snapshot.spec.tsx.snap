@@ -6,10 +6,10 @@ exports[`[SNAPSHOT] Button > should render alert type 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__alert-kPvPbc src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_4_"
+    for="_r_5_"
   >
     <button
-      id="_r_4_"
+      id="_r_5_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -27,7 +27,7 @@ exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH complex-button src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__large-size-GNuvd_"
-    for="_r_f_"
+    for="_r_g_"
   >
     <span
       class=""
@@ -35,7 +35,7 @@ exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
       ←
     </span>
     <button
-      id="_r_f_"
+      id="_r_g_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -79,11 +79,11 @@ exports[`[SNAPSHOT] Button > should render disabled state 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__disabled-dU2pl7"
-    for="_r_8_"
+    for="_r_9_"
   >
     <button
       disabled=""
-      id="_r_8_"
+      id="_r_9_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -122,10 +122,10 @@ exports[`[SNAPSHOT] Button > should render large size 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__large-size-GNuvd_"
-    for="_r_7_"
+    for="_r_8_"
   >
     <button
-      id="_r_7_"
+      id="_r_8_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -138,45 +138,6 @@ exports[`[SNAPSHOT] Button > should render large size 1`] = `
 `;
 
 exports[`[SNAPSHOT] Button > should render loading state 1`] = `
-<div
-  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
->
-  <label
-    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__loading-eeT3Tr"
-    for="_r_g_"
-  >
-    <button
-      disabled=""
-      id="_r_g_"
-    >
-      <p
-        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Button-src-index-module__Button__label-hidden-KMxcyB src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
-      >
-        Loading
-      </p>
-      <span
-        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Button-src-index-module__Button__spinner-ETFFCh"
-      >
-        <svg
-          class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-width="6"
-          />
-        </svg>
-      </span>
-    </button>
-  </label>
-</div>
-`;
-
-exports[`[SNAPSHOT] Button > should render loading state with primary type 1`] = `
 <div
   class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
 >
@@ -215,17 +176,56 @@ exports[`[SNAPSHOT] Button > should render loading state with primary type 1`] =
 </div>
 `;
 
+exports[`[SNAPSHOT] Button > should render loading state with primary type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__loading-eeT3Tr"
+    for="_r_i_"
+  >
+    <button
+      disabled=""
+      id="_r_i_"
+    >
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Button-src-index-module__Button__label-hidden-KMxcyB src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Loading
+      </p>
+      <span
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Button-src-index-module__Button__spinner-ETFFCh"
+      >
+        <svg
+          class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+          viewBox="0 0 50 50"
+        >
+          <circle
+            class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+            cx="25"
+            cy="25"
+            fill="none"
+            r="20"
+            stroke-width="6"
+          />
+        </svg>
+      </span>
+    </button>
+  </label>
+</div>
+`;
+
 exports[`[SNAPSHOT] Button > should render loading state with secondary type 1`] = `
 <div
   class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__secondary-H0IJrG src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__loading-eeT3Tr"
-    for="_r_i_"
+    for="_r_j_"
   >
     <button
       disabled=""
-      id="_r_i_"
+      id="_r_j_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Button-src-index-module__Button__label-hidden-KMxcyB src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -260,15 +260,36 @@ exports[`[SNAPSHOT] Button > should render medium size 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_6_"
+    for="_r_7_"
   >
     <button
-      id="_r_6_"
+      id="_r_7_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
       >
         Medium
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render outlined type 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__outlined-UZwV4b src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_4_"
+  >
+    <button
+      id="_r_4_"
+    >
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        Ghosted
       </p>
     </button>
   </label>
@@ -323,10 +344,10 @@ exports[`[SNAPSHOT] Button > should render small size 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__small-size-PteQvF"
-    for="_r_5_"
+    for="_r_6_"
   >
     <button
-      id="_r_5_"
+      id="_r_6_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -344,10 +365,10 @@ exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__splitted-s9I3PI"
-    for="_r_c_"
+    for="_r_d_"
   >
     <button
-      id="_r_c_"
+      id="_r_d_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -370,10 +391,10 @@ exports[`[SNAPSHOT] Button > should render with custom className 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH custom-button src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_d_"
+    for="_r_e_"
   >
     <button
-      id="_r_d_"
+      id="_r_e_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -391,10 +412,10 @@ exports[`[SNAPSHOT] Button > should render with htmlType submit 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_e_"
+    for="_r_f_"
   >
     <button
-      id="_r_e_"
+      id="_r_f_"
       type="submit"
     >
       <p
@@ -413,10 +434,10 @@ exports[`[SNAPSHOT] Button > should render with isFullWidth 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_j_"
+    for="_r_k_"
   >
     <button
-      id="_r_j_"
+      id="_r_k_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -434,10 +455,10 @@ exports[`[SNAPSHOT] Button > should render with postfix 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_a_"
+    for="_r_b_"
   >
     <button
-      id="_r_a_"
+      id="_r_b_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -460,7 +481,7 @@ exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_9_"
+    for="_r_a_"
   >
     <span
       class=""
@@ -468,7 +489,7 @@ exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
       $
     </span>
     <button
-      id="_r_9_"
+      id="_r_a_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
@@ -486,7 +507,7 @@ exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
 >
   <label
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
-    for="_r_b_"
+    for="_r_c_"
   >
     <span
       class=""
@@ -494,7 +515,7 @@ exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
       $
     </span>
     <button
-      id="_r_b_"
+      id="_r_c_"
     >
       <p
         class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"

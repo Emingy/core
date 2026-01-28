@@ -1,7 +1,7 @@
 import { Meta, Markdown } from '@storybook/blocks';
 import * as Stories from './index.stories';
 
-<Meta of={Stories}/>
+<Meta of={Stories} />
 
 # Button: Interactive Component
 
@@ -21,31 +21,37 @@ The component renders a `<button>` element wrapped in a `<label>` for proper sty
 import { Button } from '@emingy/core/ui';
 
 // Simple button with onClick
+
 <Button type="primary" size="md" onClick={() => console.log('Clicked!')}>
-  Submit
+    Submit
 </Button>
 
 // Button with navigation
+
 <Button type="secondary" href="/dashboard">
-  Go to Dashboard
+    Go to Dashboard
 </Button>
 
 // Button with prefix and postfix
+
 <Button type="primary" prefix="$" postfix="USD">
-  100
+    100
 </Button>
 
 // Splitted button with additional action
+
 <Button type="primary" splitted>
-  Save
+    Save
 </Button>
 
 // Loading state
+
 <Button type="primary" isLoading={true}>
-  Saving...
+    Saving...
 </Button>
 
 // Full width button
+
 <Button type="primary" isFullWidth>
   Submit Form
 </Button>
@@ -60,10 +66,10 @@ import { Button } from '@emingy/core/ui';
 The `Button` component accepts standard HTML button attributes, plus specific props to control appearance and behavior.
 
 <Markdown>
-{`
+    {`
 | Prop Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **\`type\`** | \`'primary'\` \\| \`'secondary'\` \\| \`'ghosted'\` \\| \`'alert'\` | \`'primary'\` | Visual style variant of the button. |
+| **\`type\`** | \`'primary'\` \\| \`'secondary'\` \\| \`'ghosted'\` \\| \`'outlined'\` \\| \`'alert'\` | \`'primary'\` | Visual style variant of the button. |
 | **\`size\`** | \`'sm'\` \\| \`'md'\` \\| \`'lg'\` | \`'md'\` | Size of the button. |
 | **\`disabled\`** | \`boolean\` | \`false\` | Disables button interaction and applies disabled styling. |
 | **\`htmlType\`** | \`'button'\` \\| \`'submit'\` \\| \`'reset'\` | \`'button'\` | Native HTML button type attribute. |
@@ -87,10 +93,11 @@ The `Button` component accepts standard HTML button attributes, plus specific pr
 The component supports four visual variants:
 
 <Markdown>
-{`
+    {`
 - **Primary** (\`type="primary"\`): Main action button with solid background.
-- **Secondary** (\`type="secondary"\`): Alternative action button with outlined style.
+- **Secondary** (\`type="secondary"\`): button with secondary style.
 - **Ghosted** (\`type="ghosted"\`): Subtle button with minimal styling.
+- **Outlined** (\`type="outlined"\`): button with outlined style.
 - **Alert** (\`type="alert"\`): Warning or destructive action button (e.g., delete, cancel).
 `}
 </Markdown>
@@ -102,7 +109,7 @@ The component supports four visual variants:
 Three size options are available:
 
 <Markdown>
-{`
+    {`
 - **Small** (\`size="sm"\`): Compact button for dense layouts.
 - **Medium** (\`size="md"\`): Default size for most use cases.
 - **Large** (\`size="lg"\`): Prominent button for primary actions.
@@ -122,14 +129,13 @@ The `Button` component integrates with React Router for client-side navigation:
 <Button href="/profile">View Profile</Button>
 
 // Navigation with options
-<Button
-  href="/settings"
-  navigateOptions={{ replace: true, state: { from: 'dashboard' } }}
->
-  Settings
+
+<Button href="/settings" navigateOptions={{ replace: true, state: { from: 'dashboard' } }}>
+    Settings
 </Button>
 
 // Navigation with onClick (both fire)
+
 <Button
   href="/save"
   onClick={() => console.log('Saving...')}
@@ -149,7 +155,7 @@ The `Button` component integrates with React Router for client-side navigation:
 The `splitted` prop enables a split button with two clickable areas:
 
 <Markdown>
-{`
+    {`
 \`\`\`tsx
 <Button type="primary" splitted>
   Save
@@ -159,6 +165,7 @@ The `splitted` prop enables a split button with two clickable areas:
 </Markdown>
 
 This creates a button with:
+
 - **Main area**: Executes the primary action
 - **Secondary area** (right side with "-"): For additional options or actions
 
@@ -174,32 +181,34 @@ The `isLoading` prop shows a loading spinner and disables the button:
 import { useState } from 'react';
 
 function SubmitForm() {
-  const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async () => {
-    setIsLoading(true);
-    try {
-      await saveData();
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  return (
-    <Button onClick={handleSubmit} isLoading={isLoading}>
-      Submit
-    </Button>
-  );
+const handleSubmit = async () => {
+setIsLoading(true);
+try {
+await saveData();
+} finally {
+setIsLoading(false);
 }
+};
+
+return (
+
+<Button onClick={handleSubmit} isLoading={isLoading}>
+    Submit
+</Button>
+); }
 
 // Loading state with navigation
+
 <Button href="/dashboard" isLoading={isLoading}>
-  Go to Dashboard
+    Go to Dashboard
 </Button>
 
 // Loading state with different types
+
 <Button type="primary" isLoading={true}>
-  Saving...
+    Saving...
 </Button>
 
 <Button type="secondary" isLoading={true}>
@@ -210,6 +219,7 @@ function SubmitForm() {
 </Markdown>
 
 **Behavior when `isLoading={true}`:**
+
 - The button becomes disabled and cannot be clicked
 - A spinner is displayed in place of the button text
 - The button text is hidden but maintains the button's dimensions
@@ -231,13 +241,15 @@ The `isFullWidth` prop makes the button expand to fill the full width of its con
 </Button>
 
 // Full width in a form
+
 <form style={{ maxWidth: '400px' }}>
-  <Button type="primary" isFullWidth htmlType="submit">
-    Submit Form
-  </Button>
+    <Button type="primary" isFullWidth htmlType="submit">
+        Submit Form
+    </Button>
 </form>
 
 // Full width with loading state
+
 <Button type="secondary" isFullWidth isLoading={isSubmitting}>
   Processing...
 </Button>
@@ -246,6 +258,7 @@ The `isFullWidth` prop makes the button expand to fill the full width of its con
 </Markdown>
 
 **Behavior when `isFullWidth={true}`:**
+
 - The button's wrapper expands to 100% of the parent container width
 - Useful for forms, mobile layouts, and modal dialogs
 - Works with all button types, sizes, and states
@@ -256,7 +269,7 @@ The `isFullWidth` prop makes the button expand to fill the full width of its con
 ## IX. Important Notes
 
 <Markdown>
-{`
+    {`
 - The button is wrapped in a \`<label>\` element for styling purposes.
 - When \`disabled={true}\` or \`isLoading={true}\`, the button cannot be clicked and navigation is prevented.
 - The \`isLoading\` prop automatically disables the button, shows a spinner, and hides the text.

@@ -64,6 +64,13 @@ describe('[UNIT] Button', () => {
         expect(label?.className).toContain('Button__ghosted');
     });
 
+    it('Applies outlined type', () => {
+        const { container } = renderWithRouter(<Button type={EType.Outlined}>Button</Button>);
+        const label = container.querySelector('label');
+
+        expect(label?.className).toContain('Button__outlined');
+    });
+
     it('Applies alert type', () => {
         const { container } = renderWithRouter(<Button type={EType.Alert}>Button</Button>);
         const label = container.querySelector('label');

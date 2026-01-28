@@ -8,5 +8,6 @@ export enum EType {
     Primary = 'primary',
     Secondary = 'secondary',
     Ghosted = 'ghosted',
+    Outlined = 'outlined',
     Alert = 'alert',
 }
