@@ -29,7 +29,11 @@ exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
     class="src-ui-Button-src-index-module__Button-zslpsH complex-button src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__large-size-GNuvd_"
     for="_r_f_"
   >
-    ←
+    <span
+      class=""
+    >
+      ←
+    </span>
     <button
       id="_r_f_"
     >
@@ -39,7 +43,11 @@ exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
         Complex Button
       </p>
     </button>
-    →
+    <span
+      class=""
+    >
+      →
+    </span>
   </label>
 </div>
 `;
@@ -416,7 +424,11 @@ exports[`[SNAPSHOT] Button > should render with postfix 1`] = `
         Next
       </p>
     </button>
-    →
+    <span
+      class=""
+    >
+      →
+    </span>
   </label>
 </div>
 `;
@@ -429,7 +441,11 @@ exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
     for="_r_9_"
   >
-    $
+    <span
+      class=""
+    >
+      $
+    </span>
     <button
       id="_r_9_"
     >
@@ -451,7 +467,11 @@ exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
     for="_r_b_"
   >
-    $
+    <span
+      class=""
+    >
+      $
+    </span>
     <button
       id="_r_b_"
     >
@@ -461,7 +481,11 @@ exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
         100
       </p>
     </button>
-    USD
+    <span
+      class=""
+    >
+      USD
+    </span>
   </label>
 </div>
 `;
