@@ -1,0 +1,86 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Link > should render basic link 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/test"
+>
+  Click me
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render complex link 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0 nav-link src-ui-Link-src-index-module__Link__disabled-nwWgmZ"
+  href="/dashboard"
+  title="Dashboard"
+>
+  Dashboard
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render disabled link 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0 src-ui-Link-src-index-module__Link__disabled-nwWgmZ"
+  href="/test"
+>
+  Disabled Link
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render link with aria attributes 1`] = `
+<a
+  aria-current="page"
+  aria-label="test-label"
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/test"
+>
+  Accessible Link
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render link with different paths 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/about"
+>
+  About
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render link with replace 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/test"
+>
+  Replace Link
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render link with state 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/test"
+>
+  With State
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render link with title 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0"
+  href="/test"
+  title="Go to test page"
+>
+  Link with Title
+</a>
+`;
+
+exports[`[SNAPSHOT] Link > should render with custom className 1`] = `
+<a
+  class="src-ui-Link-src-index-module__Link-pFuyM0 custom-link"
+  href="/test"
+>
+  Custom Link
+</a>
+`;

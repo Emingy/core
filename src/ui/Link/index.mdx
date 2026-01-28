@@ -1,0 +1,245 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Link: Navigation Component
+
+The `Link` component is a wrapper around React Router's `Link` component with additional styling capabilities and a disabled state. It provides client-side navigation while maintaining accessibility and visual consistency.
+
+---
+
+## I. Component Usage
+
+The component renders a React Router Link with custom styling. It's used for navigation between routes in your application without full page reloads.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Link } from '@emingy/core/ui';
+
+// Simple link
+<Link to="/about">
+  About Us
+</Link>
+
+// Link with custom className
+<Link to="/dashboard" className="nav-link">
+  Dashboard
+</Link>
+
+// Disabled link
+<Link to="/admin" disabled>
+  Admin Panel (Coming Soon)
+</Link>
+
+// Link with state
+<Link to="/profile" state={{ from: 'home' }}>
+  View Profile
+</Link>
+
+// Link with replace (replaces current history entry)
+<Link to="/login" replace>
+  Login
+</Link>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Link` component accepts all React Router Link props, plus custom props for styling and behavior.
+
+<Markdown>
+{`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`to\`** | \`string\` \\| \`Partial<Path>\` | **Required** | The path or location to navigate to. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Applies disabled styling. Note: link remains functional. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+| **\`replace\`** | \`boolean\` | \`false\` | Replace current entry in history stack instead of adding new one. |
+| **\`state\`** | \`any\` | | State to pass to the destination route. |
+| **\`relative\`** | \`'route'\` \\| \`'path'\` | | Defines relative path resolution behavior. |
+| **\`preventScrollReset\`** | \`boolean\` | | Prevents scroll position reset on navigation. |
+| **\`unstable_viewTransition\`** | \`boolean\` | | Enables view transitions (experimental). |
+| **\`children\`** | \`ReactNode\` | | Link text or content. |
+`}
+</Markdown>
+
+---
+
+## III. Navigation
+
+The Link component provides client-side navigation using React Router:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Simple navigation
+<Link to="/home">Home</Link>
+
+// Navigation with query parameters
+<Link to="/search?q=react">Search</Link>
+
+// Navigation with hash
+<Link to="/docs#introduction">Introduction</Link>
+
+// Navigation to absolute path
+<Link to="/products/123">Product Details</Link>
+
+// Navigation with relative path
+<Link to="../about" relative="path">About</Link>
+
+// Navigation with replace (no history entry)
+<Link to="/dashboard" replace>
+  Dashboard
+</Link>
+\`\`\`
+`}
+</Markdown>
+
+**Navigation behavior:**
+- Clicking the link navigates without full page reload
+- Browser history is updated (unless `replace={true}`)
+- Active link can be styled with CSS `:active` pseudo-class
+- Navigation works with browser back/forward buttons
+
+---
+
+## IV. State Passing
+
+You can pass state to the destination route that isn't visible in the URL:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Pass state to destination
+<Link
+  to="/user/profile"
+  state={{ from: 'dashboard', userId: 123 }}
+>
+  View Profile
+</Link>
+
+// Access state in destination component
+import { useLocation } from 'react-router-dom';
+
+function ProfilePage() {
+  const location = useLocation();
+  const { from, userId } = location.state || {};
+
+  return (
+    <div>
+      <p>Navigated from: {from}</p>
+      <p>User ID: {userId}</p>
+    </div>
+  );
+}
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Disabled State
+
+The `disabled` prop applies visual styling to indicate the link is disabled:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Disabled link (still functional, only visual styling)
+<Link to="/premium" disabled>
+  Premium Features
+</Link>
+
+// Conditionally disabled
+<Link to="/admin" disabled={!isAdmin}>
+  Admin Panel
+</Link>
+
+// Disabled with custom styling
+<Link to="/beta" disabled className="beta-link">
+  Beta Features
+</Link>
+\`\`\`
+`}
+</Markdown>
+
+**Important:** The `disabled` prop only applies visual styling using the `Link__disabled` CSS class. The link remains clickable and functional. If you need to prevent navigation, implement click handlers or conditional rendering:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Prevent navigation when disabled
+{isEnabled ? (
+  <Link to="/dashboard">Dashboard</Link>
+) : (
+  <span className="Link Link__disabled">Dashboard</span>
+)}
+
+// Or use onClick to prevent
+<Link
+  to="/dashboard"
+  disabled={!isEnabled}
+  onClick={(e) => {
+    if (!isEnabled) {
+      e.preventDefault();
+    }
+  }}
+>
+  Dashboard
+</Link>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Styling
+
+The component applies CSS classes for styling:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Base class always applied
+<Link to="/test">Link</Link>
+// Result: <a class="Link" href="/test">Link</a>
+
+// Custom className is combined with base class
+<Link to="/test" className="nav-link">Link</Link>
+// Result: <a class="Link nav-link" href="/test">Link</a>
+
+// Disabled adds additional class
+<Link to="/test" disabled>Link</Link>
+// Result: <a class="Link Link__disabled" href="/test">Link</a>
+
+// All combined
+<Link to="/test" className="nav-link" disabled>Link</Link>
+// Result: <a class="Link nav-link Link__disabled" href="/test">Link</a>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+{`
+- The Link component must be used within a React Router context (e.g., \`BrowserRouter\`, \`MemoryRouter\`).
+- The \`disabled\` prop only applies visual styling - the link remains functional.
+- To truly prevent navigation, use conditional rendering or \`onClick\` with \`e.preventDefault()\`.
+- The \`to\` prop is required and can be a string or path object.
+- State passed via the \`state\` prop is not visible in the URL.
+- The \`replace\` prop replaces the current history entry instead of adding a new one.
+- All React Router Link props are supported and passed through.
+- Custom styling can be added via the \`className\` prop.
+- The component uses React Router's Link internally for optimal performance.
+`}
+</Markdown>
