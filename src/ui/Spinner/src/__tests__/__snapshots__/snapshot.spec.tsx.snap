@@ -1,0 +1,33 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Spinner > should render basic spinner 1`] = `
+<svg
+  class="src-ui-Spinner-src-index-module__Spinner-n3wEGp"
+  viewBox="0 0 50 50"
+>
+  <circle
+    class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+    cx="25"
+    cy="25"
+    fill="none"
+    r="20"
+    stroke-width="6"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Spinner > should render with custom className 1`] = `
+<svg
+  class="src-ui-Spinner-src-index-module__Spinner-n3wEGp my-custom-spinner"
+  viewBox="0 0 50 50"
+>
+  <circle
+    class="src-ui-Spinner-src-index-module__Spinner__circle-oS9BA4"
+    cx="25"
+    cy="25"
+    fill="none"
+    r="20"
+    stroke-width="6"
+  />
+</svg>
+`;

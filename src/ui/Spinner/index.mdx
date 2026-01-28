@@ -1,0 +1,125 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Spinner: Loading Indicator Component
+
+The `Spinner` component is a lightweight, animated loading indicator that provides visual feedback during asynchronous operations. It features a rotating arc with dynamic length animation, creating a smooth and modern loading experience.
+
+---
+
+## I. Component Usage
+
+The component renders an SVG-based circular spinner with a continuously rotating and pulsating arc. It automatically sizes to 1em, making it adaptable to different text sizes and contexts.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Spinner } from '@emingy/core/ui';
+
+// Simple spinner
+
+<Spinner />
+
+// Spinner with custom styling
+
+<Spinner className="my-spinner" />
+
+// Inline with text
+
+<button disabled>
+    Loading <Spinner />
+</button>
+
+// In a loading state
+{isLoading ? <Spinner /> : <Content />}
+
+// Centered in a container
+
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Spinner />
+</div>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Spinner` component accepts minimal props for maximum flexibility.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+`}
+</Markdown>
+
+---
+
+## III. Visual Behavior
+
+The spinner has two simultaneous animations:
+
+<Markdown>
+    {`
+- **Rotation**: Continuous 360° rotation (1.2s per cycle)
+- **Arc Length**: Dynamic stretching and contracting of the visible arc (1.5s per cycle)
+- **Color**: Uses \`currentColor\`, inheriting text color from parent
+- **Size**: 1em × 1em, scales with font size
+`}
+</Markdown>
+
+---
+
+## IV. Styling
+
+The spinner inherits color from its parent context:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Inherits text color
+<div style={{ color: 'red' }}>
+  <Spinner />
+</div>
+
+// Inherits from CSS class
+
+<div className="text-blue">
+    <Spinner />
+</div>
+
+// Custom size through font-size
+
+<div style={{ fontSize: '24px' }}>
+    <Spinner />
+</div>
+
+// Custom styling
+
+<Spinner className="custom-spinner" />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Important Notes
+
+<Markdown>
+    {`
+- The spinner uses \`currentColor\` for its stroke, making it inherit the text color from its parent.
+- Default size is 1em × 1em, which scales with the parent's font size.
+- The component uses pure CSS animations for optimal performance.
+- SVG-based implementation ensures crisp rendering at any size.
+- No JavaScript animations - runs entirely in CSS for better performance.
+- The arc dynamically changes length while rotating, creating a fluid loading effect.
+- Custom \`className\` can be used to override size, color, or animation speed.
+`}
+</Markdown>
