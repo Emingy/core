@@ -128,4 +128,9 @@ describe('[SNAPSHOT] Button', () => {
         );
         expect(container.firstChild).toMatchSnapshot();
     });
+
+    it('should render with isFullWidth', () => {
+        const { container } = renderWithRouter(<Button isFullWidth>Full Width Button</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });

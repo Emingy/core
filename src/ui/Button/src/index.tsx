@@ -26,6 +26,7 @@ export const Button = ({
     isLoading = false,
     href,
     navigateOptions,
+    isFullWidth,
     onClick,
     ...restProps
 }: TProps) => {
@@ -41,7 +42,11 @@ export const Button = ({
     };
 
     return (
-        <div className={cn(`${BLOCK_NAME}__wrapper`)}>
+        <div
+            className={cn(`${BLOCK_NAME}__wrapper`, {
+                [`${BLOCK_NAME}__wrapper_full-width`]: isFullWidth,
+            })}
+        >
             <label
                 className={cn(`${BLOCK_NAME}`, className, {
                     [`${BLOCK_NAME}__primary`]: type === EType.Primary,
@@ -53,6 +58,7 @@ export const Button = ({
                     [`${BLOCK_NAME}__large-size`]: size === ESize.Lg,
                     [`${BLOCK_NAME}__disabled`]: disabled,
                     [`${BLOCK_NAME}__splitted`]: splitted,
+                    [`${BLOCK_NAME}__loading`]: isLoading,
                 })}
                 htmlFor={restProps.id ?? id}
             >

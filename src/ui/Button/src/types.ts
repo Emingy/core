@@ -16,6 +16,7 @@ type TPropsCommon = {
     isLoading?: boolean;
     href?: string;
     navigateOptions?: NavigateOptions;
+    isFullWidth?: boolean;
     className?: string;
 };
 

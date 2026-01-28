@@ -295,4 +295,18 @@ describe('[UNIT] Button', () => {
 
         expect(spinner).toBeNull();
     });
+
+    it('Applies full width class when isFullWidth is true', () => {
+        const { container } = renderWithRouter(<Button isFullWidth>Full Width</Button>);
+        const wrapper = container.firstChild as HTMLElement;
+
+        expect(wrapper?.className).toContain('Button__wrapper_full-width');
+    });
+
+    it('Does not apply full width class when isFullWidth is false', () => {
+        const { container } = renderWithRouter(<Button isFullWidth={false}>Normal</Button>);
+        const wrapper = container.firstChild as HTMLElement;
+
+        expect(wrapper?.className).not.toContain('Button__wrapper_full-width');
+    });
 });
