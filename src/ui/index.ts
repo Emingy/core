@@ -8,4 +8,5 @@ export * from './PageWrapper';
 export * from './Radio';
 export * from './Spinner';
 export * from './Toggle';
+export * from './ToggleButton';
 export * from './Typography';

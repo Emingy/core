@@ -1,7 +1,8 @@
 import cls from 'classnames/bind';
 import React, { useId } from 'react';
 
-import { Flex, Typography } from '../..';
+import { Flex } from '../../Flex';
+import { Typography } from '../../Typography';
 
 import styles from './index.module.scss';
 

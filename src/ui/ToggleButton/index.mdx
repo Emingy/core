@@ -1,0 +1,233 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# ToggleButton: Interactive Toggle Component
+
+The `ToggleButton` component is a stylized checkbox control that looks and behaves like a button. It provides a binary on/off interaction with visual feedback and supports loading states, prefixes, and postfixes.
+
+---
+
+## I. Component Usage
+
+The component renders a visually styled checkbox input wrapped in a label. It's useful when you need a button-like appearance for toggle functionality.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { ToggleButton } from '@emingy/core/ui';
+
+// Simple toggle button
+<ToggleButton onChange={(e) => console.log('Checked:', e.target.checked)}>
+  Dark Mode
+</ToggleButton>
+
+// Toggle button with primary type (default)
+<ToggleButton type="primary">
+  Enable Feature
+</ToggleButton>
+
+// Toggle button with secondary type
+<ToggleButton type="secondary">
+  Subscribe
+</ToggleButton>
+
+// Toggle button with prefix and postfix
+<ToggleButton prefix="🔔" postfix="→">
+  Notifications
+</ToggleButton>
+
+// Loading state
+<ToggleButton isLoading>
+  Saving...
+</ToggleButton>
+
+// Full width toggle button
+<ToggleButton isFullWidth>
+  Accept Terms
+</ToggleButton>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `ToggleButton` component accepts standard HTML input attributes, plus specific props to control appearance and behavior.
+
+<Markdown>
+{`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`type\`** | \`'primary'\` \\| \`'secondary'\` | \`'primary'\` | Visual style variant of the toggle button. |
+| **\`prefix\`** | \`ReactNode\` | | Content displayed before the button text (e.g., icon, symbol). |
+| **\`postfix\`** | \`ReactNode\` | | Content displayed after the button text (e.g., icon, badge). |
+| **\`isLoading\`** | \`boolean\` | \`false\` | Shows spinner and disables the input. Hides button text while loading. |
+| **\`isFullWidth\`** | \`boolean\` | \`false\` | Makes the toggle button take the full width of its container. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables interaction and applies disabled styling. |
+| **\`checked\`** | \`boolean\` | | Controls checked state (requires \`onChange\` or \`readOnly\`). |
+| **\`defaultChecked\`** | \`boolean\` | | Sets initial checked state for uncontrolled usage. |
+| **\`onChange\`** | \`(e: ChangeEvent) => void\` | | Change event handler called when toggle state changes. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+| **\`id\`** | \`string\` | | Custom ID for the input element. Auto-generated if not provided. |
+| **\`children\`** | \`ReactNode\` | | Button text or content. |
+`}
+</Markdown>
+
+---
+
+## III. Toggle Button Types
+
+The component supports two visual variants:
+
+<Markdown>
+{`
+- **Primary** (\`type="primary"\`): Main action toggle with solid styling (default).
+- **Secondary** (\`type="secondary"\`): Alternative toggle with different visual treatment.
+`}
+</Markdown>
+
+---
+
+## IV. Loading State
+
+The `isLoading` prop shows a loading spinner and disables the toggle button:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useState } from 'react';
+
+function FeatureToggle() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [enabled, setEnabled] = useState(false);
+
+  const handleToggle = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsLoading(true);
+    try {
+      await updateFeatureSetting(e.target.checked);
+      setEnabled(e.target.checked);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <ToggleButton
+      checked={enabled}
+      onChange={handleToggle}
+      isLoading={isLoading}
+    >
+      Enable Feature
+    </ToggleButton>
+  );
+}
+
+// Loading state with different types
+<ToggleButton type="primary" isLoading>
+  Saving...
+</ToggleButton>
+
+<ToggleButton type="secondary" isLoading>
+  Loading...
+</ToggleButton>
+\`\`\`
+`}
+</Markdown>
+
+**Behavior when `isLoading={true}`:**
+- The input becomes disabled and cannot be toggled
+- A spinner is displayed in place of the button text
+- The button text is hidden but maintains the button's dimensions
+- Prefix and postfix elements are hidden
+- The spinner inherits the button's text color
+
+---
+
+## V. Full Width Mode
+
+The `isFullWidth` prop makes the toggle button expand to fill the full width of its container:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Full width toggle button
+<ToggleButton type="primary" isFullWidth>
+  Accept All Cookies
+</ToggleButton>
+
+// Full width in a form
+<form style={{ maxWidth: '400px' }}>
+  <ToggleButton type="primary" isFullWidth>
+    Subscribe to Newsletter
+  </ToggleButton>
+</form>
+
+// Full width with loading state
+<ToggleButton type="secondary" isFullWidth isLoading={isSubmitting}>
+  Processing...
+</ToggleButton>
+\`\`\`
+`}
+</Markdown>
+
+**Behavior when `isFullWidth={true}`:**
+- The toggle button expands to 100% of the parent container width
+- Useful for forms, mobile layouts, and modal dialogs
+- Works with all button types and states
+
+---
+
+## VI. Controlled vs Uncontrolled
+
+The ToggleButton can be used in both controlled and uncontrolled modes:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Controlled: you manage the state
+const [checked, setChecked] = useState(false);
+
+<ToggleButton
+  checked={checked}
+  onChange={(e) => setChecked(e.target.checked)}
+>
+  Controlled Toggle
+</ToggleButton>
+
+// Uncontrolled: component manages its own state
+<ToggleButton defaultChecked={false}>
+  Uncontrolled Toggle
+</ToggleButton>
+
+// Uncontrolled with onChange handler
+<ToggleButton
+  defaultChecked={false}
+  onChange={(e) => console.log('New value:', e.target.checked)}
+>
+  Notify on Change
+</ToggleButton>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+{`
+- The toggle button is implemented as a styled \`<label>\` wrapping a hidden \`<input type="checkbox">\`.
+- When \`disabled={true}\` or \`isLoading={true}\`, the input cannot be toggled.
+- The \`isLoading\` prop automatically disables the input, shows a spinner, and hides the text and prefix/postfix.
+- The \`isFullWidth\` prop makes the toggle button expand to the full width of its container.
+- The \`prefix\` and \`postfix\` props accept any React node (text, icons, components).
+- If \`id\` is not provided, a unique ID is auto-generated using React's \`useId\`.
+- For controlled usage, provide both \`checked\` and \`onChange\` props.
+- For uncontrolled usage, use \`defaultChecked\` instead of \`checked\`.
+`}
+</Markdown>
