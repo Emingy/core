@@ -1,0 +1,18 @@
+.Link {
+    text-decoration: none;
+    color: var(--color-purple-50);
+    user-select: none;
+
+    &:hover {
+        color: var(--color-purple-40);
+    }
+
+    &:active {
+        color: var(--color-purple-60);
+    }
+
+    &__disabled {
+        color: var(--color-grey-60);
+        pointer-events: none;
+    }
+}
