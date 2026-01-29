@@ -1,5 +1,6 @@
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
+import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { defineConfig } from '@rstest/core';
 
 export default defineConfig({
@@ -10,6 +11,11 @@ export default defineConfig({
             },
         }),
         pluginSass(),
+        pluginSvgr({
+            svgrOptions: {
+                exportType: 'default',
+            },
+        }),
     ],
     testEnvironment: 'jsdom',
     globals: true,
