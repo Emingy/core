@@ -6,6 +6,7 @@ export * from './Flex';
 export * from './Icon';
 export * from './Input';
 export * from './Link';
+export * from './Message';
 export * from './PageWrapper';
 export * from './Radio';
 export * from './Spinner';
