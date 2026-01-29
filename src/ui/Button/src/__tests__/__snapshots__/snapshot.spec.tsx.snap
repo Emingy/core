@@ -380,7 +380,21 @@ exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
   <button
     class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5 src-ui-Button-src-index-module__Button__splitted-right-AUN946"
   >
-    -
+    <svg
+      class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m21 7-7.513 8.348a2 2 0 0 1-2.974 0L3 7"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+    </svg>
   </button>
 </div>
 `;
