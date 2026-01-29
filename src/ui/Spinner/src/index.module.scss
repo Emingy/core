@@ -4,7 +4,7 @@
     animation: spinner-rotate 1.2s linear infinite;
 
     &__circle {
-        stroke: currentColor;
+        stroke: currentcolor;
         stroke-linecap: round;
         stroke-dasharray: 1, 150;
         stroke-dashoffset: 0;
@@ -23,10 +23,12 @@
         stroke-dasharray: 1, 150;
         stroke-dashoffset: 0;
     }
+
     50% {
         stroke-dasharray: 90, 150;
         stroke-dashoffset: -35;
     }
+
     100% {
         stroke-dasharray: 90, 150;
         stroke-dashoffset: -124;
