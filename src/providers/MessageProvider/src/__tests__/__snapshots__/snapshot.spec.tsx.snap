@@ -1,0 +1,61 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] MessageProvider > should render with all props 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with bottom-center position 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with bottom-left position 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with bottom-right position 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with children 1`] = `
+<div>
+  Child content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with default position 1`] = `
+<span>
+  App
+</span>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with maxCount prop 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with top-center position 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with top-left position 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageProvider > should render with top-right position 1`] = `
+<div>
+  Content
+</div>
+`;

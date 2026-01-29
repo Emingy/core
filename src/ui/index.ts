@@ -1,4 +1,3 @@
-export * from './AppProvider';
 export * from './Button';
 export * from './Checkbox';
 export * from './Divider';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 
+import type { TSvgComponent } from '@emingy/core/ui/Icon/src/types';
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import type { TSvgComponent } from '../../../Icon/src/types';
 import { ESize, EType } from '../constants';
 import { Button } from '..';
 

@@ -1,0 +1,210 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# useMessage: Imperative Notification Hook
+
+The `useMessage` hook provides an imperative API for displaying toast notifications. It works in conjunction with `MessageProvider` (included in `AppProvider`) and renders messages via `createPortal` into `document.body`.
+
+---
+
+## I. Basic Usage
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useMessage } from '@emingy/core/hooks';
+
+const MyComponent = () => {
+    const message = useMessage();
+
+    const handleSave = async () => {
+        try {
+            await saveData();
+            message.success({ title: 'Saved', content: 'Your changes have been saved.' });
+        } catch {
+            message.error({ content: 'Failed to save changes.' });
+        }
+    };
+
+    return <button onClick={handleSave}>Save</button>;
+};
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Returned Methods
+
+The hook returns an object with methods for showing and closing messages.
+
+<Markdown>
+    {`
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| **\`success\`** | \`(config: TMessageConfig) => string\` | Shows a success message. Returns message ID. |
+| **\`warning\`** | \`(config: TMessageConfig) => string\` | Shows a warning message. Returns message ID. |
+| **\`error\`** | \`(config: TMessageConfig) => string\` | Shows an error message. Returns message ID. |
+| **\`close\`** | \`(id: string) => void\` | Closes a specific message by its ID. |
+| **\`closeAll\`** | \`() => void\` | Closes all visible messages. |
+`}
+</Markdown>
+
+---
+
+## III. TMessageConfig
+
+Configuration object passed to `success`, `warning`, and `error` methods.
+
+<Markdown>
+    {`
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`content\`** | \`ReactNode\` | **Required** | Message body content. |
+| **\`title\`** | \`string\` | | Optional bold title displayed above the content. |
+| **\`duration\`** | \`number\` | \`5000\` | Auto-dismiss timeout in ms. Set to \`0\` to disable auto-dismiss. |
+`}
+</Markdown>
+
+---
+
+## IV. Message Types
+
+Three severity types are available, each with a distinct `StatusIndicator`:
+
+<Markdown>
+{`
+\`\`\`tsx
+const message = useMessage();
+
+// Success — green indicator with checkmark
+message.success({ title: 'Done', content: 'Operation completed.' });
+
+// Warning — yellow indicator with warning icon
+message.warning({ content: 'Check your input.' });
+
+// Error — red indicator with cross icon
+message.error({ title: 'Error', content: 'Something went wrong.' });
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Auto-Dismiss and Duration
+
+Messages auto-dismiss after a configurable timeout. Hovering over a message pauses the timer; leaving resumes it with the remaining time.
+
+<Markdown>
+{`
+\`\`\`tsx
+const message = useMessage();
+
+// Default: disappears in 5 seconds
+message.success({ content: 'Default timeout.' });
+
+// Custom: disappears in 1 second
+message.success({ content: 'Quick message.', duration: 1000 });
+
+// Custom: disappears in 10 seconds
+message.warning({ content: 'Longer message.', duration: 10000 });
+
+// No auto-dismiss: must be closed manually
+message.error({ content: 'Close me manually.', duration: 0 });
+\`\`\`
+`}
+</Markdown>
+
+**Auto-dismiss behavior:**
+
+- Default duration is 5000ms
+- Timer starts when the message enters the visible state
+- Hovering over the message pauses the timer
+- Moving the mouse away resumes with the remaining time
+- `duration: 0` disables auto-dismiss entirely
+
+---
+
+## VI. Manual Close
+
+Each `success`, `warning`, and `error` method returns a unique message ID for programmatic closing:
+
+<Markdown>
+{`
+\`\`\`tsx
+const message = useMessage();
+
+// Show a persistent message and store its ID
+const id = message.success({
+    title: 'Processing',
+    content: 'Please wait...',
+    duration: 0,
+});
+
+// Close the specific message later
+message.close(id);
+
+// Or close all messages at once
+message.closeAll();
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. MessageProvider Configuration
+
+The `MessageProvider` (wrapped by `AppProvider`) accepts `position` and `maxCount` props:
+
+<Markdown>
+    {`
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`position\`** | \`'top-left'\` \\| \`'top-center'\` \\| \`'top-right'\` \\| \`'bottom-left'\` \\| \`'bottom-center'\` \\| \`'bottom-right'\` | \`'bottom-right'\` | Position of the message stack on screen. |
+| **\`maxCount\`** | \`number\` | | Maximum number of visible messages. Oldest messages are hidden when exceeded. |
+`}
+</Markdown>
+
+<Markdown>
+{`
+\`\`\`tsx
+import { MessageProvider } from '@emingy/core/ui';
+
+// Custom position and max count
+<MessageProvider position="top-right" maxCount={3}>
+    <App />
+</MessageProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VIII. Animation
+
+Messages animate in and out using CSS transitions on `opacity` and `transform`:
+
+- **Enter**: fades in and slides from 16px offset toward the screen edge
+- **Exit**: fades out and slides 16px away from the screen edge
+- Animation direction adapts to position: top positions slide down, bottom positions slide up
+- Duration is `var(--animation-duration-base)` (250ms) with `var(--animation-easing-ease-out)` easing
+
+---
+
+## IX. Important Notes
+
+<Markdown>
+    {`
+- The hook **must** be used inside a \`MessageProvider\` (or \`AppProvider\`, which wraps \`MessageProvider\` internally). Calling \`useMessage\` outside the provider throws an error.
+- Messages render via \`createPortal\` into \`document.body\`, independent of the component tree's DOM structure.
+- React portals preserve context from the React tree, so messages have access to Router and other providers.
+- Multiple messages stack with \`var(--spacing-2x)\` (8px) gap between them.
+- The message container uses \`pointer-events: none\` so it doesn't block interaction with the page. Individual messages have \`pointer-events: auto\`.
+- The message container is positioned \`fixed\` with \`z-index: 9999\`.
+- For bottom positions, newest messages appear closest to the screen edge (stack grows upward).
+- For top positions, newest messages appear closest to the screen edge (stack grows downward).
+- The hook returns a stable reference as long as the context value remains the same.
+`}
+</Markdown>

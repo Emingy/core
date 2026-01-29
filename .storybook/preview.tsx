@@ -2,7 +2,8 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import type { Preview } from 'storybook-react-rsbuild';
 
-import { AppProvider, PageWrapper } from '@emingy/core/ui';
+import { AppProvider } from '@emingy/core/providers';
+import { PageWrapper } from '@emingy/core/ui';
 
 import './preview.scss';
 
@@ -17,13 +18,13 @@ const preview: Preview = {
     },
     decorators: [
         (Story) => (
-            <AppProvider>
-                <PageWrapper>
-                    <MemoryRouter>
+            <MemoryRouter>
+                <AppProvider>
+                    <PageWrapper>
                         <Story />
-                    </MemoryRouter>
-                </PageWrapper>
-            </AppProvider>
+                    </PageWrapper>
+                </AppProvider>
+            </MemoryRouter>
         ),
     ],
 };

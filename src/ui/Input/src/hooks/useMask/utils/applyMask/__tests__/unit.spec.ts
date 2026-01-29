@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@rstest/core';
 
-import { EMaskType, TParsedMask } from '../../parseMask';
+import { EMaskType, type TParsedMask } from '../../parseMask';
 import { applyMask } from '..'; // укажи правильный путь
 
 describe('[UNIT] applyMask', () => {

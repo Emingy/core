@@ -1,0 +1,869 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] MessageItem > should render error message 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__error-U6Ngs7"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 14 14 2M2 2l12 12"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_2_"
+      >
+        <button
+          id="_r_2_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render success message 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_0_"
+      >
+        <button
+          id="_r_0_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render warning message 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__warning-CJHNzF"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 6v3.333"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+          <path
+            d="m2.419 11.83 4.24-8.48c.552-1.105 2.13-1.105 2.683 0l4.24 8.48A1.5 1.5 0 0 1 12.238 14H3.76a1.5 1.5 0 0 1-1.341-2.17M8 11.333v.333"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_1_"
+      >
+        <button
+          id="_r_1_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with ReactNode content 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          <span
+            data-testid="custom"
+          >
+            Custom JSX
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_b_"
+      >
+        <button
+          id="_r_b_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with bottom-center position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_9_"
+      >
+        <button
+          id="_r_9_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with bottom-left position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_8_"
+      >
+        <button
+          id="_r_8_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with bottom-right position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_a_"
+      >
+        <button
+          id="_r_a_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with title 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+        >
+          Alert Title
+        </p>
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_3_"
+      >
+        <button
+          id="_r_3_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with top-center position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_6_"
+      >
+        <button
+          id="_r_6_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with top-left position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_5_"
+      >
+        <button
+          id="_r_5_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render with top-right position 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_7_"
+      >
+        <button
+          id="_r_7_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[SNAPSHOT] MessageItem > should render without title 1`] = `
+<div
+  class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
+>
+  <div
+    class="src-ui-Message-src-index-module__Message-x4gJ4S"
+  >
+    <div
+      class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--gap-4x-ehdL2m"
+    >
+      <div
+        class="src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator-pMDQ_f src-ui-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-gpOaPT"
+      >
+        <svg
+          class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 8.667 1.901 3.802c.661 1.322 2.464 1.484 3.3.266C10.372 8.12 14 2 14 2"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Message-src-index-module__Message__content-IWkf95 src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8 src-ui-Flex-src-index-module__Flex--justify-center-nscGfa src-ui-Flex-src-index-module__Flex--gap-1x-lUedzJ"
+      >
+        <p
+          class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+        >
+          Snapshot content
+        </p>
+      </div>
+    </div>
+    <div
+      class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+    >
+      <label
+        class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__ghosted-sDJOSh src-ui-Button-src-index-module__Button__small-size-PteQvF"
+        for="_r_4_"
+      >
+        <button
+          id="_r_4_"
+        >
+          <svg
+            class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 14 14 2M2 2l12 12"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </label>
+    </div>
+  </div>
+</div>
+`;
