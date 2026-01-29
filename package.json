@@ -31,7 +31,7 @@
         "format:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json,css,md}'",
         "test": "rstest",
         "check-circular-dependency": "dpdm --no-warning --no-tree --transform --exit-code circular:1 src/**/*.{ts,tsx}",
-        "precommit": "pnpm test && pnpm knip && pnpm coverage:ts && pnpm check-circular-dependency && pnpm build && pnpx lint-staged",
+        "precommit": "pnpm test && pnpm knip && pnpm coverage:ts && pnpm check-circular-dependency && pnpm build && pnpx lint-staged && pnpm lint:scss",
         "cm": "cz",
         "knip": "knip",
         "coverage:ts": "type-coverage --project=src"
