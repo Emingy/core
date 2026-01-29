@@ -72,7 +72,11 @@ describe('[UNIT] Option', () => {
     });
 
     it('Does not apply selected state when isSelected is false', () => {
-        render(<Option isSelected={false}>Test</Option>);
+        render(
+            <Option isSelected={false} onSelect={() => {}}>
+                Test
+            </Option>
+        );
         const input = screen.getByRole('checkbox', { hidden: true }) as HTMLInputElement;
 
         expect(input.checked).toBe(false);
@@ -177,7 +181,11 @@ describe('[UNIT] Option', () => {
     });
 
     it('Does not apply selected class when isSelected is false', () => {
-        const { container } = render(<Option isSelected={false}>Test</Option>);
+        const { container } = render(
+            <Option isSelected={false} onSelect={() => {}}>
+                Test
+            </Option>
+        );
         const label = container.querySelector('label');
 
         expect(label?.className).not.toContain('Option__selected');

@@ -11,7 +11,11 @@ import { EAnimationState } from '../constants';
 import { MessageItem } from '..';
 
 const renderWithRouter = (ui: React.ReactElement) => {
-    return render(<MemoryRouter>{ui}</MemoryRouter>);
+    return render(
+        <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            {ui}
+        </MemoryRouter>
+    );
 };
 
 const createItem = (overrides: Partial<TMessageItem> = {}): TMessageItem => ({

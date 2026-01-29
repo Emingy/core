@@ -8,7 +8,11 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { AppProvider } from '..';
 
 const renderWithRouter = (ui: React.ReactElement) => {
-    return render(<MemoryRouter>{ui}</MemoryRouter>);
+    return render(
+        <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            {ui}
+        </MemoryRouter>
+    );
 };
 
 const TestConsumer = () => {

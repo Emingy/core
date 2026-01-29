@@ -8,7 +8,11 @@ import { EMessagePosition } from '../constants';
 import { MessageProvider } from '..';
 
 const renderWithRouter = (ui: React.ReactElement) => {
-    return render(<MemoryRouter>{ui}</MemoryRouter>);
+    return render(
+        <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            {ui}
+        </MemoryRouter>
+    );
 };
 
 describe('[SNAPSHOT] MessageProvider', () => {
