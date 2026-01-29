@@ -29,7 +29,8 @@
             border-color: var(--color-purple-40);
 
             &::after {
-                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iI0Y3RjdGNyIvPgo8L3N2Zz4K");
+                background-color: var(--color-grey-1);
+                border-radius: 12px;
                 width: 12px;
                 height: 12px;
                 top: 5px;
