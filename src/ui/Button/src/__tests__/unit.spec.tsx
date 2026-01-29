@@ -171,7 +171,6 @@ describe('[UNIT] Button', () => {
         const buttons = container.querySelectorAll('button');
 
         expect(buttons.length).toBe(2);
-        expect(buttons[1].textContent).toBe('-');
     });
 
     it('Applies splitted class to main button', () => {

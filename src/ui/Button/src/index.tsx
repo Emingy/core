@@ -2,7 +2,7 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Icon } from '@emingy/core/ui/Icon';
+import { ArrowBottomIcon, Icon } from '@emingy/core/ui/Icon';
 import { Spinner } from '@emingy/core/ui/Spinner';
 import { Typography } from '@emingy/core/ui/Typography';
 
@@ -129,7 +129,7 @@ export const Button = ({
                     type={htmlType}
                     disabled={disabled}
                 >
-                    -
+                    <Icon icon={ArrowBottomIcon} size="sm" />
                 </button>
             )}
         </div>
