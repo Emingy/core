@@ -428,6 +428,57 @@ exports[`[SNAPSHOT] Button > should render with htmlType submit 1`] = `
 </div>
 `;
 
+exports[`[SNAPSHOT] Button > should render with icon 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_l_"
+  >
+    <button
+      id="_r_l_"
+    >
+      <p
+        class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ Button__label src-ui-Typography-src-index-module__Typography--weight-bold-WJgBzA"
+      >
+        With Icon
+      </p>
+      <svg
+        class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with icon and without children 1`] = `
+<div
+  class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf"
+>
+  <label
+    class="src-ui-Button-src-index-module__Button-zslpsH src-ui-Button-src-index-module__Button__primary-JJN2vt src-ui-Button-src-index-module__Button__middle-size-mvK_o5"
+    for="_r_m_"
+  >
+    <button
+      id="_r_m_"
+    >
+      <svg
+        class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
+  </label>
+</div>
+`;
+
 exports[`[SNAPSHOT] Button > should render with isFullWidth 1`] = `
 <div
   class="src-ui-Button-src-index-module__Button__wrapper-LNoaLf src-ui-Button-src-index-module__Button__wrapper_full-width-lU2ysD"

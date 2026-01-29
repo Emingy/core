@@ -1,6 +1,8 @@
 import type { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren, ReactNode } from 'react';
 import type { NavigateOptions } from 'react-router-dom';
 
+import type { TIcon } from '../../Icon';
+
 import type { ESize, EType } from './constants';
 
 type TButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
@@ -18,6 +20,7 @@ type TPropsCommon = {
     navigateOptions?: NavigateOptions;
     isFullWidth?: boolean;
     className?: string;
+    icon?: TIcon;
 };
 
 export type TProps = PropsWithChildren<TPropsCommon> &

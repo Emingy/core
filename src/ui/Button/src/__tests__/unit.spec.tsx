@@ -4,8 +4,16 @@ import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import type { TSvgComponent } from '../../../Icon/src/types';
+
 import { ESize, EType } from '../constants';
 import { Button } from '..';
+
+const MockIcon: TSvgComponent = (props) => (
+    <svg data-testid="button-icon" {...props}>
+        <path d="M0 0h24v24H0z" />
+    </svg>
+);
 
 const LocationDisplay = () => {
     const location = useLocation();
@@ -315,5 +323,24 @@ describe('[UNIT] Button', () => {
         const wrapper = container.firstChild as HTMLElement;
 
         expect(wrapper?.className).not.toContain('Button__wrapper_full-width');
+    });
+
+    it('Renders icon when icon prop is provided', () => {
+        renderWithRouter(<Button icon={MockIcon}>Button</Button>);
+
+        expect(screen.getByTestId('button-icon')).toBeDefined();
+    });
+
+    it('Does not render icon when icon prop is not provided', () => {
+        renderWithRouter(<Button>Button</Button>);
+
+        expect(screen.queryByTestId('button-icon')).toBeNull();
+    });
+
+    it('Renders icon alongside children', () => {
+        renderWithRouter(<Button icon={MockIcon}>Button</Button>);
+
+        expect(screen.getByText('Button')).toBeDefined();
+        expect(screen.getByTestId('button-icon')).toBeDefined();
     });
 });
