@@ -1,8 +1,8 @@
 import cls from 'classnames/bind';
 import React, { useId } from 'react';
 
-import { Spinner } from '../../Spinner';
-import { Typography } from '../../Typography';
+import { Spinner } from '@emingy/core/ui/Spinner';
+import { Typography } from '@emingy/core/ui/Typography';
 
 import styles from './index.module.scss';
 

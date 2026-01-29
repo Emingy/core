@@ -1,7 +1,7 @@
 import cls from 'classnames/bind';
 import React from 'react';
 
-import { Typography } from '../../Typography';
+import { Typography } from '@emingy/core/ui/Typography';
 
 import styles from './index.module.scss';
 

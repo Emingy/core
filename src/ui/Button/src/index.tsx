@@ -2,9 +2,9 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Icon } from '../../Icon';
-import { Spinner } from '../../Spinner';
-import { Typography } from '../../Typography';
+import { Icon } from '@emingy/core/ui/Icon';
+import { Spinner } from '@emingy/core/ui/Spinner';
+import { Typography } from '@emingy/core/ui/Typography';
 
 import styles from './index.module.scss';
 

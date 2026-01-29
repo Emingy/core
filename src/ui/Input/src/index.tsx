@@ -1,7 +1,7 @@
 import cls from 'classnames/bind';
 import React, { type ChangeEvent, useEffect, useId, useRef, useState } from 'react';
 
-import { Typography } from '../../Typography';
+import { Typography } from '@emingy/core/ui/Typography';
 
 import { useMask } from './hooks/useMask';
 import { calculateCursorPosition } from './utils/calculateCursorPosition';
