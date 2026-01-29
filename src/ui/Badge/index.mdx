@@ -1,0 +1,184 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Badge: Compact Label Component
+
+The `Badge` component is a compact label for displaying short text or numbers. It automatically formats numeric values over 99 as "99+" and truncates long text with ellipsis.
+
+---
+
+## I. Component Usage
+
+The component displays text or numeric values in a compact, styled container. It's ideal for notification counts, status indicators, or short labels.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Badge } from '@emingy/core/ui';
+
+// Simple text badge
+
+<Badge value="New" />
+
+// Numeric badge
+
+<Badge value={5} />
+
+// Badge with primary type (default, red)
+
+<Badge value="Hot" type="primary" />
+
+// Badge with secondary type (gray)
+
+<Badge value="Info" type="secondary" />
+
+// Badge with custom className
+
+<Badge value="Custom" className="my-badge" />
+
+// Large number (displays as "99+")
+
+<Badge value={150} />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Badge` component accepts a minimal set of props for maximum flexibility.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`value\`** | \`number\` \\| \`string\` | **Required** | The content to display in the badge. |
+| **\`type\`** | \`'primary'\` \\| \`'secondary'\` | \`'primary'\` | Visual style variant (red or gray). |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+`}
+</Markdown>
+
+---
+
+## III. Badge Types
+
+The component supports two visual variants defined by the `EType` enum:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Badge } from '@emingy/core/ui';
+
+// Primary type (red styling)
+
+<Badge value="New" type="primary" />
+
+// Secondary type (gray styling)
+
+<Badge value="Info" type="secondary" />
+\`\`\`
+`}
+</Markdown>
+
+**Type Styles:**
+
+- **Primary** (`type="primary"`): Red background, used for alerts, notifications, or important information (default).
+- **Secondary** (`type="secondary"`): Gray background, used for general information or status indicators.
+
+---
+
+## IV. Value Display Logic
+
+The Badge automatically formats values based on type:
+
+<Markdown>
+{`
+\`\`\`tsx
+// String values - displayed as-is
+<Badge value="New" />  // Displays: "New"
+<Badge value="Hot" />  // Displays: "Hot"
+
+// Numeric values - converted to string
+
+<Badge value={5} /> // Displays: "5"
+<Badge value={0} /> // Displays: "0"
+<Badge value={99} /> // Displays: "99"
+
+// Large numbers - capped at 99+
+
+<Badge value={100} /> // Displays: "99+"
+<Badge value={150} /> // Displays: "99+"
+<Badge value={9999} /> // Displays: "99+"
+
+// Long text - truncated with ellipsis
+
+<Badge value="This is a very long text that will be truncated" />
+// Displays: "This is a very..." (with ellipsis)
+\`\`\`
+`}
+</Markdown>
+
+**Value Formatting Rules:**
+
+- **String values**: Displayed exactly as provided
+- **Numbers 0-99**: Converted to string and displayed
+- **Numbers > 99**: Displayed as "99+"
+- **Long text**: Truncated with ellipsis if it exceeds the badge width (48px max-width)
+
+The formatting logic is handled by the `getPreparedValue` utility function.
+
+---
+
+## V. Text Truncation
+
+Long text values are automatically truncated with an ellipsis using the `Typography.Base` component with `isTruncated` prop:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Short text - displays fully
+<Badge value="New" />
+
+// Medium text - may truncate based on width
+
+<Badge value="Important" />
+
+// Long text - truncates with ellipsis
+
+<Badge value="Very Long Badge Text That Exceeds Width" />
+// Result: "Very Lon..." (visual truncation with ellipsis)
+\`\`\`
+`}
+</Markdown>
+
+**Truncation behavior:**
+
+- Badge has a maximum width of 48px
+- Text that exceeds this width is truncated
+- Ellipsis (...) appears at the end of truncated text
+- The full text is still in the DOM but visually cut off
+
+---
+
+## VIII. Important Notes
+
+<Markdown>
+    {`
+- The Badge component uses \`Typography.Base\` with \`isTruncated\` for text display.
+- Text truncation happens automatically when content exceeds the 48px max-width.
+- Numbers greater than 99 are automatically formatted as "99+".
+- The Badge has fixed dimensions: max-width 48px, height 24px.
+- Padding is 4px vertical and 8px horizontal.
+- Border radius is 24px (fully rounded).
+- Badge types are stored in the \`EType\` enum (\`Primary\`, \`Secondary\`).
+- The default type is \`Primary\` (red).
+- The \`value\` prop is required and accepts both strings and numbers.
+- Custom styling can be added via the \`className\` prop.
+- The component is a \`<div>\` element, not interactive by default.
+`}
+</Markdown>

@@ -1,0 +1,109 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Badge > should render complex badge 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj complex-badge src-ui-Badge-src-index-module__Badge__secondary-AdFwFG"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    99
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with custom className 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj my-badge src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    Custom
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with long text 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    Very Long Badge Text
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with numeric value 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    5
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with primary type 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    Test
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with secondary type 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__secondary-AdFwFG"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    Badge
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with string value 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    New
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with value 99+ 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    99+
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with zero value 1`] = `
+<div
+  class="src-ui-Badge-src-index-module__Badge-dAbgkj src-ui-Badge-src-index-module__Badge__primary-jq4iK_"
+>
+  <p
+    class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ src-ui-Typography-src-index-module__Typography--truncated-xYvElo"
+  >
+    0
+  </p>
+</div>
+`;

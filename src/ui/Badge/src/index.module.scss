@@ -1,0 +1,19 @@
+.Badge {
+    max-width: 48px;
+    width: fit-content;
+    height: 24px;
+    padding: 4px 8px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    box-shadow: 0 4px 4px 0 var(--color-grey-100);
+
+    &__primary {
+        background-color: var(--color-red-40);
+    }
+
+    &__secondary {
+        background-color: var(--color-grey-40);
+    }
+}
