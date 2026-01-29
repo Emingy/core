@@ -1,0 +1,50 @@
+.Icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: inherit;
+
+    &__xs {
+        width: 12px;
+        height: 12px;
+    }
+
+    &__sm {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__md {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__lg {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__xl {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__primary {
+        color: var(--color-purple-50);
+    }
+
+    &__secondary {
+        color: var(--color-grey-60);
+    }
+
+    &__alert {
+        color: var(--color-red-50);
+    }
+
+    &__success {
+        color: var(--color-green-50);
+    }
+
+    &__inherit {
+        color: inherit;
+    }
+}

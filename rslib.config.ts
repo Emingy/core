@@ -1,5 +1,6 @@
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
+import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { defineConfig } from '@rslib/core';
 
 const isLibBuild = process.env.TYPE === 'lib';
@@ -45,7 +46,15 @@ export default defineConfig({
               }
             : undefined,
     },
-    plugins: [pluginReact(), pluginSass()],
+    plugins: [
+        pluginReact(),
+        pluginSass(),
+        pluginSvgr({
+            svgrOptions: {
+                exportType: 'default',
+            },
+        }),
+    ],
     resolve: {
         alias: {
             '@emingy/core': './src/*',
