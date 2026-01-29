@@ -1,9 +1,10 @@
 import React from 'react';
-import { describe, expect, it } from '@rstest/core';
-import { render, screen } from '@testing-library/react';
 
-import { Badge } from '..';
+import { describe, expect, it } from '@rstest/core';
+import { render } from '@testing-library/react';
+
 import { EType } from '../constants';
+import { Badge } from '..';
 
 describe('[SNAPSHOT] Badge', () => {
     it('should render with string value', () => {
