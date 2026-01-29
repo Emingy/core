@@ -1,7 +1,7 @@
 import cls from 'classnames/bind';
 import React, { useEffect, useState } from 'react';
 
-import { Spinner } from '../../Spinner';
+import { Spinner } from '@emingy/core/ui/Spinner';
 
 import styles from './index.module.scss';
 
