@@ -4,8 +4,16 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from '@rstest/core';
 import { render } from '@testing-library/react';
 
+import type { TSvgComponent } from '../../../Icon/src/types';
+
 import { ESize, EType } from '../constants';
 import { Button } from '..';
+
+const MockIcon: TSvgComponent = (props) => (
+    <svg {...props}>
+        <path d="M0 0h24v24H0z" />
+    </svg>
+);
 
 const renderWithRouter = (ui: React.ReactElement) => {
     return render(<MemoryRouter>{ui}</MemoryRouter>);
@@ -136,6 +144,16 @@ describe('[SNAPSHOT] Button', () => {
 
     it('should render with isFullWidth', () => {
         const { container } = renderWithRouter(<Button isFullWidth>Full Width Button</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render with icon', () => {
+        const { container } = renderWithRouter(<Button icon={MockIcon}>With Icon</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render with icon and without children', () => {
+        const { container } = renderWithRouter(<Button icon={MockIcon} />);
         expect(container.firstChild).toMatchSnapshot();
     });
 });

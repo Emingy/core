@@ -2,6 +2,7 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Icon } from '../../Icon';
 import { Spinner } from '../../Spinner';
 import { Typography } from '../../Typography';
 
@@ -23,6 +24,7 @@ export const Button = ({
     splitted,
     className,
     children,
+    icon,
     isLoading = false,
     href,
     navigateOptions,
@@ -79,14 +81,17 @@ export const Button = ({
                     disabled={disabled || isLoading}
                     onClick={handleClick}
                 >
-                    <Typography.Base
-                        weight="bold"
-                        className={cn(`${BLOCK_NAME}__label`, {
-                            [`${BLOCK_NAME}__label-hidden`]: isLoading,
-                        })}
-                    >
-                        {children}
-                    </Typography.Base>
+                    {children && (
+                        <Typography.Base
+                            weight="bold"
+                            className={cn(`${BLOCK_NAME}__label`, {
+                                [`${BLOCK_NAME}__label-hidden`]: isLoading,
+                            })}
+                        >
+                            {children}
+                        </Typography.Base>
+                    )}
+                    {icon && <Icon icon={icon} size="sm" />}
                     {isLoading && (
                         <Typography.Base
                             elementType="span"
