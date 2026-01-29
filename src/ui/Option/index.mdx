@@ -1,0 +1,344 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Option: Selectable Checkbox Component
+
+The `Option` component is a stylized checkbox control rendered as a label. It supports prefix icons, descriptions, selection states, and disabled states, making it ideal for creating custom select menus, filter lists, or multi-choice interfaces.
+
+---
+
+## I. Component Usage
+
+The component renders a label with a hidden checkbox input. It displays main content, an optional prefix, and an optional description in a vertical layout.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Option } from '@emingy/core/ui';
+
+// Simple option
+
+<Option>Basic Option</Option>
+
+// Selected option
+
+<Option isSelected>Selected Option</Option>
+
+// Disabled option
+
+<Option isDisabled>Disabled Option</Option>
+
+// Option with prefix (icon or emoji)
+
+<Option prefix="🔔">Notifications</Option>
+
+// Option with description
+
+<Option description="Enable desktop notifications">Notifications</Option>
+
+// Option with controlled selection
+
+<Option isSelected={isEnabled} onSelect={() => setIsEnabled(!isEnabled)}>
+    Enable Feature
+</Option>
+
+// Complex option with all features
+
+<Option
+  prefix="✓"
+  description="Recommended for most users"
+  isSelected={selected}
+  onSelect={() => setSelected(!selected)}
+>
+  Standard Plan
+</Option>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Option` component accepts a focused set of props for flexible checkbox behavior.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`children\`** | \`ReactNode\` | | The main text or content of the option. |
+| **\`isSelected\`** | \`boolean\` | \`false\` | Controls the checked state of the checkbox. |
+| **\`onSelect\`** | \`() => void\` | | Callback fired when the option is toggled. |
+| **\`isDisabled\`** | \`boolean\` | \`false\` | Disables interaction and applies disabled styling. |
+| **\`prefix\`** | \`ReactNode\` | | Content displayed before the text (icon, emoji, component). |
+| **\`description\`** | \`string\` | | Descriptive text displayed below the main content. |
+| **\`id\`** | \`string\` | Auto-generated | Custom ID for the checkbox input. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+`}
+</Markdown>
+
+---
+
+## III. Selection State
+
+The `isSelected` prop controls whether the option is checked:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useState } from 'react';
+
+function FeatureToggle() {
+const [enabled, setEnabled] = useState(false);
+
+return (
+<Option
+isSelected={enabled}
+onSelect={() => setEnabled(!enabled)} >
+Enable Feature
+</Option>
+);
+}
+
+// Uncontrolled usage (not recommended)
+
+<Option>Uncontrolled Option</Option>
+
+// Controlled usage (recommended)
+
+<Option isSelected={isChecked} onSelect={handleToggle}>
+    Controlled Option
+</Option>
+
+// Multiple options
+function MultiSelect() {
+const [options, setOptions] = useState({
+option1: false,
+option2: true,
+option3: false
+});
+
+return (
+<>
+<Option
+isSelected={options.option1}
+onSelect={() => setOptions({...options, option1: !options.option1})} >
+Option 1
+</Option>
+<Option
+isSelected={options.option2}
+onSelect={() => setOptions({...options, option2: !options.option2})} >
+Option 2
+</Option>
+</>
+);
+}
+\`\`\`
+`}
+
+</Markdown>
+
+**Selection Behavior:**
+
+- When `isSelected={true}`, the checkbox is checked and `Option__selected` class is applied
+- When `isSelected={false}` or undefined, the checkbox is unchecked
+- The `onSelect` callback is triggered when the checkbox state changes
+- The label is clickable and toggles the checkbox
+
+---
+
+## IV. Disabled State
+
+The `isDisabled` prop prevents interaction with the option:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Disabled option
+<Option isDisabled>Disabled Option</Option>
+
+// Disabled and selected
+
+<Option isSelected isDisabled>
+    Selected but Disabled
+</Option>
+
+// Conditionally disabled
+
+<Option isDisabled={!hasPermission}>Admin Panel</Option>
+
+// Disabled with callback (callback won't fire)
+
+<Option
+  isDisabled
+  onSelect={() => console.log('This will not execute')}
+>
+  Disabled Option
+</Option>
+\`\`\`
+`}
+</Markdown>
+
+**Disabled Behavior:**
+
+- The checkbox input's `disabled` attribute is set to `true`
+- The `Option__disabled` CSS class is applied to the label
+- The `onSelect` callback will not be triggered when disabled
+- Visual styling indicates the option cannot be interacted with
+
+---
+
+## V. Prefix Support
+
+The `prefix` prop accepts any React node to display before the main content:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Emoji prefix
+<Option prefix="🔔">Notifications</Option>
+
+// Icon prefix (string)
+
+<Option prefix="✓">Completed Tasks</Option>
+
+// Component prefix
+const CheckIcon = () => <svg>...</svg>;
+
+<Option prefix={<CheckIcon />}>Custom Icon Option</Option>
+
+// Image prefix
+
+<Option prefix={<img src="/icon.png" alt="" />}>With Image</Option>
+
+// Multiple options with different prefixes
+
+<>
+  <Option prefix="📧">Email Notifications</Option>
+  <Option prefix="💬">SMS Notifications</Option>
+  <Option prefix="🔔">Push Notifications</Option>
+</>
+\`\`\`
+`}
+</Markdown>
+
+**Prefix Rendering:**
+
+- The prefix is wrapped in a `div` with class `Option__prefix`
+- The prefix appears to the left of the main content
+- If no prefix is provided, the prefix div is not rendered
+- Any React node is supported: strings, emojis, icons, components
+
+---
+
+## VI. Description Support
+
+The `description` prop adds explanatory text below the main content:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Option with description
+<Option description="Receive notifications via email">
+  Email Notifications
+</Option>
+
+// Multiple options with descriptions
+
+<>
+    <Option prefix="🚀" description="Best for personal projects">
+        Free Plan
+    </Option>
+    <Option prefix="⭐" description="Recommended for growing teams">
+        Pro Plan
+    </Option>
+    <Option prefix="💎" description="For large organizations">
+        Enterprise Plan
+    </Option>
+</>
+
+// Selected option with description
+
+<Option
+  isSelected
+  description="Currently active"
+>
+  Current Selection
+</Option>
+\`\`\`
+`}
+</Markdown>
+
+**Description Rendering:**
+
+- The description is rendered using `Typography.Micro` component
+- It appears below the main content in a vertical layout (Flex column)
+- The description has class `Option__description`
+- If no description is provided, the description element is not rendered
+- Only string values are supported for description
+
+---
+
+## VII. ID Management
+
+The component handles IDs automatically or accepts custom IDs:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Auto-generated ID (using React's useId)
+<Option>Auto ID Option</Option>
+// Result: <input id=":r1:" /> <label htmlFor=":r1:" />
+
+// Custom ID
+
+<Option id="custom-option-1">Custom ID Option</Option>
+// Result: <input id="custom-option-1" /> <label htmlFor="custom-option-1" />
+
+// Multiple options with custom IDs
+
+<form>
+    <Option id="opt-email">Email</Option>
+    <Option id="opt-sms">SMS</Option>
+    <Option id="opt-push">Push</Option>
+</form>
+
+// Accessing by ID
+const checkbox = document.getElementById('opt-email');
+\`\`\`
+`}
+
+</Markdown>
+
+**ID Behavior:**
+
+- If `id` prop is provided, it's used for the checkbox `id` and label `htmlFor`
+- If `id` prop is not provided, React's `useId()` generates a unique ID
+- The label's `htmlFor` attribute always matches the input's `id`
+- This ensures proper label-input association for accessibility
+
+---
+
+## IX. Important Notes
+
+<Markdown>
+    {`
+- The Option is rendered as a \`<label>\` element wrapping a hidden \`<input type="checkbox">\`.
+- The checkbox input is visually hidden with the \`hidden\` attribute.
+- The label is clickable and toggles the checkbox state.
+- Main content is rendered using \`Typography.Base\` component.
+- Description is rendered using \`Typography.Micro\` component.
+- The component uses \`Flex\` with \`direction="column"\` for vertical layout.
+- When \`isDisabled={true}\`, the \`onSelect\` callback will not be triggered.
+- The \`prefix\` prop accepts any React node (string, emoji, component).
+- The \`description\` prop only accepts string values.
+- IDs are auto-generated using React's \`useId()\` if not provided.
+- The label's \`htmlFor\` always matches the input's \`id\` for accessibility.
+- Multiple Option components can be used together for multi-select interfaces.
+- The component is fully keyboard accessible (Tab, Space to toggle).
+`}
+</Markdown>
