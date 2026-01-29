@@ -1,0 +1,256 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Option > should render basic option 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP"
+  for="_r_0_"
+>
+  <input
+    hidden=""
+    id="_r_0_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Basic Option
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render complex option 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP custom-class src-ui-Option-src-index-module__Option__selected-M11HOV"
+  for="complex-option"
+>
+  <input
+    checked=""
+    hidden=""
+    id="complex-option"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Option-src-index-module__Option__prefix-arMC1T"
+  >
+    ⭐
+  </div>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Complex Option
+    </p>
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Option-src-index-module__Option__description-U3VSMX"
+    >
+      Complex option with all props
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render disabled option 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP src-ui-Option-src-index-module__Option__disabled-AI50F8"
+  for="_r_3_"
+>
+  <input
+    disabled=""
+    hidden=""
+    id="_r_3_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Disabled Option
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render selected and disabled 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP src-ui-Option-src-index-module__Option__disabled-AI50F8 src-ui-Option-src-index-module__Option__selected-M11HOV"
+  for="_r_8_"
+>
+  <input
+    checked=""
+    disabled=""
+    hidden=""
+    id="_r_8_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Selected and Disabled
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render selected option 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP src-ui-Option-src-index-module__Option__selected-M11HOV"
+  for="_r_2_"
+>
+  <input
+    checked=""
+    hidden=""
+    id="_r_2_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Selected Option
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render with custom className 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP custom-option"
+  for="_r_1_"
+>
+  <input
+    hidden=""
+    id="_r_1_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Custom Option
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render with custom id 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP"
+  for="custom-id"
+>
+  <input
+    hidden=""
+    id="custom-id"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Option with ID
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render with description 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP"
+  for="_r_5_"
+>
+  <input
+    hidden=""
+    id="_r_5_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Option with Description
+    </p>
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Option-src-index-module__Option__description-U3VSMX"
+    >
+      This is a helpful description
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render with prefix 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP"
+  for="_r_4_"
+>
+  <input
+    hidden=""
+    id="_r_4_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Option-src-index-module__Option__prefix-arMC1T"
+  >
+    🔔
+  </div>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Option with Prefix
+    </p>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Option > should render with prefix and description 1`] = `
+<label
+  class="src-ui-Option-src-index-module__Option-QFIcQP"
+  for="_r_6_"
+>
+  <input
+    hidden=""
+    id="_r_6_"
+    type="checkbox"
+  />
+  <div
+    class="src-ui-Option-src-index-module__Option__prefix-arMC1T"
+  >
+    ✓
+  </div>
+  <div
+    class="src-ui-Flex-src-index-module__Flex-hw5lRl src-ui-Flex-src-index-module__Flex--direction-column-S0EpG8"
+  >
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-base-l7OoAQ"
+    >
+      Full Option
+    </p>
+    <p
+      class="src-ui-Typography-src-index-module__Typography-ru9vNS src-ui-Typography-src-index-module__Typography--type-micro-TAnjBM src-ui-Option-src-index-module__Option__description-U3VSMX"
+    >
+      Complete description
+    </p>
+  </div>
+</label>
+`;
