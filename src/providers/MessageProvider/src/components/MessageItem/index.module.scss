@@ -1,0 +1,35 @@
+.MessageItem {
+    pointer-events: auto;
+    transition:
+        opacity var(--animation-duration-base) var(--animation-easing-ease-out),
+        transform var(--animation-duration-base) var(--animation-easing-ease-out);
+
+    &__from-bottom {
+        &.MessageItem__entering {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        &.MessageItem__exiting {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+    }
+
+    &__from-top {
+        &.MessageItem__entering {
+            opacity: 0;
+            transform: translateY(-16px);
+        }
+
+        &.MessageItem__exiting {
+            opacity: 0;
+            transform: translateY(-16px);
+        }
+    }
+
+    &__visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

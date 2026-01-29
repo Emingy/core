@@ -1,0 +1,24 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] AppProvider > should render with children 1`] = `
+<div>
+  App content
+</div>
+`;
+
+exports[`[SNAPSHOT] AppProvider > should render with multiple children 1`] = `
+<header>
+  Header
+</header>
+`;
+
+exports[`[SNAPSHOT] AppProvider > should render with nested elements 1`] = `
+<div>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Paragraph
+  </p>
+</div>
+`;

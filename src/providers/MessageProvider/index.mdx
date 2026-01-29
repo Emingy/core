@@ -1,0 +1,170 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Providers/MessageProvider" />
+
+# MessageProvider: Toast Notification Provider
+
+The `MessageProvider` component manages a stack of toast notifications and renders them via `createPortal` into `document.body`. It provides a `MessageContext` consumed by the `useMessage` hook. It is included in `AppProvider` by default.
+
+---
+
+## I. Component Usage
+
+The provider wraps children and makes the `useMessage` hook available to any descendant component. Messages appear as fixed-position toasts on the screen.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { MessageProvider } from '@emingy/core/ui';
+
+// Standalone usage (without AppProvider)
+<MessageProvider>
+    <App />
+</MessageProvider>
+
+// With custom position and max count
+<MessageProvider position="top-right" maxCount={5}>
+    <App />
+</MessageProvider>
+\`\`\`
+`}
+</Markdown>
+
+**Note:** `AppProvider` wraps `MessageProvider` internally, so manual wrapping is not needed when `AppProvider` is used.
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`position\`** | \`'top-left'\` \\| \`'top-center'\` \\| \`'top-right'\` \\| \`'bottom-left'\` \\| \`'bottom-center'\` \\| \`'bottom-right'\` | \`'bottom-right'\` | Position of the message stack on screen. |
+| **\`maxCount\`** | \`number\` | | Maximum number of simultaneously visible messages. Oldest are hidden when exceeded. |
+| **\`children\`** | \`ReactNode\` | | Application content. |
+`}
+</Markdown>
+
+---
+
+## III. Positions
+
+Six screen positions are available through the `EMessagePosition` enum:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { MessageProvider } from '@emingy/core/ui';
+
+<MessageProvider position="top-left">...</MessageProvider>
+<MessageProvider position="top-center">...</MessageProvider>
+<MessageProvider position="top-right">...</MessageProvider>
+<MessageProvider position="bottom-left">...</MessageProvider>
+<MessageProvider position="bottom-center">...</MessageProvider>
+<MessageProvider position="bottom-right">...</MessageProvider> // default
+\`\`\`
+`}
+</Markdown>
+
+**Position behavior:**
+
+- **Top positions**: messages stack downward, newest on top
+- **Bottom positions**: messages stack upward, newest on bottom
+- **Left/Right**: aligned to the corresponding screen edge with `var(--spacing-4x)` (16px) offset
+- **Center**: horizontally centered via `translateX(-50%)`
+
+---
+
+## IV. Max Count
+
+The `maxCount` prop limits the number of visible messages. When exceeded, the oldest messages are hidden:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Only the 3 most recent messages are visible
+<MessageProvider maxCount={3}>
+    <App />
+</MessageProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Integration with AppProvider
+
+`AppProvider` wraps its children in `MessageProvider` automatically:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { AppProvider } from '@emingy/core/ui';
+import { useMessage } from '@emingy/core/hooks';
+
+// AppProvider includes MessageProvider — useMessage works out of the box
+const App = () => (
+    <AppProvider>
+        <MyPage />
+    </AppProvider>
+);
+
+const MyPage = () => {
+    const message = useMessage();
+
+    return (
+        <button onClick={() => message.success({ content: 'Done!' })}>
+            Show toast
+        </button>
+    );
+};
+\`\`\`
+`}
+</Markdown>
+
+To customize `position` or `maxCount`, use `MessageProvider` directly instead of `AppProvider`:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { MessageProvider } from '@emingy/core/ui';
+
+<MessageProvider position="top-center" maxCount={3}>
+    <App />
+</MessageProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Internal Architecture
+
+<Markdown>
+    {`
+- **State management**: \`useReducer\` with \`ADD\`, \`REMOVE\`, and \`CLEAR\` actions.
+- **Context**: \`MessageContext\` provides \`addMessage\`, \`removeMessage\`, and \`clearAll\` methods to the \`useMessage\` hook.
+- **Portal**: \`createPortal(container, document.body)\` renders the message stack outside the component DOM tree.
+- **Message rendering**: Each message is wrapped in a \`MessageItem\` component that handles auto-dismiss timer and CSS enter/exit animations.
+- **ID generation**: Each message receives a unique ID (\`msg-{counter}-{timestamp}\`) returned to the caller for programmatic closing.
+`}
+</Markdown>
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+    {`
+- The message container is positioned \`fixed\` with \`z-index: 9999\`.
+- The container uses \`pointer-events: none\` to avoid blocking page interaction. Individual messages have \`pointer-events: auto\`.
+- Messages gap is \`var(--spacing-2x)\` (8px).
+- The SSR guard \`typeof document !== 'undefined'\` prevents \`createPortal\` from running on the server.
+- React portals preserve React context (Router, Theme, etc.), so the \`Message\` component works correctly despite being rendered in \`document.body\`.
+- Nesting multiple \`MessageProvider\` instances is not recommended — the innermost provider wins for \`useMessage\` consumers.
+- The \`useMessage\` hook throws an error if called outside a \`MessageProvider\`.
+`}
+</Markdown>

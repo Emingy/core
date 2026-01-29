@@ -1,0 +1,141 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Providers/AppProvider" />
+
+# AppProvider: Application Root Context
+
+The `AppProvider` component is the **top-level wrapper** for the React application. It initializes global contexts and applies baseline CSS standards, ensuring all child components have access to the design system and required application state.
+
+---
+
+## I. Purpose and Function
+
+The `AppProvider` centralizes essential application setup logic:
+
+<Markdown>
+    {`
+- **Context provision**: Wraps children in \`MessageProvider\`, making the \`useMessage\` hook available throughout the component tree.
+- **CSS baseline initialization**: Imports a global stylesheet that loads CSS design-token variables and standardizes base element styles for cross-browser consistency.
+`}
+</Markdown>
+
+---
+
+## II. Usage
+
+The `AppProvider` must wrap the root `App` component within the main application entry point (e.g., `index.tsx` or `main.tsx`).
+
+<Markdown>
+{`
+\`\`\`tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { AppProvider } from '@emingy/core/ui';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+root.render(
+    <React.StrictMode>
+        <AppProvider>
+            <App />
+        </AppProvider>
+    </React.StrictMode>
+);
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## III. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`children\`** | \`ReactNode\` | | Application content. |
+| **\`messageContextConfig\`** | \`TMessageProviderProps\` | | Optional configuration for the internal \`MessageProvider\`. Accepts \`position\` and \`maxCount\`. |
+`}
+</Markdown>
+
+### messageContextConfig
+
+<Markdown>
+    {`
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`position\`** | \`'top-left'\` \\| \`'top-center'\` \\| \`'top-right'\` \\| \`'bottom-left'\` \\| \`'bottom-center'\` \\| \`'bottom-right'\` | \`'bottom-right'\` | Position of the message stack on screen. |
+| **\`maxCount\`** | \`number\` | | Maximum number of simultaneously visible messages. |
+`}
+</Markdown>
+
+<Markdown>
+{`
+\`\`\`tsx
+<AppProvider messageContextConfig={{ position: 'top-center', maxCount: 3 }}>
+    <App />
+</AppProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## IV. CSS Baseline
+
+The `AppProvider` imports a global SCSS module that applies the following resets:
+
+<Markdown>
+    {`
+| Rule | Effect |
+| :--- | :--- |
+| \`@use '@emingy/core/styles/variables'\` | Loads all CSS design-token variables (\`--color-*\`, \`--spacing-*\`, \`--animation-*\`, etc.). |
+| \`* { box-sizing: border-box }\` | Applies \`border-box\` sizing to every element. |
+| \`button { ... }\` | Resets native button styles: removes cursor, margin, padding, border, font, color, text-align, appearance, background, outline, and box-shadow. |
+| \`body { background-color: var(--color-grey-100) }\` | Sets the default page background color. |
+`}
+</Markdown>
+
+---
+
+## V. Provided Contexts
+
+<Markdown>
+    {`
+| Context | Provider | Hook | Description |
+| :--- | :--- | :--- | :--- |
+| \`MessageContext\` | \`MessageProvider\` | \`useMessage\` | Toast notification API: \`success\`, \`warning\`, \`error\`, \`close\`, \`closeAll\`. |
+`}
+</Markdown>
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useMessage } from '@emingy/core/hooks';
+
+const MyComponent = () => {
+    const message = useMessage();
+
+    const handleSave = () => {
+        message.success({ content: 'Saved successfully!' });
+    };
+
+    return <button onClick={handleSave}>Save</button>;
+};
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Important Notes
+
+<Markdown>
+    {`
+- \`AppProvider\` should be used once at the root of the application. Nesting multiple instances is not recommended.
+- The CSS baseline stylesheet is imported as a side effect — it is applied as soon as \`AppProvider\` is rendered.
+- All contexts provided by \`AppProvider\` are also available inside React portals (e.g., toast messages rendered in \`document.body\`), since React portals preserve React context.
+- The \`useMessage\` hook throws an error if called outside the \`AppProvider\` (or \`MessageProvider\`) tree.
+`}
+</Markdown>
