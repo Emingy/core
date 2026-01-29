@@ -1,0 +1,196 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Message: Notification Component
+
+The `Message` component displays contextual feedback messages with a status indicator, optional title, and a close button. It supports three severity types — success, warning, and error — and is designed for inline notifications, toast messages, and system alerts.
+
+---
+
+## I. Component Usage
+
+The component renders a `<div>` container with a `StatusIndicator` icon on the left, text content in the center, and a close button on the right. It supports mouse event handlers for hover-based interactions (e.g., pausing auto-dismiss timers).
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Message } from '@emingy/core/ui';
+
+// Success message
+<Message type="success">Operation completed successfully.</Message>
+
+// Warning message with title
+<Message type="warning" title="Attention">
+    Your session will expire in 5 minutes.
+</Message>
+
+// Error message with close handler
+<Message type="error" onCloseClick={() => setVisible(false)}>
+    Failed to save changes. Please try again.
+</Message>
+
+// Message with all props
+<Message
+    type="success"
+    title="Saved"
+    className="my-message"
+    onCloseClick={handleClose}
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+>
+    Your changes have been saved.
+</Message>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Message` component accepts the following props:
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`type\`** | \`'success'\` \\| \`'warning'\` \\| \`'error'\` | **Required** | Severity type that determines the status indicator icon and color. |
+| **\`title\`** | \`string\` | | Optional bold title displayed above the message body. |
+| **\`children\`** | \`ReactNode\` | | Message body content. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+| **\`onCloseClick\`** | \`TButtonProps['onClick']\` | | Handler called when the close button is clicked. |
+| **\`onMouseEnter\`** | \`MouseEventHandler<HTMLDivElement>\` | | Handler called when the mouse enters the message container. |
+| **\`onMouseLeave\`** | \`MouseEventHandler<HTMLDivElement>\` | | Handler called when the mouse leaves the message container. |
+`}
+</Markdown>
+
+---
+
+## III. Message Types
+
+Three severity types are available through the `EType` enum, each with a distinct `StatusIndicator`:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Message } from '@emingy/core/ui';
+
+// Success — green indicator with checkmark icon
+<Message type="success">Saved successfully.</Message>
+
+// Warning — yellow indicator with warning icon
+<Message type="warning">Check your input.</Message>
+
+// Error — red indicator with cross icon
+<Message type="error">Something went wrong.</Message>
+\`\`\`
+`}
+</Markdown>
+
+**Type Details:**
+
+- **Success** (`type="success"`): Green background indicator with `CheckIcon`. Use for confirmations and positive outcomes.
+- **Warning** (`type="warning"`): Yellow background indicator with `WarningIcon`. Use for non-critical alerts and cautions.
+- **Error** (`type="error"`): Red background indicator with `CrossIcon`. Use for failures and critical issues.
+
+---
+
+## IV. Title and Content
+
+The message supports an optional title displayed in bold above the body text:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Without title — body only
+<Message type="success">Your profile has been updated.</Message>
+
+// With title — bold heading + body
+<Message type="error" title="Upload Failed">
+    The file exceeds the maximum size of 10MB.
+</Message>
+
+// Title without body
+<Message type="warning" title="No results found" />
+\`\`\`
+`}
+</Markdown>
+
+**Content behavior:**
+
+- The title is rendered with `Typography.Base` and `weight="bold"`
+- The body is rendered with `Typography.Base`
+- The content area scrolls vertically if it exceeds 50% of the viewport height
+
+---
+
+## V. Close Button
+
+Every message renders a close button (ghosted `Button` with `CrossIcon`) on the right side:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useState } from 'react';
+import { Message } from '@emingy/core/ui';
+
+function Notification() {
+    const [visible, setVisible] = useState(true);
+
+    if (!visible) return null;
+
+    return (
+        <Message type="success" onCloseClick={() => setVisible(false)}>
+            Changes saved.
+        </Message>
+    );
+}
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Mouse Event Handlers
+
+The `onMouseEnter` and `onMouseLeave` handlers are useful for controlling auto-dismiss behavior in toast notifications:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Message } from '@emingy/core/ui';
+
+// Pause auto-dismiss on hover
+<Message
+    type="warning"
+    onMouseEnter={() => clearTimeout(dismissTimer)}
+    onMouseLeave={() => startDismissTimer()}
+    onCloseClick={() => dismiss()}
+>
+    This notification will auto-dismiss.
+</Message>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+    {`
+- The \`type\` prop is **required** and determines the \`StatusIndicator\` icon and color.
+- The close button is always rendered, even when \`onCloseClick\` is not provided.
+- The message container has a fixed width of 320px and a minimum height of 64px.
+- Content area has a maximum height of 50vh with overflow scrolling for long messages.
+- The component uses \`Flex\` for layout and \`Typography.Base\` for text rendering.
+- The \`StatusIndicator\` sub-component renders a 32x32px rounded square with a 16px icon.
+- Mouse event handlers fire on the outer \`<div>\` container.
+- The component must be used within a React Router context (required by the \`Button\` dependency).
+- Custom styling can be added via the \`className\` prop, which is applied to the root \`<div>\`.
+`}
+</Markdown>

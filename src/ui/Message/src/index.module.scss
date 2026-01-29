@@ -1,0 +1,16 @@
+.Message {
+    width: 320px;
+    min-height: 64px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--color-grey-60);
+
+    &__content {
+        max-height: 50vh;
+        overflow: scroll;
+    }
+}

@@ -1,0 +1,22 @@
+.StatusIndicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--color-grey-1);
+
+    &__success {
+        background-color: var(--color-green-60);
+    }
+
+    &__warning {
+        background-color: var(--color-yellow-60);
+    }
+
+    &__error {
+        background-color: var(--color-red-60);
+    }
+}
