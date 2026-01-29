@@ -20,113 +20,81 @@ describe('[SNAPSHOT] Icon', () => {
     });
 
     it('should render with size xs', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} size={ESize.Xs} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} size={ESize.Xs} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with size sm', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} size={ESize.Sm} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} size={ESize.Sm} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with size md', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} size={ESize.Md} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} size={ESize.Md} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with size lg', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} size={ESize.Lg} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} size={ESize.Lg} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with size xl', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} size={ESize.Xl} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} size={ESize.Xl} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with color primary', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} color={EColor.Primary} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} color={EColor.Primary} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with color secondary', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} color={EColor.Secondary} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} color={EColor.Secondary} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with color alert', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} color={EColor.Alert} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} color={EColor.Alert} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with color success', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} color={EColor.Success} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} color={EColor.Success} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with color inherit', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} color={EColor.Inherit} />,
-        );
+        const { container } = render(<Icon icon={MockIcon} color={EColor.Inherit} />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with custom className', () => {
-        const { container } = render(
-            <Icon icon={MockIcon} className="custom-icon" />,
-        );
+        const { container } = render(<Icon icon={MockIcon} className="custom-icon" />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with size and color combined', () => {
         const { container } = render(
-            <Icon
-                icon={MockIcon}
-                size={ESize.Lg}
-                color={EColor.Primary}
-            />,
+            <Icon icon={MockIcon} size={ESize.Lg} color={EColor.Primary} />
         );
 
         expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render with extra SVG props', () => {
-        const { container } = render(
-            <Icon
-                icon={MockIcon}
-                aria-label="close"
-                role="img"
-            />,
-        );
+        const { container } = render(<Icon icon={MockIcon} aria-label="close" role="img" />);
 
         expect(container.firstChild).toMatchSnapshot();
     });
