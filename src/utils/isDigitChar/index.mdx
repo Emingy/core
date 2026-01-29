@@ -1,0 +1,97 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# isDigitChar: Single Digit Validator
+
+The `isDigitChar` utility checks whether a given string is a single ASCII digit character (`0`–`9`). It is used internally for input masking and character-level validation.
+
+---
+
+## I. Function Signature
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isDigitChar } from '@emingy/core/utils';
+
+const result: boolean = isDigitChar(char: string);
+\`\`\`
+`}
+</Markdown>
+
+<Markdown>
+    {`
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| **\`char\`** | \`string\` | The string to check. |
+`}
+</Markdown>
+
+**Returns:** `boolean` — `true` if the string is exactly one ASCII digit (`0`–`9`), `false` otherwise.
+
+---
+
+## II. Usage Examples
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isDigitChar } from '@emingy/core/utils';
+
+// Single ASCII digits — true
+isDigitChar('0'); // true
+isDigitChar('5'); // true
+isDigitChar('9'); // true
+
+// Letters — false
+isDigitChar('a'); // false
+isDigitChar('Z'); // false
+
+// Special characters — false
+isDigitChar(' '); // false
+isDigitChar('!'); // false
+isDigitChar('-'); // false
+
+// Multiple characters — false
+isDigitChar('12');  // false
+isDigitChar('123'); // false
+
+// Empty string — false
+isDigitChar(''); // false
+
+// Non-ASCII digits — false
+isDigitChar('٠'); // false (Arabic-Indic digit)
+isDigitChar('०'); // false (Devanagari digit)
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## III. Implementation Details
+
+<Markdown>
+{`
+\`\`\`tsx
+export const isDigitChar = (char: string): boolean => /^\d$/.test(char);
+\`\`\`
+`}
+</Markdown>
+
+The function uses the regex `/^\d$/` which matches exactly one character in the `\d` class (ASCII digits `0`–`9`).
+
+---
+
+## IV. Important Notes
+
+<Markdown>
+    {`
+- Only **single characters** are accepted. Strings with two or more characters always return \`false\`.
+- Only **ASCII digits** (\`0\`–\`9\`) are recognized. Non-ASCII digit scripts (Arabic-Indic, Devanagari, etc.) return \`false\`.
+- An empty string returns \`false\`.
+- Whitespace and control characters (\`\\n\`, \`\\t\`, \`\\r\`) return \`false\`.
+- The function is pure and has no side effects.
+`}
+</Markdown>

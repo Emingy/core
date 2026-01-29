@@ -1,0 +1,127 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# isLetterChar: Single Letter Validator
+
+The `isLetterChar` utility checks whether a given string is a single Unicode letter character. It supports all writing systems — Latin, Cyrillic, Greek, Arabic, CJK, and more — using the Unicode `\p{L}` category. It is used internally for input masking and character-level validation.
+
+---
+
+## I. Function Signature
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isLetterChar } from '@emingy/core/utils';
+
+const result: boolean = isLetterChar(char: string);
+\`\`\`
+`}
+</Markdown>
+
+<Markdown>
+    {`
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| **\`char\`** | \`string\` | The string to check. |
+`}
+</Markdown>
+
+**Returns:** `boolean` — `true` if the string is exactly one Unicode letter, `false` otherwise.
+
+---
+
+## II. Usage Examples
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isLetterChar } from '@emingy/core/utils';
+
+// Latin letters — true
+isLetterChar('a'); // true
+isLetterChar('Z'); // true
+
+// Cyrillic letters — true
+isLetterChar('я'); // true
+isLetterChar('Ё'); // true
+
+// Letters with diacritics — true
+isLetterChar('é'); // true
+isLetterChar('ñ'); // true
+isLetterChar('ü'); // true
+
+// Greek letters — true
+isLetterChar('α'); // true
+isLetterChar('Ω'); // true
+
+// CJK characters — true
+isLetterChar('中'); // true (Chinese)
+isLetterChar('あ'); // true (Japanese Hiragana)
+isLetterChar('한'); // true (Korean)
+
+// Arabic letters — true
+isLetterChar('ا'); // true
+isLetterChar('ب'); // true
+
+// Digits — false
+isLetterChar('0'); // false
+isLetterChar('9'); // false
+
+// Special characters — false
+isLetterChar(' '); // false
+isLetterChar('!'); // false
+isLetterChar('-'); // false
+
+// Multiple characters — false
+isLetterChar('ab');   // false
+isLetterChar('test'); // false
+
+// Empty string — false
+isLetterChar(''); // false
+
+// Punctuation and symbols — false
+isLetterChar('。'); // false (Japanese period)
+isLetterChar('¿'); // false (inverted question mark)
+isLetterChar('§'); // false (section sign)
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## III. Implementation Details
+
+<Markdown>
+{`
+\`\`\`tsx
+export const isLetterChar = (char: string): boolean => /^\p{L}$/u.test(char);
+\`\`\`
+`}
+</Markdown>
+
+The function uses the Unicode-aware regex `/^\p{L}$/u`:
+
+- `\p{L}` — matches any Unicode character in the "Letter" general category
+- `u` flag — enables Unicode mode for correct multi-script support
+- `^` and `$` anchors — ensure the string contains exactly one character
+
+---
+
+## IV. Important Notes
+
+<Markdown>
+    {`
+- Only **single characters** are accepted. Strings with two or more characters always return \`false\`.
+- Supports **all Unicode letter scripts**: Latin, Cyrillic, Greek, Arabic, CJK (Chinese, Japanese, Korean), Devanagari, and others.
+- **Digits** are not letters — \`isLetterChar('0')\` returns \`false\`.
+- **Non-ASCII digit characters** (Arabic-Indic \`٠\`, Devanagari \`०\`) return \`false\` — they belong to the \`\\p{N}\` category, not \`\\p{L}\`.
+- **Punctuation and symbols** from any script return \`false\` (e.g., \`。\`, \`¿\`, \`§\`).
+- An empty string returns \`false\`.
+- Whitespace and control characters return \`false\`.
+- The function is pure and has no side effects.
+- The \`u\` flag is required for \`\\p{L}\` to work — without it the regex would throw a syntax error.
+`}
+</Markdown>
