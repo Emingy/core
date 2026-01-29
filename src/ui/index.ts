@@ -3,6 +3,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './Divider';
 export * from './Flex';
+export * from './Icon';
 export * from './Input';
 export * from './Link';
 export * from './PageWrapper';

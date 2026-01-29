@@ -1,0 +1,143 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Icon > should render with color alert 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__alert-aLgX8Y"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color inherit 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color primary 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__primary-Bml9Z5"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color secondary 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__secondary-SWiV7f"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color success 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__success-nNBG4K"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with custom className 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia custom-icon"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with default props 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with extra SVG props 1`] = `
+<svg
+  aria-label="close"
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+  role="img"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size and color combined 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__lg-_G93yI src-ui-Icon-src-index-module__Icon__primary-Bml9Z5"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size lg 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__lg-_G93yI src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size md 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__md-KN54lA src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size sm 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__sm-B1YaxD src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size xl 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__xl-ugQNM4 src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size xs 1`] = `
+<svg
+  class="src-ui-Icon-src-index-module__Icon-GTXDR1 src-ui-Icon-src-index-module__Icon__xs-GCGsjO src-ui-Icon-src-index-module__Icon__inherit-FSy7Ia"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;

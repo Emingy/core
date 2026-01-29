@@ -19,6 +19,54 @@ module.exports = function (plop) {
         ],
     });
 
+    plop.setGenerator('icon', {
+        description: 'Create SVG icon file and register export',
+        prompts: [
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Icon name (example: arrow-left)',
+            },
+            {
+                type: 'editor',
+                name: 'svg',
+                message: 'Paste SVG code',
+            },
+        ],
+
+        actions: [
+            {
+                type: 'add',
+                path: 'src/ui/Icon/src/svg/{{kebabCase name}}.svg',
+                template: '{{{svg}}}',
+                transform: (content) =>
+                    content.replace(
+                        /#(?:[0-9a-fA-F]{3}){1,2}\b/g,
+                        'currentColor',
+                    ),
+            },
+            {
+                type: 'append',
+                path: 'src/ui/Icon/index.ts',
+                template:
+                    "export { default as {{pascalCase name}}Icon } from './src/svg/{{kebabCase name}}.svg?react';",
+            },
+            {
+                type: 'append',
+                path: 'src/ui/Icon/index.stories.tsx',
+                pattern: /import \w+Icon from '\.\/src\/svg\/.+\.svg\?react';/,
+                template:
+                    "import {{pascalCase name}}Icon from './src/svg/{{kebabCase name}}.svg?react';",
+            },
+            {
+                type: 'append',
+                path: 'src/ui/Icon/index.stories.tsx',
+                pattern: /^\s+\w+Icon,$/m,
+                template: '    {{pascalCase name}}Icon,',
+            },
+        ],
+    });
+
     plop.setGenerator('styles-variable', {
         description: 'Create styles variable',
         prompts: [
