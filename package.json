@@ -16,7 +16,17 @@
             "import": "./lib/hooks/index.js",
             "require": "./lib/hooks/index.js"
         },
-        "./styles/*": "./lib/styles/*"
+        "./styles/*": "./lib/styles/*",
+        "./providers": {
+            "types": "./lib/providers/index.d.ts",
+            "import": "./lib/providers/index.js",
+            "require": "./lib/providers/index.js"
+        },
+        "./utils": {
+            "types": "./lib/utils/index.d.ts",
+            "import": "./lib/utils/index.js",
+            "require": "./lib/utils/index.js"
+        }
     },
     "scripts": {
         "prepare": "husky",
