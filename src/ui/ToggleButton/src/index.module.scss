@@ -21,11 +21,11 @@
     }
 
     &:hover:not(:has(input[type='checkbox']:disabled)) {
-        color: var(--color-grey-1);
+        color: var(--color-grey-10);
     }
 
     &:has(input[type='checkbox']:checked) {
-        color: var(--color-grey-1);
+        color: var(--color-grey-10);
     }
 
     &__primary:has(input[type='checkbox']:checked) {

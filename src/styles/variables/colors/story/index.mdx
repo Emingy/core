@@ -1,7 +1,7 @@
 import { Meta, Markdown } from '@storybook/blocks';
 import * as Stories from './index.stories';
 
-<Meta of={Stories}/>
+<Meta of={Stories} />
 
 # Color System Documentation: CSS Variables
 
@@ -18,12 +18,12 @@ The entire project color palette is defined using a structured system of **CSS C
 All color variables adhere to a consistent naming convention:
 
 <Markdown>
-{`
+    {`
 | Component | Description | Examples |
 | :--- | :--- | :--- |
 | **--color-** | Standard prefix for all color variables. | |
 | **[hue]** | The primary color identifier (e.g., green, grey, red). | --color-green-50 |
-| **[intensity]** | A numeric suffix indicating the value (lightness or darkness) of the shade. Typically ranges from **1** (lightest) to **100** (darkest/most saturated). | --color-grey-1 |
+| **[intensity]** | A numeric suffix indicating the value (lightness or darkness) of the shade. Typically ranges from **10** (lightest) to **100** (darkest/most saturated). | --color-grey-10 |
 `}
 </Markdown>
 
@@ -39,10 +39,11 @@ To apply any color from the palette, developers **must** reference the correspon
     background-color: var(--color-purple-50);
 }
 
-/* INCORRECT: Direct value usage */
+/_ INCORRECT: Direct value usage _/
 .component-background-error {
-    background-color: #be1d1c; /* Avoid direct HEX values */
+background-color: #be1d1c; /_ Avoid direct HEX values _/
 }
 \`\`\`
 `}
+
 </Markdown>

@@ -1,11 +1,12 @@
 @use '@emingy/core/styles/typography';
+@use '@emingy/core/styles/filters';
 
 .Input {
     flex-direction: row;
     gap: var(--spacing-2x);
     display: flex;
     align-items: center;
-    border: 1px solid var(--color-grey-10);
+    border: 1px solid var(--color-grey-40-50);
     border-radius: var(--spacing-4x);
     padding: 0 var(--spacing-4x);
     min-height: 48px;
@@ -14,13 +15,13 @@
         background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
-    color: var(--color-grey-10);
+    color: var(--color-grey-40-50);
     cursor: text;
 
     &__title {
         position: absolute;
         top: calc(50% - 9px);
-        color: var(--color-grey-10);
+        color: var(--color-grey-40-50);
 
         pointer-events: none;
         transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
@@ -58,7 +59,7 @@
         background: transparent;
 
         @include typography.base;
-        color: var(--color-grey-1);
+        color: var(--color-grey-10);
 
         &[type='number']::-webkit-inner-spin-button,
         &[type='number']::-webkit-outer-spin-button {
@@ -91,12 +92,12 @@
 
     &__prefix {
         padding-inline-end: var(--spacing-2x);
-        border-inline-end: 1px solid var(--color-grey-10);
+        border-inline-end: 1px solid var(--color-grey-40-50);
     }
 
     &__postfix {
         padding-inline-start: var(--spacing-2x);
-        border-inline-start: 1px solid var(--color-grey-10);
+        border-inline-start: 1px solid var(--color-grey-40-50);
     }
 
     /* ----------- */
@@ -117,7 +118,7 @@
     }
 
     &:focus-within:not(.Input--disabled, .Input--error) {
-        border-color: var(--color-grey-1);
+        border-color: var(--color-grey-10);
     }
 
     &--error:focus-within {
@@ -125,11 +126,11 @@
     }
 
     &:hover:not(.Input--disabled, .Input--error) {
-        border-color: var(--color-grey-1);
+        border-color: var(--color-grey-10);
 
         &:not(.Input--has-value) {
             .Input__title {
-                color: var(--color-grey-1);
+                color: var(--color-grey-10);
             }
         }
     }
@@ -161,22 +162,8 @@
 
     &--disabled {
         pointer-events: none;
-        background-color: var(--color-grey-70);
-        border-color: var(--color-grey-20);
-        color: var(--color-grey-20);
         cursor: auto;
 
-        .Input__title {
-            color: var(--color-grey-20);
-        }
-
-        .Input__field {
-            color: var(--color-grey-10);
-        }
-
-        .Input__prefix,
-        .Input__postfix {
-            border-color: var(--color-grey-20);
-        }
+        @include filters.opacity-35;
     }
 }

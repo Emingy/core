@@ -5,7 +5,7 @@
     flex-direction: row;
     gap: 8px;
     border: 1px solid;
-    color: var(--color-grey-1);
+    color: var(--color-grey-10);
     cursor: pointer;
     width: fit-content;
     transition:
@@ -35,17 +35,17 @@
 
         &:has(.Button__primary) {
             box-shadow:
-                0 4px 4px 0 var(--color-grey-100),
+                0 4px 4px 0 var(--color-grey-90-50),
                 0 0 8px 0 var(--color-purple-60);
         }
 
         &:has(.Button__secondary) {
-            box-shadow: 0 4px 4px 0 var(--color-grey-100);
+            box-shadow: 0 4px 4px 0 var(--color-grey-90-50);
         }
 
         &:has(.Button__alert) {
             box-shadow:
-                0 4px 4px 0 var(--color-grey-100),
+                0 4px 4px 0 var(--color-grey-90-50),
                 0 0 8px 0 var(--color-red-60);
         }
     }
@@ -93,11 +93,11 @@
         background-color: transparent;
 
         &:hover {
-            background-color: var(--color-grey-50);
+            background-color: var(--color-grey-50-50);
         }
 
         &:active {
-            background-color: var(--color-grey-60);
+            background-color: var(--color-grey-60-50);
         }
     }
 
