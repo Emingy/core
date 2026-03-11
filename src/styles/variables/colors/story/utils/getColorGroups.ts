@@ -19,7 +19,12 @@ export const getColorGroups = (): TColorGroup => {
     });
 
     const colorGroupNames = sortedColorVarKeys.reduce((colorGroupName: string[], colorVarKey) => {
-        const currentGroupName = colorVarKey.match(/--color-(\w+)-/)?.[1];
+        const matchWithTransparent = colorVarKey.match(/--color-(\w+)-(\w+)-(\w+)$/);
+        const match = colorVarKey.match(/--color-(\w+)-(\w+)$/);
+
+        const currentGroupName = matchWithTransparent?.[3]
+            ? `${matchWithTransparent?.[1]}-${matchWithTransparent?.[3]}`
+            : match?.[1];
 
         if (currentGroupName && !colorGroupName.includes(currentGroupName)) {
             return [...colorGroupName, currentGroupName];
@@ -41,6 +46,20 @@ export const getColorGroups = (): TColorGroup => {
                         }>,
                         varKey
                     ) => {
+                        if (colorGroupName.match(/(\w+)-(\w+)/)) {
+                            const [colorName, opacity] = colorGroupName.split('-');
+
+                            if (new RegExp(`--color-${colorName}-\\w+-${opacity}`).test(varKey)) {
+                                return [
+                                    ...currentVars,
+                                    {
+                                        name: varKey,
+                                        value: cssVars[varKey],
+                                    },
+                                ];
+                            }
+                        }
+
                         if (new RegExp(`--color-${colorGroupName}-`).test(varKey)) {
                             return [
                                 ...currentVars,

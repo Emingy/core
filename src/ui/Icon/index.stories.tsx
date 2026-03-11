@@ -64,7 +64,7 @@ export const Gallery = (props: Omit<TIconProps, 'icon'>) => {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
                     gap: 16,
-                    color: 'var(--color-grey-1)',
+                    color: 'var(--color-grey-10)',
                 }}
             >
                 {filtered.map(([name, SvgIcon]) => (

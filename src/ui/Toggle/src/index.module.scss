@@ -9,18 +9,18 @@
         border-radius: 16px;
         appearance: none;
         -webkit-appearance: none;
-        background-color: var(--color-grey-50);
+        background-color: var(--color-grey-50-50);
         flex-shrink: 0;
         margin: 0;
         transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
         position: relative;
-        box-shadow: 0 4px 4px 0 var(--color-grey-100);
+        box-shadow: 0 4px 4px 0 var(--color-grey-90-50);
 
         &::after {
             width: 20px;
             height: 20px;
             border-radius: 16px;
-            background-color: var(--color-grey-1);
+            background-color: var(--color-grey-10);
             top: 1px;
             position: absolute;
             left: 1px;
@@ -29,11 +29,11 @@
         }
 
         &:hover {
-            background-color: var(--color-grey-40);
+            background-color: var(--color-grey-40-50);
         }
 
         &:active {
-            background-color: var(--color-grey-60);
+            background-color: var(--color-grey-60-50);
         }
 
         &:checked {
