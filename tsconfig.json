@@ -8,8 +8,10 @@
         },
         "baseUrl": "./",
         "rootDir": "./src",
-        "noEmit": true
+        "noEmit": true,
+        "module": "es2015",
+        "moduleResolution": "bundler"
     },
     "include": ["src/**/*"],
-    "exclude": ["lib", "node_modules", ".storybook", "src/styles"]
+    "exclude": ["lib", "node_modules", ".storybook", "src/styles", "**/*.spec.*"]
 }
