@@ -1,0 +1,143 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Icon > should render with color alert 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__alert-H1PyT4"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color inherit 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color primary 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__primary-6sDlaa"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color secondary 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__secondary-pLBlTO"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with color success 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__success-M74p_3"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with custom className 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww custom-icon"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with default props 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with extra SVG props 1`] = `
+<svg
+  aria-label="close"
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+  role="img"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size and color combined 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__lg-vYJES3 src-ui-basic-Icon-src-index-module__Icon__primary-6sDlaa"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size lg 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__lg-vYJES3 src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size md 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__md-OC1CrN src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size sm 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size xl 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xl-M7lQ9a src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;
+
+exports[`[SNAPSHOT] Icon > should render with size xs 1`] = `
+<svg
+  class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xs-h6rwbG src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+>
+  <path
+    d="M0 0h24v24H0z"
+  />
+</svg>
+`;

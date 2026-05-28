@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { EType } from '@emingy/core/ui/Message/src/constants';
+import { EMessageType } from '@emingy/core/ui';
 import { describe, expect, it } from '@rstest/core';
 import { render } from '@testing-library/react';
 
@@ -21,7 +21,7 @@ const renderWithRouter = (ui: React.ReactElement) => {
 
 const createItem = (overrides: Partial<TMessageItem> = {}): TMessageItem => ({
     id: 'msg-1',
-    type: EType.Success,
+    type: EMessageType.Success,
     content: 'Snapshot content',
     ...overrides,
 });
@@ -42,7 +42,7 @@ describe('[SNAPSHOT] MessageItem', () => {
     it('should render warning message', () => {
         const { container } = renderWithRouter(
             <MessageItem
-                item={createItem({ type: EType.Warning })}
+                item={createItem({ type: EMessageType.Warning })}
                 position={EMessagePosition.BottomRight}
                 onRemove={noop}
             />
@@ -54,7 +54,7 @@ describe('[SNAPSHOT] MessageItem', () => {
     it('should render error message', () => {
         const { container } = renderWithRouter(
             <MessageItem
-                item={createItem({ type: EType.Error })}
+                item={createItem({ type: EMessageType.Error })}
                 position={EMessagePosition.BottomRight}
                 onRemove={noop}
             />

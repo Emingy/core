@@ -1,0 +1,93 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Divider > should render basic divider 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__horizontal-JWsiH6"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render horizontal divider 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__horizontal-JWsiH6"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render horizontal with label 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__horizontal-JWsiH6"
+>
+  <span />
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Section
+  </p>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render vertical divider 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__vertical-VKEyKy"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render vertical with label 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__vertical-VKEyKy"
+>
+  <span />
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Text
+  </p>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with all props 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y my-custom-divider src-ui-layout-Divider-src-index-module__Divider__vertical-VKEyKy"
+>
+  <span />
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Divider
+  </p>
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with custom className 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y custom-divider src-ui-layout-Divider-src-index-module__Divider__horizontal-JWsiH6"
+>
+  <span />
+  <span />
+</div>
+`;
+
+exports[`[SNAPSHOT] Divider > should render with label 1`] = `
+<div
+  class="src-ui-layout-Divider-src-index-module__Divider-no7I1Y src-ui-layout-Divider-src-index-module__Divider__horizontal-JWsiH6"
+>
+  <span />
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    OR
+  </p>
+  <span />
+</div>
+`;

@@ -1,7 +1,7 @@
 import cls from 'classnames/bind';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { Message } from '@emingy/core/ui/Message';
+import { Message } from '@emingy/core/ui';
 
 import { DEFAULT_DURATION } from '../../constants';
 

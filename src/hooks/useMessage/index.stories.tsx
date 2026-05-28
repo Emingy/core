@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import type { Meta } from 'storybook-react-rsbuild';
 
-import { Button } from '@emingy/core/ui/Button';
-import { Flex } from '@emingy/core/ui/Flex';
-import { Typography } from '@emingy/core/ui/Typography';
+import { Typography } from '@emingy/core/ui';
+import { Button } from '@emingy/core/ui';
+import { Flex } from '@emingy/core/ui';
 
 import { useMessage } from './src';
 

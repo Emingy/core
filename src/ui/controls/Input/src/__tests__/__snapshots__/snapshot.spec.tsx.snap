@@ -1,0 +1,400 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Input > should render basic input 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_0_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_0_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render disabled state 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--disabled-p6k8XS"
+  for="_r_7_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        disabled=""
+        id="_r_7_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render disabled with error 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--disabled-p6k8XS src-ui-controls-Input-src-index-module__Input--error-EdwRzF"
+  for="_r_c_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        disabled=""
+        id="_r_c_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render error state 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--error-EdwRzF"
+  for="_r_8_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_8_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with all props 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 custom-class src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  for="_r_b_"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__prefix-cyeL9B"
+  >
+    $
+  </span>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <span
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__title-dTQ_EY"
+    >
+      Amount
+    </span>
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_b_"
+        value="1000"
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__postfix-zvNd7K"
+  >
+    USD
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with custom className 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 my-custom-input"
+  for="_r_e_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_e_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with mask 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_9_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_9_"
+        value=""
+      />
+      <span
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__mask-V1ce3l"
+        data-testid="input-mask"
+      >
+        +7 (111) 111-11-11
+      </span>
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with mask and title 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_d_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <span
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__title-dTQ_EY"
+    >
+      Phone Number
+    </span>
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_d_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with placeholder 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_2_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_2_"
+        placeholder="Enter your email"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with postfix 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_5_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_5_"
+        value=""
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__postfix-zvNd7K"
+  >
+    .com
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with prefix 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_4_"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__prefix-cyeL9B"
+  >
+    @
+  </span>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_4_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with prefix and postfix 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_6_"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__prefix-cyeL9B"
+  >
+    $
+  </span>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_6_"
+        value=""
+      />
+    </div>
+  </div>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__postfix-zvNd7K"
+  >
+    USD
+  </span>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with title 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_1_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <span
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__title-dTQ_EY"
+    >
+      Email
+    </span>
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_1_"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with title and value 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  for="_r_a_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <span
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Input-src-index-module__Input__title-dTQ_EY"
+    >
+      Phone
+    </span>
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_a_"
+        value="+7 (555) 123-45-67"
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with value 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  for="_r_3_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_3_"
+        value="test@example.com"
+      />
+    </div>
+  </div>
+</label>
+`;
+
+exports[`[SNAPSHOT] Input > should render with various HTML input attributes 1`] = `
+<label
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8"
+  for="_r_f_"
+>
+  <div
+    class="src-ui-controls-Input-src-index-module__Input__wrapper-GFlzD1"
+  >
+    <div
+      class="src-ui-controls-Input-src-index-module__Input__input-container-BqR8Ks"
+    >
+      <input
+        autocomplete="email"
+        class="src-ui-controls-Input-src-index-module__Input__field-k0Gne9"
+        id="_r_f_"
+        name="email"
+        required=""
+        type="email"
+        value=""
+      />
+    </div>
+  </div>
+</label>
+`;

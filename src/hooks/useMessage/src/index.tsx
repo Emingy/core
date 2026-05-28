@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 
 import { MessageContext } from '@emingy/core/providers/MessageProvider/src/context';
-import { EType } from '@emingy/core/ui/Message/src/constants';
+import { EMessageType } from '@emingy/core/ui';
 
 import type { TUseMessageReturn } from './types.ts';
 
@@ -16,9 +16,9 @@ export const useMessage = (): TUseMessageReturn => {
 
     return useMemo<TUseMessageReturn>(
         () => ({
-            success: (config) => context.addMessage(EType.Success, config),
-            warning: (config) => context.addMessage(EType.Warning, config),
-            error: (config) => context.addMessage(EType.Error, config),
+            success: (config) => context.addMessage(EMessageType.Success, config),
+            warning: (config) => context.addMessage(EMessageType.Warning, config),
+            error: (config) => context.addMessage(EMessageType.Error, config),
             close: (id) => context.removeMessage(id),
             closeAll: () => context.clearAll(),
         }),

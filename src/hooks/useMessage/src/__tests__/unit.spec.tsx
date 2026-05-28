@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { MessageContext } from '@emingy/core/providers/MessageProvider/src/context';
-import type { TMessageContext } from '@emingy/core/providers/MessageProvider/src/types';
-import { EType } from '@emingy/core/ui/Message/src/constants';
+import type { TMessageContext } from '@emingy/core/providers';
+import { MessageContext } from '@emingy/core/providers';
+import { EMessageType } from '@emingy/core/ui';
 import { describe, expect, it, rstest } from '@rstest/core';
 import { renderHook } from '@testing-library/react';
 
@@ -46,7 +46,7 @@ describe('[UNIT] useMessage', () => {
 
         result.current.success(config);
 
-        expect(context.addMessage).toHaveBeenCalledWith(EType.Success, config);
+        expect(context.addMessage).toHaveBeenCalledWith(EMessageType.Success, config);
     });
 
     it('warning calls addMessage with Warning type', () => {
@@ -57,7 +57,7 @@ describe('[UNIT] useMessage', () => {
 
         result.current.warning(config);
 
-        expect(context.addMessage).toHaveBeenCalledWith(EType.Warning, config);
+        expect(context.addMessage).toHaveBeenCalledWith(EMessageType.Warning, config);
     });
 
     it('error calls addMessage with Error type', () => {
@@ -68,7 +68,7 @@ describe('[UNIT] useMessage', () => {
 
         result.current.error(config);
 
-        expect(context.addMessage).toHaveBeenCalledWith(EType.Error, config);
+        expect(context.addMessage).toHaveBeenCalledWith(EMessageType.Error, config);
     });
 
     it('success returns message ID', () => {
@@ -124,7 +124,7 @@ describe('[UNIT] useMessage', () => {
 
         result.current.success(config);
 
-        expect(context.addMessage).toHaveBeenCalledWith(EType.Success, config);
+        expect(context.addMessage).toHaveBeenCalledWith(EMessageType.Success, config);
     });
 
     it('Returns stable reference when context does not change', () => {

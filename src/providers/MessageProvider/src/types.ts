@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactNode } from 'react';
 
-import type { EType } from '@emingy/core/ui/Message/src/constants';
+import type { EMessageType } from '@emingy/core/ui';
 
 import type { EActionType, EMessagePosition } from './constants';
 
@@ -12,11 +12,11 @@ export type TMessageConfig = {
 
 export type TMessageItem = TMessageConfig & {
     id: string;
-    type: `${EType}`;
+    type: `${EMessageType}`;
 };
 
 export type TMessageContext = {
-    addMessage: (type: `${EType}`, config: TMessageConfig) => string;
+    addMessage: (type: `${EMessageType}`, config: TMessageConfig) => string;
     removeMessage: (id: string) => void;
     clearAll: () => void;
 };

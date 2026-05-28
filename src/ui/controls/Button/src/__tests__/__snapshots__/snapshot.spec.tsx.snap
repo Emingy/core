@@ -1,0 +1,598 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Button > should render alert type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__alert-ATihCt src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_5_"
+  >
+    <button
+      id="_r_5_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Alert
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render all combinations 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L complex-button src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__large-size-oV_yRB"
+    for="_r_g_"
+  >
+    <span
+      class=""
+    >
+      ←
+    </span>
+    <button
+      id="_r_g_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Complex Button
+      </p>
+    </button>
+    <span
+      class=""
+    >
+      →
+    </span>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render basic button 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_0_"
+  >
+    <button
+      id="_r_0_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Click me
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render disabled state 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__disabled-Fb84uT"
+    for="_r_9_"
+  >
+    <button
+      disabled=""
+      id="_r_9_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Disabled
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render ghosted type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_3_"
+  >
+    <button
+      id="_r_3_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Ghosted
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render large size 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__large-size-oV_yRB"
+    for="_r_8_"
+  >
+    <button
+      id="_r_8_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Large
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render loading state 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__loading-hsdHzU"
+    for="_r_h_"
+  >
+    <button
+      disabled=""
+      id="_r_h_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-controls-Button-src-index-module__Button__label-hidden-SZlgzW src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Loading
+      </p>
+      <span
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
+      >
+        <svg
+          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          viewBox="0 0 50 50"
+        >
+          <circle
+            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            cx="25"
+            cy="25"
+            fill="none"
+            r="20"
+            stroke-width="6"
+          />
+        </svg>
+      </span>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render loading state with primary type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__loading-hsdHzU"
+    for="_r_i_"
+  >
+    <button
+      disabled=""
+      id="_r_i_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-controls-Button-src-index-module__Button__label-hidden-SZlgzW src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Loading
+      </p>
+      <span
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
+      >
+        <svg
+          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          viewBox="0 0 50 50"
+        >
+          <circle
+            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            cx="25"
+            cy="25"
+            fill="none"
+            r="20"
+            stroke-width="6"
+          />
+        </svg>
+      </span>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render loading state with secondary type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__loading-hsdHzU"
+    for="_r_j_"
+  >
+    <button
+      disabled=""
+      id="_r_j_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-controls-Button-src-index-module__Button__label-hidden-SZlgzW src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Loading
+      </p>
+      <span
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
+      >
+        <svg
+          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          viewBox="0 0 50 50"
+        >
+          <circle
+            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            cx="25"
+            cy="25"
+            fill="none"
+            r="20"
+            stroke-width="6"
+          />
+        </svg>
+      </span>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render medium size 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_7_"
+  >
+    <button
+      id="_r_7_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Medium
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render outlined type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__outlined-Z3vNuR src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_4_"
+  >
+    <button
+      id="_r_4_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Ghosted
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render primary type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_1_"
+  >
+    <button
+      id="_r_1_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Primary
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render secondary type 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_2_"
+  >
+    <button
+      id="_r_2_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Secondary
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render small size 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+    for="_r_6_"
+  >
+    <button
+      id="_r_6_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Small
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-wmVZ_S"
+    for="_r_d_"
+  >
+    <button
+      id="_r_d_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Split
+      </p>
+    </button>
+  </label>
+  <button
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-right-EAKOzc"
+  >
+    <svg
+      class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m21 7-7.513 8.348a2 2 0 0 1-2.974 0L3 7"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with custom className 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L custom-button src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_e_"
+  >
+    <button
+      id="_r_e_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Custom
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with htmlType submit 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_f_"
+  >
+    <button
+      id="_r_f_"
+      type="submit"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Submit
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with icon 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_l_"
+  >
+    <button
+      id="_r_l_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        With Icon
+      </p>
+      <svg
+        class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with icon and without children 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_m_"
+  >
+    <button
+      id="_r_m_"
+    >
+      <svg
+        class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+      >
+        <path
+          d="M0 0h24v24H0z"
+        />
+      </svg>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with isFullWidth 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV src-ui-controls-Button-src-index-module__Button__wrapper_full-width-OGEvsM"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_k_"
+  >
+    <button
+      id="_r_k_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Full Width Button
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with postfix 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_b_"
+  >
+    <button
+      id="_r_b_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Next
+      </p>
+    </button>
+    <span
+      class=""
+    >
+      →
+    </span>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with prefix 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_a_"
+  >
+    <span
+      class=""
+    >
+      $
+    </span>
+    <button
+      id="_r_a_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        Price
+      </p>
+    </button>
+  </label>
+</div>
+`;
+
+exports[`[SNAPSHOT] Button > should render with prefix and postfix 1`] = `
+<div
+  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+>
+  <label
+    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA"
+    for="_r_c_"
+  >
+    <span
+      class=""
+    >
+      $
+    </span>
+    <button
+      id="_r_c_"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ Button__label src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+      >
+        100
+      </p>
+    </button>
+    <span
+      class=""
+    >
+      USD
+    </span>
+  </label>
+</div>
+`;

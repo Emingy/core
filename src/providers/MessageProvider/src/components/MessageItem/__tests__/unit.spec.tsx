@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { EType } from '@emingy/core/ui/Message/src/constants';
+import { EMessageType } from '@emingy/core/ui';
 import { afterEach, beforeEach, describe, expect, it, rstest } from '@rstest/core';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
@@ -20,7 +20,7 @@ const renderWithRouter = (ui: React.ReactElement) => {
 
 const createItem = (overrides: Partial<TMessageItem> = {}): TMessageItem => ({
     id: 'msg-1',
-    type: EType.Success,
+    type: EMessageType.Success,
     content: 'Test message',
     ...overrides,
 });
@@ -346,7 +346,7 @@ describe('[UNIT] MessageItem', () => {
     });
 
     it('Renders success message type', () => {
-        const item = createItem({ type: EType.Success, content: 'Success msg' });
+        const item = createItem({ type: EMessageType.Success, content: 'Success msg' });
         const onRemove = rstest.fn();
 
         renderWithRouter(
@@ -357,7 +357,7 @@ describe('[UNIT] MessageItem', () => {
     });
 
     it('Renders warning message type', () => {
-        const item = createItem({ type: EType.Warning, content: 'Warning msg' });
+        const item = createItem({ type: EMessageType.Warning, content: 'Warning msg' });
         const onRemove = rstest.fn();
 
         renderWithRouter(
@@ -368,7 +368,7 @@ describe('[UNIT] MessageItem', () => {
     });
 
     it('Renders error message type', () => {
-        const item = createItem({ type: EType.Error, content: 'Error msg' });
+        const item = createItem({ type: EMessageType.Error, content: 'Error msg' });
         const onRemove = rstest.fn();
 
         renderWithRouter(

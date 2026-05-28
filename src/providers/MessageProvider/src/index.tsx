@@ -2,7 +2,7 @@ import cls from 'classnames/bind';
 import React, { useCallback, useMemo, useReducer } from 'react';
 import { createPortal } from 'react-dom';
 
-import type { EType } from '@emingy/core/ui/Message/src/constants';
+import type { EMessageType } from '@emingy/core/ui';
 
 import { MessageItem } from './components/MessageItem';
 
@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 
 import { DEFAULT_POSITION, EActionType } from './constants';
 import { MessageContext } from './context';
-import type { TAction, TMessageConfig, TMessageItem, TProps } from './types';
+import type { TAction, TMessageConfig, TMessageContext, TMessageItem, TProps } from './types';
 
 const BLOCK_NAME = 'MessageContainer';
 const cn = cls.bind(styles);
@@ -34,7 +34,7 @@ const messagesReducer = (state: TMessageItem[], action: TAction): TMessageItem[]
 export const MessageProvider = ({ children, position = DEFAULT_POSITION, maxCount }: TProps) => {
     const [messages, dispatch] = useReducer(messagesReducer, []);
 
-    const addMessage = useCallback((type: `${EType}`, config: TMessageConfig): string => {
+    const addMessage = useCallback((type: `${EMessageType}`, config: TMessageConfig): string => {
         const id = generateId();
 
         dispatch({ type: EActionType.Add, payload: { ...config, id, type } });
@@ -79,3 +79,5 @@ export const MessageProvider = ({ children, position = DEFAULT_POSITION, maxCoun
 };
 
 export type TMessageProviderProps = TProps;
+export { MessageContext };
+export type { TMessageContext };
