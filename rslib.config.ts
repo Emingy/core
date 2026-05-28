@@ -23,6 +23,7 @@ export default defineConfig({
                       '!src/**/*.{mdx,snap}',
                       '!src/**/story',
                       '!src/styles/**',
+                      '!**/.DS_Store',
                   ]
                 : ['./src/**', '!**/dist', '!**/node_modules'],
         },
@@ -39,7 +40,12 @@ export default defineConfig({
                           to: './styles',
                           globOptions: {
                               dot: false,
-                              ignore: ['**/story/**/*', '**/*.mdx', '**/*.stories.*'],
+                              ignore: [
+                                  '**/.DS_Store',
+                                  '**/story/**/*',
+                                  '**/*.mdx',
+                                  '**/*.stories.*',
+                              ],
                           },
                       },
                   ],
