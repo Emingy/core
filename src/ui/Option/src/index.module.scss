@@ -9,6 +9,7 @@
     border-radius: 8px;
     position: relative;
     color: var(--color-grey-10);
+    user-select: none;
 
     &:not(.Option__disabled) {
         cursor: pointer;
