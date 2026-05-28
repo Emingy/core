@@ -1,8 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from '@rstest/core';
 import { act, renderHook } from '@testing-library/react';
 
-import { SCREEN_SIZE_BREAKPOINT_CHECKERS } from '../constants';
-import { EDeviceType } from '../constants';
+import { EDeviceType, SCREEN_SIZE_BREAKPOINT_CHECKERS } from '../constants';
 import { useDeviceType } from '..';
 
 const originalInnerWidth = window.innerWidth;
