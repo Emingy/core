@@ -9,8 +9,19 @@
     border-radius: 16px;
     background-color: var(--color-grey-60-50);
 
+    &__wrapper {
+        flex: 1;
+        min-width: 0;
+    }
+
     &__content {
         max-height: 50vh;
-        overflow: scroll;
+        overflow-y: scroll;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    &__title {
+        flex-shrink: 0;
     }
 }

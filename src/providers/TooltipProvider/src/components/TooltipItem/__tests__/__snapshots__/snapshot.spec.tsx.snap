@@ -6,7 +6,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with isExiting true 1`] = `
   style="top: 12px; left: 0px;"
 >
   <p
-    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
   >
     Exiting tooltip
   </p>
@@ -19,7 +19,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position bottom 1`] = `
   style="top: 12px; left: 0px;"
 >
   <p
-    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
   >
     Bottom tooltip
   </p>
@@ -32,7 +32,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position right 1`] = `
   style="top: 0px; left: 12px;"
 >
   <p
-    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
   >
     Right tooltip
   </p>
@@ -45,7 +45,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position top 1`] = `
   style="top: 12px; left: 0px;"
 >
   <p
-    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
   >
     Snapshot tooltip
   </p>
@@ -58,7 +58,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with size sm 1`] = `
   style="top: 12px; left: 0px;"
 >
   <p
-    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh"
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
   >
     Small tooltip
   </p>

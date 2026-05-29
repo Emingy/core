@@ -1,4 +1,5 @@
 @use '@emingy/core/styles/shadows';
+@use '@emingy/core/styles/typography';
 
 .TooltipItem {
     @include shadows.shadow-sm;
@@ -15,6 +16,16 @@
         opacity var(--animation-duration-medium),
         transform var(--animation-duration-medium);
     transition-timing-function: var(--animation-easing-ease-in);
+
+    &__label {
+        margin: 0;
+        padding: 0;
+        color: var(--color-grey-10);
+        text-align: left;
+        width: fit-content;
+
+        @include typography.base;
+    }
 
     &__top {
         transform: translate(-50%, calc(-100% - 4px));
@@ -56,5 +67,9 @@
     &__sm {
         padding: 4px 8px;
         border-radius: 8px;
+
+        .TooltipItem__label {
+            @include typography.small;
+        }
     }
 }

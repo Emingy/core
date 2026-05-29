@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 
 import { MessageContext } from '@emingy/core/providers/MessageProvider/src/context';
-import { EMessageType } from '@emingy/core/ui';
+import { EMessageType } from '@emingy/core/ui/dataDisplay/Message';
 
 import type { TUseMessageReturn } from './types.ts';
 

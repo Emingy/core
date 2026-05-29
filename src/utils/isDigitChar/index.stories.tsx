@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Meta } from 'storybook-react-rsbuild';
 
-import { Flex, Typography } from '@emingy/core/ui';
+import { Typography } from '@emingy/core/ui/basic/Typography';
+import { Flex } from '@emingy/core/ui/layout/Flex';
 
 import { isDigitChar } from '.';
 

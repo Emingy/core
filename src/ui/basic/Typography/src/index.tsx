@@ -1,5 +1,9 @@
 import cls from 'classnames/bind';
-import React, { type ElementType, type ReactNode } from 'react';
+import React, { type ElementType, type ReactNode, useRef } from 'react';
+
+import { Tooltip } from '@emingy/core/ui/dataDisplay/Tooltip';
+
+import { useIsTruncated } from './hooks/useIsTruncated';
 
 import styles from './index.module.scss';
 
@@ -24,31 +28,42 @@ const getTypographyNodeByType =
         ...restProps
     }: TProps<T>) => {
         const Tag = elementType ?? HTML_TAG_BY_TYPO_TYPE[type];
+        const ref = useRef<HTMLElement>(null);
+        const isTextTruncated = useIsTruncated({ ref, isTruncated, maxLines, children });
 
-        return (
-            <Tag
-                {...restProps}
-                className={cn(`${BLOCK_NAME}`, `${BLOCK_NAME}--type-${type}`, className, {
-                    [`${BLOCK_NAME}--italic`]: isItalic,
-                    [`${BLOCK_NAME}--truncated`]: isTruncated,
-                    [`${BLOCK_NAME}--align-${align}`]: align,
-                    [`${BLOCK_NAME}--case-${textCase}`]: textCase,
-                    [`${BLOCK_NAME}--weight-${weight}`]: weight,
-                })}
-                style={
-                    maxLines && !isTruncated
-                        ? {
-                              WebkitLineClamp: maxLines,
-                              display: '-webkit-box',
-                              WebkitBoxOrient: 'vertical',
-                              overflow: 'hidden',
-                          }
-                        : undefined
-                }
-            >
-                {children}
-            </Tag>
-        );
+        const typographyNode = (() => {
+            return (
+                <Tag
+                    {...restProps}
+                    ref={ref}
+                    className={cn(`${BLOCK_NAME}`, `${BLOCK_NAME}--type-${type}`, className, {
+                        [`${BLOCK_NAME}--italic`]: isItalic,
+                        [`${BLOCK_NAME}--truncated`]: isTruncated,
+                        [`${BLOCK_NAME}--align-${align}`]: align,
+                        [`${BLOCK_NAME}--case-${textCase}`]: textCase,
+                        [`${BLOCK_NAME}--weight-${weight}`]: weight,
+                    })}
+                    style={
+                        maxLines && !isTruncated
+                            ? {
+                                  WebkitLineClamp: maxLines,
+                                  display: '-webkit-box',
+                                  WebkitBoxOrient: 'vertical',
+                                  overflow: 'hidden',
+                              }
+                            : undefined
+                    }
+                >
+                    {children}
+                </Tag>
+            );
+        })();
+
+        if (isTextTruncated) {
+            return <Tooltip text={children}>{typographyNode}</Tooltip>;
+        }
+
+        return typographyNode;
     };
 
 export const Typography = {

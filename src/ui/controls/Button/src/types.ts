@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren, ReactNode } from 'react';
 import type { NavigateOptions } from 'react-router-dom';
 
-import type { TIcon } from '@emingy/core/ui';
+import type { TIcon } from '@emingy/core/ui/basic/Icon';
 
 import type { ESize, EType } from './constants';
 

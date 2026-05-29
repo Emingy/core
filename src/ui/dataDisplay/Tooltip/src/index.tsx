@@ -10,13 +10,13 @@ import type { TProps } from './types';
 const BLOCK_NAME = 'Tooltip';
 const cn = cls.bind(styles);
 
-export const Tooltip = ({ children, ...tooltipProps }: TProps) => {
+export const Tooltip = ({ children, disabled, ...tooltipProps }: TProps) => {
     const { showTooltip, hideTooltip } = useTooltipContext();
     const triggerRef = useRef<HTMLDivElement>(null);
     const id = useId();
 
     const handleMouseEnter = () => {
-        if (!(triggerRef.current instanceof HTMLDivElement)) return;
+        if (disabled || !(triggerRef.current instanceof HTMLDivElement)) return;
 
         showTooltip({
             ...tooltipProps,
@@ -26,6 +26,7 @@ export const Tooltip = ({ children, ...tooltipProps }: TProps) => {
     };
 
     const handleMouseLeave = () => {
+        if (disabled) return;
         hideTooltip(id);
     };
 

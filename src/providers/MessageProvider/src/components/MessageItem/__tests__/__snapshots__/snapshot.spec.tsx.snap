@@ -8,7 +8,7 @@ exports[`[SNAPSHOT] MessageItem > should render error message 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__error-qLfOG1"
@@ -79,7 +79,7 @@ exports[`[SNAPSHOT] MessageItem > should render success message 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -150,7 +150,7 @@ exports[`[SNAPSHOT] MessageItem > should render warning message 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__warning-oyfZkR"
@@ -228,7 +228,7 @@ exports[`[SNAPSHOT] MessageItem > should render with ReactNode content 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -303,7 +303,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-center position 1`] 
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -374,7 +374,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-left position 1`] = 
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -445,7 +445,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-right position 1`] =
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -516,7 +516,7 @@ exports[`[SNAPSHOT] MessageItem > should render with title 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -541,7 +541,7 @@ exports[`[SNAPSHOT] MessageItem > should render with title 1`] = `
         class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
-          class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+          class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-dataDisplay-Message-src-index-module__Message__title-LntRu4 src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
         >
           Alert Title
         </p>
@@ -592,7 +592,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-center position 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -663,7 +663,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-left position 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -734,7 +734,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-right position 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
@@ -805,7 +805,7 @@ exports[`[SNAPSHOT] MessageItem > should render without title 1`] = `
     class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
-      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
+      class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__wrapper-GgSjLx src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
         class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"

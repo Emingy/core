@@ -33,52 +33,113 @@ The `Typography` component is an object containing nine named subcomponents, eac
 
 ### Basic Usage
 
-Use the desired subcomponent to set the size, then apply modifiers via props.
-
 <Markdown>
 {`
 \`\`\`tsx
 import { Typography } from '@emingy/core/ui';
 
-// Renders an <h1> tag with the 'heading-1' style
-<Typography.Heading1 weight="bold">
-  Main Dashboard Title
-</Typography.Heading1>
+<Typography.Heading1 weight="bold">Main Dashboard Title</Typography.Heading1>
 
-// Renders a <p> tag with the 'base' style
-<Typography.Base align="center">
-  Standard paragraph text centered.
-</Typography.Base>
+<Typography.Base align="center">Standard paragraph text centered.</Typography.Base>
 \`\`\`
 `}
 </Markdown>
 
-## II. Component Props (Modifiers)
-All subcomponents accept the following props to modify the text's appearance and behavior.
+---
 
-<Markdown> 
+## II. Component Props
+
+<Markdown>
 {`
-| Prop Name | Type | Default | Description | 
+| Prop Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| weight | 'medium' \\| 'semibold' \\| 'bold' | 400 (via mixin) | Applies a specific font weight. | 
-| elementType | ElementType | (Varies) | Overrides the default HTML tag for semantic or structural reasons. | 
-| align | 'center' \\| 'right' \\| 'justify' | 'left' (via CSS) | Sets the horizontal text alignment. | 
-| isItalic | boolean | false | Renders text with font-style: italic. |
-| textCase | 'uppercase' \\| 'lowercase' \\| 'capitalize' | undefined | Applies text-transform. | 
-| isTruncated | boolean | false | Truncates single-line text with ellipsis (...). | 
-| maxLines | number | undefined | Limits multi-line text to a specified number of lines with ellipsis. | 
-| className | string | undefined | Additional CSS classes. | 
+| **\`weight\`** | \`'medium' | 'semibold' | 'bold'\` | | Applies a specific font weight. |
+| **\`elementType\`** | \`ElementType\` | (varies) | Overrides the default HTML tag for semantic or structural reasons. |
+| **\`align\`** | \`'center' | 'right' | 'justify'\` | \`'left'\` | Sets the horizontal text alignment. |
+| **\`isItalic\`** | \`boolean\` | \`false\` | Renders text with \`font-style: italic\`. |
+| **\`textCase\`** | \`'uppercase' | 'lowercase' | 'capitalize'\` | | Applies \`text-transform\`. |
+| **\`isTruncated\`** | \`boolean\` | \`false\` | Truncates single-line text with ellipsis. Automatically shows a tooltip with the full text on hover when the text overflows. |
+| **\`maxLines\`** | \`number\` | | Limits multi-line text to N lines with ellipsis. Shows a tooltip with the full text on hover when the text overflows. |
+| **\`className\`** | \`string\` | | Additional CSS classes. |
 `}
 </Markdown>
 
-## III. Truncation Control
-The component offers two distinct methods for handling text overflow. Only one method should be used at a time.
+---
 
-<Markdown> 
+## III. Truncation and Tooltip
+
+When `isTruncated` or `maxLines` is set, Typography automatically detects whether the text is actually overflowing its container. If it is — a `Tooltip` with the full text appears on hover.
+
+<Markdown>
 {`
-| Property | Behavior | Mechanism | 
-| :--- | :--- | :--- | 
-| isTruncated | Single-line overflow | Applies white-space: nowrap and overflow: hidden (standard CSS). |
-| maxLines | Multi-line overflow | Uses proprietary -webkit-line-clamp styles (for cross-browser multi-line truncation). |
+\`\`\`tsx
+// Single-line truncation — tooltip on hover when text overflows
+<div style={{ width: 200 }}>
+    <Typography.Base isTruncated>
+        This is a very long text that will be cut off with an ellipsis
+    </Typography.Base>
+</div>
+
+// Multi-line truncation — tooltip on hover when text exceeds 3 lines
+<div style={{ width: 300 }}>
+    <Typography.Base maxLines={3}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </Typography.Base>
+</div>
+\`\`\`
+`}
+</Markdown>
+
+**How it works:**
+
+- Typography renders a `Tooltip` wrapper whenever `isTruncated` or `maxLines` is set
+- After mount, `useIsTruncated` measures `scrollWidth > offsetWidth` (single-line) or `scrollHeight > offsetHeight` (multi-line) via `ResizeObserver`
+- The Tooltip is `disabled` while the text fits — hover does nothing
+- When the container shrinks and overflow is detected, the Tooltip activates automatically
+
+**Detection precision:**
+
+<Markdown>
+{`
+| Prop | Overflow check | Tooltip text |
+| :--- | :--- | :--- |
+| **\`isTruncated\`** | \`scrollWidth > offsetWidth\` | Full \`children\` string |
+| **\`maxLines\`** | \`scrollHeight > offsetHeight\` | Full \`children\` string |
+`}
+</Markdown>
+
+**Requirements:**
+
+- `TooltipProvider` (or `AppProvider` if it wraps one) must be present in the component tree
+- `children` must be a plain `string` for the tooltip text to display correctly — React elements are not supported as tooltip content
+- The container must have a constrained width/height for overflow to be detectable
+
+---
+
+## IV. Truncation CSS
+
+<Markdown>
+{`
+| Property | Behavior | Mechanism |
+| :--- | :--- | :--- |
+| \`isTruncated\` | Single-line overflow | \`white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%\` |
+| \`maxLines\` | Multi-line overflow | \`-webkit-line-clamp\`, \`display: -webkit-box\`, \`overflow: hidden\` |
+`}
+</Markdown>
+
+Note: `isTruncated` and `maxLines` are mutually exclusive — `maxLines` styles apply only when `isTruncated` is not set.
+
+---
+
+## V. Important Notes
+
+<Markdown>
+    {`
+- Typography is the **only** component in the system for rendering text — avoid using raw HTML tags.
+- The \`elementType\` prop allows semantic override (e.g., render \`Typography.Large\` as a \`span\` or \`label\`) without changing the visual style.
+- The Tooltip is always present in the DOM when \`isTruncated\` or \`maxLines\` is set (using \`disabled\` to suppress it when text fits) — this keeps the DOM structure stable and prevents detection oscillation.
+- Detection re-runs automatically on container resize via \`ResizeObserver\`.
+- Only \`string\` children are supported for tooltip text. If \`children\` is a React element, the tooltip will display an empty string.
 `}
 </Markdown>

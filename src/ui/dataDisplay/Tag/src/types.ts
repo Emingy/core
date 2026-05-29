@@ -1,4 +1,4 @@
-import type { TIconProps } from '@emingy/core/ui/basic';
+import type { TIconProps } from '@emingy/core/ui/basic/Icon';
 
 import type { EColor, ESize } from './constants';
 

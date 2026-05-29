@@ -30,7 +30,7 @@ export const Message = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
-            <Flex direction="row" gap="4x">
+            <Flex direction="row" gap="4x" className={cn(`${BLOCK_NAME}__wrapper`)}>
                 <StatusIndicator type={type} />
                 <Flex
                     direction="column"
@@ -38,7 +38,15 @@ export const Message = ({
                     justify="center"
                     className={cn(`${BLOCK_NAME}__content`)}
                 >
-                    {title && <Typography.Base weight="bold">{title}</Typography.Base>}
+                    {title && (
+                        <Typography.Base
+                            weight="bold"
+                            isTruncated
+                            className={cn(`${BLOCK_NAME}__title`)}
+                        >
+                            {title}
+                        </Typography.Base>
+                    )}
                     <Typography.Base>{children}</Typography.Base>
                 </Flex>
             </Flex>

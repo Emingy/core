@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactNode } from 'react';
 
-import type { EMessageType } from '@emingy/core/ui';
+import type { EMessageType } from '@emingy/core/ui/dataDisplay/Message';
 
 import type { EActionType, EMessagePosition } from './constants';
 

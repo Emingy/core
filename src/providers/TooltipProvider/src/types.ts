@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 import type { EActionType, EPosition, ESize } from './constants';
 
@@ -11,7 +11,7 @@ export type TProps = PropsWithChildren;
 
 export type TTooltipParams = {
     id: string;
-    text: string;
+    text: ReactNode;
     trigger: HTMLDivElement;
     position?: `${EPosition}`;
     size?: `${ESize}`;
@@ -19,7 +19,7 @@ export type TTooltipParams = {
 
 export type TTooltipItem = {
     id: string;
-    text: string;
+    text: ReactNode;
     position: `${EPosition}`;
     trigger: HTMLDivElement;
     size: `${ESize}`;

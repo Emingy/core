@@ -2,7 +2,7 @@ import cls from 'classnames/bind';
 import React, { useCallback, useMemo, useReducer } from 'react';
 import { createPortal } from 'react-dom';
 
-import type { EMessageType } from '@emingy/core/ui';
+import type { EMessageType } from '@emingy/core/ui/dataDisplay/Message';
 
 import { MessageItem } from './components/MessageItem';
 

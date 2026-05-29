@@ -1,10 +1,6 @@
 import cls from 'classnames/bind';
 import React, { useRef } from 'react';
 
-import { Typography } from '@emingy/core/ui/basic/Typography';
-
-import { ESize } from '../../constants';
-
 import { useTooltipPosition } from './hooks/useTooltipPosition';
 
 import styles from './index.module.scss';
@@ -17,17 +13,6 @@ const cn = cls.bind(styles);
 export const TooltipItem = ({ item, isExiting, onRemove }: TProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const { visible, posDir, style } = useTooltipPosition(item, ref);
-
-    const TextNode = (() => {
-        switch (item.size) {
-            case ESize.Md:
-                return Typography.Small;
-            case ESize.Sm:
-                return Typography.Micro;
-            default:
-                return Typography.Small;
-        }
-    })();
 
     const handleTransitionEnd = (e: React.TransitionEvent<HTMLDivElement>) => {
         if (e.target !== e.currentTarget) return;
@@ -43,7 +28,7 @@ export const TooltipItem = ({ item, isExiting, onRemove }: TProps) => {
             style={style}
             onTransitionEnd={handleTransitionEnd}
         >
-            <TextNode>{item.text}</TextNode>
+            <p className={cn(`${BLOCK_NAME}__label`)}>{item.text}</p>
         </div>
     );
 };

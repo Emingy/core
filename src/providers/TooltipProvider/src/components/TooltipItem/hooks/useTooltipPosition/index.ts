@@ -10,7 +10,9 @@ export const useTooltipPosition = (item: TTooltipItem, ref: RefObject<HTMLDivEle
     const [visible, setVisible] = useState(false);
     const [posDir, setPosDir] = useState(item.position);
     const [style, setStyle] = useState<CSSProperties>(() => {
-        const rect = getElementPageRect(item.trigger);
+        const rect = getElementPageRect(
+            (item.trigger.firstElementChild ?? item.trigger) as HTMLElement
+        );
         return calcStyle(rect, item.position);
     });
 
@@ -18,7 +20,9 @@ export const useTooltipPosition = (item: TTooltipItem, ref: RefObject<HTMLDivEle
         const el = ref.current;
         if (!el) return;
 
-        const rect = getElementPageRect(item.trigger);
+        const rect = getElementPageRect(
+            (item.trigger.firstElementChild ?? item.trigger) as HTMLElement
+        );
         const flipped = flipPos(item.position, rect, el.offsetWidth, el.offsetHeight);
 
         if (flipped !== item.position) {

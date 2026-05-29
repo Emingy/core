@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta } from 'storybook-react-rsbuild';
 
-import { Flex, Input } from '@emingy/core/ui';
+import { Input } from '@emingy/core/ui/controls/Input';
+import { Flex } from '@emingy/core/ui/layout/Flex';
 
 import { Typography } from '../Typography';
 

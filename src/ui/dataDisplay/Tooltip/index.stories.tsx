@@ -9,6 +9,11 @@ import { Tooltip } from './src';
 const meta: Meta = {
     title: 'UI/DataDisplay/Tooltip',
     component: Tooltip,
+    argTypes: {
+        text: {
+            type: 'string',
+        },
+    },
 };
 
 export default meta;

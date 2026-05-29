@@ -1,7 +1,8 @@
 import cls from 'classnames/bind';
 import React, { type MouseEvent } from 'react';
 
-import { CrossIcon, Icon, Typography } from '@emingy/core/ui/basic';
+import { CrossIcon, Icon } from '@emingy/core/ui/basic/Icon';
+import { Typography } from '@emingy/core/ui/basic/Typography';
 
 import styles from './index.module.scss';
 
