@@ -1,0 +1,139 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# getElementPageRect: Cross-Frame Element Rect
+
+`getElementPageRect` returns the viewport-relative bounding rectangle of a DOM element, with correction for iframe nesting. It is used by `TooltipProvider` to calculate where tooltip bubbles should be positioned.
+
+---
+
+## I. Function Signature
+
+<Markdown>
+{`
+\`\`\`ts
+import { getElementPageRect } from '@emingy/core/utils/getElementPageRect';
+
+const rect = getElementPageRect(element: HTMLElement);
+\`\`\`
+`}
+</Markdown>
+
+<Markdown>
+    {`
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| **\`element\`** | \`HTMLElement\` | The DOM element to measure. |
+`}
+</Markdown>
+
+**Returns:**
+
+<Markdown>
+    {`
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| **\`left\`** | \`number\` | Distance from the left edge of the viewport (accounting for iframe offset). |
+| **\`top\`** | \`number\` | Distance from the top edge of the viewport (accounting for iframe offset). |
+| **\`right\`** | \`number\` | \`left + width\` |
+| **\`bottom\`** | \`number\` | \`top + height\` |
+| **\`width\`** | \`number\` | Element width in pixels. |
+| **\`height\`** | \`number\` | Element height in pixels. |
+`}
+</Markdown>
+
+---
+
+## II. Usage Examples
+
+<Markdown>
+{`
+\`\`\`ts
+import { getElementPageRect } from '@emingy/core/utils/getElementPageRect';
+
+const button = document.querySelector('button')!;
+const rect = getElementPageRect(button);
+
+// rect.left, rect.top — viewport-relative origin
+// rect.right = rect.left + rect.width
+// rect.bottom = rect.top + rect.height
+
+// Place a tooltip 12px above the button center:
+const tooltipLeft = rect.left + rect.width / 2 + window.scrollX;
+const tooltipTop = rect.top + window.scrollY - 12;
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## III. iframe Correction
+
+When an element is inside one or more `<iframe>` elements, `getBoundingClientRect()` returns coordinates relative to the iframe's own viewport — not the top-level window. `getElementPageRect` walks up the `window.parent` chain and adds each frame's own `getBoundingClientRect()` offset:
+
+<Markdown>
+{`
+\`\`\`
+Top-level window
+└── <iframe> at (200, 100) in top-level viewport
+    └── element at (50, 30) inside iframe viewport
+
+getBoundingClientRect() on element → { left: 50, top: 30 }   ← iframe-relative
+getElementPageRect(element)        → { left: 250, top: 130 }  ← top-level-relative
+\`\`\`
+`}
+</Markdown>
+
+The traversal stops if `frameElement` is not an `HTMLElement` (e.g., cross-origin iframes where access is restricted).
+
+---
+
+## IV. Implementation
+
+<Markdown>
+{`
+\`\`\`ts
+export const getElementPageRect = (element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+
+    let left = rect.left;
+    let top = rect.top;
+    let currentWindow: Window = window;
+
+    while (currentWindow !== currentWindow.parent) {
+        const frame = currentWindow.frameElement;
+        if (!(frame instanceof HTMLElement)) break;
+
+        const frameRect = frame.getBoundingClientRect();
+        left += frameRect.left;
+        top += frameRect.top;
+        currentWindow = currentWindow.parent;
+    }
+
+    return {
+        left, top,
+        right: left + rect.width,
+        bottom: top + rect.height,
+        width: rect.width,
+        height: rect.height,
+    };
+};
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Important Notes
+
+<Markdown>
+    {`
+- The returned coordinates are **viewport-relative** (same origin as \`getBoundingClientRect()\`), not page-relative. Add \`window.scrollX\`/\`scrollY\` when positioning \`position: absolute\` elements.
+- The function does not cache results — call it each time a fresh measurement is needed (e.g., on every \`mouseenter\`).
+- Cross-origin iframes block access to \`frameElement\`, so the traversal stops at the first cross-origin boundary. Coordinates will be relative to the innermost same-origin window.
+- In non-browser environments (SSR), \`window\` is undefined — guard the call site with \`typeof window !== 'undefined'\`.
+- The function is pure and has no side effects.
+`}
+</Markdown>
