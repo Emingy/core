@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Option, type TOptionProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Option',
+    title: 'UI/Controls/Option',
     component: Option,
     argTypes: {
         prefix: {

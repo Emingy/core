@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Button, type TButtonProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Button',
+    title: 'UI/Controls/Button',
     component: Button,
     argTypes: {
         prefix: {

@@ -5,7 +5,7 @@ import type { TFlexProps } from './src';
 import { Flex } from './src';
 
 const meta: Meta = {
-    title: 'UI/Flex',
+    title: 'UI/Layout/Flex',
     component: Flex,
     argTypes: {
         countNodes: {

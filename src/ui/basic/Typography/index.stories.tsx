@@ -5,7 +5,7 @@ import { type TTypographyProps, Typography } from './src';
 const TypographyTypes = Object.keys(Typography);
 
 const meta: Meta = {
-    title: 'UI/Typography',
+    title: 'UI/Basic/Typography',
     component: Typography.Base,
     argTypes: {
         type: {

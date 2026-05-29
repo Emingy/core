@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { ToggleButton, type TToggleButtonProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/ToggleButton',
+    title: 'UI/Controls/ToggleButton',
     component: ToggleButton,
     argTypes: {
         prefix: {

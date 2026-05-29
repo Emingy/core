@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Toggle, type TToggleProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Toggle',
+    title: 'UI/Controls/Toggle',
     component: Toggle,
     argTypes: {
         description: {

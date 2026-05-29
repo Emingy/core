@@ -25,7 +25,7 @@ const ICONS: Record<string, TSvgComponent> = {
 };
 
 const meta: Meta = {
-    title: 'Icon/Gallery',
+    title: 'UI/Basic/Icon/Gallery',
     component: Icon,
     argTypes: {
         icon: { table: { disable: true } },

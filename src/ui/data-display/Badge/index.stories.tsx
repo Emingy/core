@@ -6,7 +6,7 @@ import { Flex, Typography } from '@emingy/core/ui';
 import { Badge, type TBadgeProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Badge',
+    title: 'UI/DataDisplay/Badge',
     component: Badge,
     argTypes: {
         value: {

@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Input, type TInputProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Input',
+    title: 'UI/Controls/Input',
     component: Input,
     argTypes: {
         prefix: {

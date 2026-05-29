@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Radio, type TRadioProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Radio',
+    title: 'UI/Controls/Radio',
     component: Radio,
     argTypes: {
         description: {

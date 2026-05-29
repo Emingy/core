@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Link, type TLinkProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Link',
+    title: 'UI/Navigation/Link',
     component: Link,
     argTypes: {
         disabled: {

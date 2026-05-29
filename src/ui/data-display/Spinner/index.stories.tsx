@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Spinner, type TSpinnerProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Spinner',
+    title: 'UI/DataDisplay/Spinner',
     component: Spinner,
 };
 

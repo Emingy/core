@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Checkbox, type TCheckboxProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Checkbox',
+    title: 'UI/Controls/Checkbox',
     component: Checkbox,
     argTypes: {
         description: {

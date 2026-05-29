@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Divider, type TDividerProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Divider',
+    title: 'UI/Layout/Divider',
     component: Divider,
     argTypes: {
         label: {

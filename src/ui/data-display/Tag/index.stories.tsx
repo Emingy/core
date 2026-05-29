@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Tag, type TTagProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Tag',
+    title: 'UI/DataDisplay/Tag',
     component: Tag,
 };
 

@@ -4,7 +4,7 @@ import type { Meta } from 'storybook-react-rsbuild';
 import { Message, type TMessageProps } from './src';
 
 const meta: Meta = {
-    title: 'UI/Message',
+    title: 'UI/DataDisplay/Message',
     component: Message,
     argTypes: {
         type: {
