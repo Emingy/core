@@ -1,0 +1,218 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Tag: Label Component
+
+The `Tag` component is a compact label for categorizing or marking content. It supports multiple colors, two sizes, an optional close button, and click interaction.
+
+---
+
+## I. Component Usage
+
+The component renders as a `<button>` element. By default it is non-interactive — click handling is enabled only when `onClick` is provided.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Tag } from '@emingy/core/ui';
+
+// Simple tag
+
+<Tag text="Design" />
+
+// Tag with color
+
+<Tag text="Bug" color="red" />
+
+// Small tag
+
+<Tag text="Draft" size="sm" />
+
+// Closable tag
+
+<Tag text="React" closable onClose={(id) => console.log('closed', id)} id="1" />
+
+// Clickable tag
+
+<Tag text="Frontend" onClick={(id) => console.log('clicked', id)} id="2" />
+
+// Tag with icon
+
+<Tag text="Starred" icon={StarIcon} />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`text\`** | \`string\` | | Text content displayed inside the tag. |
+| **\`color\`** | \`'purple' | 'grey' | 'yellow' | 'red' | 'green'\` | \`'purple'\` | Color variant of the tag. |
+| **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Size variant of the tag. |
+| **\`icon\`** | \`TIconProps['icon']\` | | Icon rendered before the text. |
+| **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
+| **\`id\`** | \`string | number\` | | Identifier passed to \`onClick\` and \`onClose\` callbacks. Required when using either callback. |
+| **\`onClick\`** | \`(id: string | number) => void\` | | Click handler. Enables pointer events and applies \`Tag__clickable\` class. |
+| **\`onClose\`** | \`(id: string | number) => void\` | | Close handler. Required together with \`closable\` and \`id\`. |
+| **\`closable\`** | \`boolean\` | | When \`true\`, renders a close icon. Required together with \`onClose\` and \`id\`. |
+`}
+</Markdown>
+
+**Note:** `onClick`, `onClose`, and `closable` each require `id` to be provided. TypeScript enforces this via discriminated union types.
+
+---
+
+## III. Color Variants
+
+<Markdown>
+{`
+\`\`\`tsx
+import { ETagColor, Tag } from '@emingy/core/ui';
+
+<Tag text="Purple" color={ETagColor.Purple} />  // default
+<Tag text="Grey"   color={ETagColor.Grey} />
+<Tag text="Yellow" color={ETagColor.Yellow} />
+<Tag text="Red"    color={ETagColor.Red} />
+<Tag text="Green"  color={ETagColor.Green} />
+\`\`\`
+`}
+</Markdown>
+
+Each color has hover and active states defined in CSS via design tokens.
+
+---
+
+## IV. Size Variants
+
+<Markdown>
+{`
+\`\`\`tsx
+import { ETagSize, Tag } from '@emingy/core/ui';
+
+// Medium (default): padding 8px 12px, border-radius 12px, Typography.Base
+<Tag text="Medium" size={ETagSize.Md} />
+
+// Small: padding 4px 8px, border-radius 8px, Typography.Micro
+<Tag text="Small" size={ETagSize.Sm} />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Closable Tag
+
+When `closable` is set, a `CrossIcon` is rendered at the end of the tag. Clicking it calls `onClose` with the tag's `id` and **stops event propagation**, so the outer `onClick` is not triggered.
+
+<Markdown>
+{`
+\`\`\`tsx
+const [tags, setTags] = useState([
+  { id: 1, text: 'React' },
+  { id: 2, text: 'TypeScript' },
+]);
+
+const handleClose = (id: string | number) => {
+  setTags((prev) => prev.filter((tag) => tag.id !== id));
+};
+
+{tags.map((tag) => (
+  <Tag
+    key={tag.id}
+    id={tag.id}
+    text={tag.text}
+    closable
+    onClose={handleClose}
+  />
+))}
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Clickable Tag
+
+Providing `onClick` enables pointer events and applies the `Tag__clickable` CSS modifier.
+
+<Markdown>
+{`
+\`\`\`tsx
+<Tag
+  text="Frontend"
+  id="frontend"
+  onClick={(id) => console.log('selected:', id)}
+/>
+
+// Clickable and closable at the same time
+
+<Tag
+  text="React"
+  id="react"
+  onClick={(id) => selectTag(id)}
+  closable
+  onClose={(id) => removeTag(id)}
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Styling
+
+The component applies CSS classes based on props:
+
+<Markdown>
+{`
+\`\`\`tsx
+// Base structure
+<button class="Tag Tag__purple">
+  <svg><!-- optional icon --></svg>
+  <span>Text</span>
+  <svg><!-- optional close icon --></svg>
+</button>
+
+// Small size
+<button class="Tag Tag__purple Tag__small">...</button>
+
+// Clickable
+<button class="Tag Tag__purple Tag__clickable">...</button>
+
+// Custom className
+<button class="Tag Tag__red custom-class">...</button>
+\`\`\`
+`}
+</Markdown>
+
+**CSS Classes:**
+
+- `Tag` — base class, always applied
+- `Tag__purple` / `Tag__grey` / `Tag__yellow` / `Tag__red` / `Tag__green` — color modifier
+- `Tag__small` — applied when `size="sm"`
+- `Tag__clickable` — applied when `onClick` is provided; enables pointer events
+
+---
+
+## VIII. Important Notes
+
+<Markdown>
+    {`
+- The Tag renders as a \`<button>\` element for accessibility.
+- Without \`onClick\`, pointer events are disabled (\`pointer-events: none\`).
+- The close icon click stops propagation — it will not trigger the tag's \`onClick\`.
+- \`id\` is required whenever \`onClick\`, \`onClose\`, or \`closable\` is used (enforced by TypeScript).
+- \`closable\` and \`onClose\` must always be used together with \`id\`.
+- The text typography adapts to the size: \`Typography.Base\` for \`md\`, \`Typography.Micro\` for \`sm\`.
+- Color and size values are exposed as \`ETagColor\` and \`ETagSize\` enums.
+`}
+</Markdown>

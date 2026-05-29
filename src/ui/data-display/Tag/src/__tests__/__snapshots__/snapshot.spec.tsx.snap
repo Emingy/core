@@ -1,0 +1,169 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Tag > should render basic tag 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render clickable tag 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf src-ui-data-display-Tag-src-index-module__Tag__clickable-Mu8kQW"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render closable tag 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+  <svg
+    class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xs-h6rwbG src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+    fill="none"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2 14 14 2M2 2l12 12"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render complex tag 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc complex-tag src-ui-data-display-Tag-src-index-module__Tag__green-TT_EBR src-ui-data-display-Tag-src-index-module__Tag__small-CVFHsG src-ui-data-display-Tag-src-index-module__Tag__clickable-Mu8kQW"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh"
+  >
+    Complex
+  </p>
+  <svg
+    class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xs-h6rwbG src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+    fill="none"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2 14 14 2M2 2l12 12"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-width="2"
+    />
+  </svg>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with custom className 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc custom-tag src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with green color 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__green-TT_EBR"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with grey color 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__grey-uvbLku"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with md size 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with red color 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__red-rF13n2"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with sm size 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf src-ui-data-display-Tag-src-index-module__Tag__small-CVFHsG"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render with yellow color 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__yellow-Sx7X6f"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
+  >
+    Test
+  </p>
+</button>
+`;
+
+exports[`[SNAPSHOT] Tag > should render without text 1`] = `
+<button
+  class="src-ui-data-display-Tag-src-index-module__Tag-Y0DqAc src-ui-data-display-Tag-src-index-module__Tag__purple-iKz3Rf"
+/>
+`;

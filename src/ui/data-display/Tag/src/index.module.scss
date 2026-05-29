@@ -1,0 +1,83 @@
+.Tag {
+    display: flex;
+    gap: 8px;
+    padding: 8px 12px;
+    color: var(--color-grey-10);
+    border-radius: 12px;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    user-select: none;
+    pointer-events: none;
+    transition: background var(--animation-duration-fast) var(--animation-easing-ease-in-out);
+
+    &__clickable {
+        pointer-events: unset;
+    }
+
+    &__purple {
+        background-color: var(--color-purple-50);
+
+        &:hover {
+            background-color: var(--color-purple-40);
+        }
+
+        &:active {
+            background-color: var(--color-purple-60);
+        }
+    }
+
+    &__grey {
+        background-color: var(--color-grey-50);
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
+    }
+
+    &__yellow {
+        background-color: var(--color-yellow-50);
+
+        &:hover {
+            background-color: var(--color-yellow-40);
+        }
+
+        &:active {
+            background-color: var(--color-yellow-60);
+        }
+    }
+
+    &__red {
+        background-color: var(--color-red-50);
+
+        &:hover {
+            background-color: var(--color-red-40);
+        }
+
+        &:active {
+            background-color: var(--color-red-60);
+        }
+    }
+
+    &__green {
+        background-color: var(--color-green-50);
+
+        &:hover {
+            background-color: var(--color-green-40);
+        }
+
+        &:active {
+            background-color: var(--color-green-60);
+        }
+    }
+
+    &__small {
+        gap: 4px;
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+}
