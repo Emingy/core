@@ -4,3 +4,4 @@ plop-templates
 lib
 coverage
 storybook-static
+*.hbs

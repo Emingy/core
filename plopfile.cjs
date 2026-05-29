@@ -7,14 +7,39 @@ module.exports = function (plop) {
                 name: 'name',
                 message: 'Component name (example Button)',
             },
+            {
+                type: 'input',
+                name: 'group',
+                message: 'Component group (example controls)',
+            },
         ],
 
         actions: [
             {
                 type: 'addMany',
                 base: '.plop-templates/UIComponent',
-                destination: 'src/ui/{{pascalCase name}}',
+                destination: 'src/ui/{{group}}/{{pascalCase name}}',
                 templateFiles: '.plop-templates/UIComponent/**/*.hbs',
+            },
+        ],
+    });
+
+    plop.setGenerator('provider', {
+        description: 'Create provider',
+        prompts: [
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Provider name (example Message)',
+            },
+        ],
+
+        actions: [
+            {
+                type: 'addMany',
+                base: '.plop-templates/provider',
+                destination: 'src/providers/{{pascalCase name}}Provider',
+                templateFiles: '.plop-templates/provider/**/*.hbs',
             },
         ],
     });
@@ -40,10 +65,7 @@ module.exports = function (plop) {
                 path: 'src/ui/Icon/src/svg/{{kebabCase name}}.svg',
                 template: '{{{svg}}}',
                 transform: (content) =>
-                    content.replace(
-                        /#(?:[0-9a-fA-F]{3}){1,2}\b/g,
-                        'currentColor',
-                    ),
+                    content.replace(/#(?:[0-9a-fA-F]{3}){1,2}\b/g, 'currentColor'),
             },
             {
                 type: 'append',

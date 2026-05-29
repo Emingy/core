@@ -1,0 +1,21 @@
+import React, { useMemo } from 'react';
+
+import { {{ pascalCase name }}Context } from './context';
+import type { TProps, T{{ pascalCase name }}Context } from './types';
+
+export const {{ pascalCase name }}Provider = ({ children }: TProps) => {
+    const contextValue = useMemo(
+        () => ({}),
+        []
+    );
+
+    return (
+        <{{ pascalCase name }}Context.Provider value={contextValue}>
+            { children }
+        </{{ pascalCase name }}Context.Provider>
+    );
+};
+
+export type T{{ pascalCase name}}ProviderProps = TProps;
+export { {{ pascalCase name}}Context };
+export type { T{{ pascalCase name}}Context };
