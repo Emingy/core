@@ -2,7 +2,7 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 
 import { Typography } from '@emingy/core/ui/basic/Typography';
-import { Spinner } from '@emingy/core/ui/data-display/Spinner';
+import { Spinner } from '@emingy/core/ui/dataDisplay/Spinner';
 
 import styles from './index.module.scss';
 

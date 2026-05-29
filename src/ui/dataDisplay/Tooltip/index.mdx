@@ -1,0 +1,165 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Tooltip: Contextual Hint Component
+
+The `Tooltip` component shows a floating hint near a trigger element on hover. It wraps any content in a transparent `div`, listens for `mouseenter`/`mouseleave`, and delegates rendering to `TooltipProvider` via context.
+
+---
+
+## I. Component Usage
+
+`Tooltip` must be placed inside a `TooltipProvider` (or `AppProvider` if it includes one). It wraps children without affecting layout (`display: contents` on the trigger wrapper).
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Tooltip } from '@emingy/core/ui';
+
+// Minimal — text + position are required via context
+<Tooltip text="Copy to clipboard" position="top">
+    <button>Copy</button>
+</Tooltip>
+
+// With size
+<Tooltip text="Short hint" position="bottom" size="sm">
+    <span>Hover me</span>
+</Tooltip>
+
+// Left / right
+<Tooltip text="Settings" position="right">
+    <Icon icon={SettingsIcon} />
+</Tooltip>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`text\`** | \`string\` | **Required** | Text content displayed inside the tooltip bubble. |
+| **\`position\`** | \`'top' | 'bottom' | 'left' | 'right'\` | | Preferred direction to show the tooltip relative to the trigger. Automatically flipped if there is not enough space. |
+| **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Size variant of the tooltip bubble. |
+| **\`children\`** | \`ReactNode\` | **Required** | The element that triggers the tooltip on hover. |
+`}
+</Markdown>
+
+---
+
+## III. Position Variants
+
+<Markdown>
+{`
+\`\`\`tsx
+import { ETooltipPosition, Tooltip } from '@emingy/core/ui';
+
+<Tooltip text="Above" position={ETooltipPosition.Top}>
+    <span>Hover</span>
+</Tooltip>
+
+<Tooltip text="Below" position={ETooltipPosition.Bottom}>
+    <span>Hover</span>
+</Tooltip>
+
+<Tooltip text="To the left" position={ETooltipPosition.Left}>
+    <span>Hover</span>
+</Tooltip>
+
+<Tooltip text="To the right" position={ETooltipPosition.Right}>
+    <span>Hover</span>
+</Tooltip>
+\`\`\`
+`}
+</Markdown>
+
+**Flip behavior:** if the tooltip would overflow the viewport in the preferred direction, it is automatically flipped to the opposite side. Flip is calculated after the first render using `offsetWidth`/`offsetHeight` of the tooltip bubble.
+
+---
+
+## IV. Size Variants
+
+<Markdown>
+{`
+\`\`\`tsx
+import { ETooltipSize, Tooltip } from '@emingy/core/ui';
+
+// Medium (default): Typography.Small, padding 8px 12px, border-radius 12px
+<Tooltip text="Medium tooltip" position="top" size={ETooltipSize.Md}>
+    <span>Hover</span>
+</Tooltip>
+
+// Small: Typography.Micro, padding 4px 8px, border-radius 8px
+<Tooltip text="Small tooltip" position="top" size={ETooltipSize.Sm}>
+    <span>Hover</span>
+</Tooltip>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## V. Show / Hide Animation
+
+The tooltip appears and disappears with CSS transitions managed by `TooltipProvider`:
+
+- **Appear**: the bubble slides from a 4px offset toward the trigger and becomes visible via CSS transform transition
+- **Disappear**: opacity fades to 0 after `mouseleave`; the bubble is removed from the DOM after the transition completes
+
+<Markdown>
+{`
+\`\`\`tsx
+// Hover sequence:
+// 1. mouseenter → showTooltip() → bubble renders at 0 opacity, offset 4px
+// 2. requestAnimationFrame → __visible class added → slide + (instant opacity) in
+// 3. mouseleave → hideTooltip() → __visible removed → opacity transitions to 0
+// 4. transitionend → bubble removed from DOM
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VI. Provider Requirement
+
+`Tooltip` reads `showTooltip` and `hideTooltip` from `TooltipContext`. The component throws an error if rendered without a provider:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { TooltipProvider } from '@emingy/core/ui';
+
+// Required wrapper
+<TooltipProvider>
+    <App />
+</TooltipProvider>
+
+// Or use AppProvider if it wraps TooltipProvider
+<AppProvider>
+    <App />
+</AppProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+    {`
+- The trigger wrapper uses \`display: contents\` — it is transparent to CSS layout.
+- Each \`Tooltip\` instance uses React's \`useId()\` to generate a stable, unique ID for the show/hide cycle.
+- If the user moves the mouse away and back quickly, the ongoing exit animation is cancelled and the tooltip reappears without a flash.
+- The tooltip bubble is rendered via \`createPortal\` into \`document.body\` to avoid stacking-context clipping.
+- \`TooltipProvider\` must be present in the tree; \`useTooltipContext\` throws if it is not found.
+`}
+</Markdown>

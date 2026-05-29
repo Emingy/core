@@ -158,11 +158,11 @@ exports[`[SNAPSHOT] Button > should render loading state 1`] = `
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
       >
         <svg
-          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          class="src-ui-dataDisplay-Spinner-src-index-module__Spinner-KaCVau"
           viewBox="0 0 50 50"
         >
           <circle
-            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            class="src-ui-dataDisplay-Spinner-src-index-module__Spinner__circle-uEgTGH"
             cx="25"
             cy="25"
             fill="none"
@@ -197,11 +197,11 @@ exports[`[SNAPSHOT] Button > should render loading state with primary type 1`] =
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
       >
         <svg
-          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          class="src-ui-dataDisplay-Spinner-src-index-module__Spinner-KaCVau"
           viewBox="0 0 50 50"
         >
           <circle
-            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            class="src-ui-dataDisplay-Spinner-src-index-module__Spinner__circle-uEgTGH"
             cx="25"
             cy="25"
             fill="none"
@@ -236,11 +236,11 @@ exports[`[SNAPSHOT] Button > should render loading state with secondary type 1`]
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__spinner-KPFbhU"
       >
         <svg
-          class="src-ui-data-display-Spinner-src-index-module__Spinner-W_KULf"
+          class="src-ui-dataDisplay-Spinner-src-index-module__Spinner-KaCVau"
           viewBox="0 0 50 50"
         >
           <circle
-            class="src-ui-data-display-Spinner-src-index-module__Spinner__circle-KQKL0w"
+            class="src-ui-dataDisplay-Spinner-src-index-module__Spinner__circle-uEgTGH"
             cx="25"
             cy="25"
             fill="none"

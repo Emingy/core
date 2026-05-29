@@ -1,0 +1,66 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] TooltipItem > should render with isExiting true 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  style="top: 12px; left: 0px;"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+  >
+    Exiting tooltip
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] TooltipItem > should render with position bottom 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  style="top: 12px; left: 0px;"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+  >
+    Bottom tooltip
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] TooltipItem > should render with position right 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__right-nzzjcH"
+  style="top: 0px; left: 12px;"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+  >
+    Right tooltip
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] TooltipItem > should render with position top 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  style="top: 12px; left: 0px;"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-small-JPa4y6"
+  >
+    Snapshot tooltip
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] TooltipItem > should render with size sm 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__sm-xxn_fr src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  style="top: 12px; left: 0px;"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh"
+  >
+    Small tooltip
+  </p>
+</div>
+`;

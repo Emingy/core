@@ -1,5 +1,5 @@
 export * from './basic';
 export * from './controls';
-export * from './data-display';
+export * from './dataDisplay';
 export * from './layout';
 export * from './navigation';

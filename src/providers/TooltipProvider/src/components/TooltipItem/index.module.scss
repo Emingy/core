@@ -1,0 +1,60 @@
+@use '@emingy/core/styles/shadows';
+
+.TooltipItem {
+    @include shadows.shadow-sm;
+    position: absolute;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: var(--color-grey-60);
+    color: var(--color-grey-10);
+    white-space: nowrap;
+    pointer-events: none;
+
+    opacity: 0;
+    transition:
+        opacity var(--animation-duration-medium),
+        transform var(--animation-duration-medium);
+    transition-timing-function: var(--animation-easing-ease-in);
+
+    &__top {
+        transform: translate(-50%, calc(-100% - 4px));
+    }
+
+    &__bottom {
+        transform: translate(-50%, 4px);
+    }
+
+    &__left {
+        transform: translate(calc(-100% - 4px), -50%);
+    }
+
+    &__right {
+        transform: translate(4px, -50%);
+    }
+
+    &__visible {
+        opacity: 1;
+        transition-timing-function: var(--animation-easing-ease-out);
+
+        &.TooltipItem__top {
+            transform: translate(-50%, -100%);
+        }
+
+        &.TooltipItem__bottom {
+            transform: translateX(-50%);
+        }
+
+        &.TooltipItem__left {
+            transform: translate(-100%, -50%);
+        }
+
+        &.TooltipItem__right {
+            transform: translateY(-50%);
+        }
+    }
+
+    &__sm {
+        padding: 4px 8px;
+        border-radius: 8px;
+    }
+}

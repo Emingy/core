@@ -5,6 +5,7 @@
     padding: 0;
     color: var(--color-grey-10);
     text-align: left;
+    width: fit-content;
 
     &--type-heading-1 {
         @include typography.heading-1;

@@ -1,0 +1,71 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Tooltip > should render with children 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render with position bottom 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render with position left 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render with position right 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render with position top 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render with size md 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;
+
+exports[`[SNAPSHOT] Tooltip > should render without size prop 1`] = `
+<div
+  class="src-ui-dataDisplay-Tooltip-src-index-module__Tooltip__trigger-ljACCY"
+>
+  <span>
+    Hover me
+  </span>
+</div>
+`;

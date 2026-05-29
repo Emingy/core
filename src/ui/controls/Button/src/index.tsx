@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { ArrowBottomIcon, Icon } from '@emingy/core/ui/basic/Icon';
 import { Typography } from '@emingy/core/ui/basic/Typography';
-import { Spinner } from '@emingy/core/ui/data-display/Spinner';
+import { Spinner } from '@emingy/core/ui/dataDisplay/Spinner';
 
 import styles from './index.module.scss';
 

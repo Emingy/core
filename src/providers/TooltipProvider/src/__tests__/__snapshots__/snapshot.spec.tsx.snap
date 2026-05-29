@@ -1,0 +1,13 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] TooltipProvider > should render with children 1`] = `
+<div>
+  Child content
+</div>
+`;
+
+exports[`[SNAPSHOT] TooltipProvider > should render with text children 1`] = `
+<span>
+  App content
+</span>
+`;

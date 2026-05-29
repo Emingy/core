@@ -5,13 +5,13 @@ exports[`[SNAPSHOT] MessageItem > should render error message 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__error-SO4Jcz"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__error-qLfOG1"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -30,7 +30,7 @@ exports[`[SNAPSHOT] MessageItem > should render error message 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -76,13 +76,13 @@ exports[`[SNAPSHOT] MessageItem > should render success message 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -101,7 +101,7 @@ exports[`[SNAPSHOT] MessageItem > should render success message 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -147,13 +147,13 @@ exports[`[SNAPSHOT] MessageItem > should render warning message 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__warning-S5vQB4"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__warning-oyfZkR"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -179,7 +179,7 @@ exports[`[SNAPSHOT] MessageItem > should render warning message 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -225,13 +225,13 @@ exports[`[SNAPSHOT] MessageItem > should render with ReactNode content 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -250,7 +250,7 @@ exports[`[SNAPSHOT] MessageItem > should render with ReactNode content 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -300,13 +300,13 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-center position 1`] 
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -325,7 +325,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-center position 1`] 
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -371,13 +371,13 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-left position 1`] = 
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -396,7 +396,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-left position 1`] = 
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -442,13 +442,13 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-right position 1`] =
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -467,7 +467,7 @@ exports[`[SNAPSHOT] MessageItem > should render with bottom-right position 1`] =
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -513,13 +513,13 @@ exports[`[SNAPSHOT] MessageItem > should render with title 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -538,7 +538,7 @@ exports[`[SNAPSHOT] MessageItem > should render with title 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
@@ -589,13 +589,13 @@ exports[`[SNAPSHOT] MessageItem > should render with top-center position 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -614,7 +614,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-center position 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -660,13 +660,13 @@ exports[`[SNAPSHOT] MessageItem > should render with top-left position 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -685,7 +685,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-left position 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -731,13 +731,13 @@ exports[`[SNAPSHOT] MessageItem > should render with top-right position 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-top-vdBxgO"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -756,7 +756,7 @@ exports[`[SNAPSHOT] MessageItem > should render with top-right position 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"
@@ -802,13 +802,13 @@ exports[`[SNAPSHOT] MessageItem > should render without title 1`] = `
   class="src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem-u3Z88x src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__entering-CTRbtO src-providers-MessageProvider-src-components-MessageItem-index-module__MessageItem__from-bottom-iZZUlw"
 >
   <div
-    class="src-ui-data-display-Message-src-index-module__Message-rtZPuE"
+    class="src-ui-dataDisplay-Message-src-index-module__Message-jsJMZI"
   >
     <div
       class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--gap-4x-QnFrBy"
     >
       <div
-        class="src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator-lC83Ly src-ui-data-display-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-sk7Dgr"
+        class="src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator-v31ldC src-ui-dataDisplay-Message-src-components-StatusIndicator-index-module__StatusIndicator__success-ALXjpt"
       >
         <svg
           class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
@@ -827,7 +827,7 @@ exports[`[SNAPSHOT] MessageItem > should render without title 1`] = `
         </svg>
       </div>
       <div
-        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-data-display-Message-src-index-module__Message__content-zxNtK8 src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
+        class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-dataDisplay-Message-src-index-module__Message__content-OjO4mu src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW src-ui-layout-Flex-src-index-module__Flex--justify-center-a1BeoF src-ui-layout-Flex-src-index-module__Flex--gap-1x-E2WphX"
       >
         <p
           class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ"

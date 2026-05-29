@@ -1,0 +1,109 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Badge > should render complex badge 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC complex-badge src-ui-dataDisplay-Badge-src-index-module__Badge__secondary-kUlFe7"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    99
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with custom className 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC my-badge src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    Custom
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with long text 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    Very Long Badge Text
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with numeric value 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    5
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with primary type 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    Test
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with secondary type 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__secondary-kUlFe7"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    Badge
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with string value 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    New
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with value 99+ 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    99+
+  </p>
+</div>
+`;
+
+exports[`[SNAPSHOT] Badge > should render with zero value 1`] = `
+<div
+  class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+  >
+    0
+  </p>
+</div>
+`;

@@ -1,0 +1,184 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Providers/TooltipProvider" />
+
+# TooltipProvider: Tooltip Display Manager
+
+The `TooltipProvider` manages the lifecycle of tooltip bubbles for the entire application. It renders tooltips via `createPortal` into `document.body`, handles enter and exit animations, and resolves race conditions when the user hovers/unhovers rapidly.
+
+---
+
+## I. Component Usage
+
+Wrap the application root (or any subtree that uses `Tooltip`) with `TooltipProvider`. Any `Tooltip` component in the subtree will automatically use it via context.
+
+<Markdown>
+{`
+\`\`\`tsx
+import { TooltipProvider } from '@emingy/core/ui';
+
+<TooltipProvider>
+    <App />
+</TooltipProvider>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`children\`** | \`ReactNode\` | **Required** | Application content that may contain \`Tooltip\` components. |
+`}
+</Markdown>
+
+---
+
+## III. Context API
+
+`TooltipProvider` exposes two methods via `TooltipContext`, consumed by `useTooltipContext()`:
+
+<Markdown>
+    {`
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| **\`showTooltip\`** | \`(params: TTooltipParams) => void\` | Registers and renders a tooltip. Cancels any ongoing exit animation for the same \`id\`. |
+| **\`hideTooltip\`** | \`(id: string) => void\` | Starts the exit animation. The tooltip is removed from the DOM after the CSS transition completes. |
+`}
+</Markdown>
+
+### `TTooltipParams`
+
+<Markdown>
+    {`
+| Field | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`id\`** | \`string\` | **Required** | Unique identifier for this tooltip instance. |
+| **\`text\`** | \`string\` | **Required** | Text to display in the tooltip bubble. |
+| **\`trigger\`** | \`HTMLDivElement\` | **Required** | The DOM element the tooltip is anchored to. Used to calculate position. |
+| **\`position\`** | \`'top' | 'bottom' | 'left' | 'right'\` | \`'top'\` | Preferred direction. Automatically flipped if there is not enough space. |
+| **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Controls the typography and padding of the bubble. |
+`}
+</Markdown>
+
+---
+
+## IV. Accessing Context Directly
+
+Use `useTooltipContext` when you need to show or hide tooltips programmatically without the `Tooltip` component:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useTooltipContext } from '@emingy/core/ui';
+
+const CustomTrigger = () => {
+    const { showTooltip, hideTooltip } = useTooltipContext();
+    const ref = useRef<HTMLDivElement>(null);
+    const id = useId();
+
+    return (
+        <div
+            ref={ref}
+            onMouseEnter={() => {
+                if (ref.current) {
+                    showTooltip({ id, text: 'Custom hint', trigger: ref.current, position: 'bottom' });
+                }
+            }}
+            onMouseLeave={() => hideTooltip(id)}
+        >
+            Hover me
+        </div>
+    );
+};
+\`\`\`
+`}
+</Markdown>
+
+`useTooltipContext` throws if called outside a `TooltipProvider`.
+
+---
+
+## V. Positioning and Flip Logic
+
+Tooltip positions are calculated relative to the trigger element using `getElementPageRect`, which accounts for iframe nesting. The result is set as `position: absolute` inline styles on the tooltip bubble:
+
+<Markdown>
+{`
+\`\`\`
+Anchor point per direction:
+  top    → (centerX of trigger, top of trigger − OFFSET)   | transform: translate(-50%, -100%)
+  bottom → (centerX of trigger, bottom of trigger + OFFSET) | transform: translateX(-50%)
+  left   → (left of trigger − OFFSET, centerY of trigger)  | transform: translate(-100%, -50%)
+  right  → (right of trigger + OFFSET, centerY of trigger)  | transform: translateY(-50%)
+
+TOOLTIP_OFFSET = 12px
+\`\`\`
+`}
+</Markdown>
+
+**Flip** is applied after the bubble is rendered: `offsetWidth`/`offsetHeight` are read and compared against `window.innerWidth`/`window.innerHeight`. If the bubble overflows, the position is flipped to the opposite direction.
+
+---
+
+## VI. Animation
+
+Enter and exit animations are CSS-driven via the `TooltipItem__visible` class:
+
+<Markdown>
+{`
+\`\`\`
+Enter (adding __visible):
+  transform transitions from offset-4px to final position
+
+Exit (removing __visible):
+  opacity transitions from 1 → 0
+  The bubble stays in the DOM until transitionend, then is removed
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Race Condition Handling
+
+If the user moves the mouse away and quickly back over the same trigger:
+
+1. `hideTooltip(id)` adds the id to `exitingIds` — exit animation starts
+2. `showTooltip({ id, ... })` is called — id is removed from `exitingIds` before `dispatch(Add)` runs
+3. React batches both state updates in one render cycle
+4. `__visible` is restored immediately; the exit CSS transition is interrupted by the browser
+
+This prevents the tooltip from disappearing after a fast re-hover.
+
+---
+
+## VIII. Internal Architecture
+
+<Markdown>
+    {`
+- **State**: \`useReducer\` with \`ADD\`/\`REMOVE\` actions manages a \`Map<id, TTooltipItem>\`. A separate \`useState<Set<string>>\` tracks IDs currently in the exit phase (\`exitingIds\`).
+- **Portal**: \`createPortal(<TooltipContainer>, document.body)\` renders bubbles outside the app DOM tree, avoiding stacking-context clipping.
+- **\`TooltipItem\`**: internal component that owns position calculation (\`useTooltipPosition\` hook), flip logic (\`flipPos\`), enter animation (\`requestAnimationFrame\`), and the \`onTransitionEnd\` handler that calls \`onRemove\` after the exit transition.
+- **SSR guard**: \`typeof document !== 'undefined'\` prevents \`createPortal\` from running on the server.
+- **Context**: \`TooltipContext\` is a nullable React context; \`useTooltipContext\` throws with a descriptive message when called outside the provider.
+`}
+</Markdown>
+
+---
+
+## IX. Important Notes
+
+<Markdown>
+    {`
+- Multiple tooltips with different IDs can be visible simultaneously.
+- The tooltip bubble has \`z-index: 9999\` and \`pointer-events: none\`.
+- \`position: absolute\` is used for the bubble — scroll position is factored in via \`window.scrollX\`/\`scrollY\`.
+- Only \`top\` ↔ \`bottom\` and \`left\` ↔ \`right\` flips are supported. If both directions overflow, the preferred direction is kept.
+- Nesting multiple \`TooltipProvider\` instances is not recommended — the innermost provider wins for \`useTooltipContext\` consumers.
+`}
+</Markdown>
