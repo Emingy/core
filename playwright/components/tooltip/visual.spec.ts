@@ -5,13 +5,11 @@ const SIZES = ['md', 'sm'] as const;
 
 test.describe('[Visual] Tooltip', () => {
     test('trigger only', async ({ Tooltip }) => {
-        await Tooltip.page.waitForLoadState('networkidle');
         await expect(Tooltip.page).toHaveScreenshot();
     });
 
     test('disabled', async ({ Tooltip }) => {
         await Tooltip.navigate({ disabled: true });
-        await Tooltip.page.waitForLoadState('networkidle');
         await expect(Tooltip.page).toHaveScreenshot();
     });
 
