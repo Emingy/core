@@ -17,7 +17,7 @@ export const Radio = ({ className, label, description, error, ...restProps }: TP
     return (
         <label
             htmlFor={restProps.id ? restProps.id : id}
-            className={cn(`${BLOCK_NAME}`, className)}
+            className={cn(`${BLOCK_NAME}`, { [`${BLOCK_NAME}--error`]: !!error }, className)}
         >
             <Flex direction="row" gap="2x" align="flex-start">
                 <input

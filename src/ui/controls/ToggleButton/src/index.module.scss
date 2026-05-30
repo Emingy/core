@@ -24,16 +24,36 @@
         color: var(--color-grey-10);
     }
 
+    &:active:not(:has(input[type='checkbox']:disabled)) {
+        color: var(--color-grey-20);
+    }
+
     &:has(input[type='checkbox']:checked) {
         color: var(--color-grey-10);
     }
 
     &__primary:has(input[type='checkbox']:checked) {
         background-color: var(--color-purple-50);
+
+        &:hover {
+            background-color: var(--color-purple-40);
+        }
+
+        &:active {
+            background-color: var(--color-purple-60);
+        }
     }
 
     &__secondary:has(input[type='checkbox']:checked) {
         background-color: var(--color-grey-50);
+
+        &:hover {
+            background-color: var(--color-grey-40);
+        }
+
+        &:active {
+            background-color: var(--color-grey-60);
+        }
     }
 
     &:not(.ToggleButton__loading):has(input[type='checkbox']:disabled) {

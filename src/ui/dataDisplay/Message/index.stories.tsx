@@ -14,12 +14,18 @@ const meta: Meta = {
         title: {
             type: 'string',
         },
+        content: {
+            type: 'string',
+        },
     },
     args: {
         type: 'success',
+        content: 'Some message',
     },
 };
 
 export default meta;
 
-export const Demo = (props: TMessageProps) => <Message {...props}>Some message</Message>;
+export const Demo = (props: TMessageProps & { content: string }) => (
+    <Message {...props}>{props.content}</Message>
+);

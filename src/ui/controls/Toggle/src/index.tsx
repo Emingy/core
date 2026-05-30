@@ -17,7 +17,7 @@ export const Toggle = ({ className, label, description, error, ...restProps }: T
     return (
         <label
             htmlFor={restProps.id ? restProps.id : id}
-            className={cn(`${BLOCK_NAME}`, className)}
+            className={cn(`${BLOCK_NAME}`, { [`${BLOCK_NAME}--error`]: !!error }, className)}
         >
             <Flex direction="row" gap="2x" align="flex-start">
                 <input

@@ -35,6 +35,7 @@ exports[`[SNAPSHOT] Tag > should render closable tag 1`] = `
   </p>
   <svg
     class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xs-h6rwbG src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+    data-testid="tag-close"
     fill="none"
     height="16"
     viewBox="0 0 16 16"
@@ -62,6 +63,7 @@ exports[`[SNAPSHOT] Tag > should render complex tag 1`] = `
   </p>
   <svg
     class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xs-h6rwbG src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+    data-testid="tag-close"
     fill="none"
     height="16"
     viewBox="0 0 16 16"

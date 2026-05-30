@@ -198,7 +198,7 @@ exports[`[SNAPSHOT] Toggle > should render with description 1`] = `
 
 exports[`[SNAPSHOT] Toggle > should render with description and error (error takes priority) 1`] = `
 <label
-  class="src-ui-controls-Toggle-src-index-module__Toggle-f0DROZ"
+  class="src-ui-controls-Toggle-src-index-module__Toggle-f0DROZ src-ui-controls-Toggle-src-index-module__Toggle--error-eflffL"
   for="_r_3_"
 >
   <div
@@ -229,7 +229,7 @@ exports[`[SNAPSHOT] Toggle > should render with description and error (error tak
 
 exports[`[SNAPSHOT] Toggle > should render with error 1`] = `
 <label
-  class="src-ui-controls-Toggle-src-index-module__Toggle-f0DROZ"
+  class="src-ui-controls-Toggle-src-index-module__Toggle-f0DROZ src-ui-controls-Toggle-src-index-module__Toggle--error-eflffL"
   for="_r_2_"
 >
   <div

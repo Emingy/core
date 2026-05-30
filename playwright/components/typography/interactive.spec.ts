@@ -42,7 +42,9 @@ test.describe('[Interactive] Typography', () => {
         expect(await Typography.hasClass('Typography--case-uppercase')).toBe(true);
     });
 
-    test('renders text content', async ({ Typography }) => {
-        await expect(Typography.root).toHaveText('Lorem ipsum');
+    test('renders children prop', async ({ Typography }) => {
+        await Typography.navigate({ children: 'Custom text' });
+
+        await expect(Typography.root).toContainText('Custom text');
     });
 });

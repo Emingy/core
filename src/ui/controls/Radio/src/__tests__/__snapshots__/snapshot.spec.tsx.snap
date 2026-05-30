@@ -199,7 +199,7 @@ exports[`[SNAPSHOT] Radio > should render with description 1`] = `
 
 exports[`[SNAPSHOT] Radio > should render with description and error (error takes priority) 1`] = `
 <label
-  class="src-ui-controls-Radio-src-index-module__Radio-n_YMWT"
+  class="src-ui-controls-Radio-src-index-module__Radio-n_YMWT src-ui-controls-Radio-src-index-module__Radio--error-Mwa4OJ"
   for="_r_3_"
 >
   <div
@@ -230,7 +230,7 @@ exports[`[SNAPSHOT] Radio > should render with description and error (error take
 
 exports[`[SNAPSHOT] Radio > should render with error 1`] = `
 <label
-  class="src-ui-controls-Radio-src-index-module__Radio-n_YMWT"
+  class="src-ui-controls-Radio-src-index-module__Radio-n_YMWT src-ui-controls-Radio-src-index-module__Radio--error-Mwa4OJ"
   for="_r_2_"
 >
   <div

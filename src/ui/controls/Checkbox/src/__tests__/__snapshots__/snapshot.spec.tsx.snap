@@ -198,7 +198,7 @@ exports[`[SNAPSHOT] Checkbox > should render with description 1`] = `
 
 exports[`[SNAPSHOT] Checkbox > should render with description and error (error takes priority) 1`] = `
 <label
-  class="src-ui-controls-Checkbox-src-index-module__Checkbox-q9EcQe"
+  class="src-ui-controls-Checkbox-src-index-module__Checkbox-q9EcQe src-ui-controls-Checkbox-src-index-module__Checkbox--error-tZUHGH"
   for="_r_3_"
 >
   <div
@@ -229,7 +229,7 @@ exports[`[SNAPSHOT] Checkbox > should render with description and error (error t
 
 exports[`[SNAPSHOT] Checkbox > should render with error 1`] = `
 <label
-  class="src-ui-controls-Checkbox-src-index-module__Checkbox-q9EcQe"
+  class="src-ui-controls-Checkbox-src-index-module__Checkbox-q9EcQe src-ui-controls-Checkbox-src-index-module__Checkbox--error-tZUHGH"
   for="_r_2_"
 >
   <div

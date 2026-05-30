@@ -49,12 +49,12 @@
         }
     }
 
-    &:has(.Radio__input:disabled) {
+    &:has(input:disabled) {
         filter: opacity(0.1);
         pointer-events: none;
     }
 
-    &:has(.Radio__error) &__input {
+    &--error &__input {
         border-color: var(--color-red-50);
     }
 

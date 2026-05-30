@@ -16,6 +16,9 @@ const meta: Meta = {
         disabled: {
             type: 'boolean',
         },
+        checked: {
+            type: 'boolean',
+        },
     },
     args: {
         label: 'Checkbox',

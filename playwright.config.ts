@@ -5,6 +5,13 @@ export default defineConfig({
 
     fullyParallel: true,
 
+    expect: {
+        toHaveScreenshot: {
+            maxDiffPixels: 1,
+            threshold: 0.05,
+        },
+    },
+
     use: {
         baseURL: 'http://127.0.0.1:3000',
         viewport: {

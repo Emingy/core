@@ -30,7 +30,7 @@ export class ButtonComponent {
     }
 
     async hover() {
-        await this.button.hover();
+        await this.button.hover({ force: true });
     }
 
     async hasClass(className: string): Promise<boolean> {

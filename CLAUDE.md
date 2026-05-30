@@ -150,6 +150,12 @@ storyUrl('ui-controls-button--demo');
 
 Boolean args are serialized as `!true` / `!false`.
 
+**Storybook arg format limitations** — some string values are not passed correctly:
+
+- `$` and `#` are treated as special markers → use `USD`, `EUR`, `+` instead
+- `{` and `}` break the parser (e.g. mask `d{3}`) → use repeated-char syntax (`ddd`) instead
+- Storybook does **not** URL-decode arg values, so `encodeURIComponent` does not help
+
 ### Component Object Model
 
 ```ts

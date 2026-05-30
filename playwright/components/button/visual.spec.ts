@@ -1,67 +1,38 @@
 import { expect, test } from '../../fixtures';
 
+const TYPES = ['primary', 'secondary', 'ghosted', 'outlined', 'alert'] as const;
+const SIZES = ['sm', 'md', 'lg'] as const;
+
+const STATES = [
+    { label: 'default', args: {} },
+    { label: 'loading', args: { isLoading: true } },
+    { label: 'disabled', args: { disabled: true } },
+    { label: 'prefix', args: { prefix: 'pre' } },
+    { label: 'postfix', args: { postfix: 'post' } },
+    { label: 'splitted', args: { splitted: true } },
+    { label: 'full width', args: { isFullWidth: true } },
+] as const;
+
 test.describe('[Visual] Button', () => {
-    test('primary', async ({ Button }) => {
-        await expect(Button.root).toHaveScreenshot();
-    });
+    for (const type of TYPES) {
+        for (const size of SIZES) {
+            for (const { label, args } of STATES) {
+                test(`type ${type} ${size} ${label}`, async ({ Button, page }) => {
+                    await Button.navigate({ type, size, ...args });
+                    await expect(Button.root).toHaveScreenshot();
 
-    test('secondary', async ({ Button }) => {
-        await Button.navigate({ type: 'secondary' });
+                    await test.step('hover', async () => {
+                        await Button.hover();
+                        await expect(Button.root).toHaveScreenshot();
+                    });
 
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('ghosted', async ({ Button }) => {
-        await Button.navigate({ type: 'ghosted' });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('outlined', async ({ Button }) => {
-        await Button.navigate({ type: 'outlined' });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('alert', async ({ Button }) => {
-        await Button.navigate({ type: 'alert' });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('size sm', async ({ Button }) => {
-        await Button.navigate({ size: 'sm' });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('size lg', async ({ Button }) => {
-        await Button.navigate({ size: 'lg' });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('disabled', async ({ Button }) => {
-        await Button.navigate({ disabled: true });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('loading', async ({ Button }) => {
-        await Button.navigate({ isLoading: true });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('split', async ({ Button }) => {
-        await Button.navigate({ splitted: true });
-
-        await expect(Button.root).toHaveScreenshot();
-    });
-
-    test('hover', async ({ Button }) => {
-        await Button.hover();
-
-        await expect(Button.root).toHaveScreenshot();
-    });
+                    await test.step('clicked', async () => {
+                        await Button.root.hover();
+                        await page.mouse.down();
+                        await expect(Button.root).toHaveScreenshot();
+                    });
+                });
+            }
+        }
+    }
 });

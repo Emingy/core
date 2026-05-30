@@ -62,7 +62,14 @@ export const Tag = ({
         >
             {icon && <Icon icon={icon} size="xs" />}
             {text && <TextNode>{text}</TextNode>}
-            {closable && <Icon icon={CrossIcon} onClick={handleCloseClick} size="xs" />}
+            {closable && (
+                <Icon
+                    icon={CrossIcon}
+                    onClick={handleCloseClick}
+                    size="xs"
+                    data-testid="tag-close"
+                />
+            )}
         </button>
     );
 };
