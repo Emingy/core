@@ -46,9 +46,9 @@
         "knip": "knip",
         "coverage:ts": "type-coverage --project=src",
         "pw:test": "playwright test",
-        "pw:ui": "playwright test --ui",
-        "pw:headed": "playwright test --headed",
         "pw:update": "playwright test --update-snapshots",
+        "pw:docker": "docker compose run --rm playwright",
+        "pw:docker:update": "docker compose run --rm playwright pnpm pw:update",
         "api:gen": "tsx scripts/gen-api.ts",
         "api:check": "tsx scripts/gen-api.ts --check"
     },
