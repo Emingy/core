@@ -20,7 +20,7 @@ export default defineConfig({
                       './src/**',
                       '!src/storybook/**/*',
                       '!src/**/*.{stories,spec}.*',
-                      '!src/**/*.{mdx,snap}',
+                      '!src/**/*.{mdx,md,snap}',
                       '!src/**/story',
                       '!src/styles/**',
                       '!**/.DS_Store',

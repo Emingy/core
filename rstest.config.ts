@@ -4,6 +4,7 @@ import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { defineConfig } from '@rstest/core';
 
 export default defineConfig({
+    include: ['src/**/*.spec.{ts,tsx}'],
     plugins: [
         pluginReact({
             swcReactOptions: {

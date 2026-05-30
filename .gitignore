@@ -4,3 +4,4 @@ debug-storybook.log
 storybook-static
 lib
 coverage
+test-results
