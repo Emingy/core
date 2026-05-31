@@ -21,7 +21,8 @@
 
 - 🎨 Modern React UI components with TypeScript support
 - 📚 Interactive documentation via [Storybook](https://emingy.github.io/core/)
-- 🧪 100% test coverage
+- 🧪 Unit, snapshot, and visual regression tests (Playwright)
+- 🔍 Strict code quality checks: ESLint, Stylelint, Prettier, circular deps, dead code
 
 ---
 
@@ -58,7 +59,7 @@ Full component documentation and interactive examples are available at:
 
 ### Prerequisites
 
-- Node.js 22
+- Node.js >=22
 - pnpm 10
 
 ### Commands
@@ -80,6 +81,68 @@ pnpm build
 pnpm lint:fix
 pnpm format:fix
 ```
+
+---
+
+## ✅ Checks
+
+### Unit tests
+
+```bash
+pnpm test
+```
+
+Runs component unit and snapshot tests via [rstest](https://rstest.rs/) (vitest-compatible API). Coverage thresholds: 90% lines / functions.
+
+### Playwright (interactive & visual)
+
+```bash
+pnpm pw:docker        # run in Docker (matches CI environment)
+pnpm pw:docker:update # update visual snapshots
+```
+
+Interactive and visual regression tests run via [Playwright](https://playwright.dev/) inside a Docker container. Snapshots are Linux-specific and must be updated inside Docker to stay consistent with CI.
+
+### Linting
+
+```bash
+pnpm lint             # ESLint
+pnpm lint:scss        # Stylelint (SCSS files)
+pnpm format           # Prettier (check only)
+```
+
+### Circular dependencies
+
+```bash
+pnpm check-circular-dependency
+```
+
+Detects circular imports across all TypeScript source files using [dpdm](https://github.com/acrazing/dpdm). Exits with code 1 if any cycle is found.
+
+### Dead code
+
+```bash
+pnpm knip
+```
+
+Finds unused exports, files, and dependencies with [Knip](https://knip.dev/).
+
+### TypeScript coverage
+
+```bash
+pnpm coverage:ts
+```
+
+Measures the percentage of typed values in the codebase using [type-coverage](https://github.com/plantain-00/type-coverage).
+
+### API docs
+
+```bash
+pnpm api:check   # validate (runs in pre-commit)
+pnpm api:gen     # regenerate all api.md files
+```
+
+Each module has a generated `api.md` with a props/signature table. The check fails if any file is out of date.
 
 ---
 
