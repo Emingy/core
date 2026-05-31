@@ -114,7 +114,7 @@
         "react-router-dom": "6.30.3"
     },
     "engines": {
-        "node": "22",
+        "node": ">=22",
         "pnpm": "10"
     },
     "typeCoverage": {

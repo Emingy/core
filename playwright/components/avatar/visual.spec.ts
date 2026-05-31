@@ -6,15 +6,13 @@ test.describe('[Visual] Avatar', () => {
     });
 
     test('loading', async ({ Avatar, page }) => {
-        await page.route(
-            'https://avatars.githubusercontent.com/u/52676421?s=64&v=4',
-            async (route) => {
-                await new Promise((r) => setTimeout(r, 30000)); // держим запрос 30 сек
-                await route.continue();
-            }
-        );
+        await page.route('/static/avatar-placeholder.svg', async (route) => {
+            await new Promise((r) => setTimeout(r, 30000));
+            await route.continue();
+        });
         await Avatar.navigate({}, false);
         await expect(Avatar.root).toHaveScreenshot();
+        await page.unrouteAll();
     });
 
     test('disabled', async ({ Avatar }) => {

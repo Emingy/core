@@ -1,5 +1,5 @@
 import cls from 'classnames/bind';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Spinner } from '@emingy/core/ui/dataDisplay/Spinner';
 
@@ -12,6 +12,7 @@ const cn = cls.bind(styles);
 
 export const Avatar = ({ className, onLoad, onError, onClick, disabled, ...restProps }: TProps) => {
     const [isLoading, setIsLoading] = useState(true);
+    const imgRef = useRef<HTMLImageElement>(null);
 
     const handleLoad = () => {
         setIsLoading(false);
@@ -25,6 +26,11 @@ export const Avatar = ({ className, onLoad, onError, onClick, disabled, ...restP
 
     useEffect(() => {
         setIsLoading(true);
+        // Cached images skip onLoad — check complete synchronously after mount/src change.
+        const img = imgRef.current;
+        if (img?.complete && img.naturalWidth > 0) {
+            handleLoad();
+        }
     }, [restProps.src]);
 
     return (
@@ -42,6 +48,7 @@ export const Avatar = ({ className, onLoad, onError, onClick, disabled, ...restP
             )}
             <img
                 {...restProps}
+                ref={imgRef}
                 className={cn(`${BLOCK_NAME}__image`, {
                     [`${BLOCK_NAME}__image-hidden`]: isLoading,
                 })}

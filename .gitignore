@@ -5,3 +5,4 @@ storybook-static
 lib
 coverage
 test-results
+**/*-darwin.png

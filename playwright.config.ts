@@ -4,6 +4,7 @@ export default defineConfig({
     testDir: './playwright',
 
     fullyParallel: true,
+    retries: 2,
 
     expect: {
         toHaveScreenshot: {
@@ -18,6 +19,9 @@ export default defineConfig({
             width: 1280,
             height: 720,
         },
+        screenshot: 'only-on-failure',
+        trace: 'on-first-retry',
+        video: 'on-first-retry',
     },
 
     webServer: {

@@ -7,7 +7,7 @@ const meta: Meta = {
     title: 'UI/DataDisplay/Avatar',
     component: Avatar,
     args: {
-        src: 'https://avatars.githubusercontent.com/u/52676421?s=64&v=4',
+        src: '/static/avatar-placeholder.svg',
         disabled: false,
     },
 };
