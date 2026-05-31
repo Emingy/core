@@ -1,11 +1,11 @@
 @use '@emingy/core/styles/typography';
 
 .Typography {
+    width: fit-content;
     margin: 0;
     padding: 0;
-    color: var(--color-grey-10);
     text-align: left;
-    width: fit-content;
+    color: var(--color-grey-10);
 
     &--type-heading-1 {
         @include typography.heading-1;
@@ -84,9 +84,9 @@
     }
 
     &--truncated {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }

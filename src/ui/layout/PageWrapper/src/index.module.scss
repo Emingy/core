@@ -1,30 +1,30 @@
 .PageWrapper {
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
 
     &__content {
-        min-height: 100vh;
         box-sizing: border-box;
+        min-height: 100vh;
 
         &--mobile {
-            padding-left: var(--spacing-4x);
             padding-right: var(--spacing-4x);
             padding-bottom: var(--spacing-4x);
+            padding-left: var(--spacing-4x);
         }
 
         &--tablet {
-            padding-left: var(--spacing-8x);
             padding-right: var(--spacing-8x);
             padding-bottom: var(--spacing-8x);
+            padding-left: var(--spacing-8x);
         }
 
         &--desktop {
-            margin-left: auto;
-            margin-right: auto;
             max-width: 1280px;
-            padding-left: var(--spacing-12x);
+            margin-right: auto;
+            margin-left: auto;
             padding-right: var(--spacing-12x);
             padding-bottom: var(--spacing-12x);
+            padding-left: var(--spacing-12x);
         }
     }
 }

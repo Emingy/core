@@ -1,11 +1,11 @@
 .StatusIndicator {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
     color: var(--color-grey-10);
 
     &__success {

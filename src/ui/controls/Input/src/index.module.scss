@@ -2,69 +2,69 @@
 @use '@emingy/core/styles/filters';
 
 .Input {
-    flex-direction: row;
-    gap: var(--spacing-2x);
     display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: var(--spacing-2x);
+    min-height: 48px;
+    padding: 0 var(--spacing-4x);
     border: 1px solid var(--color-grey-40-50);
     border-radius: var(--spacing-4x);
-    padding: 0 var(--spacing-4x);
-    min-height: 48px;
+    cursor: text;
+    color: var(--color-grey-40-50);
     transition:
         border-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
-    color: var(--color-grey-40-50);
-    cursor: text;
 
     &__title {
         position: absolute;
         top: calc(50% - 9px);
-        color: var(--color-grey-40-50);
-
-        pointer-events: none;
-        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
 
         z-index: 1;
         max-width: calc(100% - var(--spacing-8x));
         overflow: hidden;
-        white-space: nowrap;
+
+        pointer-events: none;
         text-overflow: ellipsis;
+        color: var(--color-grey-40-50);
+        white-space: nowrap;
+        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
     }
 
     &__wrapper {
         position: relative;
         display: flex;
         align-items: center;
-        height: 48px;
         width: 100%;
+        height: 48px;
     }
 
     &__input-container {
-        display: inline-flex;
         position: relative;
+        display: inline-flex;
         overflow-x: scroll;
     }
 
     &__field {
-        width: fit-content;
         flex-grow: 1;
-        border: none;
-        outline: none;
-        padding: 0;
-        margin: 0;
+        width: fit-content;
         min-width: 0;
+        margin: 0;
+        padding: 0;
         padding-right: 25px;
         background: transparent;
+        border: none;
+        outline: none;
+        color: var(--color-grey-10);
 
         @include typography.base;
-        color: var(--color-grey-10);
 
         &[type='number']::-webkit-inner-spin-button,
         &[type='number']::-webkit-outer-spin-button {
-            -webkit-appearance: none;
             margin: 0;
+            -webkit-appearance: none;
         }
 
         &[type='number'] {
@@ -74,19 +74,19 @@
 
     &__mask {
         position: absolute;
-        right: 0;
         top: 50%;
-        transform: translateY(-50%);
+        right: 0;
         width: 100%;
         pointer-events: none;
         color: #555;
+        transform: translateY(-50%);
     }
 
     &__prefix,
     &__postfix {
         display: flex;
-        align-items: center;
         flex-shrink: 0;
+        align-items: center;
         min-height: 22px;
     }
 
@@ -161,8 +161,8 @@
     }
 
     &--disabled {
-        pointer-events: none;
         cursor: auto;
+        pointer-events: none;
 
         @include filters.opacity-35;
     }

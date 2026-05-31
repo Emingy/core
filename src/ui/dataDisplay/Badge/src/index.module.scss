@@ -1,13 +1,13 @@
 .Badge {
-    max-width: 48px;
+    display: flex;
+    align-items: center;
     width: fit-content;
+    max-width: 48px;
     height: 24px;
     padding: 4px 8px;
     border-radius: 24px;
-    display: flex;
-    align-items: center;
-    user-select: none;
     box-shadow: 0 4px 4px 0 var(--color-grey-90-50);
+    user-select: none;
 
     &__primary {
         background-color: var(--color-red-40);

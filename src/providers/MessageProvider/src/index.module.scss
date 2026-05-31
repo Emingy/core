@@ -15,8 +15,8 @@
     &__top-center {
         top: var(--spacing-4x);
         left: 50%;
-        transform: translateX(-50%);
         align-items: center;
+        transform: translateX(-50%);
     }
 
     &__top-right {
@@ -28,22 +28,22 @@
     &__bottom-left {
         bottom: var(--spacing-4x);
         left: var(--spacing-4x);
-        align-items: flex-start;
         flex-direction: column-reverse;
+        align-items: flex-start;
     }
 
     &__bottom-center {
         bottom: var(--spacing-4x);
         left: 50%;
-        transform: translateX(-50%);
-        align-items: center;
         flex-direction: column-reverse;
+        align-items: center;
+        transform: translateX(-50%);
     }
 
     &__bottom-right {
-        bottom: var(--spacing-4x);
         right: var(--spacing-4x);
-        align-items: flex-end;
+        bottom: var(--spacing-4x);
         flex-direction: column-reverse;
+        align-items: flex-end;
     }
 }

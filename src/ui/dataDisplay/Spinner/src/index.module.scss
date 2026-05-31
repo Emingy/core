@@ -4,11 +4,11 @@
     animation: spinner-rotate 1.2s linear infinite;
 
     &__circle {
+        animation: spinner-dash 1.5s ease-in-out infinite;
         stroke: currentcolor;
         stroke-linecap: round;
         stroke-dasharray: 1, 150;
         stroke-dashoffset: 0;
-        animation: spinner-dash 1.5s ease-in-out infinite;
     }
 }
 

@@ -1,22 +1,22 @@
 @use '@emingy/core/styles/typography';
 
 .Button {
+    position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
-    border: 1px solid;
-    color: var(--color-grey-10);
-    cursor: pointer;
     width: fit-content;
+    border: 1px solid;
+    cursor: pointer;
+    color: var(--color-grey-10);
     transition:
         border-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         color var(--animation-duration-base) var(--animation-easing-ease-in-out),
         box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
     user-select: none;
-    align-items: center;
-    position: relative;
-    justify-content: center;
 
     &__wrapper {
         display: flex;
@@ -51,8 +51,8 @@
     }
 
     &__primary {
-        border-color: var(--color-purple-40);
         background-color: var(--color-purple-50);
+        border-color: var(--color-purple-40);
 
         &:hover {
             background-color: var(--color-purple-40);
@@ -64,8 +64,8 @@
     }
 
     &__secondary {
-        border-color: var(--color-grey-40);
         background-color: var(--color-grey-50);
+        border-color: var(--color-grey-40);
 
         &:hover {
             background-color: var(--color-grey-40);
@@ -89,8 +89,8 @@
     }
 
     &__ghosted {
-        border: 0;
         background-color: transparent;
+        border: 0;
 
         &:hover {
             background-color: var(--color-grey-50-50);
@@ -102,8 +102,8 @@
     }
 
     &__alert {
-        border-color: var(--color-red-40);
         background-color: var(--color-red-50);
+        border-color: var(--color-red-40);
 
         &:hover {
             background-color: var(--color-red-40);
@@ -115,21 +115,21 @@
     }
 
     &__middle-size {
-        border-radius: 12px;
-        padding: 4px 24px;
         height: 48px;
+        padding: 4px 24px;
+        border-radius: 12px;
     }
 
     &__small-size {
-        border-radius: 8px;
-        padding: 4px 16px;
         height: 32px;
+        padding: 4px 16px;
+        border-radius: 8px;
     }
 
     &__large-size {
-        border-radius: 16px;
-        padding: 4px 32px;
         height: 64px;
+        padding: 4px 32px;
+        border-radius: 16px;
     }
 
     &__disabled {
@@ -164,8 +164,8 @@
     }
 
     button {
-        cursor: inherit;
         display: flex;
         align-items: center;
+        cursor: inherit;
     }
 }
