@@ -68,7 +68,7 @@
         "@axe-core/playwright": "4.11.3",
         "@commitlint/cli": "20.1.0",
         "@commitlint/config-conventional": "20.0.0",
-        "@emingy/configs": "0.2.0",
+        "@emingy/configs": "0.3.0",
         "@playwright/test": "1.60.0",
         "@rsbuild/plugin-react": "1.4.1",
         "@rsbuild/plugin-sass": "1.4.0",

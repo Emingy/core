@@ -22,8 +22,8 @@ importers:
         specifier: 20.0.0
         version: 20.0.0
       '@emingy/configs':
-        specifier: 0.2.0
-        version: 0.2.0(@commitlint/cli@20.1.0(@types/node@24.10.0)(typescript@5.9.3))(@commitlint/config-conventional@20.0.0)(@eslint/js@9.39.1)(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-import-x@4.16.2(eslint@9.37.0(jiti@2.6.1)))(eslint-plugin-simple-import-sort@12.1.1(eslint@9.37.0(jiti@2.6.1)))(eslint@9.37.0(jiti@2.6.1))(globals@16.5.0)(prettier@3.6.2)(stylelint-config-css-modules@4.5.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint-config-standard@39.0.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint-order@7.0.0(stylelint@16.25.0(typescript@5.9.3)))(stylelint-scss@6.12.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint@16.25.0(typescript@5.9.3))(typescript-eslint@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(typescript@5.9.3)
+        specifier: 0.3.0
+        version: 0.3.0(376633fc7867b96d73c5ecc56569161a)
       '@playwright/test':
         specifier: 1.60.0
         version: 1.60.0
@@ -477,8 +477,8 @@ packages:
   '@dual-bundle/import-meta-resolve@4.2.1':
     resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
-  '@emingy/configs@0.2.0':
-    resolution: {integrity: sha512-tvjzDKZ0xT9jUMkhYqtOJAqVeQkNWDI1gTxQKnmW3QsQqHsssox2ReKA1jsPArwmGDViiU39O+LbI5W2QoEqTQ==}
+  '@emingy/configs@0.3.0':
+    resolution: {integrity: sha512-sRiVxtCjnVaRtTAMWBqZ9N+OcXpiZyAEGPbgL8ZmCMMZek0wEEaLdyYHqmOYo8t3GUaIcTFcXQ04u70QCcPJYw==}
     engines: {node: '22', pnpm: '10'}
     peerDependencies:
       '@commitlint/cli': 20.1.0
@@ -488,6 +488,7 @@ packages:
       eslint: 9.37.0
       eslint-plugin-import-x: 4.16.2
       eslint-plugin-simple-import-sort: 12.1.1
+      eslint-plugin-unused-imports: 4.4.1
       globals: 16.5.0
       prettier: 3.6.2
       stylelint: 16.25.0
@@ -2649,6 +2650,15 @@ packages:
     resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
     peerDependencies:
       eslint: '>=5.0.0'
+
+  eslint-plugin-unused-imports@4.4.1:
+    resolution: {integrity: sha512-oZGYUz1X3sRMGUB+0cZyK2VcvRX5lm/vB56PgNNcU+7ficUCKm66oZWKUubXWnOuPjQ8PvmXtCViXBMONPe7tQ==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^8.0.0-0 || ^7.0.0 || ^6.0.0 || ^5.0.0
+      eslint: ^10.0.0 || ^9.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
 
   eslint-scope@5.1.1:
     resolution: {integrity: sha512-2NxwbF/hZ0KpepYN0cNbo+FN6XoK7GaHlQhgx/hIZl6Va0bF45RQOOwhLIy8lQDbuCiadSLCBnH2CFYquit5bw==}
@@ -5054,7 +5064,7 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
-  '@emingy/configs@0.2.0(@commitlint/cli@20.1.0(@types/node@24.10.0)(typescript@5.9.3))(@commitlint/config-conventional@20.0.0)(@eslint/js@9.39.1)(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint-plugin-import-x@4.16.2(eslint@9.37.0(jiti@2.6.1)))(eslint-plugin-simple-import-sort@12.1.1(eslint@9.37.0(jiti@2.6.1)))(eslint@9.37.0(jiti@2.6.1))(globals@16.5.0)(prettier@3.6.2)(stylelint-config-css-modules@4.5.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint-config-standard@39.0.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint-order@7.0.0(stylelint@16.25.0(typescript@5.9.3)))(stylelint-scss@6.12.1(stylelint@16.25.0(typescript@5.9.3)))(stylelint@16.25.0(typescript@5.9.3))(typescript-eslint@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(typescript@5.9.3)':
+  '@emingy/configs@0.3.0(376633fc7867b96d73c5ecc56569161a)':
     dependencies:
       '@commitlint/cli': 20.1.0(@types/node@24.10.0)(typescript@5.9.3)
       '@commitlint/config-conventional': 20.0.0
@@ -5063,6 +5073,7 @@ snapshots:
       eslint: 9.37.0(jiti@2.6.1)
       eslint-plugin-import-x: 4.16.2(eslint@9.37.0(jiti@2.6.1))
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.37.0(jiti@2.6.1))
+      eslint-plugin-unused-imports: 4.4.1(@typescript-eslint/eslint-plugin@8.46.3(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))
       globals: 16.5.0
       prettier: 3.6.2
       stylelint: 16.25.0(typescript@5.9.3)
@@ -7157,6 +7168,12 @@ snapshots:
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.37.0(jiti@2.6.1)):
     dependencies:
       eslint: 9.37.0(jiti@2.6.1)
+
+  eslint-plugin-unused-imports@4.4.1(@typescript-eslint/eslint-plugin@8.46.3(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1)):
+    dependencies:
+      eslint: 9.37.0(jiti@2.6.1)
+    optionalDependencies:
+      '@typescript-eslint/eslint-plugin': 8.46.3(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
 
   eslint-scope@5.1.1:
     dependencies:
