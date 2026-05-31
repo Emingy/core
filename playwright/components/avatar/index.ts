@@ -17,8 +17,6 @@ export class AvatarComponent {
 
     async navigate(args?: TArgs, waitImage = true) {
         await this.page.goto(iframeUrl(STORY_ID, args));
-        console.log(await this.image.getAttribute('class'));
-        console.log(await this.image.getAttribute('src'));
         if (waitImage) {
             await this.waitForImageLoaded();
         }
