@@ -90,9 +90,9 @@ export const Input = ({
     return (
         <label
             className={cn(BLOCK_NAME, className, {
-                [`${BLOCK_NAME}--disabled`]: disabled,
-                [`${BLOCK_NAME}--error`]: hasError,
-                [`${BLOCK_NAME}--has-value`]: inputValue,
+                [`${BLOCK_NAME}__disabled`]: disabled,
+                [`${BLOCK_NAME}__error`]: hasError,
+                [`${BLOCK_NAME}__has-value`]: inputValue,
             })}
             htmlFor={restProps.id ?? id}
         >

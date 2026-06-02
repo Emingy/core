@@ -69,14 +69,14 @@ describe('[UNIT] Input', () => {
         const { container } = render(<Input error data-testid="input" />);
         const label = container.querySelector('label');
 
-        expect(label?.className).toContain('Input--error');
+        expect(label?.className).toContain('Input__error');
     });
 
     it('Applies has-value class when value is present', () => {
         const { container } = render(<Input value="test" data-testid="input" />);
         const label = container.querySelector('label');
 
-        expect(label?.className).toContain('Input--has-value');
+        expect(label?.className).toContain('Input__has-value');
     });
 
     it('Validates input using validate function', () => {
@@ -84,7 +84,7 @@ describe('[UNIT] Input', () => {
         const { container } = render(<Input validate={validate} value="ab" data-testid="input" />);
         const label = container.querySelector('label');
 
-        expect(label?.className).toContain('Input--error');
+        expect(label?.className).toContain('Input__error');
     });
 
     it('Does not show error when validate function returns true', () => {
@@ -92,7 +92,7 @@ describe('[UNIT] Input', () => {
         const { container } = render(<Input validate={validate} value="abc" data-testid="input" />);
         const label = container.querySelector('label');
 
-        expect(label?.className).not.toContain('Input--error');
+        expect(label?.className).not.toContain('Input__error');
     });
 
     it('Handles mask with onChange providing unmaskedValue', () => {

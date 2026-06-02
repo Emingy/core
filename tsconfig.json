@@ -8,8 +8,6 @@
         },
         "baseUrl": "./",
         "rootDir": "./src",
-        "noEmit": true,
-        "module": "es2015",
         "moduleResolution": "bundler"
     },
     "include": ["src/**/*"],

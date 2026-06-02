@@ -23,7 +23,7 @@ exports[`[SNAPSHOT] Input > should render basic input 1`] = `
 
 exports[`[SNAPSHOT] Input > should render disabled state 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--disabled-p6k8XS"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input__disabled-y81atV"
   for="_r_7_"
 >
   <div
@@ -45,7 +45,7 @@ exports[`[SNAPSHOT] Input > should render disabled state 1`] = `
 
 exports[`[SNAPSHOT] Input > should render disabled with error 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--disabled-p6k8XS src-ui-controls-Input-src-index-module__Input--error-EdwRzF"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input__disabled-y81atV src-ui-controls-Input-src-index-module__Input__error-pF24vM"
   for="_r_c_"
 >
   <div
@@ -67,7 +67,7 @@ exports[`[SNAPSHOT] Input > should render disabled with error 1`] = `
 
 exports[`[SNAPSHOT] Input > should render error state 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--error-EdwRzF"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input__error-pF24vM"
   for="_r_8_"
 >
   <div
@@ -88,7 +88,7 @@ exports[`[SNAPSHOT] Input > should render error state 1`] = `
 
 exports[`[SNAPSHOT] Input > should render with all props 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 custom-class src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 custom-class src-ui-controls-Input-src-index-module__Input__has-value-jVdego"
   for="_r_b_"
 >
   <span
@@ -329,7 +329,7 @@ exports[`[SNAPSHOT] Input > should render with title 1`] = `
 
 exports[`[SNAPSHOT] Input > should render with title and value 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input__has-value-jVdego"
   for="_r_a_"
 >
   <div
@@ -355,7 +355,7 @@ exports[`[SNAPSHOT] Input > should render with title and value 1`] = `
 
 exports[`[SNAPSHOT] Input > should render with value 1`] = `
 <label
-  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input--has-value-e1LiaB"
+  class="src-ui-controls-Input-src-index-module__Input-u7a_v8 src-ui-controls-Input-src-index-module__Input__has-value-jVdego"
   for="_r_3_"
 >
   <div

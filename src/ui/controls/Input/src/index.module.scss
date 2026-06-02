@@ -108,7 +108,7 @@
 
     &:has(.Input__field:placeholder-shown) &__title,
     &:focus-within &__title,
-    &--has-value &__title {
+    &__has-value &__title {
         @include typography.micro;
         top: 6px;
     }
@@ -117,28 +117,28 @@
         top: 21px;
     }
 
-    &:focus-within:not(.Input--disabled, .Input--error) {
+    &:focus-within:not(.Input__disabled, .Input__error) {
         border-color: var(--color-grey-10);
     }
 
-    &--error:focus-within {
+    &__error:focus-within {
         border-color: var(--color-red-40);
     }
 
-    &:hover:not(.Input--disabled, .Input--error) {
+    &:hover:not(.Input__disabled, .Input__error) {
         border-color: var(--color-grey-10);
 
-        &:not(.Input--has-value) {
+        &:not(.Input__has-value) {
             .Input__title {
                 color: var(--color-grey-10);
             }
         }
     }
 
-    &--error:hover {
+    &__error:hover {
         border-color: var(--color-red-40);
 
-        &:not(.Input--has-value) {
+        &:not(.Input__has-value) {
             .Input__title {
                 color: var(--color-red-40);
             }
@@ -147,7 +147,7 @@
 
     /* ----------- */
 
-    &--error {
+    &__error {
         border-color: var(--color-red-50);
         box-shadow: 0 0 8px 0 var(--color-red-60);
 
@@ -160,7 +160,7 @@
         }
     }
 
-    &--disabled {
+    &__disabled {
         cursor: auto;
         pointer-events: none;
 

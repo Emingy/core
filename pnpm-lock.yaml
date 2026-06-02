@@ -22,8 +22,8 @@ importers:
         specifier: 20.0.0
         version: 20.0.0
       '@emingy/configs':
-        specifier: 0.3.0
-        version: 0.3.0(376633fc7867b96d73c5ecc56569161a)
+        specifier: 0.5.2
+        version: 0.5.2(a2989b4a11ad1c9b9511bf79508acae6)
       '@playwright/test':
         specifier: 1.60.0
         version: 1.60.0
@@ -477,8 +477,8 @@ packages:
   '@dual-bundle/import-meta-resolve@4.2.1':
     resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
-  '@emingy/configs@0.3.0':
-    resolution: {integrity: sha512-sRiVxtCjnVaRtTAMWBqZ9N+OcXpiZyAEGPbgL8ZmCMMZek0wEEaLdyYHqmOYo8t3GUaIcTFcXQ04u70QCcPJYw==}
+  '@emingy/configs@0.5.2':
+    resolution: {integrity: sha512-EUr1HpP1MQ4X9ZhrLUg/rpXbbQLxsrr3BsMdMhMKljdDLtSVvO9OCsWnTrsLvOoXAhj6q9LhqrsiDRPidUYJeA==}
     engines: {node: '22', pnpm: '10'}
     peerDependencies:
       '@commitlint/cli': 20.1.0
@@ -490,6 +490,7 @@ packages:
       eslint-plugin-simple-import-sort: 12.1.1
       eslint-plugin-unused-imports: 4.4.1
       globals: 16.5.0
+      knip: 6.15.0
       prettier: 3.6.2
       stylelint: 16.25.0
       stylelint-config-css-modules: 4.5.1
@@ -5064,7 +5065,7 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
-  '@emingy/configs@0.3.0(376633fc7867b96d73c5ecc56569161a)':
+  '@emingy/configs@0.5.2(a2989b4a11ad1c9b9511bf79508acae6)':
     dependencies:
       '@commitlint/cli': 20.1.0(@types/node@24.10.0)(typescript@5.9.3)
       '@commitlint/config-conventional': 20.0.0
@@ -5075,6 +5076,7 @@ snapshots:
       eslint-plugin-simple-import-sort: 12.1.1(eslint@9.37.0(jiti@2.6.1))
       eslint-plugin-unused-imports: 4.4.1(@typescript-eslint/eslint-plugin@8.46.3(@typescript-eslint/parser@8.46.3(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.37.0(jiti@2.6.1))
       globals: 16.5.0
+      knip: 5.67.1(@types/node@24.10.0)(typescript@5.9.3)
       prettier: 3.6.2
       stylelint: 16.25.0(typescript@5.9.3)
       stylelint-config-css-modules: 4.5.1(stylelint@16.25.0(typescript@5.9.3))
