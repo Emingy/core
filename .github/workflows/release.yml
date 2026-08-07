@@ -121,7 +121,7 @@ jobs:
               uses: ./.github/actions/prepare-project/
 
             - name: Build Storybook
-              run: PUBLIC_PATH='/packages' pnpm build:storybook
+              run: PUBLIC_PATH="/${{ github.event.repository.name }}" pnpm build:storybook
 
             - name: Setup Pages
               uses: actions/configure-pages@v5
