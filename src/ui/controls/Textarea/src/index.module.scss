@@ -1,0 +1,167 @@
+@use '@emingy/core/styles/typography';
+@use '@emingy/core/styles/filters';
+
+.Textarea {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--spacing-2x);
+    padding: var(--spacing-4x);
+    border: 1px solid var(--color-grey-40-50);
+    border-radius: var(--spacing-4x);
+    cursor: text;
+    color: var(--color-grey-40-50);
+    transition:
+        border-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        box-shadow var(--animation-duration-base) var(--animation-easing-ease-in-out);
+
+    &__title {
+        position: absolute;
+        top: 0;
+
+        z-index: 1;
+        max-width: calc(100% - var(--spacing-8x));
+        overflow: hidden;
+
+        pointer-events: none;
+        text-overflow: ellipsis;
+        color: var(--color-grey-40-50);
+        white-space: nowrap;
+        transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
+    }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    &__input-container {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        min-height: 0;
+    }
+
+    &__field {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        resize: none;
+        color: var(--color-grey-10);
+
+        @include typography.base;
+    }
+
+    &__prefix,
+    &__postfix {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+    }
+
+    &__prefix {
+        padding-inline-end: var(--spacing-2x);
+        border-inline-end: 1px solid var(--color-grey-40-50);
+    }
+
+    &__postfix {
+        padding-inline-start: var(--spacing-2x);
+        border-inline-start: 1px solid var(--color-grey-40-50);
+    }
+
+    &__counter {
+        position: absolute;
+        right: 0;
+        bottom: -15px;
+        pointer-events: none;
+        color: var(--color-grey-40-50);
+    }
+
+    &__resize-vertical {
+        overflow: hidden;
+        resize: vertical;
+    }
+
+    &__resize-horizontal {
+        overflow: hidden;
+        resize: horizontal;
+    }
+
+    &__resize-both {
+        overflow: hidden;
+        resize: both;
+    }
+
+    /* ----------- */
+
+    &:has(.Textarea__title) &__field {
+        margin-top: var(--spacing-2x);
+    }
+
+    &:has(.Textarea__field:placeholder-shown) &__title,
+    &:focus-within &__title,
+    &__has-value &__title {
+        @include typography.micro;
+        top: -8px;
+    }
+
+    &:focus-within:not(.Textarea__disabled, .Textarea__error) {
+        border-color: var(--color-grey-10);
+    }
+
+    &__error:focus-within {
+        border-color: var(--color-red-40);
+    }
+
+    &:hover:not(.Textarea__disabled, .Textarea__error) {
+        border-color: var(--color-grey-10);
+
+        &:not(.Textarea__has-value) {
+            .Textarea__title {
+                color: var(--color-grey-10);
+            }
+        }
+    }
+
+    &__error:hover {
+        border-color: var(--color-red-40);
+
+        &:not(.Textarea__has-value) {
+            .Textarea__title {
+                color: var(--color-red-40);
+            }
+        }
+    }
+
+    /* ----------- */
+
+    &__error {
+        border-color: var(--color-red-50);
+        box-shadow: 0 0 8px 0 var(--color-red-60);
+
+        .Textarea__title {
+            color: var(--color-red-50);
+        }
+
+        &:focus-within .Textarea__title {
+            color: var(--color-red-50);
+        }
+    }
+
+    &__disabled {
+        cursor: auto;
+        pointer-events: none;
+
+        @include filters.opacity-35;
+    }
+}

@@ -14,6 +14,7 @@ import { OptionComponent } from './components/option';
 import { RadioComponent } from './components/radio';
 import { SpinnerComponent } from './components/spinner';
 import { TagComponent } from './components/tag';
+import { TextareaComponent } from './components/textarea';
 import { ToggleComponent } from './components/toggle';
 import { ToggleButtonComponent } from './components/toggle-button';
 import { TooltipComponent } from './components/tooltip';
@@ -34,6 +35,7 @@ type TFixtures = {
     Radio: RadioComponent;
     Spinner: SpinnerComponent;
     Tag: TagComponent;
+    Textarea: TextareaComponent;
     Toggle: ToggleComponent;
     ToggleButton: ToggleButtonComponent;
     Tooltip: TooltipComponent;
@@ -110,6 +112,11 @@ export const test = base.extend<TFixtures>({
         const tag = new TagComponent(page);
         await tag.navigate();
         await use(tag);
+    },
+    Textarea: async ({ page }, use) => {
+        const textarea = new TextareaComponent(page);
+        await textarea.navigate();
+        await use(textarea);
     },
     Toggle: async ({ page }, use) => {
         const toggle = new ToggleComponent(page);

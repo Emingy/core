@@ -1,0 +1,181 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Textarea: Form Control
+
+The `Textarea` component is a flexible and accessible multi-line text field. It shares its visual language and API with [`Input`](/?path=/docs/ui-controls-input--docs), adding native multi-line editing and an opt-in resize handle.
+
+---
+
+## I. Component Usage
+
+The component renders an HTML `<textarea>` element wrapped in a `<label>` for accessibility. It supports controlled and uncontrolled modes, custom validation, and prefix/postfix elements.
+
+### Basic Example
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Textarea } from '@emingy/core/ui';
+
+<Textarea
+  title="Description"
+  placeholder="Tell us more..."
+/>
+\`\`\`
+`}
+</Markdown>
+
+### With Resize
+
+By default the field cannot be resized. Opt in via the `resize` prop. The drag handle resizes the whole bordered box (border, prefix/postfix included), not just the inner text area, and is bounded by `minWidth`/`maxWidth`/`minHeight`/`maxHeight`.
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Textarea } from '@emingy/core/ui';
+
+<Textarea title="Bio" resize="vertical" />
+
+// Custom resize bounds
+<Textarea title="Bio" resize="both" minHeight={200} maxHeight={600} maxWidth="600px" />
+\`\`\`
+`}
+</Markdown>
+
+### With Character Limit
+
+Set `maxLength` to enforce a native character cap and show a `current/max` counter in the bottom-right corner of the field (before the `postfix`).
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Textarea } from '@emingy/core/ui';
+
+<Textarea title="Bio" maxLength={200} />
+\`\`\`
+`}
+</Markdown>
+
+### With Prefix and Postfix
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Textarea } from '@emingy/core/ui';
+
+<Textarea
+  title="Message"
+  prefix={<Icon name="message" />}
+  value={message}
+  onChange={(e) => setMessage(e.target.value)}
+/>
+\`\`\`
+`}
+</Markdown>
+
+### With Validation
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Textarea } from '@emingy/core/ui';
+
+<Textarea
+  title="Comment"
+  placeholder="At least 10 characters"
+  validate={(value) => value.length >= 10}
+  error={false}
+/>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+The `Textarea` component accepts all standard HTML `<textarea>` attributes (`rows`, `cols`, `maxLength`, …), plus specific props for enhanced functionality.
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`title\`** | \`string\` | | Label displayed above the field. Recommended for accessibility. |
+| **\`prefix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed before the field. |
+| **\`postfix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed after the field. |
+| **\`error\`** | \`boolean\` | \`false\` | Indicates validation error state. Applies error-specific styling. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables the field. Prevents user interaction. |
+| **\`resize\`** | \`'none' \\| 'vertical' \\| 'horizontal' \\| 'both'\` | \`'none'\` | Controls whether and in which direction the user can resize the field. |
+| **\`minWidth\`** | \`number \\| string\` | \`'100%'\` | Minimum width. A number is treated as pixels, a string is used as-is (e.g. \`'50%'\`). |
+| **\`maxWidth\`** | \`number \\| string\` | \`'100%'\` | Maximum width. |
+| **\`minHeight\`** | \`number \\| string\` | \`100\` | Minimum height. |
+| **\`maxHeight\`** | \`number \\| string\` | \`400\` | Maximum height. |
+| **\`maxLength\`** | \`number\` | | Maximum character count. Also renders a \`current/max\` counter in the bottom-right corner of the field, before \`postfix\`. |
+| **\`value\`** | \`string\` | | Controlled value of the field. |
+| **\`onChange\`** | \`(event) => void\` | | Event handler called when the value changes. |
+| **\`validate\`** | \`(value: string) => boolean\` | | Custom validation function. Returns \`true\` if value is valid, \`false\` otherwise. |
+| **\`className\`** | \`string\` | | Additional CSS classes for styling. |
+`}
+</Markdown>
+
+---
+
+## III. Validation
+
+The component supports both built-in and custom validation:
+
+### Built-in Error State
+
+<Markdown>
+    {`
+\`\`\`tsx
+<Textarea
+  title="Feedback"
+  error={true}
+/>
+\`\`\`
+`}
+</Markdown>
+
+### Custom Validation Function
+
+<Markdown>
+    {`
+\`\`\`tsx
+<Textarea
+  title="Bio"
+  validate={(value) => {
+    // Must be at least 20 characters
+    return value.length >= 20;
+  }}
+/>
+\`\`\`
+`}
+</Markdown>
+
+The validation function is called on every change. If it returns `false`, error styling is automatically applied.
+
+---
+
+## IV. Accessibility
+
+The component follows accessibility best practices:
+
+- The `<label>` element wraps the field for proper click targeting
+- The `title` prop creates an associated label for screen readers
+- The `id` attribute is automatically generated if not provided
+- Error states are visually indicated for users with disabilities
+- Disabled state prevents keyboard navigation to the field
+
+---
+
+## V. Notes
+
+- **Controlled Component**: When using the `value` prop, always provide an `onChange` handler to update the value.
+- **Resize**: The resize handle is disabled by default (`resize="none"`); opt in per-instance via the `resize` prop. Resizing is bounded by `minWidth`/`maxWidth`/`minHeight`/`maxHeight` (defaults: width `100%`–`100%`, height `100`–`400`).
+- **Character counter**: Setting `maxLength` both enforces the native limit on the `<textarea>` and renders a `current/max` counter overlaid in the bottom-right corner of the field.
+- **Error State Logic**: The component shows error styling when either `error` prop is `true` OR the `validate` function returns `false`. They work together via OR logic: if `error={true}`, the error state is shown regardless of validation result.
+- **No masking**: Unlike `Input`, `Textarea` does not support input masks — multi-line free text isn't a good fit for positional masking.
