@@ -1,10 +1,10 @@
 # ToggleButton
 
-| Prop          | Type                       | Default     | Description |
-| ------------- | -------------------------- | ----------- | ----------- |
-| `type`        | `"primary" \| "secondary"` | `'primary'` | —           |
-| `prefix`      | `ReactNode`                | —           | —           |
-| `postfix`     | `ReactNode`                | —           | —           |
-| `isLoading`   | `boolean`                  | —           | —           |
-| `isFullWidth` | `boolean`                  | —           | —           |
-| `className`   | `string`                   | —           | —           |
+| Prop          | Type                     | Default     | Description |
+| ------------- | ------------------------ | ----------- | ----------- |
+| `type`        | "primary" \| "secondary" | `'primary'` | —           |
+| `className`   | `string`                 | —           | —           |
+| `prefix`      | `ReactNode`              | —           | —           |
+| `postfix`     | `ReactNode`              | —           | —           |
+| `isLoading`   | `boolean`                | —           | —           |
+| `isFullWidth` | `boolean`                | —           | —           |

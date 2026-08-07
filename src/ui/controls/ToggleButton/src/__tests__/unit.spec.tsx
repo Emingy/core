@@ -238,4 +238,13 @@ describe('[UNIT] ToggleButton', () => {
         expect(label?.getAttribute('for')).toBe('test-id');
         expect(input?.getAttribute('id')).toBe('test-id');
     });
+
+    it('Forwards ref to the input element', () => {
+        const ref = React.createRef<HTMLInputElement>();
+
+        render(<ToggleButton ref={ref}>Toggle</ToggleButton>);
+
+        expect(ref.current).toBeInstanceOf(HTMLInputElement);
+        expect(ref.current?.type).toBe('checkbox');
+    });
 });

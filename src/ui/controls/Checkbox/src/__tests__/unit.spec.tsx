@@ -141,4 +141,13 @@ describe('[UNIT] Checkbox', () => {
 
         expect(input.className).toContain('Checkbox__input');
     });
+
+    it('Forwards ref to the input element', () => {
+        const ref = React.createRef<HTMLInputElement>();
+
+        render(<Checkbox label="Test" ref={ref} />);
+
+        expect(ref.current).toBeInstanceOf(HTMLInputElement);
+        expect(ref.current).toBe(screen.getByRole('checkbox'));
+    });
 });

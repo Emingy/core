@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { describe, expect, it } from '@rstest/core';
+import { describe, expect, it, rstest } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Input } from '..';
@@ -171,5 +171,28 @@ describe('[UNIT] Input', () => {
         const label = container.querySelector('label');
 
         expect(label?.className).toContain('custom-class');
+    });
+
+    it('Forwards ref to the input element', () => {
+        const ref = React.createRef<HTMLInputElement>();
+
+        render(<Input ref={ref} data-testid="input" />);
+
+        expect(ref.current).toBeInstanceOf(HTMLInputElement);
+        expect(ref.current).toBe(screen.getByTestId('input'));
+    });
+
+    it('Calls onFocus and onBlur handlers passed as props', () => {
+        const handleFocus = rstest.fn();
+        const handleBlur = rstest.fn();
+
+        render(<Input onFocus={handleFocus} onBlur={handleBlur} data-testid="input" />);
+        const input = screen.getByTestId('input') as HTMLInputElement;
+
+        fireEvent.focus(input);
+        expect(handleFocus).toHaveBeenCalledTimes(1);
+
+        fireEvent.blur(input);
+        expect(handleBlur).toHaveBeenCalledTimes(1);
     });
 });

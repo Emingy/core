@@ -141,4 +141,13 @@ describe('[UNIT] Toggle', () => {
 
         expect(input.className).toContain('Toggle__input');
     });
+
+    it('Forwards ref to the input element', () => {
+        const ref = React.createRef<HTMLInputElement>();
+
+        render(<Toggle label="Test" ref={ref} />);
+
+        expect(ref.current).toBeInstanceOf(HTMLInputElement);
+        expect(ref.current).toBe(screen.getByRole('checkbox'));
+    });
 });

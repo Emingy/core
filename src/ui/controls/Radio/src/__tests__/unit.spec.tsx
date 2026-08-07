@@ -165,4 +165,13 @@ describe('[UNIT] Radio', () => {
         expect(radios[1].name).toBe('group1');
         expect(radios[2].name).toBe('group1');
     });
+
+    it('Forwards ref to the input element', () => {
+        const ref = React.createRef<HTMLInputElement>();
+
+        render(<Radio label="Test" ref={ref} />);
+
+        expect(ref.current).toBeInstanceOf(HTMLInputElement);
+        expect(ref.current).toBe(screen.getByRole('radio'));
+    });
 });
