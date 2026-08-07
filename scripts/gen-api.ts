@@ -105,21 +105,59 @@ function getComponentPropTypes(entryFile: string): Map<string, string> {
             ts.getModifiers(node)?.some((m) => m.kind === ts.SyntaxKind.ExportKeyword)
         );
 
+    // `forwardRef((props, ref) => ...)` — unwrap to the inner render function so we
+    // read its signature directly instead of the exported symbol's type
+    // (ForwardRefExoticComponent, whose synthetic call signature loses the
+    // parameter's valueDeclaration and breaks the lookups below).
+    const findRenderFunctionNode = (
+        decl: ts.VariableDeclaration
+    ): ts.FunctionLikeDeclaration | undefined => {
+        const init = decl.initializer;
+        if (!init) return undefined;
+
+        const isForwardRefCall =
+            ts.isCallExpression(init) &&
+            (ts.isIdentifier(init.expression)
+                ? init.expression.text === 'forwardRef'
+                : ts.isPropertyAccessExpression(init.expression) &&
+                  init.expression.name.text === 'forwardRef');
+
+        if (isForwardRefCall) {
+            const renderFn = (init as ts.CallExpression).arguments[0];
+            return ts.isArrowFunction(renderFn) || ts.isFunctionExpression(renderFn)
+                ? renderFn
+                : undefined;
+        }
+
+        return ts.isArrowFunction(init) || ts.isFunctionExpression(init) ? init : undefined;
+    };
+
     ts.forEachChild(source, (node) => {
         if (!isExportedVar(node)) return;
         for (const decl of node.declarationList.declarations) {
             if (!ts.isIdentifier(decl.name)) continue;
-            const sym = checker.getSymbolAtLocation(decl.name);
-            if (!sym) continue;
-            const type = checker.getTypeOfSymbolAtLocation(sym, decl);
-            const [sig] = type.getCallSignatures();
-            if (!sig || !sig.parameters.length) continue;
-            const propsParam = sig.parameters[0];
-            if (!propsParam.valueDeclaration) continue;
+
+            const renderFn = findRenderFunctionNode(decl);
+
+            let propsParam: ts.Symbol | undefined;
+
+            if (renderFn) {
+                const renderSig = checker.getSignatureFromDeclaration(renderFn);
+                propsParam = renderSig?.parameters[0];
+            } else {
+                const sym = checker.getSymbolAtLocation(decl.name);
+                if (!sym) continue;
+                const type = checker.getTypeOfSymbolAtLocation(sym, decl);
+                const [sig] = type.getCallSignatures();
+                propsParam = sig?.parameters[0];
+            }
+
+            if (!propsParam || !propsParam.valueDeclaration) continue;
             const propsType = checker.getTypeOfSymbolAtLocation(
                 propsParam,
                 propsParam.valueDeclaration
             );
+
             for (const prop of propsType.getProperties()) {
                 if (!prop.valueDeclaration) continue;
                 const decl = prop.valueDeclaration;
