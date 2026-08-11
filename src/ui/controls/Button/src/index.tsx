@@ -1,6 +1,6 @@
 import cls from 'classnames/bind';
 import React, { useId } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useInRouterContext, useNavigate } from 'react-router-dom';
 
 import { ArrowBottomIcon, Icon } from '@emingy/core/ui/basic/Icon';
 import { Typography } from '@emingy/core/ui/basic/Typography';
@@ -33,13 +33,14 @@ export const Button = ({
     ...restProps
 }: TProps) => {
     const id = useId();
-    const navigate = useNavigate();
+    const isInRouterContext = useInRouterContext();
+    const navigate = isInRouterContext ? useNavigate() : undefined;
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         onClick?.(e);
 
         if (href) {
-            navigate(href, navigateOptions);
+            navigate?.(href, navigateOptions);
         }
     };
 
