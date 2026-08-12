@@ -135,6 +135,15 @@ pnpm coverage:ts
 
 Measures the percentage of typed values in the codebase using [type-coverage](https://github.com/plantain-00/type-coverage).
 
+### LLM context bundle
+
+```bash
+pnpm llms:check   # validate (runs in pre-commit)
+pnpm llms:gen     # regenerate llms.txt + every module's llms.md
+```
+
+Every component, provider, hook, util, and styles module has a generated `llms.md` (props/signature/variables). `llms.txt` at the repo root indexes them all by category — the entry point for an LLM agent to load context for the whole kit. The check fails if any file is out of date.
+
 ---
 
 ## 📄 License

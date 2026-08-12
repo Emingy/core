@@ -1,0 +1,64 @@
+# @emingy/core
+
+> Personal UI-kit — context index for LLM agents. Each linked file documents one module's props/signature/variables. Run `pnpm llms:gen` to regenerate.
+
+## Hooks
+
+- [useDeviceType](src/hooks/useDeviceType/llms.md)
+- [useMessage](src/hooks/useMessage/llms.md)
+
+## Providers
+
+- [AppProvider](src/providers/AppProvider/llms.md)
+- [MessageProvider](src/providers/MessageProvider/llms.md)
+- [TooltipProvider](src/providers/TooltipProvider/llms.md)
+
+## Styles
+
+- [animations](src/styles/variables/animations/llms.md)
+- [colors](src/styles/variables/colors/llms.md)
+- [filters](src/styles/filters/llms.md)
+- [media](src/styles/media/llms.md)
+- [shadows](src/styles/shadows/llms.md)
+- [spacing](src/styles/variables/spacing/llms.md)
+- [typography](src/styles/typography/llms.md)
+
+## UI / Basic
+
+- [Icon](src/ui/basic/Icon/llms.md)
+- [Typography](src/ui/basic/Typography/llms.md)
+
+## UI / Controls
+
+- [Button](src/ui/controls/Button/llms.md)
+- [Checkbox](src/ui/controls/Checkbox/llms.md)
+- [Input](src/ui/controls/Input/llms.md)
+- [Option](src/ui/controls/Option/llms.md)
+- [Radio](src/ui/controls/Radio/llms.md)
+- [Textarea](src/ui/controls/Textarea/llms.md)
+- [Toggle](src/ui/controls/Toggle/llms.md)
+- [ToggleButton](src/ui/controls/ToggleButton/llms.md)
+
+## UI / DataDisplay
+
+- [Avatar](src/ui/dataDisplay/Avatar/llms.md)
+- [Badge](src/ui/dataDisplay/Badge/llms.md)
+- [Message](src/ui/dataDisplay/Message/llms.md)
+- [Spinner](src/ui/dataDisplay/Spinner/llms.md)
+- [Tag](src/ui/dataDisplay/Tag/llms.md)
+- [Tooltip](src/ui/dataDisplay/Tooltip/llms.md)
+
+## UI / Layout
+
+- [Divider](src/ui/layout/Divider/llms.md)
+- [Flex](src/ui/layout/Flex/llms.md)
+
+## UI / Navigation
+
+- [Link](src/ui/navigation/Link/llms.md)
+
+## Utils
+
+- [getElementPageRect](src/utils/getElementPageRect/llms.md)
+- [isDigitChar](src/utils/isDigitChar/llms.md)
+- [isLetterChar](src/utils/isLetterChar/llms.md)

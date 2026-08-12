@@ -23,6 +23,25 @@ pnpm storybook     # dev server on :3000
 pnpm build         # lib build (TYPE=lib rslib build)
 ```
 
+## LLM context bundle
+
+Every component, provider, hook, util, and styles module (variables, mixins) has a generated `llms.md` — props table for components, function signature + returns table for hooks/utils, variables/mixins table for styles:
+
+```
+src/ui/controls/Button/llms.md       # props table
+src/hooks/useMessage/llms.md         # function signature + returns
+src/styles/variables/colors/llms.md  # CSS custom properties
+…
+```
+
+`llms.txt` at the repo root indexes all of them by category with relative links — the entry point for an LLM agent to discover the whole kit.
+
+**Regenerate all:** `pnpm llms:gen` — script: `scripts/gen-llms.ts`, config at the top of the file (`SOURCES`, `ENTRY_FILE_CANDIDATES`).
+
+**Validate:** `pnpm llms:check` — runs in precommit, exits 1 if any file is outdated.
+
+When writing code that touches a module, read its `llms.md` first. No need to open `index.tsx`, `types.ts`, or `constants.ts`.
+
 ## Source structure
 
 ```
