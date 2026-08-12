@@ -144,6 +144,8 @@ pnpm llms:gen     # regenerate llms.txt + every module's llms.md
 
 Every component, provider, hook, util, and styles module has a generated `llms.md` (props/signature/variables). `llms.txt` at the repo root indexes them all by category — the entry point for an LLM agent to load context for the whole kit. The check fails if any file is out of date.
 
+Both `llms.txt` and every `src/**/llms.md` are listed in `package.json`'s `files` field, so they ship with the published npm package alongside `lib`.
+
 ---
 
 ## 📄 License
