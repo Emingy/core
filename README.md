@@ -135,15 +135,6 @@ pnpm coverage:ts
 
 Measures the percentage of typed values in the codebase using [type-coverage](https://github.com/plantain-00/type-coverage).
 
-### API docs
-
-```bash
-pnpm api:check   # validate (runs in pre-commit)
-pnpm api:gen     # regenerate all api.md files
-```
-
-Each module has a generated `api.md` with a props/signature table. The check fails if any file is out of date.
-
 ---
 
 ## 📄 License

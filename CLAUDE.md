@@ -23,25 +23,6 @@ pnpm storybook     # dev server on :3000
 pnpm build         # lib build (TYPE=lib rslib build)
 ```
 
-## API reference
-
-Every module has a generated `api.md` — props table for components, function signature + returns table for hooks/utils:
-
-```
-src/ui/controls/Button/api.md       # props table
-src/ui/basic/Typography/api.md      # props table
-src/providers/AppProvider/api.md    # props table
-src/hooks/useMessage/api.md         # function signature + returns
-src/utils/isDigitChar/api.md        # function signature + params
-…
-```
-
-**Regenerate all:** `pnpm api:gen` — script: `scripts/gen-api.ts`, config at the top of the file (`SOURCES`, `ENTRY_FILE_CANDIDATES`, `PRIMITIVE_RETURN_TYPES`).
-
-**Validate:** `pnpm api:check` — runs in precommit, exits 1 if any file is outdated.
-
-When writing code that touches a module, read its `api.md` first. No need to open `index.tsx`, `types.ts`, or `constants.ts`.
-
 ## Source structure
 
 ```
