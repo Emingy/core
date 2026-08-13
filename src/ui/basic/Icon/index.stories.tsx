@@ -11,6 +11,7 @@ import CheckIcon from './src/svg/check.svg?react';
 import CrossIcon from './src/svg/cross.svg?react';
 import HomeIcon from './src/svg/home.svg?react';
 import InfoIcon from './src/svg/info.svg?react';
+import PersonIcon from './src/svg/person.svg?react';
 import WarningIcon from './src/svg/warning.svg?react';
 import type { TSvgComponent } from './src/types';
 
@@ -22,6 +23,7 @@ const ICONS: Record<string, TSvgComponent> = {
     CrossIcon,
     HomeIcon,
     InfoIcon,
+    PersonIcon,
     WarningIcon,
 };
 
