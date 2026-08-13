@@ -15,12 +15,12 @@
     user-select: none;
 
     &:hover {
-        background-color: var(--color-grey-40-50);
+        background-color: var(--color-grey-60-50);
         color: var(--color-grey-10);
     }
 
     &:active {
-        background-color: var(--color-grey-50-50);
+        background-color: var(--color-grey-70-50);
         color: var(--color-grey-10);
     }
 
@@ -59,10 +59,5 @@
     &__disabled {
         pointer-events: none;
         color: var(--color-grey-60);
-
-        .NavItem__tags,
-        .NavItem__badge {
-            opacity: 0.1;
-        }
     }
 }
