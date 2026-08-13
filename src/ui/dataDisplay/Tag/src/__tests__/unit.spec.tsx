@@ -8,16 +8,20 @@ import { ETagColor, ETagSize, Tag } from '..';
 describe('[UNIT] Tag', () => {
     it('Render', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
 
-        expect(button).toBeDefined();
+        expect(container.firstElementChild).toBeDefined();
     });
 
-    it('Renders as button element', () => {
+    it('Renders as div element by default', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
 
-        expect(button?.tagName).toBe('BUTTON');
+        expect(container.firstElementChild?.tagName).toBe('DIV');
+    });
+
+    it('Renders as button element when onClick is provided', () => {
+        const { container } = render(<Tag text="Test" onClick={rstest.fn()} id="1" />);
+
+        expect(container.firstElementChild?.tagName).toBe('BUTTON');
     });
 
     it('Renders text content', () => {
@@ -28,79 +32,68 @@ describe('[UNIT] Tag', () => {
 
     it('Applies Tag base class', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag');
+        expect(container.firstElementChild?.className).toContain('Tag');
     });
 
     it('Applies custom className', () => {
         const { container } = render(<Tag text="Test" className="custom-tag" />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('custom-tag');
+        expect(container.firstElementChild?.className).toContain('custom-tag');
     });
 
     it('Applies default purple color class', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__purple');
+        expect(container.firstElementChild?.className).toContain('Tag__purple');
     });
 
     it('Applies grey color class', () => {
         const { container } = render(<Tag text="Test" color={ETagColor.Grey} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__grey');
+        expect(container.firstElementChild?.className).toContain('Tag__grey');
     });
 
     it('Applies yellow color class', () => {
         const { container } = render(<Tag text="Test" color={ETagColor.Yellow} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__yellow');
+        expect(container.firstElementChild?.className).toContain('Tag__yellow');
     });
 
     it('Applies red color class', () => {
         const { container } = render(<Tag text="Test" color={ETagColor.Red} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__red');
+        expect(container.firstElementChild?.className).toContain('Tag__red');
     });
 
     it('Applies green color class', () => {
         const { container } = render(<Tag text="Test" color={ETagColor.Green} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__green');
+        expect(container.firstElementChild?.className).toContain('Tag__green');
     });
 
     it('Does not apply small class for md size', () => {
         const { container } = render(<Tag text="Test" size={ETagSize.Md} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).not.toContain('Tag__small');
+        expect(container.firstElementChild?.className).not.toContain('Tag__small');
     });
 
     it('Applies small class for sm size', () => {
         const { container } = render(<Tag text="Test" size={ETagSize.Sm} />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__small');
+        expect(container.firstElementChild?.className).toContain('Tag__small');
     });
 
     it('Applies clickable class when onClick provided', () => {
         const { container } = render(<Tag text="Test" onClick={rstest.fn()} id="1" />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).toContain('Tag__clickable');
+        expect(container.firstElementChild?.className).toContain('Tag__clickable');
     });
 
     it('Does not apply clickable class without onClick', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
 
-        expect(button?.className).not.toContain('Tag__clickable');
+        expect(container.firstElementChild?.className).not.toContain('Tag__clickable');
     });
 
     it('Calls onClick with id when clicked', () => {
@@ -137,11 +130,11 @@ describe('[UNIT] Tag', () => {
 
     it('Does not throw when clicked without onClick', () => {
         const { container } = render(<Tag text="Test" />);
-        const button = container.querySelector('button');
+        const root = container.firstElementChild;
 
         expect(() => {
-            if (button) {
-                fireEvent.click(button);
+            if (root) {
+                fireEvent.click(root);
             }
         }).not.toThrow();
     });

@@ -52,14 +52,13 @@ export const Tag = ({
         }
     })();
 
-    return (
-        <button
-            className={cn(`${BLOCK_NAME}`, className, `${BLOCK_NAME}__${color}`, {
-                [`${BLOCK_NAME}__small`]: size === ESize.Sm,
-                [`${BLOCK_NAME}__clickable`]: typeof onClick === 'function',
-            })}
-            onClick={handleClick}
-        >
+    const rootClassName = cn(`${BLOCK_NAME}`, className, `${BLOCK_NAME}__${color}`, {
+        [`${BLOCK_NAME}__small`]: size === ESize.Sm,
+        [`${BLOCK_NAME}__clickable`]: typeof onClick === 'function',
+    });
+
+    const content = (
+        <>
             {icon && <Icon icon={icon} size="xs" />}
             {text && <TextNode>{text}</TextNode>}
             {closable && (
@@ -70,8 +69,18 @@ export const Tag = ({
                     data-testid="tag-close"
                 />
             )}
-        </button>
+        </>
     );
+
+    if (typeof onClick === 'function') {
+        return (
+            <button className={rootClassName} onClick={handleClick}>
+                {content}
+            </button>
+        );
+    }
+
+    return <div className={rootClassName}>{content}</div>;
 };
 
 export type TTagProps = TProps;
