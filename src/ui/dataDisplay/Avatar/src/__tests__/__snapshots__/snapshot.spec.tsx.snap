@@ -177,3 +177,14 @@ exports[`[SNAPSHOT] Avatar > should render with title 1`] = `
   />
 </button>
 `;
+
+exports[`[SNAPSHOT] Avatar > should render without src and without loading state 1`] = `
+<button
+  class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K"
+>
+  <img
+    alt="No src"
+    class="Avatar__image"
+  />
+</button>
+`;

@@ -11,7 +11,7 @@ const BLOCK_NAME = 'Avatar';
 const cn = cls.bind(styles);
 
 export const Avatar = ({ className, onLoad, onError, onClick, disabled, ...restProps }: TProps) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(Boolean(restProps.src));
     const imgRef = useRef<HTMLImageElement>(null);
 
     const handleLoad = () => {
@@ -25,6 +25,11 @@ export const Avatar = ({ className, onLoad, onError, onClick, disabled, ...restP
     };
 
     useEffect(() => {
+        if (!restProps.src) {
+            setIsLoading(false);
+            return;
+        }
+
         setIsLoading(true);
         // Cached images skip onLoad — check complete synchronously after mount/src change.
         const img = imgRef.current;

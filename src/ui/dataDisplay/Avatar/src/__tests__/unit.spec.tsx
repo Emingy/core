@@ -191,4 +191,27 @@ describe('[UNIT] Avatar', () => {
 
         expect(img.getAttribute('title')).toBe('User Avatar');
     });
+
+    describe('without src', () => {
+        it('Does not apply loading class', () => {
+            const { container } = render(<Avatar />);
+            const button = container.querySelector('button');
+
+            expect(button?.className).not.toContain('Avatar__loading');
+        });
+
+        it('Does not render a spinner', () => {
+            const { container } = render(<Avatar />);
+            const spinner = container.querySelector('svg');
+
+            expect(spinner).toBeNull();
+        });
+
+        it('Does not hide the image', () => {
+            const { container } = render(<Avatar />);
+            const img = container.querySelector('img');
+
+            expect(img?.className).not.toContain('Avatar__image-hidden');
+        });
+    });
 });

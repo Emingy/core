@@ -39,4 +39,9 @@ describe('[SNAPSHOT] Avatar', () => {
         );
         expect(container.firstChild).toMatchSnapshot();
     });
+
+    it('should render without src and without loading state', () => {
+        const { container } = render(<Avatar alt="No src" />);
+        expect(container.firstChild).toMatchSnapshot();
+    });
 });
