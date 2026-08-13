@@ -1,4 +1,4 @@
-import type { HTMLAttributes, PropsWithChildren } from 'react';
+import type { ElementType, HTMLAttributes, PropsWithChildren } from 'react';
 
 import { EFlexAlign, EFlexDirection, EFlexGap, EFlexJustify } from './constants';
 
@@ -10,5 +10,6 @@ export type TProps = PropsWithChildren<{
     gap?: `${EFlexGap}`;
     inline?: boolean;
     wrap?: boolean;
+    elementType?: ElementType;
 }> &
     HTMLAttributes<HTMLDivElement>;

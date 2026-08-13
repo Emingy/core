@@ -17,6 +17,26 @@ describe('[UNIT] Flex', () => {
         expect(screen.getByTestId('flex')).toBeDefined();
     });
 
+    it('Renders a div by default', () => {
+        render(
+            <Flex data-testid="flex">
+                <div />
+            </Flex>
+        );
+
+        expect(screen.getByTestId('flex').tagName).toBe('DIV');
+    });
+
+    it('Renders the tag passed via elementType', () => {
+        render(
+            <Flex elementType="section" data-testid="flex">
+                <div />
+            </Flex>
+        );
+
+        expect(screen.getByTestId('flex').tagName).toBe('SECTION');
+    });
+
     it('Flex direction variants', () => {
         const variants = Object.values(EFlexDirection);
 

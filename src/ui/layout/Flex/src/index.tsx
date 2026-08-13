@@ -18,10 +18,11 @@ export const Flex = ({
     children,
     inline = false,
     wrap = false,
+    elementType: Tag = 'div',
     ...restProps
 }: TProps) => {
     return (
-        <div
+        <Tag
             {...restProps}
             className={cn(BLOCK_NAME, className, {
                 [`${BLOCK_NAME}--direction-${direction}`]: direction !== EFlexDirection.Row,
@@ -33,7 +34,7 @@ export const Flex = ({
             })}
         >
             {children}
-        </div>
+        </Tag>
     );
 };
 
