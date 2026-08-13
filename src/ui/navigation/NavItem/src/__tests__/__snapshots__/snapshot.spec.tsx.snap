@@ -1,0 +1,181 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] NavItem > should render as a button when onClick is used instead of "to" 1`] = `
+<button
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  type="button"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Log out
+  </span>
+</button>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render as an external link for an absolute http(s) "to" 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  href="https://example.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Docs
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render basic nav item 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render disabled state 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc src-ui-navigation-NavItem-src-index-module__NavItem__disabled-fZF5V3"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render forced active state 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc src-ui-navigation-NavItem-src-index-module__NavItem__active-FQcur8"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render with a badge 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Inbox
+  </span>
+  <div
+    class="src-ui-dataDisplay-Badge-src-index-module__Badge-XTL7MC src-ui-navigation-NavItem-src-index-module__NavItem__badge-ueVT9l src-ui-dataDisplay-Badge-src-index-module__Badge__primary-X2Dz8g"
+  >
+    <p
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-basic-Typography-src-index-module__Typography--truncated-v5eL_T"
+    >
+      3
+    </p>
+  </div>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render with custom className 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc custom-nav-item"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render with prefix icon 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  href="/test"
+>
+  <span
+    class="src-ui-navigation-NavItem-src-index-module__NavItem__prefix-l8anHU"
+  >
+    <span>
+      icon
+    </span>
+  </span>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+</a>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render with subitems chevron 1`] = `
+<div
+  class="src-ui-layout-Dropdown-src-index-module__Dropdown__trigger-S0Yu4P"
+>
+  <a
+    class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+    href="/test"
+  >
+    <span
+      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+    >
+      Settings
+    </span>
+    <svg
+      class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww src-ui-navigation-NavItem-src-index-module__NavItem__chevron-s1WRN_"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m21 7-7.513 8.348a2 2 0 0 1-2.974 0L3 7"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+    </svg>
+  </a>
+</div>
+`;
+
+exports[`[SNAPSHOT] NavItem > should render with tags 1`] = `
+<a
+  class="src-ui-navigation-NavItem-src-index-module__NavItem-X2dZxc"
+  href="/test"
+>
+  <span
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-large-fDXdZZ src-ui-navigation-NavItem-src-index-module__NavItem__label-blTNZC"
+  >
+    Dashboard
+  </span>
+  <span
+    class="src-ui-navigation-NavItem-src-index-module__NavItem__tags-AGYbEy"
+  >
+    <div
+      class="src-ui-dataDisplay-Tag-src-index-module__Tag-snvK3L src-ui-dataDisplay-Tag-src-index-module__Tag__green-bNk8HO src-ui-dataDisplay-Tag-src-index-module__Tag__small-oFdbhU"
+    >
+      <p
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh"
+      >
+        New
+      </p>
+    </div>
+  </span>
+</a>
+`;

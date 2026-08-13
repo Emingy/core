@@ -1,0 +1,166 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# NavItem: Navigation Menu Item
+
+The `NavItem` component is a single row in a navigation menu — a leading icon slot, a label, optional tags/badge, and a trailing chevron for items with subitems. Depending on which props it receives, it renders as one of three different root elements while looking identical: a router-aware `NavLink`, a plain external `<a>`, or an action `<button>`.
+
+When `subItems` is provided, the item is wrapped in a `Dropdown` — clicking it toggles a floating panel rendering the subitems as nested `NavItem`s.
+
+---
+
+## I. Component Usage
+
+<Markdown>
+{`
+\`\`\`tsx
+import { NavItem } from '@emingy/core/ui';
+import { HomeIcon, Icon } from '@emingy/core/ui/basic/Icon';
+
+<NavItem to="/dashboard" label="Dashboard" prefix={<Icon icon={HomeIcon} size="sm" />} />
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`label\`** | \`string\` | **Required** | The item's text. |
+| **\`to\`** | \`string\` | — | Navigation destination. Required unless \`onClick\` is used instead — see [Render Modes](#iii-render-modes). |
+| **\`onClick\`** | \`(event) => void\` | — | Turns the item into an action button. Required unless \`to\` is used instead — mutually exclusive with \`to\`. |
+| **\`prefix\`** | \`ReactNode\` | — | Slot rendered before the label — typically an \`Icon\`. |
+| **\`subItems\`** | \`TNavItemProps[]\` | — | Nested items rendered as \`NavItem\`s inside a \`Dropdown\` panel. Shows a trailing chevron and makes the item clickable to toggle the panel — see [Subitems, Tags and Badge](#vi-subitems-tags-and-badge). |
+| **\`tags\`** | \`TTagProps[]\` | — | \`Tag\` components rendered after the label. |
+| **\`badge\`** | \`TBadgeProps\` | — | A \`Badge\` rendered after the tags — typically an unread/item count. |
+| **\`active\`** | \`boolean\` | — | Forces the highlighted state. For a \`to\` item this is combined with route matching — see [Active State](#iv-active-state). Ignored for \`onClick\` items unless set explicitly. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Visually dims the item and disables interaction — see [Disabled State](#v-disabled-state). |
+| **\`className\`** | \`string\` | — | Additional CSS classes for custom styling. |
+| **\`style\`** | \`CSSProperties\` | — | Inline styles for the root element. |
+`}
+</Markdown>
+
+All other native anchor/button attributes (`id`, `data-*`, `aria-*`, `title`, …) are forwarded to the root element.
+
+---
+
+## III. Render Modes
+
+<Markdown>
+{`
+\`\`\`tsx
+// Internal route — renders a react-router NavLink
+<NavItem to="/reports" label="Reports" />
+
+// Absolute http(s) URL — renders a plain <a target="_blank" rel="noopener noreferrer">
+
+<NavItem to="https://docs.example.com" label="Documentation" />
+
+// onClick instead of "to" — renders a <button type="button">
+
+<NavItem onClick={handleLogout} label="Log out" />
+\`\`\`
+`}
+</Markdown>
+
+**How the mode is picked:**
+
+- `onClick` present, no `to` → **action button**. Use this for items that trigger behavior instead of navigating (log out, open a modal, toggle a panel).
+- `to` starting with `http://` or `https://` (checked via `isExternalUrl` from `@emingy/core/utils`) → **external link**. Opens in a new tab; does not participate in in-app routing or the `active` auto-detection.
+- Any other `to` → **internal navigation** via react-router's `NavLink`.
+
+All three modes share the exact same visual output (content, spacing, colors) — only the root DOM element and its behavior differ.
+
+---
+
+## IV. Active State
+
+For an internal (`to`-based, non-external) item, the highlighted state comes from react-router's own route matching by default:
+
+<Markdown>
+    {`
+\`\`\`tsx
+// Highlighted automatically when the current route is "/reports"
+<NavItem to="/reports" label="Reports" />
+\`\`\`
+`}
+</Markdown>
+
+The `active` prop overrides that: `true`/`false` forces the state, `undefined` (the default) falls back to route matching. This is useful for a parent item that should look active while any of its subitems' routes are open:
+
+<Markdown>
+    {`
+\`\`\`tsx
+// Force-highlighted regardless of whether "/reports" is the current route
+<NavItem to="/reports" label="Reports" active={isReportsSectionOpen} />
+\`\`\`
+`}
+</Markdown>
+
+External links and action buttons have no route to match against, so for them `active` is a plain on/off switch (`undefined`/`false` → not active).
+
+---
+
+## V. Disabled State
+
+<Markdown>
+    {`
+\`\`\`tsx
+<NavItem to="/admin" label="Admin Panel" disabled />
+\`\`\`
+`}
+</Markdown>
+
+`disabled` dims the label and sets `pointer-events: none` on the root, and also dims any `tags`/`badge` to match. As with `Link`, this is a **visual-only** state — an internal `to` item stays keyboard-focusable and activatable via Enter (same rationale as `Link`'s documented `disabled` behavior). To fully prevent navigation, guard the destination or the `onClick` handler on the consumer side.
+
+---
+
+## VI. Subitems, Tags and Badge
+
+<Markdown>
+{`
+\`\`\`tsx
+// Trailing chevron; clicking toggles a Dropdown panel of nested NavItems
+<NavItem
+  to="/reports"
+  label="Reports"
+  subItems={[
+    { to: '/reports/daily', label: 'Daily' },
+    { to: '/reports/monthly', label: 'Monthly' },
+  ]}
+/>
+
+// Tags and a badge after the label
+
+<NavItem
+  to="/inbox"
+  label="Inbox"
+  tags={[{ text: 'New', color: 'green', size: 'sm' }]}
+  badge={{ value: 3 }}
+/>
+\`\`\`
+`}
+</Markdown>
+
+Order of the trailing content is fixed: label → tags → badge → chevron.
+
+Each entry in `subItems` is a full `TNavItemProps` object — it can have its own `prefix`, `tags`, `badge`, and even its own nested `subItems` for multi-level menus. The parent item's own click behavior (navigate / `onClick`) still fires in addition to toggling the panel.
+
+---
+
+## VII. Important Notes
+
+<Markdown>
+    {`
+- An internal (\`to\`-based, non-external) \`NavItem\` must be used within a React Router context (e.g. \`BrowserRouter\`, \`MemoryRouter\`) — external links and action buttons don't require one.
+- \`to\` and \`onClick\` are mutually exclusive at the type level — providing both is a type error, and \`onClick\` takes priority if both were forced through.
+- \`prefix\` accepts any \`ReactNode\`, not just \`Icon\` — an \`Avatar\`, a colored dot, etc. all work.
+- The external/internal check is a simple \`^https?://\` prefix match (see \`isExternalUrl\`) — protocol-relative URLs (\`//example.com\`) and other schemes (\`mailto:\`) are treated as internal paths.
+`}
+</Markdown>

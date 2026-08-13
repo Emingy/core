@@ -1,0 +1,68 @@
+.NavItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-2x);
+    width: 100%;
+    padding: var(--spacing-2x);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-grey-20);
+    transition:
+        background-color var(--animation-duration-base) var(--animation-easing-ease-in-out),
+        color var(--animation-duration-base) var(--animation-easing-ease-in-out);
+    user-select: none;
+
+    &:hover {
+        background-color: var(--color-grey-40-50);
+        color: var(--color-grey-10);
+    }
+
+    &:active {
+        background-color: var(--color-grey-50-50);
+        color: var(--color-grey-10);
+    }
+
+    &__active {
+        background-color: var(--color-grey-50-50);
+        color: var(--color-grey-10);
+    }
+
+    &__prefix {
+        display: flex;
+        flex: none;
+        align-items: center;
+    }
+
+    &__label {
+        flex: 1;
+        color: inherit;
+    }
+
+    &__tags {
+        display: flex;
+        flex: none;
+        align-items: center;
+        gap: var(--spacing-1x);
+    }
+
+    &__badge {
+        flex: none;
+    }
+
+    &__chevron {
+        flex: none;
+        transform: rotate(-90deg);
+    }
+
+    &__disabled {
+        pointer-events: none;
+        color: var(--color-grey-60);
+
+        .NavItem__tags,
+        .NavItem__badge {
+            opacity: 0.1;
+        }
+    }
+}

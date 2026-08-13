@@ -1,0 +1,74 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# isExternalUrl: External URL Detector
+
+The `isExternalUrl` utility checks whether a given string is an absolute `http://` or `https://` URL. It is used internally (e.g. by `NavItem`) to decide whether a destination should be treated as an external link (opened in a new tab) rather than routed internally.
+
+---
+
+## I. Function Signature
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isExternalUrl } from '@emingy/core/utils';
+
+const result: boolean = isExternalUrl(url: string);
+\`\`\`
+`}
+
+</Markdown>
+
+<Markdown>
+    {`
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| **\`url\`** | \`string\` | The string to check. |
+`}
+</Markdown>
+
+**Returns:** `boolean` — `true` if the string starts with `http://` or `https://`, `false` otherwise.
+
+---
+
+## II. Usage Examples
+
+<Markdown>
+{`
+\`\`\`tsx
+import { isExternalUrl } from '@emingy/core/utils';
+
+// Absolute http(s) URLs — true
+isExternalUrl('https://example.com'); // true
+isExternalUrl('http://example.com'); // true
+
+// Internal paths — false
+isExternalUrl('/dashboard'); // false
+isExternalUrl('dashboard'); // false
+isExternalUrl('#section'); // false
+
+// Other protocols — false
+isExternalUrl('mailto:test@example.com'); // false
+isExternalUrl('ftp://example.com'); // false
+
+// Only matches a leading protocol — false
+isExternalUrl('/redirect?to=https://example.com'); // false
+\`\`\`
+`}
+
+</Markdown>
+
+---
+
+## III. Important Notes
+
+<Markdown>
+    {`
+- Only strings starting with \`http://\` or \`https://\` are considered external — protocol-relative (\`//example.com\`), \`mailto:\`, and other schemes return \`false\`.
+- The check is a prefix match — a URL embedded later in the string does not count.
+- The function is pure and has no side effects.
+`}
+</Markdown>
