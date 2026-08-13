@@ -11,6 +11,7 @@ import { IconComponent } from './components/icon';
 import { InputComponent } from './components/input';
 import { LinkComponent } from './components/link';
 import { MessageComponent } from './components/message';
+import { NavItemComponent } from './components/nav-item';
 import { OptionComponent } from './components/option';
 import { RadioComponent } from './components/radio';
 import { SpinnerComponent } from './components/spinner';
@@ -33,6 +34,7 @@ type TFixtures = {
     Input: InputComponent;
     Link: LinkComponent;
     Message: MessageComponent;
+    NavItem: NavItemComponent;
     Option: OptionComponent;
     Radio: RadioComponent;
     Spinner: SpinnerComponent;
@@ -99,6 +101,11 @@ export const test = base.extend<TFixtures>({
         const message = new MessageComponent(page);
         await message.navigate();
         await use(message);
+    },
+    NavItem: async ({ page }, use) => {
+        const navItem = new NavItemComponent(page);
+        await navItem.navigate();
+        await use(navItem);
     },
     Option: async ({ page }, use) => {
         const option = new OptionComponent(page);
