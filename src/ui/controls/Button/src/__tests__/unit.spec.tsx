@@ -170,21 +170,33 @@ describe('[UNIT] Button', () => {
     });
 
     it('Renders splitted button', () => {
-        const { container } = renderWithRouter(<Button splitted>Button</Button>);
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Button
+            </Button>
+        );
         const buttons = container.querySelectorAll('button');
 
         expect(buttons.length).toBe(2);
     });
 
     it('Applies splitted class to main button', () => {
-        const { container } = renderWithRouter(<Button splitted>Button</Button>);
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Button
+            </Button>
+        );
         const label = container.querySelector('label');
 
         expect(label?.className).toContain('Button__splitted');
     });
 
     it('Applies splitted-right class to second button', () => {
-        const { container } = renderWithRouter(<Button splitted>Button</Button>);
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Button
+            </Button>
+        );
         const buttons = container.querySelectorAll('button');
 
         expect(buttons[1].className).toContain('Button__splitted-right');

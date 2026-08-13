@@ -14,7 +14,6 @@ type TPropsCommon = {
     htmlType?: TButtonProps['type'];
     prefix?: ReactNode;
     postfix?: ReactNode;
-    splitted?: boolean;
     isLoading?: boolean;
     href?: string;
     navigateOptions?: NavigateOptions;
@@ -23,5 +22,9 @@ type TPropsCommon = {
     icon?: TIcon;
 };
 
-export type TProps = PropsWithChildren<TPropsCommon> &
+type TPropsDependent =
+    | { splitted?: false; dropdownContent?: never }
+    | { splitted: true; dropdownContent: ReactNode };
+
+export type TProps = PropsWithChildren<TPropsCommon & TPropsDependent> &
     Omit<TButtonProps, 'type' | 'disabled' | 'children'>;

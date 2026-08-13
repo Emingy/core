@@ -8,10 +8,11 @@
 | `htmlType`        | `"submit" \| "reset" \| "button"`                                | —           | —           |
 | `prefix`          | `ReactNode`                                                      | —           | —           |
 | `postfix`         | `ReactNode`                                                      | —           | —           |
-| `splitted`        | `boolean`                                                        | —           | —           |
 | `isLoading`       | `boolean`                                                        | `false`     | —           |
 | `href`            | `string`                                                         | —           | —           |
 | `navigateOptions` | `NavigateOptions`                                                | —           | —           |
 | `isFullWidth`     | `boolean`                                                        | —           | —           |
 | `className`       | `string`                                                         | —           | —           |
 | `icon`            | `TIcon`                                                          | —           | —           |
+| `splitted`        | `boolean`                                                        | —           | —           |
+| `dropdownContent` | `ReactNode`                                                      | —           | —           |

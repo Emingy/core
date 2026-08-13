@@ -12,6 +12,7 @@ export class ButtonComponent {
     readonly label: Locator;
     readonly spinner: Locator;
     readonly splitButton: Locator;
+    readonly splitPanel: Locator;
 
     constructor(private readonly page: Page) {
         this.root = page.locator('[class*="Button__wrapper"]');
@@ -19,6 +20,7 @@ export class ButtonComponent {
         this.label = this.root.locator('label');
         this.spinner = this.root.locator('[class*="Button__spinner"]');
         this.splitButton = this.root.locator('button').nth(1);
+        this.splitPanel = page.locator('[class*="Dropdown__panel"]');
     }
 
     async navigate(args?: TArgs) {

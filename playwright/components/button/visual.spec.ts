@@ -36,3 +36,14 @@ test.describe('[Visual] Button', () => {
         }
     }
 });
+
+test.describe('[Visual] Button split dropdown (full page)', () => {
+    test('panel open', async ({ Button, page }) => {
+        await Button.navigate({ splitted: true });
+
+        await Button.splitButton.click();
+        await expect(Button.splitPanel).toBeVisible();
+
+        await expect(page).toHaveScreenshot();
+    });
+});

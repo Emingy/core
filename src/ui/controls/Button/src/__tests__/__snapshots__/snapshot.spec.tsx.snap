@@ -377,25 +377,29 @@ exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
       </p>
     </button>
   </label>
-  <button
-    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-right-EAKOzc"
+  <div
+    class="src-ui-layout-Dropdown-src-index-module__Dropdown__trigger-S0Yu4P"
   >
-    <svg
-      class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
-      fill="none"
-      height="24"
-      viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+    <button
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-right-EAKOzc"
     >
-      <path
-        d="m21 7-7.513 8.348a2 2 0 0 1-2.974 0L3 7"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-width="2"
-      />
-    </svg>
-  </button>
+      <svg
+        class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__sm-DEM9fi src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+        fill="none"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m21 7-7.513 8.348a2 2 0 0 1-2.974 0L3 7"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="2"
+        />
+      </svg>
+    </button>
+  </div>
 </div>
 `;
 

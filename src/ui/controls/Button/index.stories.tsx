@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Meta } from 'storybook-react-rsbuild';
 
+import { Option } from '@emingy/core/ui/controls/Option';
+
 import { Button, type TButtonProps } from './src';
 
 const meta: Meta = {
@@ -15,6 +17,11 @@ const meta: Meta = {
         },
         splitted: {
             type: 'boolean',
+        },
+        dropdownContent: {
+            table: {
+                disable: true,
+            },
         },
         href: {
             table: {
@@ -42,4 +49,19 @@ const meta: Meta = {
 
 export default meta;
 
-export const Demo = (props: TButtonProps) => <Button {...props}>Button</Button>;
+export const Demo = (props: TButtonProps) =>
+    props.splitted ? (
+        <Button
+            {...props}
+            dropdownContent={
+                <>
+                    <Option>Option one</Option>
+                    <Option>Option two</Option>
+                </>
+            }
+        >
+            Button
+        </Button>
+    ) : (
+        <Button {...props}>Button</Button>
+    );

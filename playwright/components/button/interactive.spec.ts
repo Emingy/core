@@ -39,4 +39,28 @@ test.describe('[Interactive] Button', () => {
         await expect(Button.button).toBeEnabled();
         await expect(Button.splitButton).toBeEnabled();
     });
+
+    test('split panel is hidden before the split button is clicked', async ({ Button }) => {
+        await Button.navigate({ splitted: true });
+
+        await expect(Button.splitPanel).not.toBeVisible();
+    });
+
+    test('clicking the split button opens the dropdown panel', async ({ Button }) => {
+        await Button.navigate({ splitted: true });
+
+        await Button.splitButton.click();
+
+        await expect(Button.splitPanel).toBeVisible();
+    });
+
+    test('clicking the split button again closes the dropdown panel', async ({ Button }) => {
+        await Button.navigate({ splitted: true });
+
+        await Button.splitButton.click();
+        await expect(Button.splitPanel).toBeVisible();
+
+        await Button.splitButton.click();
+        await expect(Button.splitPanel).not.toBeVisible();
+    });
 });

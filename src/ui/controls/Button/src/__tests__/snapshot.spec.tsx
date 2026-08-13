@@ -93,7 +93,11 @@ describe('[SNAPSHOT] Button', () => {
     });
 
     it('should render splitted button', () => {
-        const { container } = renderWithRouter(<Button splitted>Split</Button>);
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Split
+            </Button>
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 

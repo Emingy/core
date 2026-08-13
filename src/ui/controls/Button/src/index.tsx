@@ -5,6 +5,7 @@ import { useInRouterContext, useNavigate } from 'react-router-dom';
 import { ArrowBottomIcon, Icon } from '@emingy/core/ui/basic/Icon';
 import { Typography } from '@emingy/core/ui/basic/Typography';
 import { Spinner } from '@emingy/core/ui/dataDisplay/Spinner';
+import { Dropdown } from '@emingy/core/ui/layout/Dropdown';
 
 import styles from './index.module.scss';
 
@@ -22,6 +23,7 @@ export const Button = ({
     prefix,
     postfix,
     splitted,
+    dropdownContent,
     className,
     children,
     icon,
@@ -113,25 +115,27 @@ export const Button = ({
                 )}
             </label>
             {splitted && (
-                <button
-                    {...restProps}
-                    className={cn(`${BLOCK_NAME}`, className, {
-                        [`${BLOCK_NAME}__primary`]: type === EType.Primary,
-                        [`${BLOCK_NAME}__secondary`]: type === EType.Secondary,
-                        [`${BLOCK_NAME}__ghosted`]: type === EType.Ghosted,
-                        [`${BLOCK_NAME}__outlined`]: type === EType.Outlined,
-                        [`${BLOCK_NAME}__alert`]: type === EType.Alert,
-                        [`${BLOCK_NAME}__middle-size`]: size === ESize.Md,
-                        [`${BLOCK_NAME}__small-size`]: size === ESize.Sm,
-                        [`${BLOCK_NAME}__large-size`]: size === ESize.Lg,
-                        [`${BLOCK_NAME}__disabled`]: disabled,
-                        [`${BLOCK_NAME}__splitted-right`]: splitted,
-                    })}
-                    type={htmlType}
-                    disabled={disabled}
-                >
-                    <Icon icon={ArrowBottomIcon} size="sm" />
-                </button>
+                <Dropdown direction="bottom" content={dropdownContent}>
+                    <button
+                        {...restProps}
+                        className={cn(`${BLOCK_NAME}`, className, {
+                            [`${BLOCK_NAME}__primary`]: type === EType.Primary,
+                            [`${BLOCK_NAME}__secondary`]: type === EType.Secondary,
+                            [`${BLOCK_NAME}__ghosted`]: type === EType.Ghosted,
+                            [`${BLOCK_NAME}__outlined`]: type === EType.Outlined,
+                            [`${BLOCK_NAME}__alert`]: type === EType.Alert,
+                            [`${BLOCK_NAME}__middle-size`]: size === ESize.Md,
+                            [`${BLOCK_NAME}__small-size`]: size === ESize.Sm,
+                            [`${BLOCK_NAME}__large-size`]: size === ESize.Lg,
+                            [`${BLOCK_NAME}__disabled`]: disabled,
+                            [`${BLOCK_NAME}__splitted-right`]: splitted,
+                        })}
+                        type={htmlType}
+                        disabled={disabled}
+                    >
+                        <Icon icon={ArrowBottomIcon} size="sm" />
+                    </button>
+                </Dropdown>
             )}
         </div>
     );
