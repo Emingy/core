@@ -20,7 +20,6 @@ type TPropsCommon = {
     disabled?: boolean;
     className?: string;
     style?: CSSProperties;
-    containerRef?: RefObject<HTMLElement | null>;
 };
 
 type TAnchorRestProps = Omit<
@@ -37,7 +36,10 @@ type TPropsDependent =
     | ({ to: string; onClick?: never } & TAnchorRestProps)
     | ({ to?: never; onClick: MouseEventHandler<HTMLButtonElement> } & TButtonRestProps);
 
-export type TProps = TPropsCommon & TPropsDependent;
+export type TProps = TPropsCommon &
+    TPropsDependent & {
+        containerRef?: RefObject<HTMLElement | null>;
+    };
 
 export type TNavItemAsButtonProps = TPropsCommon & {
     onClick: MouseEventHandler<HTMLButtonElement>;

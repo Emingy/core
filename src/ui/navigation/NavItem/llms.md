@@ -11,6 +11,6 @@
 | `disabled`     | `boolean`                              | —       | —           |
 | `className`    | `string`                               | —       | —           |
 | `style`        | `CSSProperties`                        | —       | —           |
-| `containerRef` | `RefObject`                            | —       | —           |
 | `to`           | `string`                               | —       | —           |
 | `onClick`      | `MouseEventHandler<HTMLButtonElement>` | —       | —           |
+| `containerRef` | `RefObject`                            | —       | —           |

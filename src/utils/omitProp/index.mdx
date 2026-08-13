@@ -1,0 +1,77 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# omitProp: Object Key Omission
+
+The `omitProp` utility returns a shallow copy of an object without one named key. It exists for the case where a component prop must never reach a native DOM element (e.g. spreading `...restProps` onto a `<button>`/`<a>`) but still needs to be typed and read elsewhere in the same component.
+
+Passing the source object as a generic argument (rather than destructuring it once up front) lets TypeScript infer the result from whatever narrowed type the caller currently has — useful when the source is a discriminated union and destructuring it outside the narrowing branch would otherwise collapse the union.
+
+---
+
+## I. Function Signature
+
+<Markdown>
+{`
+\`\`\`tsx
+import { omitProp } from '@emingy/core/utils';
+
+const result: Omit<T, K> = omitProp(obj: T, key: K);
+\`\`\`
+`}
+
+</Markdown>
+
+<Markdown>
+    {`
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| **\`obj\`** | \`T extends object\` | The source object. |
+| **\`key\`** | \`K extends keyof T\` | The key to remove. |
+`}
+</Markdown>
+
+**Returns:** `Omit<T, K>` — a new object with every key of `obj` except `key`. `obj` itself is not mutated.
+
+---
+
+## II. Usage Examples
+
+<Markdown>
+{`
+\`\`\`tsx
+import { omitProp } from '@emingy/core/utils';
+
+const props = { label: 'Reports', to: '/reports', containerRef };
+
+// containerRef is a component-only prop, never a valid <a> attribute
+<a {...omitProp(props, 'containerRef')} href={props.to}>{props.label}</a>
+\`\`\`
+
+\`\`\`tsx
+// Preserves narrowing across a discriminated union
+const trigger = (() => {
+  if (props.onClick) {
+    // props is narrowed to the "button" branch here — omitProp keeps that
+    return <ButtonEl {...omitProp(props, 'containerRef')} onClick={props.onClick} />;
+  }
+
+  return <LinkEl {...omitProp(props, 'containerRef')} to={props.to} />;
+})();
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## III. Important Notes
+
+<Markdown>
+    {`
+- \`omitProp\` removes exactly one key at a time — call it again (or wrap it) to strip more than one.
+- Passing \`obj\` as a function argument, rather than destructuring the caller's variable first, is what lets a discriminated union stay narrowed at each call site.
+- The function is pure: it returns a new object and never mutates \`obj\`.
+`}
+</Markdown>

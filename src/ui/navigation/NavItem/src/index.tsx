@@ -8,6 +8,7 @@ import { Badge } from '@emingy/core/ui/dataDisplay/Badge';
 import { Tag } from '@emingy/core/ui/dataDisplay/Tag';
 import { Dropdown } from '@emingy/core/ui/layout/Dropdown';
 import { isExternalUrl } from '@emingy/core/utils/isExternalUrl';
+import { omitProp } from '@emingy/core/utils/omitProp';
 
 import styles from './index.module.scss';
 
@@ -149,14 +150,14 @@ export const NavItem = (props: TProps) => {
 
     const trigger = (() => {
         if (props.onClick) {
-            return <NavItemAsButton {...props} onClick={props.onClick} />;
+            return <NavItemAsButton {...omitProp(props, 'containerRef')} onClick={props.onClick} />;
         }
 
         if (isExternalUrl(props.to)) {
-            return <NavItemAsLink {...props} to={props.to} />;
+            return <NavItemAsLink {...omitProp(props, 'containerRef')} to={props.to} />;
         }
 
-        return <NavItemAsNavLink {...props} to={props.to} />;
+        return <NavItemAsNavLink {...omitProp(props, 'containerRef')} to={props.to} />;
     })();
 
     if (!subItems || subItems.length === 0) {

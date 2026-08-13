@@ -65,3 +65,4 @@
 - [isDigitChar](src/utils/isDigitChar/llms.md)
 - [isExternalUrl](src/utils/isExternalUrl/llms.md)
 - [isLetterChar](src/utils/isLetterChar/llms.md)
+- [omitProp](src/utils/omitProp/llms.md)
