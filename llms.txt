@@ -51,6 +51,7 @@
 ## UI / Layout
 
 - [Divider](src/ui/layout/Divider/llms.md)
+- [Dropdown](src/ui/layout/Dropdown/llms.md)
 - [Flex](src/ui/layout/Flex/llms.md)
 
 ## UI / Navigation

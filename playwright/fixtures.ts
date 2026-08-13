@@ -5,6 +5,7 @@ import { BadgeComponent } from './components/badge';
 import { ButtonComponent } from './components/button';
 import { CheckboxComponent } from './components/checkbox';
 import { DividerComponent } from './components/divider';
+import { DropdownComponent } from './components/dropdown';
 import { FlexComponent } from './components/flex';
 import { IconComponent } from './components/icon';
 import { InputComponent } from './components/input';
@@ -26,6 +27,7 @@ type TFixtures = {
     Button: ButtonComponent;
     Checkbox: CheckboxComponent;
     Divider: DividerComponent;
+    Dropdown: DropdownComponent;
     Flex: FlexComponent;
     Icon: IconComponent;
     Input: InputComponent;
@@ -67,6 +69,11 @@ export const test = base.extend<TFixtures>({
         const divider = new DividerComponent(page);
         await divider.navigate();
         await use(divider);
+    },
+    Dropdown: async ({ page }, use) => {
+        const dropdown = new DropdownComponent(page);
+        await dropdown.navigate();
+        await use(dropdown);
     },
     Flex: async ({ page }, use) => {
         const flex = new FlexComponent(page);

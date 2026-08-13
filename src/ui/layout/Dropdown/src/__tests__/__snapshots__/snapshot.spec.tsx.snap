@@ -1,0 +1,24 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] Dropdown > Closed state 1`] = `
+<div
+  class="src-ui-layout-Dropdown-src-index-module__Dropdown__trigger-S0Yu4P"
+>
+  <button
+    type="button"
+  >
+    Trigger
+  </button>
+</div>
+`;
+
+exports[`[SNAPSHOT] Dropdown > Open state 1`] = `
+<div
+  class="src-ui-layout-Dropdown-src-index-module__Dropdown__panel-f47uO2"
+  style="top: 8px; left: 0px;"
+>
+  <span>
+    Content
+  </span>
+</div>
+`;

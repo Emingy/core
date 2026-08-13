@@ -1,0 +1,191 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# Dropdown: Positioned Floating Panel
+
+The `Dropdown` component is a layout primitive that positions a floating panel next to a trigger element. The trigger is passed as `children`; the panel body is arbitrary content passed via `content` — options, a menu, nested navigation items, anything. It handles positioning, viewport-aware flipping, open/close interaction (click and/or hover), and enter/exit animation, while staying unopinionated about what's actually rendered inside the panel.
+
+---
+
+## I. Component Usage
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Dropdown } from '@emingy/core/ui';
+import { Button } from '@emingy/core/ui/controls/Button';
+import { Option } from '@emingy/core/ui/controls/Option';
+
+<Dropdown
+  content={
+    <>
+      <Option>Option one</Option>
+      <Option>Option two</Option>
+    </>
+  }
+>
+  <Button>Toggle dropdown</Button>
+</Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`children\`** | \`ReactNode\` | **Required** | The trigger element. |
+| **\`content\`** | \`ReactNode \\| ((panelRef: RefObject<HTMLElement \\| null>) => ReactNode)\` | **Required** | The panel body. Pass a function to receive the panel's own ref, e.g. to hand it down as a nested \`Dropdown\`'s \`containerRef\` — see [Aligning to a Container](#iv-aligning-to-a-container). |
+| **\`direction\`** | \`'top'\` \\| \`'bottom'\` \\| \`'left'\` \\| \`'right'\` | \`'bottom'\` | Direction the panel opens relative to the trigger — see [Direction and Auto-Flip](#iii-direction-and-auto-flip). |
+| **\`triggerMode\`** | \`('click' \\| 'hover')[]\` | \`['click']\` | Which interactions open/close the panel — see [Trigger Modes](#v-trigger-modes). |
+| **\`containerRef\`** | \`RefObject<HTMLElement \\| null>\` | — | Aligns the panel to this element's edge instead of the trigger's — see [Aligning to a Container](#iv-aligning-to-a-container). |
+| **\`maxHeight\`** | \`CSSProperties['maxHeight']\` | — | Max height of the panel. The panel scrolls internally past this height; sizing decisions stay with the consumer. |
+| **\`isOpen\`** | \`boolean\` | — | Controlled open state — see [Open State](#vi-open-state-controlled-vs-uncontrolled). |
+| **\`onOpenChange\`** | \`(isOpen: boolean) => void\` | — | Called whenever the open state changes, controlled or not. |
+| **\`className\`** | \`string\` | — | Additional CSS class applied to the trigger wrapper. |
+`}
+</Markdown>
+
+All other native `div` attributes (`id`, `data-*`, `aria-*`, `onClick`, `onMouseEnter`, `onMouseLeave`, …) are forwarded to the trigger wrapper. `onClick` is composed with the component's own click-to-toggle handling rather than overridden; `onMouseEnter`/`onMouseLeave` are passed through as-is — hover-triggered open/close listens on the trigger's rendered child directly (see [Important Notes](#viii-important-notes)), independently of these forwarded handlers.
+
+---
+
+## III. Direction and Auto-Flip
+
+<Markdown>
+{`
+\`\`\`tsx
+<Dropdown direction="right" content={<Menu />}>
+  <Button>Actions</Button>
+</Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+`direction` sets where the panel opens relative to the trigger: `top`, `bottom` (default), `left`, or `right`. Once the panel mounts, its measured size is checked against the viewport:
+
+- The requested direction is used if the panel fits.
+- Otherwise, the opposite side on the same axis is tried (`bottom` ↔ `top`, `left` ↔ `right`).
+- If neither side of that axis fits, the perpendicular axis is tried next, in the same fallback order.
+- If nothing fits anywhere, the originally requested direction is used as a last resort — the panel does its best rather than disappearing.
+
+This means a panel that's requested to open `right` but only has room `bottom` will still end up fully on-screen instead of clipping off the edge of the viewport.
+
+---
+
+## IV. Aligning to a Container
+
+<Markdown>
+{`
+\`\`\`tsx
+const sidebarRef = useRef<HTMLElement>(null);
+
+<nav ref={sidebarRef} style={{ padding: 16 }}>
+  <Dropdown direction="right" containerRef={sidebarRef} content={<Menu />}>
+    <NavItem to="/reports" label="Reports" />
+  </Dropdown>
+</nav>
+\`\`\`
+`}
+</Markdown>
+
+By default the panel's offset on the `direction` axis is measured from the trigger's own edge. When several triggers of different widths share a padded container (a sidebar, a toolbar, …), that makes each panel hang off a slightly different edge. Passing `containerRef` fixes the offset to that container's edge instead — every panel in the container lines up flush with it, `direction`-axis padding included, since a measured element's edge already accounts for its own padding.
+
+The cross axis (e.g. the vertical position for `direction="right"`/`"left"`) always stays aligned to the trigger itself, so the panel still opens level with the specific row that triggered it. Auto-flip (see above) also switches to measuring against `containerRef` once it's provided, so flip decisions stay consistent with where the panel is actually anchored.
+
+For nested flyouts (a panel that itself contains another `Dropdown` trigger), pass `content` as a function to get the panel's own ref, then hand it down as the next level's `containerRef` — each level aligns flush with the panel above it instead of the original container:
+
+<Markdown>
+{`
+\`\`\`tsx
+<Dropdown
+  direction="right"
+  content={(panelRef) => (
+    <Dropdown direction="right" containerRef={panelRef} content={<Menu />}>
+      <Option>More options</Option>
+    </Dropdown>
+  )}
+>
+  <Button>Actions</Button>
+</Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+`NavItem` does exactly this for `subItems`: each level's flyout receives the parent panel's ref as its own `containerRef`, so a multi-level submenu stays flush at every depth. Pass `containerRef` on the top-level `NavItem` to anchor the whole chain to an outer container (a sidebar, …) instead of the first panel.
+
+---
+
+## V. Trigger Modes
+
+<Markdown>
+{`
+\`\`\`tsx
+// Default — open/close on click, outside click, and Escape
+<Dropdown content={<Menu />}><Button>Menu</Button></Dropdown>
+
+// Open on hover, close ~150ms after the pointer leaves the trigger and the panel
+<Dropdown triggerMode={['hover']} content={<Menu />}><Button>Menu</Button></Dropdown>
+
+// Both — either interaction opens it
+<Dropdown triggerMode={['hover', 'click']} content={<Menu />}><Button>Menu</Button></Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+`triggerMode` is an array, not a single value — pass whichever interactions should be able to open the panel:
+
+- **\`['click']\` (default)** — clicking the trigger toggles the panel. Outside click and `Escape` always close it, regardless of mode.
+- **\`['hover']\`** — moving the pointer onto the trigger opens the panel immediately. Moving it off the trigger schedules a close after a short delay (~150ms) rather than closing instantly, so the pointer has time to travel from the trigger to the panel without the panel disappearing first. Moving the pointer onto the panel itself (or back onto the trigger) cancels the pending close. Clicking does nothing in this mode.
+- **\`['hover', 'click']\`** — both behaviors are active at once: hover opens/closes with the same delay logic, and clicking independently toggles the panel too.
+
+The underlying element's own `onClick` (navigation, form submission, whatever the trigger normally does) always fires — `triggerMode` only controls whether that click *also* toggles the dropdown.
+
+---
+
+## VI. Open State: Controlled vs Uncontrolled
+
+<Markdown>
+{`
+\`\`\`tsx
+// Uncontrolled — Dropdown manages its own open state internally
+<Dropdown content={<Menu />}><Button>Menu</Button></Dropdown>
+
+// Controlled — the consumer owns the state
+const [isOpen, setIsOpen] = useState(false);
+
+<Dropdown isOpen={isOpen} onOpenChange={setIsOpen} content={<Menu />}>
+  <Button>Menu</Button>
+</Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+When `isOpen` is omitted, `Dropdown` tracks its own open/closed state internally, driven by `triggerMode`, outside clicks, and `Escape`. Passing `isOpen` switches it to fully controlled — the component still calls `onOpenChange` on every interaction that would have changed the state, but the actual value is up to the consumer. This is the same controlled/uncontrolled pattern used across the rest of the kit's interactive components.
+
+---
+
+## VII. Enter/Exit Animation
+
+The panel fades in and out using the tokens from `styles/animations` (`--animation-duration-base`, `--animation-easing-ease-in` / `--animation-easing-ease-out`) — the same convention used by `Tooltip`. On open, the panel mounts, then fades to full opacity on the next animation frame. On close, it fades out first and stays mounted until the transition actually finishes, so the panel never just vanishes mid-animation.
+
+---
+
+## VIII. Important Notes
+
+<Markdown>
+    {`
+- The panel is rendered through a React portal into \`document.body\`, positioned with \`position: absolute\` and page coordinates — it is not clipped by an \`overflow: hidden\` ancestor of the trigger.
+- The trigger wrapper uses \`display: contents\`, so it doesn't add any box of its own to the layout — wrapping an existing element (a \`Button\`, a \`NavItem\`, …) in \`Dropdown\` doesn't change how that element is sized or positioned by its parent.
+- Panel position is measured from the trigger's first child element, not the (boxless) wrapper itself; the optional \`containerRef\` element is measured directly.
+- A \`display: contents\` element never receives native \`mouseenter\`/\`mouseleave\` (confirmed in real browsers, not just a theoretical CSS-spec quirk — it has no box to hover), so React's synthetic \`onMouseEnter\`/\`onMouseLeave\` on the trigger wrapper itself do not fire. Hover-triggered open/close instead attaches native listeners directly to the trigger's rendered child (which does have a box). This is transparent to consumers, but matters if you're debugging why a hover interaction on the wrapper element itself doesn't do anything.
+- \`content\` is required — \`Dropdown\` has no built-in notion of options, menus, or search; it only positions and animates whatever is passed to it. Compose it with \`Option\`, \`Input\`, or nested \`NavItem\`s as needed.
+- \`maxHeight\` is the consumer's responsibility — \`Dropdown\` doesn't compute or cap it automatically based on available viewport space.
+`}
+</Markdown>
