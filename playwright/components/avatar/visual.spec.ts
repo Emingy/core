@@ -15,8 +15,8 @@ test.describe('[Visual] Avatar', () => {
         await page.unrouteAll();
     });
 
-    test('disabled', async ({ Avatar }) => {
-        await Avatar.navigate({ disabled: 'true' });
+    test('placeholder', async ({ Avatar }) => {
+        await Avatar.navigate({ src: '' }, false);
         await expect(Avatar.root).toHaveScreenshot();
     });
 
@@ -25,9 +25,37 @@ test.describe('[Visual] Avatar', () => {
         await expect(Avatar.root).toHaveScreenshot();
     });
 
-    test('clicked', async ({ Avatar, page }) => {
-        await Avatar.root.hover();
-        await page.mouse.down();
-        await expect(Avatar.root).toHaveScreenshot();
+    test.describe('with onClick', () => {
+        test('default', async ({ Avatar }) => {
+            await Avatar.navigate({ onClick: 'clicked' });
+            await expect(Avatar.root).toHaveScreenshot();
+        });
+
+        test('disabled', async ({ Avatar }) => {
+            await Avatar.navigate({ onClick: 'clicked', disabled: true });
+            await expect(Avatar.root).toHaveScreenshot();
+        });
+
+        test('clicked', async ({ Avatar, page }) => {
+            await Avatar.navigate({ onClick: 'clicked' });
+            await Avatar.root.hover();
+            await page.mouse.down();
+            await expect(Avatar.root).toHaveScreenshot();
+            await page.mouse.up();
+        });
+    });
+
+    test.describe('with to', () => {
+        test('default', async ({ Avatar }) => {
+            await Avatar.navigate({ to: 'profile' });
+            await expect(Avatar.root).toHaveScreenshot();
+        });
+    });
+
+    test.describe('with href', () => {
+        test('default', async ({ Avatar }) => {
+            await Avatar.navigate({ href: 'external' });
+            await expect(Avatar.root).toHaveScreenshot();
+        });
     });
 });

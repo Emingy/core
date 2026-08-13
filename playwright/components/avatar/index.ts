@@ -9,10 +9,14 @@ const STORY_ID = 'ui-datadisplay-avatar--demo';
 export class AvatarComponent {
     readonly root: Locator;
     readonly image: Locator;
+    readonly spinner: Locator;
+    readonly placeholderIcon: Locator;
 
     constructor(private readonly page: Page) {
         this.root = page.locator('[class*="Avatar"]').first();
         this.image = this.root.locator('img');
+        this.spinner = this.root.locator('[class*="Spinner"]');
+        this.placeholderIcon = this.root.locator('> svg');
     }
 
     async navigate(args?: TArgs, waitImage = true) {

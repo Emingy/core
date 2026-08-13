@@ -11,21 +11,26 @@
 
     &:disabled {
         cursor: auto;
-
-        img {
-            filter: brightness(0.4);
-        }
     }
 
-    &:not(:disabled):hover img {
+    &:not(:disabled, .Avatar__placeholder):hover {
         filter: brightness(1.2);
     }
 
-    &:not(:disabled):active img {
+    &:not(:disabled, .Avatar__placeholder):active {
         filter: brightness(0.8);
     }
 
     &__loading {
+        background-color: var(--color-grey-80);
+        border: 1px solid var(--color-grey-40);
+
+        img {
+            display: none;
+        }
+    }
+
+    &__placeholder {
         background-color: var(--color-grey-80);
         border: 1px solid var(--color-grey-40);
 

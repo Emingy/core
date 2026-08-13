@@ -1,8 +1,11 @@
 # Avatar
 
-| Prop        | Type                                                   | Default | Description |
-| ----------- | ------------------------------------------------------ | ------- | ----------- |
-| `className` | `string`                                               | —       | —           |
-| `onLoad`    | `(VoidFunction & ReactEventHandler<HTMLImageElement>)` | —       | —           |
-| `onError`   | `(VoidFunction & ReactEventHandler<HTMLImageElement>)` | —       | —           |
-| `onClick`   | `(VoidFunction & MouseEventHandler<HTMLImageElement>)` | —       | —           |
+| Prop        | Type                                   | Default | Description |
+| ----------- | -------------------------------------- | ------- | ----------- |
+| `className` | `string`                               | —       | —           |
+| `onLoad`    | `VoidFunction`                         | —       | —           |
+| `onError`   | `VoidFunction`                         | —       | —           |
+| `disabled`  | `boolean`                              | —       | —           |
+| `onClick`   | `MouseEventHandler<HTMLButtonElement>` | —       | —           |
+| `to`        | `string`                               | —       | —           |
+| `href`      | `string`                               | —       | —           |

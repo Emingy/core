@@ -1,7 +1,7 @@
 // Rstest Snapshot v1
 
 exports[`[SNAPSHOT] Avatar > should render basic avatar 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
 >
   <div
@@ -23,16 +23,14 @@ exports[`[SNAPSHOT] Avatar > should render basic avatar 1`] = `
   </div>
   <img
     alt="Test"
-    class="Avatar__image Avatar__image-hidden"
     src="/test.jpg"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render complex avatar 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K user-avatar src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
-  disabled=""
 >
   <div
     class="Avatar__loader"
@@ -53,17 +51,15 @@ exports[`[SNAPSHOT] Avatar > should render complex avatar 1`] = `
   </div>
   <img
     alt="User"
-    class="Avatar__image Avatar__image-hidden"
     src="/user.jpg"
     title="John Doe"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render disabled avatar 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
-  disabled=""
 >
   <div
     class="Avatar__loader"
@@ -84,14 +80,13 @@ exports[`[SNAPSHOT] Avatar > should render disabled avatar 1`] = `
   </div>
   <img
     alt="Test"
-    class="Avatar__image Avatar__image-hidden"
     src="/test.jpg"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render with custom className 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K custom-avatar src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
 >
   <div
@@ -113,14 +108,13 @@ exports[`[SNAPSHOT] Avatar > should render with custom className 1`] = `
   </div>
   <img
     alt="Test"
-    class="Avatar__image Avatar__image-hidden"
     src="/test.jpg"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render with different src 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
 >
   <div
@@ -142,14 +136,13 @@ exports[`[SNAPSHOT] Avatar > should render with different src 1`] = `
   </div>
   <img
     alt="Avatar"
-    class="Avatar__image Avatar__image-hidden"
     src="/avatar.png"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render with title 1`] = `
-<button
+<div
   class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K src-ui-dataDisplay-Avatar-src-index-module__Avatar__loading-d1rwKq"
 >
   <div
@@ -171,20 +164,42 @@ exports[`[SNAPSHOT] Avatar > should render with title 1`] = `
   </div>
   <img
     alt="Test"
-    class="Avatar__image Avatar__image-hidden"
     src="/test.jpg"
     title="User Avatar"
   />
-</button>
+</div>
 `;
 
 exports[`[SNAPSHOT] Avatar > should render without src and without loading state 1`] = `
-<button
-  class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K"
+<div
+  class="src-ui-dataDisplay-Avatar-src-index-module__Avatar-DTSe2K src-ui-dataDisplay-Avatar-src-index-module__Avatar__placeholder-zotDro"
 >
+  <svg
+    class="src-ui-basic-Icon-src-index-module__Icon-Zv3D29 src-ui-basic-Icon-src-index-module__Icon__xl-M7lQ9a src-ui-basic-Icon-src-index-module__Icon__inherit-lc1zww"
+    fill="none"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 14c-8 0-9 7-9 7h18s-1-7-9-7"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-miterlimit="1.702"
+      stroke-width="2"
+    />
+    <circle
+      cx="12"
+      cy="7"
+      r="4"
+      stroke="currentColor"
+      stroke-width="2"
+    />
+  </svg>
   <img
     alt="No src"
-    class="Avatar__image"
   />
-</button>
+</div>
 `;

@@ -5,36 +5,38 @@ import * as Stories from './index.stories';
 
 # Avatar: Image Component with Loading State
 
-The `Avatar` component is an interactive image component that displays a loading spinner while the image is being loaded. It renders as a button element, making it clickable and accessible.
+The `Avatar` component displays a user image with automatic loading-state management and a
+person-icon placeholder for when there's no image (or it fails to load). Depending on the props
+passed, it renders as a `<button>`, a router `<NavLink>`, a plain `<a>`, or a plain `<div>`.
 
 ---
 
 ## I. Component Usage
-
-The component displays an image with automatic loading state management. A spinner is shown while the image loads, and the image smoothly appears once loading is complete.
-
-### Basic Example
 
 <Markdown>
 {`
 \`\`\`tsx
 import { Avatar } from '@emingy/core/ui';
 
-// Simple avatar
+// Simple avatar (renders as a div)
 
 <Avatar src="/user-avatar.jpg" alt="User Avatar" />
 
-// Avatar with custom className
-
-<Avatar src="/profile.jpg" alt="Profile" className="user-avatar" />
-
-// Clickable avatar
+// Clickable avatar (renders as a button)
 
 <Avatar src="/avatar.jpg" alt="Avatar" onClick={() => console.log('Avatar clicked')} />
 
-// Disabled avatar (not clickable)
+// Avatar as an internal route link (renders as a react-router NavLink)
 
-<Avatar src="/avatar.jpg" alt="Avatar" disabled />
+<Avatar src="/avatar.jpg" alt="Avatar" to="/profile" />
+
+// Avatar as a plain link (renders as an anchor)
+
+<Avatar src="/avatar.jpg" alt="Avatar" href="https://example.com/profile" />
+
+// Avatar without an image (shows the person-icon placeholder)
+
+<Avatar alt="No image yet" />
 
 // Avatar with callbacks
 
@@ -52,19 +54,19 @@ import { Avatar } from '@emingy/core/ui';
 
 ## II. Component Props
 
-The `Avatar` component accepts HTML image element props, plus custom props for interaction and callbacks.
-
 <Markdown>
     {`
 | Prop Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **\`src\`** | \`string\` | **Required** | The URL of the image to display. |
+| **\`src\`** | \`string\` | | The URL of the image to display. When omitted, the person-icon placeholder is shown. |
 | **\`alt\`** | \`string\` | | Alternative text for the image (accessibility). |
 | **\`className\`** | \`string\` | | Additional CSS classes for custom styling. |
-| **\`onClick\`** | \`() => void\` | | Click event handler for the avatar button. |
-| **\`disabled\`** | \`boolean\` | \`false\` | Disables the button (prevents onClick). |
-| **\`onLoad\`** | \`() => void\` | | Callback fired when image loads successfully. |
-| **\`onError\`** | \`() => void\` | | Callback fired when image fails to load. |
+| **\`onClick\`** | \`MouseEventHandler<HTMLButtonElement>\` | | Renders the Avatar as a \`<button>\`. Mutually exclusive with \`to\` and \`href\`. |
+| **\`to\`** | \`string\` | | Renders the Avatar as a react-router \`NavLink\`. Mutually exclusive with \`onClick\` and \`href\`. |
+| **\`href\`** | \`string\` | | Renders the Avatar as a plain \`<a>\`. Mutually exclusive with \`onClick\` and \`to\`. |
+| **\`disabled\`** | \`boolean\` | \`false\` | Disables the button (only meaningful together with \`onClick\`). |
+| **\`onLoad\`** | \`() => void\` | | Callback fired when the image loads successfully. |
+| **\`onError\`** | \`() => void\` | | Callback fired when the image fails to load. |
 `}
 </Markdown>
 
@@ -72,190 +74,103 @@ The `Avatar` component accepts HTML image element props, plus custom props for i
 
 ---
 
-## III. Loading State
+## III. Root Element
 
-The component automatically manages loading states:
+The rendered root element depends on which of `onClick` / `to` / `href` is passed:
 
 <Markdown>
 {`
 \`\`\`tsx
-// Loading sequence:
-// 1. Component mounts → Spinner appears
-// 2. Image starts loading → Image is hidden
-// 3. Image loads successfully → Spinner disappears, image appears
-// 4. Or image fails → Spinner disappears, broken image appears
+// onClick → button
+<Avatar src="/avatar.jpg" onClick={() => {}} />
 
-<Avatar
-  src="/large-image.jpg"
-  alt="Large Image"
-  onLoad={() => console.log('Loaded!')}
-  onError={() => console.log('Failed to load')}
-/>
+// to → react-router NavLink (internal navigation)
+<Avatar src="/avatar.jpg" to="/profile" />
+
+// href → plain anchor
+<Avatar src="/avatar.jpg" href="https://example.com" />
+
+// none of the above → plain div (non-interactive)
+<Avatar src="/avatar.jpg" />
 \`\`\`
 `}
 </Markdown>
 
-**Loading behavior:**
+`onClick`, `to`, and `href` are mutually exclusive — passing more than one is a type error.
 
-- The spinner is displayed immediately when the component mounts
-- The image element is rendered but hidden with `Avatar__image-hidden` class
+---
+
+## IV. Loading State
+
+The component automatically manages loading state when `src` is provided:
+
+- The spinner is displayed immediately when the component mounts with a `src`
+- The image element is hidden (via CSS) while loading
 - When the image loads successfully, `onLoad` is called and the spinner is removed
-- When the image fails to load, `onError` is called and the spinner is removed
+- When the image fails to load, `onError` is called, the spinner is removed, and the person-icon
+  placeholder is shown instead
 - If the `src` prop changes, the loading state resets and the spinner appears again
+- Without a `src`, no loading state is entered — the placeholder is shown immediately
 
 ---
 
-## IV. Image Src Changes
+## V. Placeholder
 
-When the `src` prop changes, the component automatically resets the loading state:
+When there is no image to show — either because `src` was never passed, or the image failed to
+load — the component shows a standard person-icon placeholder instead of a broken `<img>`:
 
 <Markdown>
 {`
 \`\`\`tsx
-import { useState } from 'react';
+// No src → placeholder shown immediately
+<Avatar alt="No avatar yet" />
 
-function UserProfile() {
-const [imageUrl, setImageUrl] = useState('/avatar1.jpg');
-
-return (
-<div>
-<Avatar src={imageUrl} alt="User Avatar" />
-
-      {/* Changing src will trigger loading state again */}
-      <button onClick={() => setImageUrl('/avatar2.jpg')}>
-        Change Avatar
-      </button>
-    </div>
-
-);
-}
+// Broken src → placeholder shown after the error
+<Avatar src="/broken.jpg" alt="Broken avatar" />
 \`\`\`
 `}
-
 </Markdown>
-
-The component uses `useEffect` to watch for `src` changes and resets `isLoading` to `true`, causing the spinner to appear while the new image loads.
 
 ---
 
-## V. Interactive Behavior
+## VI. Image Src Changes
 
-The Avatar is rendered as a `<button>` element, making it interactive:
-
-<Markdown>
-{`
-\`\`\`tsx
-// Clickable avatar
-<Avatar
-  src="/profile.jpg"
-  alt="Profile"
-  onClick={() => openProfileModal()}
-/>
-
-// Disabled avatar (not clickable)
-
-<Avatar src="/profile.jpg" alt="Profile" onClick={() => openProfileModal()} disabled />
-
-// Avatar with navigation
-
-<Avatar
-  src="/user.jpg"
-  alt="User"
-  onClick={() => navigate('/profile')}
-/>
-\`\`\`
-`}
-</Markdown>
-
-**Button behavior:**
-
-- The entire component is clickable (not just the image)
-- The `disabled` prop prevents clicks and applies disabled styling
-- The button has no default styling except for the Avatar classes
-- Keyboard navigation works automatically (Tab, Enter, Space)
-
----
-
-## VI. Error Handling
-
-Handle image loading errors gracefully:
-
-<Markdown>
-{`
-\`\`\`tsx
-import { useState } from 'react';
-
-function UserAvatar({ userId }: { userId: string }) {
-const [hasError, setHasError] = useState(false);
-
-const imageUrl = hasError
-? '/default-avatar.jpg'
-: \`/api/users/\${userId}/avatar\`;
-
-return (
-<Avatar
-src={imageUrl}
-alt="User Avatar"
-onError={() => {
-console.error('Failed to load avatar');
-setHasError(true);
-}}
-onLoad={() => {
-console.log('Avatar loaded successfully');
-}}
-/>
-);
-}
-\`\`\`
-`}
-
-</Markdown>
+When the `src` prop changes, the component automatically resets the loading state via `useEffect`,
+causing the spinner to appear again while the new image loads.
 
 ---
 
 ## VII. Styling
 
-The component applies CSS classes for different states:
-
 <Markdown>
 {`
 \`\`\`tsx
-// Base structure
+// Loading
 <button class="Avatar Avatar__loading">
-  <div class="Avatar__loader">
-    <svg><!-- Spinner --></svg>
-  </div>
-  <img class="Avatar__image Avatar__image-hidden" src="..." />
+  <div class="Avatar__loader"><svg><!-- Spinner --></svg></div>
+  <img src="..." />
 </button>
 
-// After loading
-
+// Loaded
 <button class="Avatar">
-    <img class="Avatar__image" src="..." />
+  <img src="..." />
 </button>
 
-// With custom className
-
-<button class="Avatar custom-avatar">
-    <img class="Avatar__image" src="..." />
-</button>
-
-// Disabled
-
-<button class="Avatar" disabled>
-  <img class="Avatar__image" src="..." />
-</button>
+// Placeholder (no src, or load error)
+<div class="Avatar Avatar__placeholder">
+  <svg><!-- person icon --></svg>
+  <img />
+</div>
 \`\`\`
 `}
 </Markdown>
 
 **CSS Classes:**
 
-- `Avatar` - Base button class, always applied
-- `Avatar__loading` - Applied while image is loading
-- `Avatar__loader` - Container for the spinner
-- `Avatar__image` - Applied to the image element
-- `Avatar__image-hidden` - Applied to hide image while loading
+- `Avatar` — base class, always applied to the root element
+- `Avatar__loading` — applied to the root while the image is loading
+- `Avatar__loader` — container for the spinner
+- `Avatar__placeholder` — applied to the root when the person-icon placeholder is shown
 
 ---
 
@@ -263,14 +178,13 @@ The component applies CSS classes for different states:
 
 <Markdown>
     {`
-- The Avatar is rendered as a \`<button>\` element, making it focusable and keyboard-accessible.
-- The image is always rendered in the DOM, even while loading (just hidden).
-- The spinner uses the \`Spinner\` component from the library.
-- When \`src\` changes, the loading state automatically resets via \`useEffect\`.
-- The \`disabled\` prop prevents interaction but doesn't affect image loading.
+- The root element is a \`<button>\`, a \`NavLink\`, an \`<a>\`, or a \`<div>\` depending on which of
+  \`onClick\` / \`to\` / \`href\` is passed — these props are mutually exclusive.
+- The person-icon placeholder is shown whenever there is no successfully loaded image (no \`src\`,
+  or the image failed to load), replacing the \`<img>\`.
+- The \`disabled\` prop only has an effect when \`onClick\` is passed (button root).
 - The \`onLoad\` and \`onError\` callbacks are optional but recommended for error handling.
 - All HTML image attributes (except \`className\`, \`onLoad\`, \`onError\`) are passed to the \`<img>\` element.
-- The component supports keyboard navigation (Tab to focus, Enter/Space to click).
-- The loading state is managed internally - you don't need to control it manually.
+- The loading state is managed internally — you don't need to control it manually.
 `}
 </Markdown>

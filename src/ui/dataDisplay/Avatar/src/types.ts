@@ -1,8 +1,16 @@
-import type { HTMLProps } from 'react';
+import type { HTMLProps, MouseEventHandler } from 'react';
 
-export type TProps = {
+type TPropsCommon = {
     className?: string;
     onLoad?: VoidFunction;
     onError?: VoidFunction;
-    onClick?: VoidFunction;
-} & HTMLProps<HTMLImageElement>;
+    disabled?: boolean;
+} & Omit<HTMLProps<HTMLImageElement>, 'onClick' | 'href' | 'disabled'>;
+
+type TPropsDependent =
+    | { onClick: MouseEventHandler<HTMLButtonElement>; to?: never; href?: never }
+    | { onClick?: never; to: string; href?: never }
+    | { onClick?: never; to?: never; href: string }
+    | { onClick?: never; to?: never; href?: never };
+
+export type TProps = TPropsCommon & TPropsDependent;
