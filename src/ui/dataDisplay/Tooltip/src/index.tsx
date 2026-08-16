@@ -1,5 +1,5 @@
 import cls from 'classnames/bind';
-import React, { useId, useRef } from 'react';
+import React, { useEffect, useId, useRef } from 'react';
 
 import { useTooltipContext } from '@emingy/core/providers/TooltipProvider';
 
@@ -10,12 +10,13 @@ import type { TProps } from './types';
 const BLOCK_NAME = 'Tooltip';
 const cn = cls.bind(styles);
 
-export const Tooltip = ({ children, disabled, ...tooltipProps }: TProps) => {
+export const Tooltip = ({ children, disabled, visible, ...tooltipProps }: TProps) => {
     const { showTooltip, hideTooltip } = useTooltipContext();
     const triggerRef = useRef<HTMLDivElement>(null);
     const id = useId();
+    const isControlled = visible !== undefined;
 
-    const handleMouseEnter = () => {
+    const show = () => {
         if (disabled || !(triggerRef.current instanceof HTMLDivElement)) return;
 
         showTooltip({
@@ -25,9 +26,30 @@ export const Tooltip = ({ children, disabled, ...tooltipProps }: TProps) => {
         });
     };
 
-    const handleMouseLeave = () => {
-        if (disabled) return;
+    const hide = () => {
         hideTooltip(id);
+    };
+
+    useEffect(() => {
+        if (!isControlled) return;
+
+        if (visible) {
+            show();
+        } else {
+            hide();
+        }
+
+        return hide;
+    }, [isControlled, visible, disabled]);
+
+    const handleMouseEnter = () => {
+        if (isControlled) return;
+        show();
+    };
+
+    const handleMouseLeave = () => {
+        if (isControlled) return;
+        hide();
     };
 
     return (

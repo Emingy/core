@@ -5,5 +5,6 @@ import type { TTooltipParams } from '@emingy/core/providers/TooltipProvider/src/
 export type TProps = PropsWithChildren<
     Omit<TTooltipParams, 'trigger' | 'id'> & {
         disabled?: boolean;
+        visible?: boolean;
     }
 >;

@@ -6,3 +6,4 @@
 | `position` | "top" \| "bottom" \| "left" \| "right" | —       | —           |
 | `size`     | "md" \| "sm"                           | —       | —           |
 | `disabled` | `boolean`                              | —       | —           |
+| `visible`  | `boolean`                              | —       | —           |

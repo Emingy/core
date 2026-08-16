@@ -180,4 +180,144 @@ describe('[UNIT] Tooltip', () => {
 
         expect(showCallCount).toBe(0);
     });
+
+    describe('controlled via the visible prop', () => {
+        it('calls showTooltip on mount when visible is true', () => {
+            let showCallCount = 0;
+            const handleShow = () => {
+                showCallCount++;
+            };
+
+            renderWithContext(
+                <Tooltip text="Hint" position="top" visible>
+                    <span>Content</span>
+                </Tooltip>,
+                handleShow
+            );
+
+            expect(showCallCount).toBe(1);
+        });
+
+        it('does not call showTooltip on mount when visible is false', () => {
+            let showCallCount = 0;
+            const handleShow = () => {
+                showCallCount++;
+            };
+
+            renderWithContext(
+                <Tooltip text="Hint" position="top" visible={false}>
+                    <span>Content</span>
+                </Tooltip>,
+                handleShow
+            );
+
+            expect(showCallCount).toBe(0);
+        });
+
+        it('calls hideTooltip when visible changes from true to false', () => {
+            let hideCallCount = 0;
+            const handleHide = () => {
+                hideCallCount++;
+            };
+
+            const { rerender } = renderWithContext(
+                <Tooltip text="Hint" position="top" visible>
+                    <span>Content</span>
+                </Tooltip>,
+                undefined,
+                handleHide
+            );
+
+            rerender(
+                <TooltipContext.Provider value={{ showTooltip: () => {}, hideTooltip: handleHide }}>
+                    <Tooltip text="Hint" position="top" visible={false}>
+                        <span>Content</span>
+                    </Tooltip>
+                </TooltipContext.Provider>
+            );
+
+            expect(hideCallCount).toBeGreaterThan(0);
+        });
+
+        it('calls hideTooltip on unmount', () => {
+            let hideCallCount = 0;
+            const handleHide = () => {
+                hideCallCount++;
+            };
+
+            const { unmount } = renderWithContext(
+                <Tooltip text="Hint" position="top" visible>
+                    <span>Content</span>
+                </Tooltip>,
+                undefined,
+                handleHide
+            );
+
+            unmount();
+
+            expect(hideCallCount).toBeGreaterThan(0);
+        });
+
+        it('ignores mouseenter and stays controlled by the visible prop', () => {
+            let showCallCount = 0;
+            const handleShow = () => {
+                showCallCount++;
+            };
+
+            const { container } = renderWithContext(
+                <Tooltip text="Hint" position="top" visible={false}>
+                    <span>Content</span>
+                </Tooltip>,
+                handleShow
+            );
+
+            const trigger = container.querySelector('div');
+
+            if (trigger) {
+                fireEvent.mouseEnter(trigger);
+            }
+
+            expect(showCallCount).toBe(0);
+        });
+
+        it('ignores mouseleave and stays controlled by the visible prop', () => {
+            let hideCallCount = 0;
+            const handleHide = () => {
+                hideCallCount++;
+            };
+
+            const { container } = renderWithContext(
+                <Tooltip text="Hint" position="top" visible>
+                    <span>Content</span>
+                </Tooltip>,
+                undefined,
+                handleHide
+            );
+            hideCallCount = 0;
+
+            const trigger = container.querySelector('div');
+
+            if (trigger) {
+                fireEvent.mouseLeave(trigger);
+            }
+
+            expect(hideCallCount).toBe(0);
+        });
+
+        it('does not show when disabled even if visible is true', () => {
+            let showCallCount = 0;
+            const handleShow = () => {
+                showCallCount++;
+            };
+
+            renderWithContext(
+                <Tooltip text="Hint" position="top" visible disabled>
+                    <span>Content</span>
+                </Tooltip>,
+                handleShow
+            );
+
+            expect(showCallCount).toBe(0);
+        });
+    });
 });

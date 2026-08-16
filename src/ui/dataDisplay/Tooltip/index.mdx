@@ -49,6 +49,8 @@ import { Tooltip } from '@emingy/core/ui';
 | **\`text\`** | \`string\` | **Required** | Text content displayed inside the tooltip bubble. |
 | **\`position\`** | \`'top' | 'bottom' | 'left' | 'right'\` | | Preferred direction to show the tooltip relative to the trigger. Automatically flipped if there is not enough space. |
 | **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Size variant of the tooltip bubble. |
+| **\`disabled\`** | \`boolean\` | | Prevents the tooltip from showing, in both hover and controlled mode. |
+| **\`visible\`** | \`boolean\` | | Switches the tooltip to controlled mode — see section VI below. |
 | **\`children\`** | \`ReactNode\` | **Required** | The element that triggers the tooltip on hover. |
 `}
 </Markdown>
@@ -128,7 +130,40 @@ The tooltip appears and disappears with CSS transitions managed by `TooltipProvi
 
 ---
 
-## VI. Provider Requirement
+## VI. Controlled Visibility
+
+By default the tooltip is uncontrolled — it shows on `mouseenter` and hides on `mouseleave`. Passing
+the `visible` prop switches it to controlled mode: hover no longer has any effect, and visibility is
+driven entirely by the prop.
+
+<Markdown>
+{`
+\`\`\`tsx
+// Uncontrolled (default) — shows on hover
+<Tooltip text="Copy to clipboard" position="top">
+    <button>Copy</button>
+</Tooltip>
+
+// Controlled — visible follows external state, hover is ignored
+const [visible, setVisible] = useState(false);
+
+<Tooltip text="Copied!" position="top" visible={visible}>
+    <button onClick={() => setVisible(true)}>Copy</button>
+</Tooltip>
+\`\`\`
+`}
+</Markdown>
+
+**Controlled behavior:**
+
+- Passing any boolean to \`visible\` (including \`false\`) enables controlled mode for that instance.
+- The tooltip is shown/hidden via a \`useEffect\` that reacts to \`visible\` changes — not via mouse events.
+- \`disabled\` still applies in controlled mode: the tooltip stays hidden even when \`visible\` is \`true\`.
+- The tooltip is automatically hidden when the component unmounts while \`visible\` is \`true\`.
+
+---
+
+## VII. Provider Requirement
 
 `Tooltip` reads `showTooltip` and `hideTooltip` from `TooltipContext`. The component throws an error if rendered without a provider:
 
@@ -152,7 +187,7 @@ import { TooltipProvider } from '@emingy/core/ui';
 
 ---
 
-## VII. Important Notes
+## VIII. Important Notes
 
 <Markdown>
     {`
@@ -161,5 +196,6 @@ import { TooltipProvider } from '@emingy/core/ui';
 - If the user moves the mouse away and back quickly, the ongoing exit animation is cancelled and the tooltip reappears without a flash.
 - The tooltip bubble is rendered via \`createPortal\` into \`document.body\` to avoid stacking-context clipping.
 - \`TooltipProvider\` must be present in the tree; \`useTooltipContext\` throws if it is not found.
+- Once \`visible\` is passed (even \`false\`), hover no longer shows or hides the tooltip for that instance.
 `}
 </Markdown>
