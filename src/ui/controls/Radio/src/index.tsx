@@ -1,6 +1,7 @@
 import cls from 'classnames/bind';
-import React, { forwardRef, useId } from 'react';
+import React, { forwardRef, useId, useImperativeHandle, useRef } from 'react';
 
+import { useRegisterFieldError } from '@emingy/core/providers/FormErrorTooltipProvider';
 import { Typography } from '@emingy/core/ui/basic/Typography';
 import { Flex } from '@emingy/core/ui/layout/Flex';
 
@@ -12,8 +13,12 @@ const BLOCK_NAME = 'Radio';
 const cn = cls.bind(styles);
 
 export const Radio = forwardRef<HTMLInputElement, TProps>(
-    ({ className, label, description, error, ...restProps }: TProps, ref) => {
+    ({ className, label, description, error, ...restProps }: TProps, forwardedRef) => {
         const id = useId();
+        const inputRef = useRef<HTMLInputElement>(null);
+
+        useImperativeHandle(forwardedRef, () => inputRef.current as HTMLInputElement);
+        useRegisterFieldError(id, error, inputRef);
 
         return (
             <label
@@ -23,7 +28,7 @@ export const Radio = forwardRef<HTMLInputElement, TProps>(
                 <Flex direction="row" gap="2x" align="flex-start">
                     <input
                         {...restProps}
-                        ref={ref}
+                        ref={inputRef}
                         type="radio"
                         id={restProps.id ? restProps.id : id}
                         className={cn(`${BLOCK_NAME}__input`)}
@@ -32,20 +37,12 @@ export const Radio = forwardRef<HTMLInputElement, TProps>(
                         <Typography.Base elementType="span" className={cn(`${BLOCK_NAME}__label`)}>
                             {label}
                         </Typography.Base>
-                        {description && !error && (
+                        {description && (
                             <Typography.Micro
                                 elementType="span"
                                 className={cn(`${BLOCK_NAME}__description`)}
                             >
                                 {description}
-                            </Typography.Micro>
-                        )}
-                        {error && (
-                            <Typography.Micro
-                                elementType="span"
-                                className={cn(`${BLOCK_NAME}__error`)}
-                            >
-                                {error}
                             </Typography.Micro>
                         )}
                     </Flex>

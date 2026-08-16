@@ -1,0 +1,170 @@
+import { Meta, Markdown } from '@storybook/blocks';
+import * as Stories from './index.stories';
+
+<Meta of={Stories} />
+
+# FormErrorTooltipProvider: Form Error Tooltip
+
+`FormErrorTooltipProvider` shows a single red `Tooltip`, always above and horizontally centered on
+the *first* (in DOM order) form field that currently has a validation error. Form fields don't need
+to be wired up manually — `Input`, `Textarea`, `Checkbox`, `Radio`, and `Toggle` already report
+their own `error` prop to it through the shared `useRegisterFieldError` hook. It is included in
+`AppProvider` by default.
+
+---
+
+## I. Component Usage
+
+Once your app is wrapped in `AppProvider` (or `TooltipProvider` + `FormErrorTooltipProvider`
+directly), just pass an error message to any form field's `error` prop — no extra wiring needed:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { AppProvider } from '@emingy/core/ui';
+import { Input } from '@emingy/core/ui/controls/Input';
+import { Checkbox } from '@emingy/core/ui/controls/Checkbox';
+
+const App = () => (
+    <AppProvider>
+        <form>
+            <Input name="email" error={errors.email?.message} />
+            <Checkbox name="terms" label="I agree" error={errors.terms?.message} />
+        </form>
+    </AppProvider>
+);
+\`\`\`
+`}
+</Markdown>
+
+This is designed to slot naturally into a `react-hook-form` (or Formik, or hand-rolled validation)
+error object — anything that can produce an `error: string` per field works, there is no hard
+dependency on a specific form library.
+
+---
+
+## II. Component Props
+
+<Markdown>
+    {`
+| Prop Name | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| **\`children\`** | \`ReactNode\` | | Application/form content. |
+`}
+</Markdown>
+
+The tooltip's position (\`top\`) and color (\`error\`) are fixed and not configurable — see sections
+III and V below.
+
+---
+
+## III. Positioning
+
+The tooltip is always shown **above** the errored field, horizontally centered on it:
+
+- **Anchor element**: for `Input`/`Textarea`, the whole field — the root `<label>` that wraps the
+  title, prefix/postfix and the native field — not just the native `<input>`/`<textarea>`, so the
+  tooltip is centered on the visible field block rather than looking off-center when a `title` or
+  `prefix`/`postfix` is present. For `Checkbox`/`Radio`/`Toggle`, the anchor is the native input
+  itself (the checkbox/radio control), not the whole label row.
+- **Horizontal shift on overflow**: if the tooltip is wider than the space available at its centered
+  position (e.g. the field is near the left/right edge of the viewport), the underlying `Tooltip`
+  positioning logic shifts it sideways to keep it fully on-screen — see `TooltipProvider`'s docs,
+  section V, for the exact mechanism. It only ever shifts horizontally; it does not flip below the
+  field under normal circumstances.
+
+---
+
+## IV. How the "first" field is chosen
+
+Every field with a truthy string `error` registers itself (via `useRegisterFieldError`) with its
+own DOM element. Whenever the set of errored fields changes, the provider compares their elements
+with `Node.compareDocumentPosition` and shows the tooltip over whichever one appears first in the
+document — not whichever one happened to register first.
+
+<Markdown>
+{`
+\`\`\`tsx
+// Only the tooltip over "email" is shown, even though "password" registered later
+<Input name="email" error="Required" />
+<Input name="password" error="Too short" />
+\`\`\`
+`}
+</Markdown>
+
+As errors are fixed and new ones appear, the tooltip automatically moves to the new first errored
+field, or disappears once there are none left.
+
+---
+
+## V. Color
+
+The tooltip is always rendered with `type="error"` (red background) — see `Tooltip`'s own docs,
+section V, for the general `type` prop this maps to. There is no way to override this per-instance;
+if you need a differently colored tooltip elsewhere, use `Tooltip` or `useTooltipContext` directly.
+
+---
+
+## VI. Integration with AppProvider
+
+`AppProvider` wraps its children in `FormErrorTooltipProvider` automatically (nested inside
+`TooltipProvider`, since it uses the same underlying tooltip mechanism as `Tooltip`):
+
+<Markdown>
+{`
+\`\`\`tsx
+import { AppProvider } from '@emingy/core/ui';
+
+// AppProvider already includes FormErrorTooltipProvider — form fields' error
+// prop works out of the box, anywhere in the tree.
+const App = () => (
+    <AppProvider>
+        <MyForm />
+    </AppProvider>
+);
+\`\`\`
+`}
+</Markdown>
+
+---
+
+## VII. Using `useRegisterFieldError` in custom fields
+
+Any custom form component can opt into this behavior with the same hook `Input`/`Checkbox`/etc.
+already use internally:
+
+<Markdown>
+{`
+\`\`\`tsx
+import { useRef } from 'react';
+import { useRegisterFieldError } from '@emingy/core/providers/FormErrorTooltipProvider';
+
+const CustomField = ({ error }: { error?: string }) => {
+    const ref = useRef<HTMLInputElement>(null);
+    useRegisterFieldError('custom-field-id', error, ref);
+
+    return <input ref={ref} />;
+};
+\`\`\`
+`}
+</Markdown>
+
+**Note:** the hook is a safe no-op when there is no `FormErrorTooltipProvider` ancestor — unlike
+`useTooltipContext`, it does not throw, so form components that use it keep working standalone
+(Storybook, unit tests, apps without `AppProvider`).
+
+---
+
+## VIII. Important Notes
+
+<Markdown>
+    {`
+- Requires a \`TooltipProvider\` ancestor (\`AppProvider\` already provides one) — it calls
+  \`useTooltipContext()\` internally and throws if none is found, the same requirement \`Tooltip\`
+  itself has.
+- Only fields with a non-empty **string** \`error\` are considered.
+- A single tooltip instance is reused for the whole subtree — as the first errored field changes,
+  the same tooltip moves and updates its text rather than a new one appearing.
+- Unmounting a registered field (or its error clearing) unregisters it automatically.
+`}
+</Markdown>

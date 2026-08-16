@@ -196,7 +196,7 @@ exports[`[SNAPSHOT] Checkbox > should render with description 1`] = `
 </label>
 `;
 
-exports[`[SNAPSHOT] Checkbox > should render with description and error (error takes priority) 1`] = `
+exports[`[SNAPSHOT] Checkbox > should render with description and error together 1`] = `
 <label
   class="src-ui-controls-Checkbox-src-index-module__Checkbox-q9EcQe src-ui-controls-Checkbox-src-index-module__Checkbox--error-tZUHGH"
   for="_r_3_"
@@ -218,9 +218,9 @@ exports[`[SNAPSHOT] Checkbox > should render with description and error (error t
         Checkbox
       </span>
       <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Checkbox-src-index-module__Checkbox__error-bUGjD0"
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Checkbox-src-index-module__Checkbox__description-IBI9Au"
       >
-        Error text
+        Description text
       </span>
     </div>
   </div>
@@ -247,11 +247,6 @@ exports[`[SNAPSHOT] Checkbox > should render with error 1`] = `
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Checkbox-src-index-module__Checkbox__label-EDbFZS"
       >
         Checkbox with error
-      </span>
-      <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Checkbox-src-index-module__Checkbox__error-bUGjD0"
-      >
-        This field is required
       </span>
     </div>
   </div>

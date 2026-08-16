@@ -2,13 +2,25 @@ import type { CSSProperties } from 'react';
 
 import type { getElementPageRect } from '@emingy/core/utils/getElementPageRect';
 
-import { EPosition, TOOLTIP_OFFSET } from '../../../../constants';
+import { EPosition, TOOLTIP_OFFSET, VIEWPORT_EDGE_PADDING } from '../../../../constants';
+
+const clampViewportCenterX = (viewportCx: number, tooltipWidth: number): number => {
+    if (!tooltipWidth) return viewportCx;
+
+    const halfWidth = tooltipWidth / 2;
+    const minCx = halfWidth + VIEWPORT_EDGE_PADDING;
+    const maxCx = window.innerWidth - halfWidth - VIEWPORT_EDGE_PADDING;
+
+    return Math.min(Math.max(viewportCx, minCx), maxCx);
+};
 
 export const calcStyle = (
     rect: ReturnType<typeof getElementPageRect>,
-    pos: `${EPosition}`
+    pos: `${EPosition}`,
+    tooltipWidth = 0
 ): CSSProperties => {
-    const cx = rect.left + rect.width / 2 + window.scrollX;
+    const viewportCx = clampViewportCenterX(rect.left + rect.width / 2, tooltipWidth);
+    const cx = viewportCx + window.scrollX;
     const cy = rect.top + rect.height / 2 + window.scrollY;
 
     switch (pos) {

@@ -20,9 +20,12 @@ const STATES = [
     },
     { label: 'disabled', args: { disabled: true } },
     { label: 'disabled with value', args: { disabled: true, value: 'Hello' } },
-    { label: 'error', args: { error: true } },
-    { label: 'error with value', args: { error: true, value: 'Hello' } },
-    { label: 'error with title and value', args: { error: true, title: 'Label', value: 'Hello' } },
+    { label: 'error', args: { error: 'This field is required' } },
+    { label: 'error with value', args: { error: 'This field is required', value: 'Hello' } },
+    {
+        label: 'error with title and value',
+        args: { error: 'This field is required', title: 'Label', value: 'Hello' },
+    },
 ] as const;
 
 test.describe('[Visual] Input', () => {
@@ -54,5 +57,18 @@ test.describe('[Visual] Input', () => {
         await Input.navigate({ mask: 'ddd-ddd' });
         await Input.input.fill('123456');
         await expect(Input.root).toHaveScreenshot();
+    });
+
+    test('error tooltip', async ({ Input, page }) => {
+        await Input.navigate({ error: 'This field is required' });
+        await expect(page).toHaveScreenshot();
+    });
+
+    test('error tooltip shifts to stay within a narrow viewport', async ({ Input, page }) => {
+        await page.setViewportSize({ width: 360, height: 640 });
+        await Input.navigate({
+            error: 'This field is required and this message is intentionally quite long',
+        });
+        await expect(page).toHaveScreenshot();
     });
 });

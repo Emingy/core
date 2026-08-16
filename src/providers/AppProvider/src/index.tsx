@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import React from 'react';
 
+import { FormErrorTooltipProvider } from '@emingy/core/providers/FormErrorTooltipProvider';
 import { MessageProvider } from '@emingy/core/providers/MessageProvider';
 import { TooltipProvider } from '@emingy/core/providers/TooltipProvider';
 
@@ -11,7 +12,9 @@ import type { TProps } from './types';
 export const AppProvider = ({ children, messageContextConfig }: PropsWithChildren<TProps>) => {
     return (
         <TooltipProvider>
-            <MessageProvider {...messageContextConfig}>{children}</MessageProvider>
+            <FormErrorTooltipProvider>
+                <MessageProvider {...messageContextConfig}>{children}</MessageProvider>
+            </FormErrorTooltipProvider>
         </TooltipProvider>
     );
 };

@@ -10,6 +10,7 @@
 ## Providers
 
 - [AppProvider](src/providers/AppProvider/llms.md)
+- [FormErrorTooltipProvider](src/providers/FormErrorTooltipProvider/llms.md)
 - [MessageProvider](src/providers/MessageProvider/llms.md)
 - [TooltipProvider](src/providers/TooltipProvider/llms.md)
 

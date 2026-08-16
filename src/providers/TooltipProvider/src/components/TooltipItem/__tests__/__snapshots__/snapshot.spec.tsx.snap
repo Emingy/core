@@ -1,8 +1,21 @@
 // Rstest Snapshot v1
 
+exports[`[SNAPSHOT] TooltipItem > should render with error type 1`] = `
+<div
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__error-QWjstI"
+  style="top: 12px; left: 0px;"
+>
+  <p
+    class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__label-n03Jv6"
+  >
+    Error tooltip
+  </p>
+</div>
+`;
+
 exports[`[SNAPSHOT] TooltipItem > should render with isExiting true 1`] = `
 <div
-  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN TooltipItem__default"
   style="top: 12px; left: 0px;"
 >
   <p
@@ -15,7 +28,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with isExiting true 1`] = `
 
 exports[`[SNAPSHOT] TooltipItem > should render with position bottom 1`] = `
 <div
-  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN TooltipItem__default"
   style="top: 12px; left: 0px;"
 >
   <p
@@ -28,7 +41,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position bottom 1`] = `
 
 exports[`[SNAPSHOT] TooltipItem > should render with position right 1`] = `
 <div
-  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__right-nzzjcH"
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__right-nzzjcH TooltipItem__default"
   style="top: 0px; left: 12px;"
 >
   <p
@@ -41,7 +54,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position right 1`] = `
 
 exports[`[SNAPSHOT] TooltipItem > should render with position top 1`] = `
 <div
-  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH TooltipItem__md src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN TooltipItem__default"
   style="top: 12px; left: 0px;"
 >
   <p
@@ -54,7 +67,7 @@ exports[`[SNAPSHOT] TooltipItem > should render with position top 1`] = `
 
 exports[`[SNAPSHOT] TooltipItem > should render with size sm 1`] = `
 <div
-  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__sm-xxn_fr src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN"
+  class="src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem-cil4UH src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__sm-xxn_fr src-providers-TooltipProvider-src-components-TooltipItem-index-module__TooltipItem__bottom-uOFDUN TooltipItem__default"
   style="top: 12px; left: 0px;"
 >
   <p

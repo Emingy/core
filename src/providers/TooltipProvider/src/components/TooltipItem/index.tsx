@@ -22,9 +22,15 @@ export const TooltipItem = ({ item, isExiting, onRemove }: TProps) => {
     return (
         <div
             ref={ref}
-            className={cn(BLOCK_NAME, `${BLOCK_NAME}__${item.size}`, `${BLOCK_NAME}__${posDir}`, {
-                [`${BLOCK_NAME}__visible`]: visible && !isExiting,
-            })}
+            className={cn(
+                BLOCK_NAME,
+                `${BLOCK_NAME}__${item.size}`,
+                `${BLOCK_NAME}__${posDir}`,
+                `${BLOCK_NAME}__${item.type}`,
+                {
+                    [`${BLOCK_NAME}__visible`]: visible && !isExiting,
+                }
+            )}
             style={style}
             onTransitionEnd={handleTransitionEnd}
         >

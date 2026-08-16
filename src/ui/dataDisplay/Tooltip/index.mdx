@@ -49,8 +49,9 @@ import { Tooltip } from '@emingy/core/ui';
 | **\`text\`** | \`string\` | **Required** | Text content displayed inside the tooltip bubble. |
 | **\`position\`** | \`'top' | 'bottom' | 'left' | 'right'\` | | Preferred direction to show the tooltip relative to the trigger. Automatically flipped if there is not enough space. |
 | **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Size variant of the tooltip bubble. |
+| **\`type\`** | \`'default' | 'error'\` | \`'default'\` | Color variant of the tooltip bubble. \`'error'\` renders a red background. |
 | **\`disabled\`** | \`boolean\` | | Prevents the tooltip from showing, in both hover and controlled mode. |
-| **\`visible\`** | \`boolean\` | | Switches the tooltip to controlled mode — see section VI below. |
+| **\`visible\`** | \`boolean\` | | Switches the tooltip to controlled mode — see section VII below. |
 | **\`children\`** | \`ReactNode\` | **Required** | The element that triggers the tooltip on hover. |
 `}
 </Markdown>
@@ -85,6 +86,8 @@ import { ETooltipPosition, Tooltip } from '@emingy/core/ui';
 
 **Flip behavior:** if the tooltip would overflow the viewport in the preferred direction, it is automatically flipped to the opposite side. Flip is calculated after the first render using `offsetWidth`/`offsetHeight` of the tooltip bubble.
 
+**Horizontal shift:** for `top`/`bottom` tooltips, if the bubble is wide enough that centering it on the trigger would push it past the left or right edge of the viewport, it shifts sideways just enough to stay fully visible (with an 8px margin from the edge) instead of overflowing.
+
 ---
 
 ## IV. Size Variants
@@ -109,7 +112,32 @@ import { ETooltipSize, Tooltip } from '@emingy/core/ui';
 
 ---
 
-## V. Show / Hide Animation
+## V. Type / Color Variant
+
+<Markdown>
+{`
+\`\`\`tsx
+import { Tooltip } from '@emingy/core/ui';
+
+// Default — neutral grey background
+<Tooltip text="Copy to clipboard" position="top">
+    <button>Copy</button>
+</Tooltip>
+
+// Error — red background, used for validation messages
+<Tooltip text="This field is required" position="top" type="error">
+    <input />
+</Tooltip>
+\`\`\`
+`}
+</Markdown>
+
+\`FormErrorTooltipProvider\` uses \`type="error"\` internally to show validation errors — see its own
+docs for the full form-error-tooltip flow.
+
+---
+
+## VI. Show / Hide Animation
 
 The tooltip appears and disappears with CSS transitions managed by `TooltipProvider`:
 
@@ -130,7 +158,7 @@ The tooltip appears and disappears with CSS transitions managed by `TooltipProvi
 
 ---
 
-## VI. Controlled Visibility
+## VII. Controlled Visibility
 
 By default the tooltip is uncontrolled — it shows on `mouseenter` and hides on `mouseleave`. Passing
 the `visible` prop switches it to controlled mode: hover no longer has any effect, and visibility is
@@ -163,7 +191,7 @@ const [visible, setVisible] = useState(false);
 
 ---
 
-## VII. Provider Requirement
+## VIII. Provider Requirement
 
 `Tooltip` reads `showTooltip` and `hideTooltip` from `TooltipContext`. The component throws an error if rendered without a provider:
 
@@ -187,7 +215,7 @@ import { TooltipProvider } from '@emingy/core/ui';
 
 ---
 
-## VIII. Important Notes
+## IX. Important Notes
 
 <Markdown>
     {`

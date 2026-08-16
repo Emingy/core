@@ -16,4 +16,11 @@ test.describe('[Interactive] Toggle', () => {
 
         await expect(Toggle.input).toBeDisabled();
     });
+
+    test('error message appears in a tooltip above the field', async ({ Toggle, page }) => {
+        await Toggle.navigate({ error: 'Error text' });
+
+        const tooltip = page.locator('[class*="TooltipContainer"]');
+        await expect(tooltip).toContainText('Error text');
+    });
 });

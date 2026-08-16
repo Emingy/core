@@ -37,4 +37,9 @@ test.describe('[Visual] Toggle', () => {
             });
         }
     }
+
+    test('error tooltip', async ({ Toggle, page }) => {
+        await Toggle.navigate({ error: 'Error text' });
+        await expect(page).toHaveScreenshot();
+    });
 });

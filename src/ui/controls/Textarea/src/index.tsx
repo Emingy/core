@@ -1,6 +1,15 @@
 import cls from 'classnames/bind';
-import React, { type ChangeEvent, forwardRef, useEffect, useId, useState } from 'react';
+import React, {
+    type ChangeEvent,
+    forwardRef,
+    useEffect,
+    useId,
+    useImperativeHandle,
+    useRef,
+    useState,
+} from 'react';
 
+import { useRegisterFieldError } from '@emingy/core/providers/FormErrorTooltipProvider';
 import { Typography } from '@emingy/core/ui/basic/Typography';
 
 import styles from './index.module.scss';
@@ -18,7 +27,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TProps>(
             title,
             prefix,
             postfix,
-            error = false,
+            error,
             disabled = false,
             resize = EResize.None,
             minWidth = '100%',
@@ -31,9 +40,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TProps>(
             validate,
             ...restProps
         }: TProps,
-        ref
+        forwardedRef
     ) => {
         const id = useId();
+        const textareaRef = useRef<HTMLTextAreaElement>(null);
+        const labelRef = useRef<HTMLLabelElement>(null);
+
+        useImperativeHandle(forwardedRef, () => textareaRef.current as HTMLTextAreaElement);
+
         const [textValue, setTextValue] = useState<string>(value ?? '');
 
         useEffect(() => {
@@ -41,7 +55,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TProps>(
         }, [value]);
 
         const isValid = validate ? validate(textValue) : true;
-        const hasError = error || !isValid;
+        const hasError = Boolean(error) || !isValid;
+
+        useRegisterFieldError(id, error, labelRef);
 
         const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
             setTextValue(event.target.value);
@@ -50,6 +66,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TProps>(
 
         return (
             <label
+                ref={labelRef}
                 className={cn(BLOCK_NAME, className, `${BLOCK_NAME}__resize-${resize}`, {
                     [`${BLOCK_NAME}__disabled`]: disabled,
                     [`${BLOCK_NAME}__error`]: hasError,
@@ -72,7 +89,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TProps>(
                     <div className={cn(`${BLOCK_NAME}__input-container`)}>
                         <textarea
                             {...restProps}
-                            ref={ref}
+                            ref={textareaRef}
                             id={restProps.id ?? id}
                             className={cn(`${BLOCK_NAME}__field`)}
                             disabled={disabled}

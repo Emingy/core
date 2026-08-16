@@ -47,7 +47,7 @@ describe('[SNAPSHOT] Input', () => {
     });
 
     it('should render error state', () => {
-        const { container } = render(<Input error />);
+        const { container } = render(<Input error="This field is required" />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -69,7 +69,7 @@ describe('[SNAPSHOT] Input', () => {
     });
 
     it('should render disabled with error', () => {
-        const { container } = render(<Input disabled error />);
+        const { container } = render(<Input disabled error="This field is required" />);
         expect(container.firstChild).toMatchSnapshot();
     });
 

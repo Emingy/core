@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FormErrorTooltipContext } from '@emingy/core/providers/FormErrorTooltipProvider';
+import type { TFieldError } from '@emingy/core/providers/FormErrorTooltipProvider/src/types';
 import { describe, expect, it, rstest } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
@@ -79,8 +81,10 @@ describe('[UNIT] Textarea', () => {
         expect(textarea.disabled).toBe(true);
     });
 
-    it('Applies error class when error prop is true', () => {
-        const { container } = render(<Textarea error data-testid="textarea" />);
+    it('Applies error class when error prop is set', () => {
+        const { container } = render(
+            <Textarea error="This field is required" data-testid="textarea" />
+        );
         const label = container.querySelector('label');
 
         expect(label?.className).toContain('Textarea__error');
@@ -232,5 +236,23 @@ describe('[UNIT] Textarea', () => {
         const textarea = screen.getByTestId('textarea') as HTMLTextAreaElement;
 
         expect(textarea.maxLength).toBe(10);
+    });
+
+    it('Registers the label (not the textarea) as the field error tooltip trigger', () => {
+        const registered: TFieldError[] = [];
+
+        render(
+            <FormErrorTooltipContext.Provider
+                value={{
+                    registerFieldError: (_id, error) => registered.push(error),
+                    unregisterFieldError: () => {},
+                }}
+            >
+                <Textarea error="Required" data-testid="textarea" />
+            </FormErrorTooltipContext.Provider>
+        );
+
+        expect(registered).toHaveLength(1);
+        expect(registered[0].element.tagName).toBe('LABEL');
     });
 });

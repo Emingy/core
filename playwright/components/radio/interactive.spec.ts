@@ -16,4 +16,11 @@ test.describe('[Interactive] Radio', () => {
 
         await expect(Radio.input).toBeDisabled();
     });
+
+    test('error message appears in a tooltip above the field', async ({ Radio, page }) => {
+        await Radio.navigate({ error: 'Error text' });
+
+        const tooltip = page.locator('[class*="TooltipContainer"]');
+        await expect(tooltip).toContainText('Error text');
+    });
 });

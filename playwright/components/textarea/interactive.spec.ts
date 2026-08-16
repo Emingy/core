@@ -19,9 +19,16 @@ test.describe('[Interactive] Textarea', () => {
     });
 
     test('error state is visible', async ({ Textarea }) => {
-        await Textarea.navigate({ error: true });
+        await Textarea.navigate({ error: 'This field is required' });
 
         await expect(Textarea.root).toBeVisible();
+    });
+
+    test('error message appears in a tooltip above the field', async ({ Textarea, page }) => {
+        await Textarea.navigate({ error: 'This field is required' });
+
+        const tooltip = page.locator('[class*="TooltipContainer"]');
+        await expect(tooltip).toContainText('This field is required');
     });
 
     test('disabled state prevents interaction', async ({ Textarea }) => {

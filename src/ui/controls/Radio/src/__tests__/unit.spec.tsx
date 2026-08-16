@@ -31,17 +31,24 @@ describe('[UNIT] Radio', () => {
         expect(screen.getByText('This is a description')).toBeDefined();
     });
 
-    it('Renders with error', () => {
-        render(<Radio label="Test" error="This field is required" />);
+    it('Applies error modifier class when error is set', () => {
+        const { container } = render(<Radio label="Test" error="This field is required" />);
+        const label = container.firstChild as HTMLElement;
 
-        expect(screen.getByText('This field is required')).toBeDefined();
+        expect(label?.className).toContain('Radio--error');
     });
 
-    it('Error has priority over description', () => {
+    it('Does not apply error modifier class by default', () => {
+        const { container } = render(<Radio label="Test" />);
+        const label = container.firstChild as HTMLElement;
+
+        expect(label?.className).not.toContain('Radio--error');
+    });
+
+    it('Renders description alongside error', () => {
         render(<Radio label="Test" description="This is description" error="This is error" />);
 
-        expect(screen.getByText('This is error')).toBeDefined();
-        expect(screen.queryByText('This is description')).toBeNull();
+        expect(screen.getByText('This is description')).toBeDefined();
     });
 
     it('Applies custom className', () => {
@@ -126,13 +133,6 @@ describe('[UNIT] Radio', () => {
         const description = screen.getByText('Description text').closest('span');
 
         expect(description?.className).toContain('Radio__description');
-    });
-
-    it('Error has correct CSS class', () => {
-        render(<Radio label="Test" error="Error text" />);
-        const error = screen.getByText('Error text').closest('span');
-
-        expect(error?.className).toContain('Radio__error');
     });
 
     it('Input has correct CSS class', () => {

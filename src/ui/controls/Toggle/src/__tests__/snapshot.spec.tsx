@@ -25,7 +25,7 @@ describe('[SNAPSHOT] Toggle', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('should render with description and error (error takes priority)', () => {
+    it('should render with description and error together', () => {
         const { container } = render(
             <Toggle label="Toggle" description="Description text" error="Error text" />
         );

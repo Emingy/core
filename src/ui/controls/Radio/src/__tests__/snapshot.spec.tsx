@@ -25,7 +25,7 @@ describe('[SNAPSHOT] Radio', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('should render with description and error (error takes priority)', () => {
+    it('should render with description and error together', () => {
         const { container } = render(
             <Radio label="Radio" description="Description text" error="Error text" />
         );

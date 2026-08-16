@@ -37,4 +37,9 @@ test.describe('[Visual] Checkbox', () => {
             });
         }
     }
+
+    test('error tooltip', async ({ Checkbox, page }) => {
+        await Checkbox.navigate({ error: 'Error text' });
+        await expect(page).toHaveScreenshot();
+    });
 });

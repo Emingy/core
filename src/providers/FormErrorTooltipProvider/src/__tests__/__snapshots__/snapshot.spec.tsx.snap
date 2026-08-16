@@ -1,0 +1,7 @@
+// Rstest Snapshot v1
+
+exports[`[SNAPSHOT] FormErrorTooltipProvider > should render children without adding wrapper elements 1`] = `
+<div>
+  Form content
+</div>
+`;

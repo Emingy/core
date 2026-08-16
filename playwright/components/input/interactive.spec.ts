@@ -23,16 +23,23 @@ test.describe('[Interactive] Input', () => {
     });
 
     test('error state is visible', async ({ Input }) => {
-        await Input.navigate({ error: true });
+        await Input.navigate({ error: 'This field is required' });
 
         await expect(Input.root).toBeVisible();
     });
 
     test('error with typed value', async ({ Input }) => {
-        await Input.navigate({ error: true });
+        await Input.navigate({ error: 'This field is required' });
         await Input.input.fill('invalid');
 
         await expect(Input.input).toHaveValue('invalid');
+    });
+
+    test('error message appears in a tooltip above the field', async ({ Input, page }) => {
+        await Input.navigate({ error: 'This field is required' });
+
+        const tooltip = page.locator('[class*="TooltipContainer"]');
+        await expect(tooltip).toContainText('This field is required');
     });
 
     test('disabled state prevents interaction', async ({ Input }) => {

@@ -59,9 +59,10 @@ import { TooltipProvider } from '@emingy/core/ui';
 | :--- | :--- | :--- | :--- |
 | **\`id\`** | \`string\` | **Required** | Unique identifier for this tooltip instance. |
 | **\`text\`** | \`string\` | **Required** | Text to display in the tooltip bubble. |
-| **\`trigger\`** | \`HTMLDivElement\` | **Required** | The DOM element the tooltip is anchored to. Used to calculate position. |
+| **\`trigger\`** | \`HTMLElement\` | **Required** | The DOM element the tooltip is anchored to. Used to calculate position. |
 | **\`position\`** | \`'top' | 'bottom' | 'left' | 'right'\` | \`'top'\` | Preferred direction. Automatically flipped if there is not enough space. |
 | **\`size\`** | \`'md' | 'sm'\` | \`'md'\` | Controls the typography and padding of the bubble. |
+| **\`type\`** | \`'default' | 'error'\` | \`'default'\` | Controls the bubble's color. \`'error'\` renders a red background — used by \`FormErrorTooltipProvider\`. |
 `}
 </Markdown>
 
@@ -121,7 +122,11 @@ TOOLTIP_OFFSET = 12px
 `}
 </Markdown>
 
+**Which element's rect is measured:** `resolveTriggerElement` measures `trigger.getBoundingClientRect()` first. If that box is empty (0×0 — the case for `display: contents` wrapper elements like `Tooltip`'s own trigger `div`), it falls back to `trigger.firstElementChild`. Otherwise the trigger element's own rect is used directly — this matters for triggers that are real, laid-out boxes with their own padding/border (e.g. `FormErrorTooltipProvider` anchoring to an `Input`/`Textarea`'s root `<label>`), where using a padded-in child element instead of the trigger itself would visually eat into the intended `TOOLTIP_OFFSET` gap.
+
 **Flip** is applied after the bubble is rendered: `offsetWidth`/`offsetHeight` are read and compared against `window.innerWidth`/`window.innerHeight`. If the bubble overflows, the position is flipped to the opposite direction.
+
+**Horizontal clamp** (for `top`/`bottom` positions): once the bubble's actual `offsetWidth` is known, its horizontal center is clamped to stay within `VIEWPORT_EDGE_PADDING` (8px) of the viewport edges. If the trigger is near the left or right edge of the screen and the bubble would overflow, the bubble shifts sideways to stay fully visible instead of running off-screen — the bubble no longer stays centered on the trigger in that case.
 
 ---
 
@@ -180,5 +185,6 @@ This prevents the tooltip from disappearing after a fast re-hover.
 - \`position: absolute\` is used for the bubble — scroll position is factored in via \`window.scrollX\`/\`scrollY\`.
 - Only \`top\` ↔ \`bottom\` and \`left\` ↔ \`right\` flips are supported. If both directions overflow, the preferred direction is kept.
 - Nesting multiple \`TooltipProvider\` instances is not recommended — the innermost provider wins for \`useTooltipContext\` consumers.
+- \`type: 'error'\` only changes the bubble's color (red background) — it does not affect positioning or animation.
 `}
 </Markdown>

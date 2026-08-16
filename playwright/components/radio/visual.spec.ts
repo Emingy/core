@@ -37,4 +37,9 @@ test.describe('[Visual] Radio', () => {
             });
         }
     }
+
+    test('error tooltip', async ({ Radio, page }) => {
+        await Radio.navigate({ error: 'Error text' });
+        await expect(page).toHaveScreenshot();
+    });
 });

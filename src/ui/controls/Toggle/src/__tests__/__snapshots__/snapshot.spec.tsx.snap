@@ -196,7 +196,7 @@ exports[`[SNAPSHOT] Toggle > should render with description 1`] = `
 </label>
 `;
 
-exports[`[SNAPSHOT] Toggle > should render with description and error (error takes priority) 1`] = `
+exports[`[SNAPSHOT] Toggle > should render with description and error together 1`] = `
 <label
   class="src-ui-controls-Toggle-src-index-module__Toggle-f0DROZ src-ui-controls-Toggle-src-index-module__Toggle--error-eflffL"
   for="_r_3_"
@@ -218,9 +218,9 @@ exports[`[SNAPSHOT] Toggle > should render with description and error (error tak
         Toggle
       </span>
       <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Toggle-src-index-module__Toggle__error-yNOAZV"
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Toggle-src-index-module__Toggle__description-DDkU8S"
       >
-        Error text
+        Description text
       </span>
     </div>
   </div>
@@ -247,11 +247,6 @@ exports[`[SNAPSHOT] Toggle > should render with error 1`] = `
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Toggle-src-index-module__Toggle__label-qeIFr6"
       >
         Toggle with error
-      </span>
-      <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Toggle-src-index-module__Toggle__error-yNOAZV"
-      >
-        This field is required
       </span>
     </div>
   </div>

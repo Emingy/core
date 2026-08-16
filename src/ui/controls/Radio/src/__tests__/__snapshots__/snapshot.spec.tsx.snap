@@ -197,7 +197,7 @@ exports[`[SNAPSHOT] Radio > should render with description 1`] = `
 </label>
 `;
 
-exports[`[SNAPSHOT] Radio > should render with description and error (error takes priority) 1`] = `
+exports[`[SNAPSHOT] Radio > should render with description and error together 1`] = `
 <label
   class="src-ui-controls-Radio-src-index-module__Radio-n_YMWT src-ui-controls-Radio-src-index-module__Radio--error-Mwa4OJ"
   for="_r_3_"
@@ -219,9 +219,9 @@ exports[`[SNAPSHOT] Radio > should render with description and error (error take
         Radio
       </span>
       <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Radio-src-index-module__Radio__error-cUO2RX"
+        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Radio-src-index-module__Radio__description-SSV3oT"
       >
-        Error text
+        Description text
       </span>
     </div>
   </div>
@@ -248,11 +248,6 @@ exports[`[SNAPSHOT] Radio > should render with error 1`] = `
         class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Radio-src-index-module__Radio__label-EGFlEw"
       >
         Radio with error
-      </span>
-      <span
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Radio-src-index-module__Radio__error-cUO2RX"
-      >
-        This field is required
       </span>
     </div>
   </div>

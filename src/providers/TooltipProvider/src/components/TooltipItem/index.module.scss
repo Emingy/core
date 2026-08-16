@@ -72,4 +72,8 @@
             @include typography.small;
         }
     }
+
+    &__error {
+        background-color: var(--color-red-50);
+    }
 }

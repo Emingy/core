@@ -87,7 +87,6 @@ import { Textarea } from '@emingy/core/ui';
   title="Comment"
   placeholder="At least 10 characters"
   validate={(value) => value.length >= 10}
-  error={false}
 />
 \`\`\`
 `}
@@ -106,7 +105,7 @@ The `Textarea` component accepts all standard HTML `<textarea>` attributes (`row
 | **\`title\`** | \`string\` | | Label displayed above the field. Recommended for accessibility. |
 | **\`prefix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed before the field. |
 | **\`postfix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed after the field. |
-| **\`error\`** | \`boolean\` | \`false\` | Indicates validation error state. Applies error-specific styling. |
+| **\`error\`** | \`string\` | | Validation error message. Applies error-specific styling and is shown in a tooltip over the field via \`FormErrorTooltipProvider\`. |
 | **\`disabled\`** | \`boolean\` | \`false\` | Disables the field. Prevents user interaction. |
 | **\`resize\`** | \`'none' \\| 'vertical' \\| 'horizontal' \\| 'both'\` | \`'none'\` | Controls whether and in which direction the user can resize the field. |
 | **\`minWidth\`** | \`number \\| string\` | \`'100%'\` | Minimum width. A number is treated as pixels, a string is used as-is (e.g. \`'50%'\`). |
@@ -134,7 +133,7 @@ The component supports both built-in and custom validation:
 \`\`\`tsx
 <Textarea
   title="Feedback"
-  error={true}
+  error="Feedback is required"
 />
 \`\`\`
 `}
@@ -177,5 +176,6 @@ The component follows accessibility best practices:
 - **Controlled Component**: When using the `value` prop, always provide an `onChange` handler to update the value.
 - **Resize**: The resize handle is disabled by default (`resize="none"`); opt in per-instance via the `resize` prop. Resizing is bounded by `minWidth`/`maxWidth`/`minHeight`/`maxHeight` (defaults: width `100%`–`100%`, height `100`–`400`).
 - **Character counter**: Setting `maxLength` both enforces the native limit on the `<textarea>` and renders a `current/max` counter overlaid in the bottom-right corner of the field.
-- **Error State Logic**: The component shows error styling when either `error` prop is `true` OR the `validate` function returns `false`. They work together via OR logic: if `error={true}`, the error state is shown regardless of validation result.
+- **Error State Logic**: The component shows error styling when either `error` is set (a non-empty string) OR the `validate` function returns `false`. They work together via OR logic: if `error` is set, the error state is shown regardless of validation result.
+- **Error Tooltip**: When rendered under `FormErrorTooltipProvider` (included in `AppProvider` by default), a non-empty `error` message is automatically shown in a tooltip over the field if it is the first errored field in the form — no extra wiring needed.
 - **No masking**: Unlike `Input`, `Textarea` does not support input masks — multi-line free text isn't a good fit for positional masking.

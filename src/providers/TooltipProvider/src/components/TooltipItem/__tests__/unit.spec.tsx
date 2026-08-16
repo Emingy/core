@@ -19,6 +19,7 @@ describe('[UNIT] TooltipItem', () => {
             position: 'top',
             trigger,
             size: 'md',
+            type: 'default',
         };
     });
 
@@ -64,6 +65,30 @@ describe('[UNIT] TooltipItem', () => {
         const el = container.firstChild as HTMLElement;
 
         expect(el.className).toMatch(/TooltipItem__(top|bottom|left|right)/);
+    });
+
+    it('Applies type class TooltipItem__default by default', () => {
+        const { container } = render(
+            <TooltipItem item={mockItem} isExiting={false} onRemove={() => {}} />
+        );
+
+        const el = container.firstChild as HTMLElement;
+
+        expect(el.className).toContain('TooltipItem__default');
+    });
+
+    it('Applies type class TooltipItem__error for error type', () => {
+        const { container } = render(
+            <TooltipItem
+                item={{ ...mockItem, type: 'error' }}
+                isExiting={false}
+                onRemove={() => {}}
+            />
+        );
+
+        const el = container.firstChild as HTMLElement;
+
+        expect(el.className).toContain('TooltipItem__error');
     });
 
     it('Does not apply __visible class before requestAnimationFrame', () => {

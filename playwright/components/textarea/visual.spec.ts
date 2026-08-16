@@ -14,9 +14,12 @@ const STATES = [
     { label: 'with title and value', args: { title: 'Label', value: 'Hello' } },
     { label: 'disabled', args: { disabled: true } },
     { label: 'disabled with value', args: { disabled: true, value: 'Hello' } },
-    { label: 'error', args: { error: true } },
-    { label: 'error with value', args: { error: true, value: 'Hello' } },
-    { label: 'error with title and value', args: { error: true, title: 'Label', value: 'Hello' } },
+    { label: 'error', args: { error: 'This field is required' } },
+    { label: 'error with value', args: { error: 'This field is required', value: 'Hello' } },
+    {
+        label: 'error with title and value',
+        args: { error: 'This field is required', title: 'Label', value: 'Hello' },
+    },
     { label: 'with maxLength counter', args: { maxLength: 100, value: 'Hi' } },
     {
         label: 'with maxLength counter and postfix',
@@ -64,5 +67,10 @@ test.describe('[Visual] Textarea', () => {
         await Textarea.textarea.fill('First line\nSecond line\nThird line');
 
         await expect(Textarea.root).toHaveScreenshot();
+    });
+
+    test('error tooltip', async ({ Textarea, page }) => {
+        await Textarea.navigate({ error: 'This field is required' });
+        await expect(page).toHaveScreenshot();
     });
 });

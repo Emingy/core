@@ -15,11 +15,10 @@ type TPropsCommon = {
      */
     postfix?: ReactNode;
     /**
-     * @description Flag indicating a validation error state.
-     * Applies error-specific styling.
-     * @default false
+     * @description Validation error message. Applies error-specific styling and is shown
+     * in a tooltip over the field (via 'FormErrorTooltipProvider').
      */
-    error?: boolean;
+    error?: string;
     /**
      * @description Flag indicating the disabled state of the field.
      * The field cannot receive input and has specific disabled styles.

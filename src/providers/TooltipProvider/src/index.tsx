@@ -9,9 +9,11 @@ import styles from './index.module.scss';
 import {
     DEFAULT_POSITION,
     DEFAULT_SIZE,
+    DEFAULT_TYPE,
     EActionType,
     type EPosition,
     type ESize,
+    type EType,
 } from './constants';
 import { TooltipContext } from './context';
 import type { TAction, TProps, TTooltipContext, TTooltipItem, TTooltipParams } from './types';
@@ -62,6 +64,7 @@ export const TooltipProvider = ({ children }: TProps) => {
                 ...props,
                 size: props.size ?? DEFAULT_SIZE,
                 position: props.position ?? DEFAULT_POSITION,
+                type: props.type ?? DEFAULT_TYPE,
             },
         });
     };
@@ -121,6 +124,7 @@ export { TooltipContext };
 export type {
     EPosition as ETooltipPosition,
     ESize as ETooltipSize,
+    EType as ETooltipType,
     TTooltipContext,
     TProps as TTooltipProviderProps,
 };

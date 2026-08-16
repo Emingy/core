@@ -9,6 +9,7 @@ import React, {
     useState,
 } from 'react';
 
+import { useRegisterFieldError } from '@emingy/core/providers/FormErrorTooltipProvider';
 import { Typography } from '@emingy/core/ui/basic/Typography';
 
 import { useMask } from './hooks/useMask';
@@ -31,7 +32,7 @@ export const Input = forwardRef<HTMLInputElement, TProps>(
             mask,
             prefix,
             postfix,
-            error = false,
+            error,
             disabled = false,
             value,
             onChange,
@@ -44,6 +45,7 @@ export const Input = forwardRef<HTMLInputElement, TProps>(
     ) => {
         const id = useId();
         const inputRef = useRef<HTMLInputElement>(null);
+        const labelRef = useRef<HTMLLabelElement>(null);
         const cursorPositionRef = useRef<number | null>(null);
 
         useImperativeHandle(forwardedRef, () => inputRef.current as HTMLInputElement);
@@ -67,7 +69,9 @@ export const Input = forwardRef<HTMLInputElement, TProps>(
         }, [inputValue, mask]);
 
         const isValid = validate ? validate(inputValue) : true;
-        const hasError = error || !isValid;
+        const hasError = Boolean(error) || !isValid;
+
+        useRegisterFieldError(id, error, labelRef);
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
             const input = event.target;
@@ -108,6 +112,7 @@ export const Input = forwardRef<HTMLInputElement, TProps>(
 
         return (
             <label
+                ref={labelRef}
                 className={cn(BLOCK_NAME, className, {
                     [`${BLOCK_NAME}__disabled`]: disabled,
                     [`${BLOCK_NAME}__error`]: hasError,

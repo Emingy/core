@@ -29,6 +29,7 @@ describe('[SNAPSHOT] TooltipItem', () => {
             position: 'top',
             trigger,
             size: 'md',
+            type: 'default',
         };
 
         const { container } = render(<TooltipItem item={item} isExiting={false} onRemove={noop} />);
@@ -43,6 +44,7 @@ describe('[SNAPSHOT] TooltipItem', () => {
             position: 'top',
             trigger,
             size: 'sm',
+            type: 'default',
         };
 
         const { container } = render(<TooltipItem item={item} isExiting={false} onRemove={noop} />);
@@ -57,6 +59,7 @@ describe('[SNAPSHOT] TooltipItem', () => {
             position: 'top',
             trigger,
             size: 'md',
+            type: 'default',
         };
 
         const { container } = render(<TooltipItem item={item} isExiting={true} onRemove={noop} />);
@@ -71,6 +74,7 @@ describe('[SNAPSHOT] TooltipItem', () => {
             position: 'bottom',
             trigger,
             size: 'md',
+            type: 'default',
         };
 
         const { container } = render(<TooltipItem item={item} isExiting={false} onRemove={noop} />);
@@ -85,6 +89,22 @@ describe('[SNAPSHOT] TooltipItem', () => {
             position: 'right',
             trigger,
             size: 'md',
+            type: 'default',
+        };
+
+        const { container } = render(<TooltipItem item={item} isExiting={false} onRemove={noop} />);
+
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render with error type', () => {
+        const item: TTooltipItem = {
+            id: 'snap-6',
+            text: 'Error tooltip',
+            position: 'top',
+            trigger,
+            size: 'md',
+            type: 'error',
         };
 
         const { container } = render(<TooltipItem item={item} isExiting={false} onRemove={noop} />);

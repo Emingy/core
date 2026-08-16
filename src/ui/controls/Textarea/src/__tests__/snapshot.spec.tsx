@@ -47,7 +47,7 @@ describe('[SNAPSHOT] Textarea', () => {
     });
 
     it('should render error state', () => {
-        const { container } = render(<Textarea error />);
+        const { container } = render(<Textarea error="This field is required" />);
         expect(container.firstChild).toMatchSnapshot();
     });
 
@@ -81,7 +81,7 @@ describe('[SNAPSHOT] Textarea', () => {
     });
 
     it('should render disabled with error', () => {
-        const { container } = render(<Textarea disabled error />);
+        const { container } = render(<Textarea disabled error="This field is required" />);
         expect(container.firstChild).toMatchSnapshot();
     });
 

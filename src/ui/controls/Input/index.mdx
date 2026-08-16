@@ -78,7 +78,6 @@ import { Input } from '@emingy/core/ui';
   title="Username"
   placeholder="At least 3 characters"
   validate={(value) => value.length >= 3}
-  error={false}
 />
 \`\`\`
 `}
@@ -99,7 +98,7 @@ The `Input` component accepts all standard HTML `<input>` attributes, plus speci
 | **\`mask\`** | \`string\` | | Input mask pattern (e.g., \`"d{3}-d{3}-d{4}"\`). **Cannot be used with \`placeholder\`.** |
 | **\`prefix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed before the input field. |
 | **\`postfix\`** | \`ReactNode\` | | Element (icon, text, or component) displayed after the input field. |
-| **\`error\`** | \`boolean\` | \`false\` | Indicates validation error state. Applies error-specific styling. |
+| **\`error\`** | \`string\` | | Validation error message. Applies error-specific styling and is shown in a tooltip over the field via \`FormErrorTooltipProvider\`. |
 | **\`disabled\`** | \`boolean\` | \`false\` | Disables the input field. Prevents user interaction. |
 | **\`value\`** | \`string\` | | Controlled value of the input field. |
 | **\`onChange\`** | \`(event) => void\` | | Event handler called when input value changes. Event includes \`target.value\` (masked) and \`target.unmaskedValue\` (raw). |
@@ -243,7 +242,7 @@ The component supports both built-in and custom validation:
 \`\`\`tsx
 <Input
   title="Email"
-  error={true}
+  error="Email is required"
 />
 \`\`\`
 `}
@@ -286,4 +285,5 @@ The component follows accessibility best practices:
 - **Mask vs Placeholder**: The `mask` and `placeholder` props are mutually exclusive. Use `mask` for formatted input or `placeholder` for hint text, but not both.
 - **Controlled Component**: When using the `value` prop, always provide an `onChange` handler to update the value.
 - **Cursor Position**: When using masks, cursor position is automatically managed during input.
-- **Error State Logic**: The component shows error styling when either `error` prop is `true` OR the `validate` function returns `false`. They work together via OR logic: if `error={true}`, the error state is shown regardless of validation result.
+- **Error State Logic**: The component shows error styling when either `error` is set (a non-empty string) OR the `validate` function returns `false`. They work together via OR logic: if `error` is set, the error state is shown regardless of validation result.
+- **Error Tooltip**: When rendered under `FormErrorTooltipProvider` (included in `AppProvider` by default), a non-empty `error` message is automatically shown in a tooltip over the field if it is the first errored field in the form — no extra wiring needed.
