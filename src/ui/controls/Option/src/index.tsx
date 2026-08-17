@@ -2,7 +2,6 @@ import cls from 'classnames/bind';
 import React, { useId } from 'react';
 
 import { Typography } from '@emingy/core/ui/basic/Typography';
-import { Flex } from '@emingy/core/ui/layout/Flex';
 
 import styles from './index.module.scss';
 
@@ -31,6 +30,7 @@ export const Option = ({
                 [`${BLOCK_NAME}__alert`]: type === EType.Alert,
                 [`${BLOCK_NAME}__disabled`]: isDisabled,
                 [`${BLOCK_NAME}__selected`]: isSelected,
+                [`${BLOCK_NAME}__no-prefix`]: !prefix,
             })}
             htmlFor={id ? id : optionId}
         >
@@ -43,16 +43,14 @@ export const Option = ({
                 disabled={isDisabled}
             />
             {prefix && <div className={cn(`${BLOCK_NAME}__prefix`)}>{prefix}</div>}
-            <Flex direction="column">
-                <Typography.Base className={cn(`${BLOCK_NAME}__label`)} weight="bold">
-                    {children}
-                </Typography.Base>
-                {description && (
-                    <Typography.Micro className={cn(`${BLOCK_NAME}__description`)}>
-                        {description}
-                    </Typography.Micro>
-                )}
-            </Flex>
+            <Typography.Base className={cn(`${BLOCK_NAME}__label`)} weight="bold">
+                {children}
+            </Typography.Base>
+            {description && (
+                <Typography.Micro className={cn(`${BLOCK_NAME}__description`)}>
+                    {description}
+                </Typography.Micro>
+            )}
         </label>
     );
 };

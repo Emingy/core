@@ -241,11 +241,12 @@ describe('[UNIT] Option', () => {
         expect(description.className).toContain('micro');
     });
 
-    it('Uses Flex component with column direction', () => {
+    it('Renders label and description as siblings in document order', () => {
         const { container } = render(<Option description="Desc">Test</Option>);
-        const flex = container.querySelector('div[class*="Flex"]');
+        const label = container.querySelector('[class*="Option__label"]');
+        const description = container.querySelector('[class*="Option__description"]');
 
-        expect(flex).toBeDefined();
+        expect(label?.compareDocumentPosition(description!)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
     });
 
     it('Renders multiple options independently', () => {

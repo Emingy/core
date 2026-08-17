@@ -2,7 +2,7 @@
 
 exports[`[SNAPSHOT] Option > should render alert type 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__alert-mnUbMv"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__alert-mnUbMv src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_1_"
 >
   <input
@@ -10,21 +10,17 @@ exports[`[SNAPSHOT] Option > should render alert type 1`] = `
     id="_r_1_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Delete
-    </p>
-  </div>
+    Delete
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render basic option 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_0_"
 >
   <input
@@ -32,15 +28,11 @@ exports[`[SNAPSHOT] Option > should render basic option 1`] = `
     id="_r_0_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Basic Option
-    </p>
-  </div>
+    Basic Option
+  </p>
 </label>
 `;
 
@@ -60,26 +52,22 @@ exports[`[SNAPSHOT] Option > should render complex option 1`] = `
   >
     ⭐
   </div>
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Complex Option
-    </p>
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
-    >
-      Complex option with all props
-    </p>
-  </div>
+    Complex Option
+  </p>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
+  >
+    Complex option with all props
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render disabled option 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__disabled-to0pkT"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__disabled-to0pkT src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_4_"
 >
   <input
@@ -88,21 +76,17 @@ exports[`[SNAPSHOT] Option > should render disabled option 1`] = `
     id="_r_4_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Disabled Option
-    </p>
-  </div>
+    Disabled Option
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render selected and disabled 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__disabled-to0pkT src-ui-controls-Option-src-index-module__Option__selected-PcOJFr"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__disabled-to0pkT src-ui-controls-Option-src-index-module__Option__selected-PcOJFr src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_9_"
 >
   <input
@@ -112,21 +96,17 @@ exports[`[SNAPSHOT] Option > should render selected and disabled 1`] = `
     id="_r_9_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Selected and Disabled
-    </p>
-  </div>
+    Selected and Disabled
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render selected option 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__selected-PcOJFr"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__selected-PcOJFr src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_3_"
 >
   <input
@@ -135,21 +115,17 @@ exports[`[SNAPSHOT] Option > should render selected option 1`] = `
     id="_r_3_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Selected Option
-    </p>
-  </div>
+    Selected Option
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render with custom className 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq custom-option"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq custom-option src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_2_"
 >
   <input
@@ -157,21 +133,17 @@ exports[`[SNAPSHOT] Option > should render with custom className 1`] = `
     id="_r_2_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Custom Option
-    </p>
-  </div>
+    Custom Option
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render with custom id 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="custom-id"
 >
   <input
@@ -179,21 +151,17 @@ exports[`[SNAPSHOT] Option > should render with custom id 1`] = `
     id="custom-id"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Option with ID
-    </p>
-  </div>
+    Option with ID
+  </p>
 </label>
 `;
 
 exports[`[SNAPSHOT] Option > should render with description 1`] = `
 <label
-  class="src-ui-controls-Option-src-index-module__Option-DaIfmq"
+  class="src-ui-controls-Option-src-index-module__Option-DaIfmq src-ui-controls-Option-src-index-module__Option__no-prefix-jXfmuK"
   for="_r_6_"
 >
   <input
@@ -201,20 +169,16 @@ exports[`[SNAPSHOT] Option > should render with description 1`] = `
     id="_r_6_"
     type="checkbox"
   />
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Option with Description
-    </p>
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
-    >
-      This is a helpful description
-    </p>
-  </div>
+    Option with Description
+  </p>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
+  >
+    This is a helpful description
+  </p>
 </label>
 `;
 
@@ -233,15 +197,11 @@ exports[`[SNAPSHOT] Option > should render with prefix 1`] = `
   >
     🔔
   </div>
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Option with Prefix
-    </p>
-  </div>
+    Option with Prefix
+  </p>
 </label>
 `;
 
@@ -260,19 +220,15 @@ exports[`[SNAPSHOT] Option > should render with prefix and description 1`] = `
   >
     ✓
   </div>
-  <div
-    class="src-ui-layout-Flex-src-index-module__Flex-CjMHfi src-ui-layout-Flex-src-index-module__Flex--direction-column-AI7WGW"
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
   >
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Option-src-index-module__Option__label-detkI6 src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-    >
-      Full Option
-    </p>
-    <p
-      class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
-    >
-      Complete description
-    </p>
-  </div>
+    Full Option
+  </p>
+  <p
+    class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-micro-btqKWh src-ui-controls-Option-src-index-module__Option__description-U9yBkN"
+  >
+    Complete description
+  </p>
 </label>
 `;
