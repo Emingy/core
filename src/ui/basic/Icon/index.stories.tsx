@@ -7,8 +7,12 @@ import { Flex } from '@emingy/core/ui/layout/Flex';
 import { Typography } from '../Typography';
 
 import ArrowBottomIcon from './src/svg/arrow-bottom.svg?react';
+import ArrowLeftIcon from './src/svg/arrow-left.svg?react';
+import ArrowRightIcon from './src/svg/arrow-right.svg?react';
+import ArrowTopIcon from './src/svg/arrow-top.svg?react';
 import CheckIcon from './src/svg/check.svg?react';
 import CrossIcon from './src/svg/cross.svg?react';
+import DocumentIcon from './src/svg/document.svg?react';
 import HomeIcon from './src/svg/home.svg?react';
 import InfoIcon from './src/svg/info.svg?react';
 import PersonIcon from './src/svg/person.svg?react';
@@ -19,8 +23,12 @@ import { Icon, type TIconProps } from './src';
 
 const ICONS: Record<string, TSvgComponent> = {
     ArrowBottomIcon,
+    ArrowLeftIcon,
+    ArrowRightIcon,
+    ArrowTopIcon,
     CheckIcon,
     CrossIcon,
+    DocumentIcon,
     HomeIcon,
     InfoIcon,
     PersonIcon,

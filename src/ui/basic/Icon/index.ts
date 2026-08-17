@@ -1,7 +1,11 @@
 export * from './src';
 export { default as ArrowBottomIcon } from './src/svg/arrow-bottom.svg?react';
+export { default as ArrowLeftIcon } from './src/svg/arrow-left.svg?react';
+export { default as ArrowRightIcon } from './src/svg/arrow-right.svg?react';
+export { default as ArrowTopIcon } from './src/svg/arrow-top.svg?react';
 export { default as CheckIcon } from './src/svg/check.svg?react';
 export { default as CrossIcon } from './src/svg/cross.svg?react';
+export { default as DocumentIcon } from './src/svg/document.svg?react';
 export { default as HomeIcon } from './src/svg/home.svg?react';
 export { default as InfoIcon } from './src/svg/info.svg?react';
 export { default as PersonIcon } from './src/svg/person.svg?react';
