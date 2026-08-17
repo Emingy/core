@@ -3,11 +3,17 @@ import React from 'react';
 import { describe, expect, it } from '@rstest/core';
 import { render } from '@testing-library/react';
 
+import { EType } from '../constants';
 import { Option } from '..';
 
 describe('[SNAPSHOT] Option', () => {
     it('should render basic option', () => {
         const { container } = render(<Option>Basic Option</Option>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render alert type', () => {
+        const { container } = render(<Option type={EType.Alert}>Delete</Option>);
         expect(container.firstChild).toMatchSnapshot();
     });
 

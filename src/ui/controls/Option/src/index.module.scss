@@ -27,6 +27,26 @@
         filter: opacity(0.4);
     }
 
+    &__alert {
+        .Option__label {
+            color: var(--color-red-40);
+        }
+
+        .Option__description {
+            color: var(--color-red-50);
+        }
+
+        &:not(.Option__disabled) {
+            &:hover {
+                background-color: color-mix(in srgb, var(--color-red-50) 50%, transparent);
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, var(--color-red-60) 50%, transparent);
+            }
+        }
+    }
+
     &__selected {
         &::after {
             position: absolute;
@@ -45,6 +65,6 @@
     }
 
     &__description {
-        color: var(--color-grey-10);
+        color: var(--color-grey-20);
     }
 }

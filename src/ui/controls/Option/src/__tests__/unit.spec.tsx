@@ -3,6 +3,7 @@ import React from 'react';
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { EType } from '../constants';
 import { Option } from '..';
 
 describe('[UNIT] Option', () => {
@@ -189,6 +190,27 @@ describe('[UNIT] Option', () => {
         const label = container.querySelector('label');
 
         expect(label?.className).not.toContain('Option__selected');
+    });
+
+    it('Does not apply alert class by default', () => {
+        const { container } = render(<Option>Test</Option>);
+        const label = container.querySelector('label');
+
+        expect(label?.className).not.toContain('Option__alert');
+    });
+
+    it('Applies alert class when type is alert', () => {
+        const { container } = render(<Option type={EType.Alert}>Test</Option>);
+        const label = container.querySelector('label');
+
+        expect(label?.className).toContain('Option__alert');
+    });
+
+    it('Does not apply alert class when type is default', () => {
+        const { container } = render(<Option type={EType.Default}>Test</Option>);
+        const label = container.querySelector('label');
+
+        expect(label?.className).not.toContain('Option__alert');
     });
 
     it('Applies disabled class when isDisabled is true', () => {

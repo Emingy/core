@@ -1,5 +1,7 @@
 import { expect, test } from '../../fixtures';
 
+const TYPES = ['default', 'alert'] as const;
+
 const STATES = [
     { label: 'default', args: {} },
     { label: 'selected', args: { isSelected: true } },
@@ -18,23 +20,25 @@ const CONTENTS = [
 ] as const;
 
 test.describe('[Visual] Option', () => {
-    for (const state of STATES) {
-        for (const content of CONTENTS) {
-            test(`${state.label} ${content.label}`, async ({ Option, page }) => {
-                await Option.navigate({ ...state.args, ...content.args });
-                await expect(Option.root).toHaveScreenshot();
-
-                await test.step('hover', async () => {
-                    await Option.hover();
+    for (const type of TYPES) {
+        for (const state of STATES) {
+            for (const content of CONTENTS) {
+                test(`type ${type} ${state.label} ${content.label}`, async ({ Option, page }) => {
+                    await Option.navigate({ type, ...state.args, ...content.args });
                     await expect(Option.root).toHaveScreenshot();
-                });
 
-                await test.step('active', async () => {
-                    await Option.hover();
-                    await page.mouse.down();
-                    await expect(Option.root).toHaveScreenshot();
+                    await test.step('hover', async () => {
+                        await Option.hover();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
+
+                    await test.step('active', async () => {
+                        await Option.hover();
+                        await page.mouse.down();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
                 });
-            });
+            }
         }
     }
 });

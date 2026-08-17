@@ -71,6 +71,7 @@ The `Option` component accepts a focused set of props for flexible checkbox beha
 | Prop Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | **\`children\`** | \`ReactNode\` | | The main text or content of the option. |
+| **\`type\`** | \`'default'\` \\| \`'alert'\` | \`'default'\` | Color variant of the option — see [Type Variant](#viii-type-variant). |
 | **\`isSelected\`** | \`boolean\` | \`false\` | Controls the checked state of the checkbox. |
 | **\`onSelect\`** | \`() => void\` | | Callback fired when the option is toggled. |
 | **\`isDisabled\`** | \`boolean\` | \`false\` | Disables interaction and applies disabled styling. |
@@ -320,6 +321,24 @@ const checkbox = document.getElementById('opt-email');
 - If `id` prop is not provided, React's `useId()` generates a unique ID
 - The label's `htmlFor` attribute always matches the input's `id`
 - This ensures proper label-input association for accessibility
+
+---
+
+## VIII. Type Variant
+
+<Markdown>
+{`
+\`\`\`tsx
+// Default — neutral color
+<Option>Rename</Option>
+
+// Alert — for destructive actions (delete, remove, revoke, ...)
+<Option type="alert">Delete</Option>
+\`\`\`
+`}
+</Markdown>
+
+\`type="alert"\` tints the main content red, and gives hover/active states a red-tinted background instead of the neutral grey — use it for destructive actions inside a menu (delete, remove, revoke) so they read as dangerous at a glance. The \`description\` text stays neutral in both variants.
 
 ---
 

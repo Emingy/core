@@ -12,6 +12,7 @@ const meta: Meta = {
         },
     },
     args: {
+        type: 'default',
         isDisabled: false,
         isSelected: false,
     },

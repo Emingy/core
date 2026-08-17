@@ -6,6 +6,7 @@ import { Flex } from '@emingy/core/ui/layout/Flex';
 
 import styles from './index.module.scss';
 
+import { EType } from './constants';
 import type { TProps } from './types';
 
 const BLOCK_NAME = 'Option';
@@ -14,6 +15,7 @@ const cn = cls.bind(styles);
 export const Option = ({
     className,
     id,
+    type = EType.Default,
     isSelected,
     onSelect,
     children,
@@ -26,6 +28,7 @@ export const Option = ({
     return (
         <label
             className={cn(`${BLOCK_NAME}`, className, {
+                [`${BLOCK_NAME}__alert`]: type === EType.Alert,
                 [`${BLOCK_NAME}__disabled`]: isDisabled,
                 [`${BLOCK_NAME}__selected`]: isSelected,
             })}
@@ -41,7 +44,9 @@ export const Option = ({
             />
             {prefix && <div className={cn(`${BLOCK_NAME}__prefix`)}>{prefix}</div>}
             <Flex direction="column">
-                <Typography.Base>{children}</Typography.Base>
+                <Typography.Base className={cn(`${BLOCK_NAME}__label`)} weight="bold">
+                    {children}
+                </Typography.Base>
                 {description && (
                     <Typography.Micro className={cn(`${BLOCK_NAME}__description`)}>
                         {description}
