@@ -40,7 +40,9 @@ export const Button = ({
     const navigate = isInRouterContext ? useNavigate() : undefined;
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.stopPropagation();
+        if (splitted) {
+            e.stopPropagation();
+        }
         onClick?.(e);
 
         if (href) {

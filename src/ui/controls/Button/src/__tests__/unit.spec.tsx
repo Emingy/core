@@ -2,6 +2,7 @@ import React from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 
 import type { TIconProps } from '@emingy/core/ui';
+import { Dropdown } from '@emingy/core/ui/layout/Dropdown';
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
@@ -212,6 +213,44 @@ describe('[UNIT] Button', () => {
         const buttons = container.querySelectorAll('button');
 
         expect(buttons[1].className).toContain('Button__splitted-right');
+    });
+
+    it('Opens the dropdown menu when the split (arrow) button is clicked', () => {
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Button
+            </Button>
+        );
+        const buttons = container.querySelectorAll('button');
+
+        fireEvent.click(buttons[1]);
+
+        expect(document.body.querySelector('[class*="Dropdown__panel"]')).not.toBeNull();
+    });
+
+    it('Does not open the dropdown menu when the main button is clicked', () => {
+        const { container } = renderWithRouter(
+            <Button splitted dropdownContent={<span>Menu</span>}>
+                Button
+            </Button>
+        );
+        const buttons = container.querySelectorAll('button');
+
+        fireEvent.click(buttons[0]);
+
+        expect(document.body.querySelector('[class*="Dropdown__panel"]')).toBeNull();
+    });
+
+    it('Toggles the dropdown when a non-splitted Button is used as a Dropdown trigger', () => {
+        const { getByText } = renderWithRouter(
+            <Dropdown content={<span>Menu</span>}>
+                <Button>Toggle dropdown</Button>
+            </Dropdown>
+        );
+
+        fireEvent.click(getByText('Toggle dropdown'));
+
+        expect(document.body.querySelector('[class*="Dropdown__panel"]')).not.toBeNull();
     });
 
     it('Applies custom className', () => {
