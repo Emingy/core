@@ -3,13 +3,14 @@ import type { NavigateOptions } from 'react-router-dom';
 
 import type { TIcon } from '@emingy/core/ui/basic/Icon';
 
-import type { ESize, EType } from './constants';
+import type { ESize, EType, EVariant } from './constants';
 
 type TButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
 type TPropsCommon = {
     size?: `${ESize}`;
     type?: `${EType}`;
+    variant?: `${EVariant}`;
     disabled?: boolean;
     htmlType?: TButtonProps['type'];
     prefix?: ReactNode;

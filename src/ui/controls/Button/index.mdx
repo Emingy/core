@@ -69,7 +69,8 @@ The `Button` component accepts standard HTML button attributes, plus specific pr
     {`
 | Prop Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **\`type\`** | \`'primary'\` \\| \`'secondary'\` \\| \`'ghosted'\` \\| \`'outlined'\` \\| \`'alert'\` | \`'primary'\` | Visual style variant of the button. |
+| **\`type\`** | \`'primary'\` \\| \`'secondary'\` \\| \`'alert'\` | \`'primary'\` | Color scheme of the button. |
+| **\`variant\`** | \`'filled'\` \\| \`'outlined'\` \\| \`'ghosted'\` | \`'filled'\` | Visual treatment of the button, independent of \`type\`. |
 | **\`size\`** | \`'sm'\` \\| \`'md'\` \\| \`'lg'\` | \`'md'\` | Size of the button. |
 | **\`disabled\`** | \`boolean\` | \`false\` | Disables button interaction and applies disabled styling. |
 | **\`htmlType\`** | \`'button'\` \\| \`'submit'\` \\| \`'reset'\` | \`'button'\` | Native HTML button type attribute. |
@@ -88,17 +89,28 @@ The `Button` component accepts standard HTML button attributes, plus specific pr
 
 ---
 
-## III. Button Types
+## III. Button Types and Variants
 
-The component supports four visual variants:
+`type` and `variant` are independent props that can be combined freely.
 
 <Markdown>
     {`
-- **Primary** (\`type="primary"\`): Main action button with solid background.
-- **Secondary** (\`type="secondary"\`): button with secondary style.
-- **Ghosted** (\`type="ghosted"\`): Subtle button with minimal styling.
-- **Outlined** (\`type="outlined"\`): button with outlined style.
+**Types** (color scheme):
+
+- **Primary** (\`type="primary"\`): Main action button.
+- **Secondary** (\`type="secondary"\`): Neutral, non-primary action.
 - **Alert** (\`type="alert"\`): Warning or destructive action button (e.g., delete, cancel).
+
+**Variants** (visual treatment):
+
+- **Filled** (\`variant="filled"\`): Solid background. Default.
+- **Outlined** (\`variant="outlined"\`): Transparent background with a colored border.
+- **Ghosted** (\`variant="ghosted"\`): Transparent background, no border, subtle hover fill.
+
+\`\`\`tsx
+<Button type="alert" variant="outlined">Delete</Button>
+<Button type="secondary" variant="ghosted">Cancel</Button>
+\`\`\`
 `}
 </Markdown>
 

@@ -50,7 +50,13 @@ export const Message = ({
                     <Typography.Base>{children}</Typography.Base>
                 </Flex>
             </Flex>
-            <Button type="ghosted" size="sm" onClick={onCloseClick} icon={CrossIcon} />
+            <Button
+                type="secondary"
+                variant="ghosted"
+                size="sm"
+                onClick={onCloseClick}
+                icon={CrossIcon}
+            />
         </div>
     );
 };

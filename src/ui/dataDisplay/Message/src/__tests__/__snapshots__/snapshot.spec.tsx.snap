@@ -46,7 +46,7 @@ exports[`[SNAPSHOT] Message > should render all types with title 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_6_"
     >
       <button
@@ -126,7 +126,7 @@ exports[`[SNAPSHOT] Message > should render all types with title 2`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_7_"
     >
       <button
@@ -199,7 +199,7 @@ exports[`[SNAPSHOT] Message > should render all types with title 3`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_8_"
     >
       <button
@@ -266,7 +266,7 @@ exports[`[SNAPSHOT] Message > should render error message 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_2_"
     >
       <button
@@ -333,7 +333,7 @@ exports[`[SNAPSHOT] Message > should render success message 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_0_"
     >
       <button
@@ -407,7 +407,7 @@ exports[`[SNAPSHOT] Message > should render warning message 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_1_"
     >
       <button
@@ -474,7 +474,7 @@ exports[`[SNAPSHOT] Message > should render with custom className 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_5_"
     >
       <button
@@ -546,7 +546,7 @@ exports[`[SNAPSHOT] Message > should render with title 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_3_"
     >
       <button
@@ -613,7 +613,7 @@ exports[`[SNAPSHOT] Message > should render without title 1`] = `
     class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
     <label
-      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__secondary-Mfn9Sw src-ui-controls-Button-src-index-module__Button__ghosted-jWZdUm src-ui-controls-Button-src-index-module__Button__small-size-eaDaeQ"
       for="_r_4_"
     >
       <button

@@ -7,7 +7,11 @@ export enum ESize {
 export enum EType {
     Primary = 'primary',
     Secondary = 'secondary',
+    Alert = 'alert',
+}
+
+export enum EVariant {
+    Filled = 'filled',
     Ghosted = 'ghosted',
     Outlined = 'outlined',
-    Alert = 'alert',
 }

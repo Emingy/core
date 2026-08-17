@@ -5,7 +5,7 @@ import type { TIconProps } from '@emingy/core/ui';
 import { describe, expect, it } from '@rstest/core';
 import { render } from '@testing-library/react';
 
-import { ESize, EType } from '../constants';
+import { ESize, EType, EVariant } from '../constants';
 import { Button } from '..';
 
 const MockIcon: TIconProps['icon'] = (props) => (
@@ -38,13 +38,24 @@ describe('[SNAPSHOT] Button', () => {
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('should render ghosted type', () => {
-        const { container } = renderWithRouter(<Button type={EType.Ghosted}>Ghosted</Button>);
+    it('should render ghosted variant', () => {
+        const { container } = renderWithRouter(<Button variant={EVariant.Ghosted}>Ghosted</Button>);
         expect(container.firstChild).toMatchSnapshot();
     });
 
-    it('should render outlined type', () => {
-        const { container } = renderWithRouter(<Button type={EType.Outlined}>Ghosted</Button>);
+    it('should render outlined variant', () => {
+        const { container } = renderWithRouter(
+            <Button variant={EVariant.Outlined}>Outlined</Button>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render alert type with outlined variant', () => {
+        const { container } = renderWithRouter(
+            <Button type={EType.Alert} variant={EVariant.Outlined}>
+                Alert Outlined
+            </Button>
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 

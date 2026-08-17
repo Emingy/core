@@ -1,6 +1,7 @@
 import { expect, test } from '../../fixtures';
 
-const TYPES = ['primary', 'secondary', 'ghosted', 'outlined', 'alert'] as const;
+const TYPES = ['primary', 'secondary', 'alert'] as const;
+const VARIANTS = ['filled', 'outlined', 'ghosted'] as const;
 const SIZES = ['sm', 'md', 'lg'] as const;
 
 const STATES = [
@@ -15,23 +16,28 @@ const STATES = [
 
 test.describe('[Visual] Button', () => {
     for (const type of TYPES) {
-        for (const size of SIZES) {
-            for (const { label, args } of STATES) {
-                test(`type ${type} ${size} ${label}`, async ({ Button, page }) => {
-                    await Button.navigate({ type, size, ...args });
-                    await expect(Button.root).toHaveScreenshot();
-
-                    await test.step('hover', async () => {
-                        await Button.hover();
+        for (const variant of VARIANTS) {
+            for (const size of SIZES) {
+                for (const { label, args } of STATES) {
+                    test(`type ${type} variant ${variant} ${size} ${label}`, async ({
+                        Button,
+                        page,
+                    }) => {
+                        await Button.navigate({ type, variant, size, ...args });
                         await expect(Button.root).toHaveScreenshot();
-                    });
 
-                    await test.step('clicked', async () => {
-                        await Button.root.hover();
-                        await page.mouse.down();
-                        await expect(Button.root).toHaveScreenshot();
+                        await test.step('hover', async () => {
+                            await Button.hover();
+                            await expect(Button.root).toHaveScreenshot();
+                        });
+
+                        await test.step('clicked', async () => {
+                            await Button.root.hover();
+                            await page.mouse.down();
+                            await expect(Button.root).toHaveScreenshot();
+                        });
                     });
-                });
+                }
             }
         }
     }

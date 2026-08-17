@@ -9,7 +9,7 @@ import { Dropdown } from '@emingy/core/ui/layout/Dropdown';
 
 import styles from './index.module.scss';
 
-import { ESize, EType } from './constants';
+import { ESize, EType, EVariant } from './constants';
 import type { TProps } from './types';
 
 const BLOCK_NAME = 'Button';
@@ -18,6 +18,7 @@ const cn = cls.bind(styles);
 export const Button = ({
     size = ESize.Md,
     type = EType.Primary,
+    variant = EVariant.Filled,
     htmlType,
     disabled,
     prefix,
@@ -56,9 +57,10 @@ export const Button = ({
                 className={cn(`${BLOCK_NAME}`, className, {
                     [`${BLOCK_NAME}__primary`]: type === EType.Primary,
                     [`${BLOCK_NAME}__secondary`]: type === EType.Secondary,
-                    [`${BLOCK_NAME}__ghosted`]: type === EType.Ghosted,
-                    [`${BLOCK_NAME}__outlined`]: type === EType.Outlined,
                     [`${BLOCK_NAME}__alert`]: type === EType.Alert,
+                    [`${BLOCK_NAME}__filled`]: variant === EVariant.Filled,
+                    [`${BLOCK_NAME}__ghosted`]: variant === EVariant.Ghosted,
+                    [`${BLOCK_NAME}__outlined`]: variant === EVariant.Outlined,
                     [`${BLOCK_NAME}__middle-size`]: size === ESize.Md,
                     [`${BLOCK_NAME}__small-size`]: size === ESize.Sm,
                     [`${BLOCK_NAME}__large-size`]: size === ESize.Lg,
@@ -121,9 +123,10 @@ export const Button = ({
                         className={cn(`${BLOCK_NAME}`, className, {
                             [`${BLOCK_NAME}__primary`]: type === EType.Primary,
                             [`${BLOCK_NAME}__secondary`]: type === EType.Secondary,
-                            [`${BLOCK_NAME}__ghosted`]: type === EType.Ghosted,
-                            [`${BLOCK_NAME}__outlined`]: type === EType.Outlined,
                             [`${BLOCK_NAME}__alert`]: type === EType.Alert,
+                            [`${BLOCK_NAME}__filled`]: variant === EVariant.Filled,
+                            [`${BLOCK_NAME}__ghosted`]: variant === EVariant.Ghosted,
+                            [`${BLOCK_NAME}__outlined`]: variant === EVariant.Outlined,
                             [`${BLOCK_NAME}__middle-size`]: size === ESize.Md,
                             [`${BLOCK_NAME}__small-size`]: size === ESize.Sm,
                             [`${BLOCK_NAME}__large-size`]: size === ESize.Lg,

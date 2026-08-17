@@ -48,43 +48,104 @@
                 0 4px 4px 0 var(--color-grey-90-50),
                 0 0 8px 0 var(--color-red-60);
         }
+
+        &:has(.Button__ghosted),
+        &:has(.Button__outlined) {
+            box-shadow: none;
+        }
     }
 
     &__primary {
-        background-color: var(--color-purple-50);
         border-color: var(--color-purple-40);
-
-        &:hover {
-            background-color: var(--color-purple-40);
-        }
-
-        &:active {
-            background-color: var(--color-purple-60);
-        }
     }
 
     &__secondary {
-        background-color: var(--color-grey-50);
         border-color: var(--color-grey-40);
+    }
 
-        &:hover {
-            background-color: var(--color-grey-40);
+    &__alert {
+        border-color: var(--color-red-40);
+    }
+
+    &__filled {
+        &.Button__primary {
+            background-color: var(--color-purple-50);
+
+            &:hover {
+                background-color: var(--color-purple-40);
+            }
+
+            &:active {
+                background-color: var(--color-purple-60);
+            }
         }
 
-        &:active {
-            background-color: var(--color-grey-60);
+        &.Button__secondary {
+            background-color: var(--color-grey-50);
+
+            &:hover {
+                background-color: var(--color-grey-40);
+            }
+
+            &:active {
+                background-color: var(--color-grey-60);
+            }
+        }
+
+        &.Button__alert {
+            background-color: var(--color-red-50);
+
+            &:hover {
+                background-color: var(--color-red-40);
+            }
+
+            &:active {
+                background-color: var(--color-red-60);
+            }
         }
     }
 
     &__outlined {
-        border-color: var(--color-grey-40);
+        background-color: transparent;
 
-        &:hover {
-            border-color: var(--color-grey-10);
+        &.Button__primary {
+            &:hover {
+                background-color: color-mix(in srgb, var(--color-purple-50) 50%, transparent);
+                border-color: var(--color-purple-10);
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, var(--color-purple-60) 50%, transparent);
+                border-color: var(--color-purple-60);
+            }
         }
 
-        &:active {
-            border-color: var(--color-grey-60);
+        &.Button__secondary {
+            &:hover {
+                background-color: var(--color-grey-50-50);
+                border-color: var(--color-grey-10);
+            }
+
+            &:active {
+                background-color: var(--color-grey-60-50);
+                border-color: var(--color-grey-60);
+            }
+        }
+
+        &.Button__alert {
+            .Button__label {
+                color: var(--color-red-50);
+            }
+
+            &:hover {
+                background-color: color-mix(in srgb, var(--color-red-50) 50%, transparent);
+                border-color: var(--color-red-10);
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, var(--color-red-60) 50%, transparent);
+                border-color: var(--color-red-60);
+            }
         }
     }
 
@@ -92,25 +153,38 @@
         background-color: transparent;
         border: 0;
 
-        &:hover {
-            background-color: var(--color-grey-50-50);
+        &.Button__primary {
+            &:hover {
+                background-color: color-mix(in srgb, var(--color-purple-50) 50%, transparent);
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, var(--color-purple-60) 50%, transparent);
+            }
         }
 
-        &:active {
-            background-color: var(--color-grey-60-50);
-        }
-    }
+        &.Button__secondary {
+            &:hover {
+                background-color: var(--color-grey-50-50);
+            }
 
-    &__alert {
-        background-color: var(--color-red-50);
-        border-color: var(--color-red-40);
-
-        &:hover {
-            background-color: var(--color-red-40);
+            &:active {
+                background-color: var(--color-grey-60-50);
+            }
         }
 
-        &:active {
-            background-color: var(--color-red-60);
+        &.Button__alert {
+            .Button__label {
+                color: var(--color-red-50);
+            }
+
+            &:hover {
+                background-color: color-mix(in srgb, var(--color-red-50) 50%, transparent);
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, var(--color-red-60) 50%, transparent);
+            }
         }
     }
 

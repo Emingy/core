@@ -29,7 +29,8 @@ const Content = () => {
                         Success
                     </Button>
                     <Button
-                        type="outlined"
+                        type="secondary"
+                        variant="outlined"
                         onClick={() =>
                             message.warning({
                                 title: 'Warning',
@@ -60,7 +61,8 @@ const Content = () => {
                         Success
                     </Button>
                     <Button
-                        type="outlined"
+                        type="secondary"
+                        variant="outlined"
                         onClick={() => message.warning({ content: 'Check your connection.' })}
                     >
                         Warning
@@ -129,7 +131,8 @@ const Content = () => {
                         Show message
                     </Button>
                     <Button
-                        type="outlined"
+                        type="secondary"
+                        variant="outlined"
                         onClick={() => {
                             if (idRef.current) {
                                 message.close(idRef.current);

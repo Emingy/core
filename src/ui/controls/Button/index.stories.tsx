@@ -43,6 +43,7 @@ const meta: Meta = {
     args: {
         size: 'md',
         type: 'primary',
+        variant: 'filled',
         isLoading: false,
     },
 };

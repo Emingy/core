@@ -5,7 +5,7 @@ import type { TIconProps } from '@emingy/core/ui';
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { ESize, EType } from '../constants';
+import { ESize, EType, EVariant } from '../constants';
 import { Button } from '..';
 
 const MockIcon: TIconProps['icon'] = (props) => (
@@ -67,17 +67,29 @@ describe('[UNIT] Button', () => {
         expect(label?.className).toContain('Button__secondary');
     });
 
-    it('Applies ghosted type', () => {
-        const { container } = renderWithRouter(<Button type={EType.Ghosted}>Button</Button>);
+    it('Applies ghosted variant', () => {
+        const { container } = renderWithRouter(<Button variant={EVariant.Ghosted}>Button</Button>);
         const label = container.querySelector('label');
 
         expect(label?.className).toContain('Button__ghosted');
     });
 
-    it('Applies outlined type', () => {
-        const { container } = renderWithRouter(<Button type={EType.Outlined}>Button</Button>);
+    it('Applies outlined variant', () => {
+        const { container } = renderWithRouter(<Button variant={EVariant.Outlined}>Button</Button>);
         const label = container.querySelector('label');
 
+        expect(label?.className).toContain('Button__outlined');
+    });
+
+    it('Combines alert type with outlined variant', () => {
+        const { container } = renderWithRouter(
+            <Button type={EType.Alert} variant={EVariant.Outlined}>
+                Button
+            </Button>
+        );
+        const label = container.querySelector('label');
+
+        expect(label?.className).toContain('Button__alert');
         expect(label?.className).toContain('Button__outlined');
     });
 
@@ -277,7 +289,7 @@ describe('[UNIT] Button', () => {
 
     it('Hides label when isLoading is true', () => {
         const { container } = renderWithRouter(<Button isLoading>Loading</Button>);
-        const label = container.querySelector('.Button__label');
+        const label = container.querySelector('[class*="Button__label"]');
 
         expect(label?.className).toContain('Button__label-hidden');
     });
@@ -312,7 +324,7 @@ describe('[UNIT] Button', () => {
 
     it('Shows label when isLoading is false', () => {
         const { container } = renderWithRouter(<Button isLoading={false}>Click me</Button>);
-        const label = container.querySelector('.Button__label');
+        const label = container.querySelector('[class*="Button__label"]');
 
         expect(label?.className).not.toContain('Button__label-hidden');
     });
