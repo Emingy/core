@@ -7,6 +7,8 @@
 | `triggerMode`  | `("click" \| "hover")[]`                                                 | `[ETriggerMode.Click]` | —           |
 | `containerRef` | `RefObject`                                                              | —                      | —           |
 | `maxHeight`    | `MaxHeight<string \| number>`                                            | —                      | —           |
+| `widthMode`    | `"content" \| "trigger"`                                                 | `'trigger'`            | —           |
+| `width`        | `Width<string \| number>`                                                | —                      | —           |
 | `content`      | `ReactNode \| ((panelRef: RefObject<HTMLElement \| null>) => ReactNode)` | —                      | —           |
 | `isOpen`       | `boolean`                                                                | —                      | —           |
 | `onOpenChange` | `((isOpen: boolean) => void)`                                            | —                      | —           |

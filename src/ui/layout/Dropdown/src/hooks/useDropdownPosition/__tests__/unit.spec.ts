@@ -54,7 +54,7 @@ describe('[UNIT] useDropdownPosition', () => {
             useDropdownPosition({ triggerRef, panelRef, direction: 'bottom', isMounted: true })
         );
 
-        expect(result.current).toEqual({ top: '38px', left: '20px' });
+        expect(result.current).toEqual({ top: '38px', left: '20px', width: '100px' });
     });
 
     it('Positions above the trigger for top direction', () => {
@@ -67,6 +67,7 @@ describe('[UNIT] useDropdownPosition', () => {
         expect(result.current).toEqual({
             top: '292px',
             left: '300px',
+            width: '100px',
             transform: 'translateY(-100%)',
         });
     });
@@ -81,6 +82,7 @@ describe('[UNIT] useDropdownPosition', () => {
         expect(result.current).toEqual({
             top: '300px',
             left: '292px',
+            width: '100px',
             transform: 'translateX(-100%)',
         });
     });
@@ -92,7 +94,7 @@ describe('[UNIT] useDropdownPosition', () => {
             useDropdownPosition({ triggerRef, panelRef, direction: 'right', isMounted: true })
         );
 
-        expect(result.current).toEqual({ top: '10px', left: '128px' });
+        expect(result.current).toEqual({ top: '10px', left: '128px', width: '100px' });
     });
 
     it('Flips to top when bottom direction overflows the viewport', () => {
@@ -128,7 +130,7 @@ describe('[UNIT] useDropdownPosition', () => {
             useDropdownPosition({ triggerRef, panelRef, direction: 'top', isMounted: true })
         );
 
-        expect(result.current).toEqual({ top: '38px', left: '20px' });
+        expect(result.current).toEqual({ top: '38px', left: '20px', width: '100px' });
     });
 
     it('Uses the container edge instead of the trigger edge when containerRef is provided', () => {
@@ -153,6 +155,6 @@ describe('[UNIT] useDropdownPosition', () => {
             })
         );
 
-        expect(result.current).toEqual({ top: '10px', left: '208px' });
+        expect(result.current).toEqual({ top: '10px', left: '208px', width: '100px' });
     });
 });

@@ -382,25 +382,25 @@ exports[`[SNAPSHOT] Button > should render small size 1`] = `
 
 exports[`[SNAPSHOT] Button > should render splitted button 1`] = `
 <div
-  class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
+  class="src-ui-layout-Dropdown-src-index-module__Dropdown__trigger-S0Yu4P"
 >
-  <label
-    class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__filled-kDxjYj src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-wmVZ_S"
-    for="_r_e_"
-  >
-    <button
-      id="_r_e_"
-    >
-      <p
-        class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__label-Du_2dx src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
-      >
-        Split
-      </p>
-    </button>
-  </label>
   <div
-    class="src-ui-layout-Dropdown-src-index-module__Dropdown__trigger-S0Yu4P"
+    class="src-ui-controls-Button-src-index-module__Button__wrapper-PgWGDV"
   >
+    <label
+      class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__filled-kDxjYj src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-wmVZ_S"
+      for="_r_e_"
+    >
+      <button
+        id="_r_e_"
+      >
+        <p
+          class="src-ui-basic-Typography-src-index-module__Typography-Tt8pr3 src-ui-basic-Typography-src-index-module__Typography--type-base-CFs1tQ src-ui-controls-Button-src-index-module__Button__label-Du_2dx src-ui-basic-Typography-src-index-module__Typography--weight-bold-XAUnm1"
+        >
+          Split
+        </p>
+      </button>
+    </label>
     <button
       class="src-ui-controls-Button-src-index-module__Button-uV_e9L src-ui-controls-Button-src-index-module__Button__primary-zfyVDp src-ui-controls-Button-src-index-module__Button__filled-kDxjYj src-ui-controls-Button-src-index-module__Button__middle-size-_7MVuA src-ui-controls-Button-src-index-module__Button__splitted-right-EAKOzc"
     >

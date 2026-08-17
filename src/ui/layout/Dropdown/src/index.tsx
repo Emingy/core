@@ -8,7 +8,12 @@ import { useDropdownVisibility } from './hooks/useDropdownVisibility';
 
 import styles from './index.module.scss';
 
-import { DEFAULT_DIRECTION, DEFAULT_TRIGGER_MODE } from './constants';
+import {
+    DEFAULT_DIRECTION,
+    DEFAULT_TRIGGER_MODE,
+    DEFAULT_WIDTH_MODE,
+    EWidthMode,
+} from './constants';
 import type { TProps } from './types';
 
 const BLOCK_NAME = 'Dropdown';
@@ -21,6 +26,8 @@ export const Dropdown = ({
     triggerMode = DEFAULT_TRIGGER_MODE,
     containerRef,
     maxHeight,
+    widthMode = DEFAULT_WIDTH_MODE,
+    width,
     isOpen,
     onOpenChange,
     className,
@@ -77,7 +84,13 @@ export const Dropdown = ({
                         className={cn(`${BLOCK_NAME}__panel`, {
                             [`${BLOCK_NAME}__panel_visible`]: isVisible,
                         })}
-                        style={{ ...style, maxHeight }}
+                        style={{
+                            ...style,
+                            maxHeight,
+                            width:
+                                width ??
+                                (widthMode === EWidthMode.Content ? undefined : style.width),
+                        }}
                         onTransitionEnd={handleTransitionEnd}
                         {...hoverHandlers}
                     >

@@ -6,13 +6,14 @@ const RECT = { top: 10, left: 20, right: 120, bottom: 30, width: 100, height: 20
 
 describe('[UNIT] calcStyle', () => {
     it('Positions below the trigger for bottom direction', () => {
-        expect(calcStyle(RECT, 'bottom')).toEqual({ top: '38px', left: '20px' });
+        expect(calcStyle(RECT, 'bottom')).toEqual({ top: '38px', left: '20px', width: '100px' });
     });
 
     it('Positions above the trigger for top direction', () => {
         expect(calcStyle(RECT, 'top')).toEqual({
             top: '2px',
             left: '20px',
+            width: '100px',
             transform: 'translateY(-100%)',
         });
     });
@@ -21,12 +22,13 @@ describe('[UNIT] calcStyle', () => {
         expect(calcStyle(RECT, 'left')).toEqual({
             top: '10px',
             left: '12px',
+            width: '100px',
             transform: 'translateX(-100%)',
         });
     });
 
     it('Positions right of the trigger for right direction', () => {
-        expect(calcStyle(RECT, 'right')).toEqual({ top: '10px', left: '128px' });
+        expect(calcStyle(RECT, 'right')).toEqual({ top: '10px', left: '128px', width: '100px' });
     });
 
     describe('with a container rect', () => {
@@ -43,6 +45,7 @@ describe('[UNIT] calcStyle', () => {
             expect(calcStyle(RECT, 'right', CONTAINER_RECT)).toEqual({
                 top: '10px',
                 left: '208px',
+                width: '100px',
             });
         });
 
@@ -50,6 +53,7 @@ describe('[UNIT] calcStyle', () => {
             expect(calcStyle(RECT, 'left', CONTAINER_RECT)).toEqual({
                 top: '10px',
                 left: '-8px',
+                width: '100px',
                 transform: 'translateX(-100%)',
             });
         });
@@ -58,6 +62,7 @@ describe('[UNIT] calcStyle', () => {
             expect(calcStyle(RECT, 'bottom', CONTAINER_RECT)).toEqual({
                 top: '308px',
                 left: '20px',
+                width: '100px',
             });
         });
 
@@ -65,6 +70,7 @@ describe('[UNIT] calcStyle', () => {
             expect(calcStyle(RECT, 'top', CONTAINER_RECT)).toEqual({
                 top: '-8px',
                 left: '20px',
+                width: '100px',
                 transform: 'translateY(-100%)',
             });
         });
@@ -91,7 +97,11 @@ describe('[UNIT] calcStyle', () => {
         });
 
         it('Adds the scroll offset to the computed position', () => {
-            expect(calcStyle(RECT, 'bottom')).toEqual({ top: '138px', left: '70px' });
+            expect(calcStyle(RECT, 'bottom')).toEqual({
+                top: '138px',
+                left: '70px',
+                width: '100px',
+            });
         });
     });
 });

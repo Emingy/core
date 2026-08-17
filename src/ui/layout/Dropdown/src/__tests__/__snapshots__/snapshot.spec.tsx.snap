@@ -15,7 +15,7 @@ exports[`[SNAPSHOT] Dropdown > Closed state 1`] = `
 exports[`[SNAPSHOT] Dropdown > Open state 1`] = `
 <div
   class="src-ui-layout-Dropdown-src-index-module__Dropdown__panel-f47uO2"
-  style="top: 8px; left: 0px;"
+  style="top: 8px; left: 0px; width: 0px;"
 >
   <span>
     Content

@@ -46,13 +46,15 @@ import { Option } from '@emingy/core/ui/controls/Option';
 | **\`triggerMode\`** | \`('click' \\| 'hover')[]\` | \`['click']\` | Which interactions open/close the panel — see [Trigger Modes](#v-trigger-modes). |
 | **\`containerRef\`** | \`RefObject<HTMLElement \\| null>\` | — | Aligns the panel to this element's edge instead of the trigger's — see [Aligning to a Container](#iv-aligning-to-a-container). |
 | **\`maxHeight\`** | \`CSSProperties['maxHeight']\` | — | Max height of the panel. The panel scrolls internally past this height; sizing decisions stay with the consumer. |
+| **\`widthMode\`** | \`'trigger'\` \\| \`'content'\` | \`'trigger'\` | Whether the panel's width follows the trigger's width or fits its own content — see [Panel Width](#ix-panel-width). |
+| **\`width\`** | \`CSSProperties['width']\` | — | Explicit panel width. Overrides \`widthMode\` entirely when set. |
 | **\`isOpen\`** | \`boolean\` | — | Controlled open state — see [Open State](#vi-open-state-controlled-vs-uncontrolled). |
 | **\`onOpenChange\`** | \`(isOpen: boolean) => void\` | — | Called whenever the open state changes, controlled or not. |
 | **\`className\`** | \`string\` | — | Additional CSS class applied to the trigger wrapper. |
 `}
 </Markdown>
 
-All other native `div` attributes (`id`, `data-*`, `aria-*`, `onClick`, `onMouseEnter`, `onMouseLeave`, …) are forwarded to the trigger wrapper. `onClick` is composed with the component's own click-to-toggle handling rather than overridden; `onMouseEnter`/`onMouseLeave` are passed through as-is — hover-triggered open/close listens on the trigger's rendered child directly (see [Important Notes](#viii-important-notes)), independently of these forwarded handlers.
+All other native `div` attributes (`id`, `data-*`, `aria-*`, `onClick`, `onMouseEnter`, `onMouseLeave`, …) are forwarded to the trigger wrapper. `onClick` is composed with the component's own click-to-toggle handling rather than overridden; `onMouseEnter`/`onMouseLeave` are passed through as-is — hover-triggered open/close listens on the trigger's rendered child directly (see [Important Notes](#ix-important-notes)), independently of these forwarded handlers.
 
 ---
 
@@ -177,7 +179,28 @@ The panel fades in and out using the tokens from `styles/animations` (`--animati
 
 ---
 
-## VIII. Important Notes
+## VIII. Panel Width
+
+<Markdown>
+{`
+\`\`\`tsx
+// Default — panel matches the trigger's own width
+<Dropdown content={<Menu />}><Button>Toggle dropdown</Button></Dropdown>
+
+// Panel sizes to its own content instead of the trigger
+<Dropdown widthMode="content" content={<Menu />}><NavItem label="Reports" /></Dropdown>
+
+// Explicit width — overrides widthMode entirely
+<Dropdown width={306} content={<Menu />}><IconButton /></Dropdown>
+\`\`\`
+`}
+</Markdown>
+
+By default (\`widthMode="trigger"\`) the panel's width tracks the trigger's own measured width, so a full-width \`Select\`-style trigger gets a full-width panel without any extra configuration. Set \`widthMode="content"\` when the trigger is narrower than the panel needs to be (an icon button, a compact nav item) and the panel should instead size to whatever content it renders. \`width\` takes priority over \`widthMode\` when both are set, for cases that need an exact fixed width regardless of trigger or content.
+
+---
+
+## IX. Important Notes
 
 <Markdown>
     {`

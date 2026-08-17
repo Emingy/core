@@ -1,6 +1,6 @@
 import type { CSSProperties, HTMLAttributes, PropsWithChildren, ReactNode, RefObject } from 'react';
 
-import type { EDirection, ETriggerMode } from './constants';
+import type { EDirection, ETriggerMode, EWidthMode } from './constants';
 
 type TPropsCommon = {
     className?: string;
@@ -8,6 +8,8 @@ type TPropsCommon = {
     triggerMode?: `${ETriggerMode}`[];
     containerRef?: RefObject<HTMLElement | null>;
     maxHeight?: CSSProperties['maxHeight'];
+    widthMode?: `${EWidthMode}`;
+    width?: CSSProperties['width'];
     content: ReactNode | ((panelRef: RefObject<HTMLElement | null>) => ReactNode);
     isOpen?: boolean;
     onOpenChange?: (isOpen: boolean) => void;

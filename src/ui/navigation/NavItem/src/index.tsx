@@ -168,6 +168,7 @@ export const NavItem = (props: TProps) => {
         <Dropdown
             triggerMode={['hover']}
             direction="right"
+            widthMode="content"
             containerRef={props.containerRef}
             content={(panelRef) =>
                 subItems.map((subItem, index) => (
