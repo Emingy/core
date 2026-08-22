@@ -1,15 +1,21 @@
 .Option {
     position: relative;
-    display: grid;
+    display: flex;
+    align-items: center;
     column-gap: 8px;
-    grid-template-columns: auto 1fr;
     width: 100%;
     height: fit-content;
     padding: 8px 12px;
+    background: none;
+    border: none;
     border-radius: 8px;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
     color: var(--color-grey-10);
     transition: all var(--animation-duration-base) var(--animation-easing-ease-in-out);
     user-select: none;
+    appearance: none;
 
     &:not(.Option__disabled) {
         cursor: pointer;
@@ -28,6 +34,7 @@
     }
 
     &__disabled {
+        cursor: not-allowed;
         filter: opacity(0.4);
     }
 
@@ -65,21 +72,20 @@
 
     &__prefix {
         display: flex;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
-        grid-row: 1;
-        grid-column: 1;
         width: fit-content;
     }
 
-    &__label {
-        grid-row: 1;
-        grid-column: 2;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-width: 0;
     }
 
     &__description {
-        grid-row: 2;
-        grid-column: 2;
         color: var(--color-grey-20);
     }
 }

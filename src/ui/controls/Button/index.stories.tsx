@@ -56,8 +56,8 @@ export const Demo = (props: TButtonProps) =>
             {...props}
             dropdownContent={
                 <>
-                    <Option>Option one</Option>
-                    <Option>Option two</Option>
+                    <Option element="button">Option one</Option>
+                    <Option element="button">Option two</Option>
                 </>
             }
         >

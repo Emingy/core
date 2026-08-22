@@ -1,10 +1,37 @@
 import React from 'react';
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 
 import { describe, expect, it } from '@rstest/core';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { EType } from '../constants';
 import { Option } from '..';
+
+const LocationDisplay = () => {
+    const location = useLocation();
+    return <div data-testid="location">{location.pathname}</div>;
+};
+
+const renderWithRouter = (ui: React.ReactElement, initialRoute = '/') => {
+    return render(
+        <MemoryRouter
+            initialEntries={[initialRoute]}
+            future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+        >
+            <Routes>
+                <Route
+                    path="*"
+                    element={
+                        <>
+                            {ui}
+                            <LocationDisplay />
+                        </>
+                    }
+                />
+            </Routes>
+        </MemoryRouter>
+    );
+};
 
 describe('[UNIT] Option', () => {
     it('Render', () => {
@@ -327,5 +354,257 @@ describe('[UNIT] Option', () => {
         render(<Option prefix={<PrefixComponent />}>Test</Option>);
 
         expect(screen.getByText('Icon')).toBeDefined();
+    });
+
+    it('Renders as label with checkbox by default', () => {
+        const { container } = render(<Option>Test</Option>);
+        const label = container.querySelector('label');
+        const button = container.querySelector('button');
+
+        expect(label).not.toBeNull();
+        expect(button).toBeNull();
+    });
+
+    it('Renders as button when element is "button"', () => {
+        const { container } = render(<Option element="button">Test</Option>);
+        const button = container.querySelector('button');
+        const label = container.querySelector('label');
+
+        expect(button).not.toBeNull();
+        expect(label).toBeNull();
+    });
+
+    it('Does not render a hidden checkbox when element is "button"', () => {
+        const { container } = render(<Option element="button">Test</Option>);
+        const input = container.querySelector('input');
+
+        expect(input).toBeNull();
+    });
+
+    it('Button has type="button" attribute', () => {
+        const { container } = render(<Option element="button">Test</Option>);
+        const button = container.querySelector('button') as HTMLButtonElement;
+
+        expect(button.type).toBe('button');
+    });
+
+    it('Calls onClick when button is clicked', () => {
+        let clicked = false;
+        const handleClick = () => {
+            clicked = true;
+        };
+
+        const { container } = render(
+            <Option element="button" onClick={handleClick}>
+                Test
+            </Option>
+        );
+        const button = container.querySelector('button') as HTMLButtonElement;
+
+        fireEvent.click(button);
+
+        expect(clicked).toBe(true);
+    });
+
+    it('Does not call onClick when disabled button is clicked', () => {
+        let clicked = false;
+        const handleClick = () => {
+            clicked = true;
+        };
+
+        const { container } = render(
+            <Option element="button" onClick={handleClick} isDisabled>
+                Test
+            </Option>
+        );
+        const button = container.querySelector('button') as HTMLButtonElement;
+
+        fireEvent.click(button);
+
+        expect(clicked).toBe(false);
+    });
+
+    it('Applies disabled attribute on button when isDisabled is true', () => {
+        const { container } = render(
+            <Option element="button" isDisabled>
+                Test
+            </Option>
+        );
+        const button = container.querySelector('button') as HTMLButtonElement;
+
+        expect(button.disabled).toBe(true);
+    });
+
+    it('Applies custom id on button element', () => {
+        const { container } = render(
+            <Option element="button" id="button-option">
+                Test
+            </Option>
+        );
+        const button = container.querySelector('button') as HTMLButtonElement;
+
+        expect(button.id).toBe('button-option');
+    });
+
+    it('Renders prefix and description in button mode', () => {
+        render(
+            <Option element="button" prefix="🔔" description="Some description">
+                Button Option
+            </Option>
+        );
+
+        expect(screen.getByText('🔔')).toBeDefined();
+        expect(screen.getByText('Button Option')).toBeDefined();
+        expect(screen.getByText('Some description')).toBeDefined();
+    });
+
+    it('Applies alert class on button element', () => {
+        const { container } = render(
+            <Option element="button" type={EType.Alert}>
+                Test
+            </Option>
+        );
+        const button = container.querySelector('button');
+
+        expect(button?.className).toContain('Option__alert');
+    });
+
+    it('Renders as anchor when element is "link"', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/test">
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a');
+        const label = container.querySelector('label');
+        const button = container.querySelector('button');
+
+        expect(link).not.toBeNull();
+        expect(label).toBeNull();
+        expect(button).toBeNull();
+    });
+
+    it('Does not render a hidden checkbox when element is "link"', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/test">
+                Test
+            </Option>
+        );
+        const input = container.querySelector('input');
+
+        expect(input).toBeNull();
+    });
+
+    it('Link renders with the given href', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about">
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+
+        expect(link.getAttribute('href')).toBe('/about');
+    });
+
+    it('Navigates when the link is clicked', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about">
+                Test
+            </Option>,
+            '/'
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+        const location = screen.getByTestId('location');
+
+        expect(location.textContent).toBe('/');
+
+        fireEvent.click(link);
+
+        expect(location.textContent).toBe('/about');
+    });
+
+    it('Calls onClick when the link is clicked', () => {
+        let clicked = false;
+        const handleClick = () => {
+            clicked = true;
+        };
+
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" onClick={handleClick}>
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+
+        fireEvent.click(link);
+
+        expect(clicked).toBe(true);
+    });
+
+    it('Does not navigate or call onClick when disabled link is clicked', () => {
+        let clicked = false;
+        const handleClick = () => {
+            clicked = true;
+        };
+
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" onClick={handleClick} isDisabled>
+                Test
+            </Option>,
+            '/'
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+        const location = screen.getByTestId('location');
+
+        fireEvent.click(link);
+
+        expect(clicked).toBe(false);
+        expect(location.textContent).toBe('/');
+    });
+
+    it('Applies aria-disabled and removes link from tab order when isDisabled', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" isDisabled>
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+
+        expect(link.getAttribute('aria-disabled')).toBe('true');
+        expect(link.getAttribute('tabindex')).toBe('-1');
+    });
+
+    it('Applies custom id on link element', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" id="link-option">
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a') as HTMLAnchorElement;
+
+        expect(link.id).toBe('link-option');
+    });
+
+    it('Renders prefix and description in link mode', () => {
+        renderWithRouter(
+            <Option element="link" to="/about" prefix="🔔" description="Some description">
+                Link Option
+            </Option>
+        );
+
+        expect(screen.getByText('🔔')).toBeDefined();
+        expect(screen.getByText('Link Option')).toBeDefined();
+        expect(screen.getByText('Some description')).toBeDefined();
+    });
+
+    it('Applies alert class on link element', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" type={EType.Alert}>
+                Test
+            </Option>
+        );
+        const link = container.querySelector('a');
+
+        expect(link?.className).toContain('Option__alert');
     });
 });

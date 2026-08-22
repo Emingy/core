@@ -1,10 +1,19 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 
 import { describe, expect, it } from '@rstest/core';
 import { render } from '@testing-library/react';
 
 import { EType } from '../constants';
 import { Option } from '..';
+
+const renderWithRouter = (ui: React.ReactElement) => {
+    return render(
+        <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            {ui}
+        </MemoryRouter>
+    );
+};
 
 describe('[SNAPSHOT] Option', () => {
     it('should render basic option', () => {
@@ -66,6 +75,38 @@ describe('[SNAPSHOT] Option', () => {
         const { container } = render(
             <Option isSelected isDisabled onSelect={() => {}}>
                 Selected and Disabled
+            </Option>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render as button', () => {
+        const { container } = render(<Option element="button">Button Option</Option>);
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render as button with prefix and description', () => {
+        const { container } = render(
+            <Option element="button" prefix="⭐" description="Button description">
+                Button With Prefix
+            </Option>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render as link', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about">
+                Link Option
+            </Option>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('should render as link with prefix and description', () => {
+        const { container } = renderWithRouter(
+            <Option element="link" to="/about" prefix="⭐" description="Link description">
+                Link With Prefix
             </Option>
         );
         expect(container.firstChild).toMatchSnapshot();

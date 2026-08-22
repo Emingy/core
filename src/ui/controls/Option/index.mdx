@@ -3,15 +3,15 @@ import * as Stories from './index.stories';
 
 <Meta of={Stories} />
 
-# Option: Selectable Checkbox Component
+# Option: Selectable Checkbox / Action Button / Link Component
 
-The `Option` component is a stylized checkbox control rendered as a label. It supports prefix icons, descriptions, selection states, and disabled states, making it ideal for creating custom select menus, filter lists, or multi-choice interfaces.
+The `Option` component is a stylized list item that can behave as a checkbox (a label wrapping a hidden `<input type="checkbox">`), a plain action button (a native `<button>`), or a navigable link (a real anchor via `react-router-dom`). It supports prefix icons, descriptions, selection states, and disabled states, making it ideal for creating custom select menus, filter lists, multi-choice interfaces, or action/navigation menus (rename, delete, go to page, ...).
 
 ---
 
 ## I. Component Usage
 
-The component renders a label with a hidden checkbox input. It displays main content, an optional prefix, and an optional description in a vertical layout.
+By default the component renders a label with a hidden checkbox input. Set `element="button"` to render a native `<button>`, or `element="link"` to render a real anchor that navigates via `react-router-dom` — see [Element Variant](#ix-element-variant). It displays main content, an optional prefix, and an optional description in a vertical layout.
 
 ### Basic Example
 
@@ -72,8 +72,11 @@ The `Option` component accepts a focused set of props for flexible checkbox beha
 | :--- | :--- | :--- | :--- |
 | **\`children\`** | \`ReactNode\` | | The main text or content of the option. |
 | **\`type\`** | \`'default'\` \\| \`'alert'\` | \`'default'\` | Color variant of the option — see [Type Variant](#viii-type-variant). |
-| **\`isSelected\`** | \`boolean\` | \`false\` | Controls the checked state of the checkbox. |
-| **\`onSelect\`** | \`() => void\` | | Callback fired when the option is toggled. |
+| **\`element\`** | \`'checkbox'\` \\| \`'button'\` \\| \`'link'\` | \`'checkbox'\` | Renders as a label+checkbox, a plain button, or a link — see [Element Variant](#ix-element-variant). |
+| **\`isSelected\`** | \`boolean\` | \`false\` | Checkbox mode only. Controls the checked state of the checkbox. |
+| **\`onSelect\`** | \`() => void\` | | Checkbox mode only. Callback fired when the option is toggled. |
+| **\`onClick\`** | \`() => void\` | | Button/link mode only. Callback fired when the button/link is clicked. |
+| **\`to\`** | \`LinkProps['to']\` | | Link mode only, required. Destination passed to \`react-router-dom\`'s \`Link\`. |
 | **\`isDisabled\`** | \`boolean\` | \`false\` | Disables interaction and applies disabled styling. |
 | **\`prefix\`** | \`ReactNode\` | | Content displayed before the text (icon, emoji, component). |
 | **\`description\`** | \`string\` | | Descriptive text displayed below the main content. |
@@ -338,26 +341,70 @@ const checkbox = document.getElementById('opt-email');
 `}
 </Markdown>
 
-\`type="alert"\` tints the main content red, and gives hover/active states a red-tinted background instead of the neutral grey — use it for destructive actions inside a menu (delete, remove, revoke) so they read as dangerous at a glance. The \`description\` text stays neutral in both variants.
+`type="alert"` tints the main content red, and gives hover/active states a red-tinted background instead of the neutral grey — use it for destructive actions inside a menu (delete, remove, revoke) so they read as dangerous at a glance. The `description` text stays neutral in both variants.
 
 ---
 
-## IX. Important Notes
+## IX. Element Variant
+
+<Markdown>
+{`
+\`\`\`tsx
+// Checkbox (default) — label wrapping a hidden checkbox input
+<Option isSelected={selected} onSelect={() => setSelected(!selected)}>
+  Show archived
+</Option>
+
+// Button — a native <button>, no checkbox semantics or selected state
+<Option element="button" onClick={() => rename(item.id)}>
+  Rename
+</Option>
+
+// Button + alert type — a destructive action in a menu
+<Option element="button" type="alert" onClick={() => remove(item.id)}>
+  Delete
+</Option>
+
+// Link — a real anchor, navigates via react-router-dom
+<Option element="link" to="/settings/profile">
+  Go to profile
+</Option>
+
+// Link with an onClick side-effect (e.g. closing a menu) before navigating
+<Option element="link" to="/settings/profile" onClick={closeMenu}>
+  Go to profile
+</Option>
+\`\`\`
+`}
+</Markdown>
+
+**Element Behavior:**
+
+- `element="checkbox"` (default) renders a `<label>` wrapping a hidden `<input type="checkbox">`; use `isSelected`/`onSelect` to control it.
+- `element="button"` renders a native `<button type="button">`; use `onClick` instead — `isSelected`/`onSelect` have no effect in this mode.
+- `element="link"` renders a real anchor via `react-router-dom`'s `Link`; requires `to` and must be rendered inside a Router. `onClick` fires before navigation — `isSelected`/`onSelect` have no effect in this mode.
+- `isDisabled` maps to the native `disabled` attribute on the `<button>` in button mode, which natively prevents `onClick` from firing. In link mode, since anchors have no native `disabled` attribute, `isDisabled` instead sets `aria-disabled`, removes the link from the tab order (`tabIndex={-1}`), and blocks both navigation and `onClick` in the click handler.
+- All three variants share the same prefix/content/description layout and `type` (default/alert) styling.
+
+---
+
+## X. Important Notes
 
 <Markdown>
     {`
-- The Option is rendered as a \`<label>\` element wrapping a hidden \`<input type="checkbox">\`.
-- The checkbox input is visually hidden with the \`hidden\` attribute.
-- The label is clickable and toggles the checkbox state.
+- By default, the Option is rendered as a \`<label>\` element wrapping a hidden \`<input type="checkbox">\`; with \`element="button"\` it is a native \`<button>\`, and with \`element="link"\` it is a real anchor rendered via \`react-router-dom\`'s \`Link\` — see [Element Variant](#ix-element-variant).
+- \`element="link"\` requires a Router ancestor (e.g. \`BrowserRouter\`/\`MemoryRouter\`) — it will throw if rendered outside of one.
+- The checkbox input (checkbox mode) is visually hidden with the \`hidden\` attribute.
+- The label (checkbox mode) is clickable and toggles the checkbox state.
 - Main content is rendered using \`Typography.Base\` component.
 - Description is rendered using \`Typography.Micro\` component.
-- The component uses \`Flex\` with \`direction="column"\` for vertical layout.
-- When \`isDisabled={true}\`, the \`onSelect\` callback will not be triggered.
+- The main content and description are wrapped together so they can be centered against the prefix (and vice versa) when one is taller than the other.
+- When \`isDisabled={true}\`, the \`onSelect\`/\`onClick\` callback will not be triggered (in link mode, navigation is also blocked).
 - The \`prefix\` prop accepts any React node (string, emoji, component).
 - The \`description\` prop only accepts string values.
-- IDs are auto-generated using React's \`useId()\` if not provided.
-- The label's \`htmlFor\` always matches the input's \`id\` for accessibility.
+- IDs are auto-generated using React's \`useId()\` if not provided (checkbox mode); in button/link mode, \`id\` is applied directly to the \`<button>\`/\`<a>\` if provided.
+- The label's \`htmlFor\` always matches the input's \`id\` for accessibility (checkbox mode).
 - Multiple Option components can be used together for multi-select interfaces.
-- The component is fully keyboard accessible (Tab, Space to toggle).
+- The component is fully keyboard accessible (Tab, Space to toggle in checkbox mode; Tab, Space/Enter to activate in button/link mode).
 `}
 </Markdown>

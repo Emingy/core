@@ -52,7 +52,9 @@ export const Demo = ({ triggerMode, ...props }: TDemoProps) => (
                 triggerMode === 'hover-click' ? ['hover', 'click'] : [triggerMode ?? 'click']
             }
             content={ITEMS.map((item) => (
-                <Option key={item}>{item}</Option>
+                <Option key={item} element="button">
+                    {item}
+                </Option>
             ))}
         >
             <Button>Toggle dropdown</Button>

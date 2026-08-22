@@ -10,11 +10,20 @@ const meta: Meta = {
         prefix: {
             type: 'string',
         },
+        element: {
+            control: 'radio',
+            options: ['checkbox', 'button', 'link'],
+        },
+        to: {
+            type: 'string',
+        },
     },
     args: {
         type: 'default',
+        element: 'checkbox',
         isDisabled: false,
         isSelected: false,
+        to: '/',
     },
 };
 

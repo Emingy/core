@@ -19,12 +19,78 @@ const CONTENTS = [
     },
 ] as const;
 
+const ACTION_STATES = [
+    { label: 'default', args: {} },
+    { label: 'disabled', args: { isDisabled: true } },
+] as const;
+
 test.describe('[Visual] Option', () => {
     for (const type of TYPES) {
         for (const state of STATES) {
             for (const content of CONTENTS) {
                 test(`type ${type} ${state.label} ${content.label}`, async ({ Option, page }) => {
                     await Option.navigate({ type, ...state.args, ...content.args });
+                    await expect(Option.root).toHaveScreenshot();
+
+                    await test.step('hover', async () => {
+                        await Option.hover();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
+
+                    await test.step('active', async () => {
+                        await Option.hover();
+                        await page.mouse.down();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
+                });
+            }
+        }
+    }
+
+    for (const type of TYPES) {
+        for (const state of ACTION_STATES) {
+            for (const content of CONTENTS) {
+                test(`element button type ${type} ${state.label} ${content.label}`, async ({
+                    Option,
+                    page,
+                }) => {
+                    await Option.navigate({
+                        element: 'button',
+                        type,
+                        ...state.args,
+                        ...content.args,
+                    });
+                    await expect(Option.root).toHaveScreenshot();
+
+                    await test.step('hover', async () => {
+                        await Option.hover();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
+
+                    await test.step('active', async () => {
+                        await Option.hover();
+                        await page.mouse.down();
+                        await expect(Option.root).toHaveScreenshot();
+                    });
+                });
+            }
+        }
+    }
+
+    for (const type of TYPES) {
+        for (const state of ACTION_STATES) {
+            for (const content of CONTENTS) {
+                test(`element link type ${type} ${state.label} ${content.label}`, async ({
+                    Option,
+                    page,
+                }) => {
+                    await Option.navigate({
+                        element: 'link',
+                        to: 'about',
+                        type,
+                        ...state.args,
+                        ...content.args,
+                    });
                     await expect(Option.root).toHaveScreenshot();
 
                     await test.step('hover', async () => {

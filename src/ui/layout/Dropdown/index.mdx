@@ -21,8 +21,8 @@ import { Option } from '@emingy/core/ui/controls/Option';
 <Dropdown
   content={
     <>
-      <Option>Option one</Option>
-      <Option>Option two</Option>
+      <Option element="button" onClick={handleOptionOne}>Option one</Option>
+      <Option element="button" onClick={handleOptionTwo}>Option two</Option>
     </>
   }
 >
@@ -110,7 +110,7 @@ For nested flyouts (a panel that itself contains another `Dropdown` trigger), pa
   direction="right"
   content={(panelRef) => (
     <Dropdown direction="right" containerRef={panelRef} content={<Menu />}>
-      <Option>More options</Option>
+      <Option element="button">More options</Option>
     </Dropdown>
   )}
 >
@@ -208,7 +208,7 @@ By default (\`widthMode="trigger"\`) the panel's width tracks the trigger's own 
 - The trigger wrapper uses \`display: contents\`, so it doesn't add any box of its own to the layout — wrapping an existing element (a \`Button\`, a \`NavItem\`, …) in \`Dropdown\` doesn't change how that element is sized or positioned by its parent.
 - Panel position is measured from the trigger's first child element, not the (boxless) wrapper itself; the optional \`containerRef\` element is measured directly.
 - A \`display: contents\` element never receives native \`mouseenter\`/\`mouseleave\` (confirmed in real browsers, not just a theoretical CSS-spec quirk — it has no box to hover), so React's synthetic \`onMouseEnter\`/\`onMouseLeave\` on the trigger wrapper itself do not fire. Hover-triggered open/close instead attaches native listeners directly to the trigger's rendered child (which does have a box). This is transparent to consumers, but matters if you're debugging why a hover interaction on the wrapper element itself doesn't do anything.
-- \`content\` is required — \`Dropdown\` has no built-in notion of options, menus, or search; it only positions and animates whatever is passed to it. Compose it with \`Option\`, \`Input\`, or nested \`NavItem\`s as needed.
+- \`content\` is required — \`Dropdown\` has no built-in notion of options, menus, or search; it only positions and animates whatever is passed to it. Compose it with \`Option\`, \`Input\`, or nested \`NavItem\`s as needed — for a click-to-act menu (not a multi-select list), use \`Option element="button"\` (or \`element="link"\` for navigation entries) rather than the default checkbox variant.
 - \`maxHeight\` is the consumer's responsibility — \`Dropdown\` doesn't compute or cap it automatically based on available viewport space.
 `}
 </Markdown>
