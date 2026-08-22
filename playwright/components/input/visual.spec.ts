@@ -18,6 +18,10 @@ const STATES = [
         label: 'with prefix postfix and value',
         args: { prefix: 'USD', postfix: 'kg', value: '100' },
     },
+    {
+        label: 'with long value fills available width',
+        args: { value: 'This is a fairly long input value used to check the field stretches' },
+    },
     { label: 'disabled', args: { disabled: true } },
     { label: 'disabled with value', args: { disabled: true, value: 'Hello' } },
     { label: 'error', args: { error: 'This field is required' } },
