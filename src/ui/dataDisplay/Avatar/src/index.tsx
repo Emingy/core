@@ -59,6 +59,7 @@ export const Avatar = ({
     const rootClassName = cn(`${BLOCK_NAME}`, className, {
         [`${BLOCK_NAME}__loading`]: isLoading,
         [`${BLOCK_NAME}__placeholder`]: showPlaceholder,
+        [`${BLOCK_NAME}__clickable`]: Boolean(onClick || to || href),
     });
 
     const content = (

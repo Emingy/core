@@ -20,11 +20,6 @@ test.describe('[Visual] Avatar', () => {
         await expect(Avatar.root).toHaveScreenshot();
     });
 
-    test('hovered', async ({ Avatar }) => {
-        await Avatar.root.hover();
-        await expect(Avatar.root).toHaveScreenshot();
-    });
-
     test.describe('with onClick', () => {
         test('default', async ({ Avatar }) => {
             await Avatar.navigate({ onClick: 'clicked' });
@@ -42,6 +37,12 @@ test.describe('[Visual] Avatar', () => {
             await page.mouse.down();
             await expect(Avatar.root).toHaveScreenshot();
             await page.mouse.up();
+        });
+
+        test('hovered', async ({ Avatar }) => {
+            await Avatar.navigate({ onClick: 'clicked' }, false);
+            await Avatar.root.hover();
+            await expect(Avatar.root).toHaveScreenshot();
         });
     });
 

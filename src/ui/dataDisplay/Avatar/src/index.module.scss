@@ -13,12 +13,14 @@
         cursor: auto;
     }
 
-    &:not(:disabled, .Avatar__placeholder):hover {
-        filter: brightness(1.2);
-    }
+    &__clickable:not(:disabled, .Avatar__placeholder) {
+        &:hover {
+            filter: brightness(1.2);
+        }
 
-    &:not(:disabled, .Avatar__placeholder):active {
-        filter: brightness(0.8);
+        &:active {
+            filter: brightness(0.8);
+        }
     }
 
     &__loading {

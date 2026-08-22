@@ -218,6 +218,40 @@ describe('[UNIT] Avatar', () => {
         });
     });
 
+    describe('clickable class', () => {
+        it('Applies clickable class when onClick is passed', () => {
+            const { container } = render(<Avatar src="/test.jpg" onClick={() => {}} />);
+            const root = container.firstElementChild;
+
+            expect(root?.className).toContain('Avatar__clickable');
+        });
+
+        it('Does not apply clickable class when onClick is not passed', () => {
+            const { container } = render(<Avatar src="/test.jpg" />);
+            const root = container.firstElementChild;
+
+            expect(root?.className).not.toContain('Avatar__clickable');
+        });
+
+        it('Applies clickable class when to is passed', () => {
+            const { container } = render(
+                <MemoryRouter>
+                    <Avatar src="/test.jpg" to="/profile" />
+                </MemoryRouter>
+            );
+            const root = container.querySelector('[class*="Avatar"]');
+
+            expect(root?.className).toContain('Avatar__clickable');
+        });
+
+        it('Applies clickable class when href is passed', () => {
+            const { container } = render(<Avatar src="/test.jpg" href="/profile" />);
+            const root = container.querySelector('[class*="Avatar"]');
+
+            expect(root?.className).toContain('Avatar__clickable');
+        });
+    });
+
     describe('without src', () => {
         it('Does not apply loading class', () => {
             const { container } = render(<Avatar />);
